@@ -1,12 +1,3 @@
-# Python
-__pycache__/
-*.pyc
-*.pyo
-
-# Old mirror builds (local backups)
-site_mirror_build2/
-site_mirror_build3/
-
 # OS / editors
 Thumbs.db
 desktop.ini
