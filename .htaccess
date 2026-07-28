@@ -1,0 +1,6 @@
+# Serve the mirrored site from site_mirror/ at the domain root
+RewriteEngine On
+
+# Do not rewrite requests that already target site_mirror
+RewriteCond %{REQUEST_URI} !^/site_mirror/ [NC]
+RewriteRule ^(.*)$ /site_mirror/$1 [L]
