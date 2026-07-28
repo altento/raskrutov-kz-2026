@@ -1,0 +1,58 @@
+=== Локальные страницы без входящих ссылок ===
+
+=== Слабо связаны (1 ссылка) ===
+  pages/akademiya_korporativnoe-obuchenie.html <- ['pages/akademiya.html'] | 
+  pages/akademiya_obuchenie-r-builder.html <- ['pages/akademiya.html'] | 
+  pages/akademiya_obuchenie-seo-aeo.html <- ['pages/akademiya.html'] | 
+  pages/akademiya_obuchenie-sozdaniyu-saytov.html <- ['pages/akademiya.html'] | 
+  pages/consent.html <- ['index.html'] | 
+  pages/crm.html <- ['index.html'] | 
+  pages/crm_avtomatizatsiya-prodazh.html <- ['pages/crm.html'] | 
+  pages/crm_integratsiya-s-crm.html <- ['pages/crm.html'] | 
+  pages/crm_vnedrenie-crm.html <- ['pages/crm.html'] | 
+  pages/faq_aeo.html <- ['pages/faq.html'] | 
+  pages/faq_akademiya.html <- ['pages/faq.html'] | 
+  pages/faq_crm.html <- ['pages/faq.html'] | 
+  pages/faq_partnerstvo.html <- ['pages/faq.html'] | 
+  pages/faq_sayty.html <- ['pages/faq.html'] | 
+  pages/faq_seo.html <- ['pages/faq.html'] | 
+  pages/keysy_akademiya.html <- ['pages/keysy.html'] | 
+  pages/keysy_crm.html <- ['pages/keysy.html'] | 
+  pages/keysy_partnery.html <- ['pages/keysy.html'] | 
+  pages/o-kompanii_blagodarstvennye-pisma.html <- ['pages/o-kompanii.html'] | 
+  pages/o-kompanii_blog.html <- ['pages/o-kompanii.html'] | 
+  pages/o-kompanii_klienty.html <- ['pages/o-kompanii.html'] | 
+  pages/o-kompanii_komanda.html <- ['pages/o-kompanii.html'] | 
+  pages/o-kompanii_o-nas.html <- ['pages/o-kompanii.html'] | 
+  pages/o-kompanii_vakansii.html <- ['pages/o-kompanii.html'] | 
+  pages/partneram_deystvuyushchie-partnery.html <- ['pages/partneram.html'] | 
+  pages/partneram_dlya-reklamnyh-agentstv.html <- ['pages/partneram.html'] | 
+  pages/partneram_franshiza.html <- ['pages/partneram.html'] | 
+  pages/partneram_pakety-partnerstva.html <- ['pages/partneram.html'] | 
+  pages/r-builder_ai-r-builder.html <- ['pages/r-builder.html'] | 
+  pages/r-builder_chto-takoe-r-builder.html <- ['pages/r-builder.html'] | 
+  pages/r-builder_dlya-biznesa.html <- ['pages/r-builder.html'] | 
+  pages/r-builder_vozmozhnosti.html <- ['pages/r-builder.html'] | 
+  pages/regulation.html <- ['index.html'] | 
+  pages/web-studiya_digital-konsalting_audit-prodvizheniya.html <- ['pages/web-studiya_digital-konsalting.html'] | 
+  pages/web-studiya_digital-konsalting_konsultatsiya-dlya-biznesa.html <- ['pages/web-studiya_digital-konsalting.html'] | 
+  pages/web-studiya_dizayn_neyming.html <- ['pages/web-studiya_dizayn.html'] | 
+  pages/web-studiya_sozdanie-saitov_ai-konsultanty.html <- ['pages/web-studiya_sozdanie-saitov.html'] | 
+  pages/web-studiya_sozdanie-saitov_crm-sistemy.html <- ['pages/web-studiya_sozdanie-saitov.html'] | 
+  pages/web-studiya_sozdanie-saitov_integratsii.html <- ['pages/web-studiya_sozdanie-saitov.html'] | 
+  pages/web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html <- ['pages/web-studiya_sozdanie-saitov.html'] | 
+  pages/web-studiya_sozdanie-saitov_obsluzhivanie-saytov.html <- ['pages/web-studiya_sozdanie-saitov.html'] | 
+  pages/web-studiya_sozdanie-saitov_onlayn-kalkulyatory.html <- ['pages/web-studiya_sozdanie-saitov.html'] | 
+  pages/web-studiya_sozdanie-saitov_onlayn-shkola.html <- ['pages/web-studiya_sozdanie-saitov.html'] | 
+  pages/web-studiya_sozdanie-saitov_redizayn-sayta.html <- ['pages/web-studiya_sozdanie-saitov.html'] | 
+  pages/web-studiya_sozdanie-saitov_sayt-vizitka.html <- ['pages/web-studiya_sozdanie-saitov.html'] | 
+
+=== Карта: есть локально, нет ни одной входящей ссылки ===
+
+=== Карта: опубликована, локально нет файла ===
+  /web-studiya/sozdanie-saitov/landing | Создание лендингов | live:404
+  /web-studiya/sozdanie-saitov/mnogostranichnye-sayty | Создание многостраничных сайтов | live:404
+  /web-studiya/sozdanie-saitov/korporativnyy-sayt | Создание корпоративного сайта | live:404
+  /web-studiya/seo-prodvizhenie | SEO-продвижение | live:404
+  /o-kompanii/o-nas | О нас | live:404
+  /o-kompanii/komanda | Команда | live:404

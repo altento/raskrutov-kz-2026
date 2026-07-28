@@ -1,0 +1,86 @@
+
+=== Создание сайтов @ 1524406 ===
+  data-page-link nearby: ['pages/web-studiya_sozdanie-saitov.html']
+  labels nearby: ['⟶']
+
+=== Лендинги @ 1524739 ===
+  data-page-link nearby: ['pages/web-studiya_sozdanie-saitov.html']
+  labels nearby: ['⟶']
+
+=== Корпоративные @ 1524756 ===
+  data-page-link nearby: ['pages/web-studiya_sozdanie-saitov.html']
+  labels nearby: ['⟶']
+
+=== SEO-продвижение @ 1535041 ===
+  data-page-link nearby: ['']
+  labels nearby: ['⟶']
+
+=== SEO-продвижение @ 1753842 ===
+  data-page-link nearby: ['', '', '']
+  labels nearby: ['Смотреть всю команду ➔']
+
+=== SEO-продвижение @ 1814176 ===
+  data-page-link nearby: []
+  labels nearby: []
+
+=== AEO @ 474 ===
+  data-page-link nearby: []
+  labels nearby: []
+
+=== AEO @ 743 ===
+  data-page-link nearby: []
+  labels nearby: []
+
+=== AEO @ 1499950 ===
+  data-page-link nearby: ['', '']
+  labels nearby: ['⟶']
+
+=== AEO @ 1540379 ===
+  data-page-link nearby: ['']
+  labels nearby: ['⟶']
+
+=== AEO @ 1589480 ===
+  data-page-link nearby: ['']
+  labels nearby: ['Raskrutov Academy']
+
+=== AEO @ 1612925 ===
+  data-page-link nearby: ['', '']
+  labels nearby: []
+
+=== AEO @ 1877492 ===
+  data-page-link nearby: []
+  labels nearby: []
+
+=== О нас @ 1707741 ===
+  data-page-link nearby: ['', '']
+  labels nearby: ['⟶']
+
+=== Команда @ 1570281 ===
+  data-page-link nearby: ['', '']
+  labels nearby: []
+
+=== Команда @ 1713192 ===
+  data-page-link nearby: ['', '', '']
+  labels nearby: ['⟶']
+
+=== ALL homepage data-page-link with labels ===
+index.html	Главная
+pages/web-studiya.html	Студия
+pages/r-builder.html	R-Builder
+pages/akademiya.html	Академия
+pages/partneram.html	Партнёры
+pages/o-kompanii.html	О компании
+pages/keysy.html	Кейсы
+pages/kontakty.html	Контакты
+tel:+77000216900	+7 700 021 69 00
+pages/web-studiya_sozdanie-saitov.html	?
+pages/web-studiya_sozdanie-saitov.html	⟶
+pages/web-studiya_sozdanie-saitov.html	?
+pages/web-studiya_sozdanie-saitov.html	⟶
+assets/assets/t.me/Raskrutov_web/index.html/index.html	Telegram
+assets/assets/www.assets/www.instagram.com/index.html	Instagram
+assets/assets/www.youtube.com/@raskrutov-kz/index.html/index.html	YouTube
+assets/www.tiktok.com/@raskrutov__q__r_1__t_ZS-96qj8121sRd.kz	TikTok
+assets/api.whatsapp.com/send/index__q_phone_77000216900.html	Обсудить проект
+
+=== Sitemap URLs (web-studiya + o-kompanii subpaths) ===

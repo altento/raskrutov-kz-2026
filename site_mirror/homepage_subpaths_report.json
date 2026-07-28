@@ -1,0 +1,113 @@
+{
+  "subpaths": [
+    {
+      "path": "/web-studiya/aeo-prodvizhenie",
+      "status": 404,
+      "local": "pages/web-studiya_aeo-geo-prodvizhenie.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/digital-konsalting",
+      "status": 404,
+      "local": "pages/web-studiya_digital-konsalting.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/digital-konsalting/audit-sayta",
+      "status": 404,
+      "local": "pages/web-studiya_digital-konsalting_audit-sayta.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/digital-konsalting/digital-strategiya",
+      "status": 404,
+      "local": "pages/web-studiya_digital-konsalting_digital-strategiya.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/dizayn",
+      "status": 404,
+      "local": "pages/web-studiya_dizayn.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/dizayn/brendbuk",
+      "status": 404,
+      "local": "pages/web-studiya_dizayn_brendbuk.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/dizayn/logotip",
+      "status": 404,
+      "local": "pages/web-studiya_dizayn_logotip.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/kontekstnaya-reklama",
+      "status": 404,
+      "local": "pages/web-studiya_kontekstnaya-reklama.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/kontekstnaya-reklama/google-ads",
+      "status": 404,
+      "local": "pages/web-studiya_kontekstnaya-reklama_google-ads.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/kontekstnaya-reklama/yandex-direct",
+      "status": 404,
+      "local": "pages/web-studiya_kontekstnaya-reklama_yandex-direct.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/lidogeneratsiya",
+      "status": 404,
+      "local": "pages/web-studiya_lidogeneratsiya.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/podderzhka-saytov",
+      "status": 404,
+      "local": "pages/web-studiya_podderzhka-saytov.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/seo-prodvizhenie",
+      "status": 404,
+      "local": "pages/web-studiya_seo-prodvizhenie.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/seo-prodvizhenie/google",
+      "status": 404,
+      "local": "pages/web-studiya_seo-prodvizhenie_google.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/seo-prodvizhenie/yandex",
+      "status": 404,
+      "local": "pages/web-studiya_seo-prodvizhenie_yandex.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/sozdanie-saitov/internet-magazin",
+      "status": 404,
+      "local": "pages/web-studiya_sozdanie-saitov_internet-magazin.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/sozdanie-saitov/korporativnyy-sayt",
+      "status": 404,
+      "local": "pages/web-studiya_sozdanie-saitov_korporativnyy-sayt.html",
+      "local_exists": true
+    },
+    {
+      "path": "/web-studiya/sozdanie-saitov/landing",
+      "status": 404,
+      "local": "pages/web-studiya_sozdanie-saitov_landing.html",
+      "local_exists": true
+    }
+  ],
+  "available": []
+}

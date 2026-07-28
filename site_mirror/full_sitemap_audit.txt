@@ -1,0 +1,43 @@
+Всего в карте: 73
+Live 200: 1
+Локально найдено: 73
+Есть локально, но НЕ на главной: 9
+
+=== LIVE 200 ===
+  / | Главная | local: index.html
+
+=== Локально есть, кнопки не привязаны (главная) ===
+  /web-studiya/sozdanie-saitov/mnogostranichnye-sayty | Создание многостраничных сайтов | pages/web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html | live:404 | plan:Опубликована
+  /r-builder/chto-takoe-r-builder | Что такое R-Builder | pages/r-builder_chto-takoe-r-builder.html | live:404 | plan:Создана
+  /r-builder/ai-r-builder | AI R-Builder | pages/r-builder_ai-r-builder.html | live:404 | plan:Создана
+  /r-builder/vozmozhnosti | Возможности платформы | pages/r-builder_vozmozhnosti.html | live:404 | plan:Создана
+  /r-builder/dlya-biznesa | R-Builder для бизнеса | pages/r-builder_dlya-biznesa.html | live:404 | plan:Создана
+  /keysy/sayty | Кейсы: сайты | pages/keysy_sayty.html | live:404 | plan:Опубликована
+  /keysy/prodvizhenie | Кейсы: продвижение | pages/keysy_prodvizhenie.html | live:404 | plan:Опубликована
+  /o-kompanii/o-nas | О нас | pages/o-kompanii_o-nas.html | live:404 | plan:Опубликована
+  /o-kompanii/komanda | Команда | pages/o-kompanii_komanda.html | live:404 | plan:Опубликована
+
+=== Опубликована в CSV, но 404 online ===
+  /web-studiya | Вебстудия Raskrutov | LOCAL
+  /web-studiya/sozdanie-saitov | Создание сайтов | LOCAL
+  /web-studiya/sozdanie-saitov/landing | Создание лендингов | LOCAL
+  /web-studiya/sozdanie-saitov/mnogostranichnye-sayty | Создание многостраничных сайтов | LOCAL
+  /web-studiya/sozdanie-saitov/korporativnyy-sayt | Создание корпоративного сайта | LOCAL
+  /web-studiya/dizayn | Услуги дизайнера | LOCAL
+  /web-studiya/seo-prodvizhenie | SEO-продвижение | LOCAL
+  /web-studiya/aeo-prodvizhenie | AEO-продвижение | LOCAL
+  /web-studiya/kontekstnaya-reklama | Контекстная реклама | LOCAL
+  /web-studiya/lidogeneratsiya | Лидогенерация | LOCAL
+  /web-studiya/podderzhka-saytov | Поддержка сайтов | LOCAL
+  /web-studiya/digital-konsalting | Digital-консалтинг | LOCAL
+  /akademiya | Академия Raskrutov | LOCAL
+  /r-builder | R-Builder | LOCAL
+  /partneram | Партнёрам Raskrutov | LOCAL
+  /keysy | Кейсы Raskrutov | LOCAL
+  /keysy/sayty | Кейсы: сайты | LOCAL
+  /keysy/prodvizhenie | Кейсы: продвижение | LOCAL
+  /faq | Вопросы и ответы | LOCAL
+  /o-kompanii | О компании Raskrutov | LOCAL
+  /o-kompanii/o-nas | О нас | LOCAL
+  /o-kompanii/komanda | Команда | LOCAL
+  /kontakty | Контакты Raskrutov | LOCAL

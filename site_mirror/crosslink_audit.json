@@ -1,0 +1,1663 @@
+{
+  "orphans": [],
+  "weak": [
+    {
+      "page": "pages/akademiya_korporativnoe-obuchenie.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/akademiya.html"
+      ]
+    },
+    {
+      "page": "pages/akademiya_obuchenie-r-builder.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/akademiya.html"
+      ]
+    },
+    {
+      "page": "pages/akademiya_obuchenie-seo-aeo.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/akademiya.html"
+      ]
+    },
+    {
+      "page": "pages/akademiya_obuchenie-sozdaniyu-saytov.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/akademiya.html"
+      ]
+    },
+    {
+      "page": "pages/consent.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "index.html"
+      ]
+    },
+    {
+      "page": "pages/crm.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "index.html"
+      ]
+    },
+    {
+      "page": "pages/crm_avtomatizatsiya-prodazh.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/crm.html"
+      ]
+    },
+    {
+      "page": "pages/crm_integratsiya-s-crm.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/crm.html"
+      ]
+    },
+    {
+      "page": "pages/crm_vnedrenie-crm.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/crm.html"
+      ]
+    },
+    {
+      "page": "pages/faq_aeo.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/faq.html"
+      ]
+    },
+    {
+      "page": "pages/faq_akademiya.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/faq.html"
+      ]
+    },
+    {
+      "page": "pages/faq_crm.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/faq.html"
+      ]
+    },
+    {
+      "page": "pages/faq_partnerstvo.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/faq.html"
+      ]
+    },
+    {
+      "page": "pages/faq_sayty.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/faq.html"
+      ]
+    },
+    {
+      "page": "pages/faq_seo.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/faq.html"
+      ]
+    },
+    {
+      "page": "pages/keysy_akademiya.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/keysy.html"
+      ]
+    },
+    {
+      "page": "pages/keysy_crm.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/keysy.html"
+      ]
+    },
+    {
+      "page": "pages/keysy_partnery.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/keysy.html"
+      ]
+    },
+    {
+      "page": "pages/o-kompanii_blagodarstvennye-pisma.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/o-kompanii.html"
+      ]
+    },
+    {
+      "page": "pages/o-kompanii_blog.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/o-kompanii.html"
+      ]
+    },
+    {
+      "page": "pages/o-kompanii_klienty.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/o-kompanii.html"
+      ]
+    },
+    {
+      "page": "pages/o-kompanii_komanda.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/o-kompanii.html"
+      ]
+    },
+    {
+      "page": "pages/o-kompanii_o-nas.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/o-kompanii.html"
+      ]
+    },
+    {
+      "page": "pages/o-kompanii_vakansii.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/o-kompanii.html"
+      ]
+    },
+    {
+      "page": "pages/partneram_deystvuyushchie-partnery.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/partneram.html"
+      ]
+    },
+    {
+      "page": "pages/partneram_dlya-reklamnyh-agentstv.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/partneram.html"
+      ]
+    },
+    {
+      "page": "pages/partneram_franshiza.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/partneram.html"
+      ]
+    },
+    {
+      "page": "pages/partneram_pakety-partnerstva.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/partneram.html"
+      ]
+    },
+    {
+      "page": "pages/r-builder_ai-r-builder.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/r-builder.html"
+      ]
+    },
+    {
+      "page": "pages/r-builder_chto-takoe-r-builder.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/r-builder.html"
+      ]
+    },
+    {
+      "page": "pages/r-builder_dlya-biznesa.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/r-builder.html"
+      ]
+    },
+    {
+      "page": "pages/r-builder_vozmozhnosti.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/r-builder.html"
+      ]
+    },
+    {
+      "page": "pages/regulation.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "index.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_digital-konsalting_audit-prodvizheniya.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_digital-konsalting.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_digital-konsalting_konsultatsiya-dlya-biznesa.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_digital-konsalting.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_dizayn_neyming.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_dizayn.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_ai-konsultanty.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_crm-sistemy.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_integratsii.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_obsluzhivanie-saytov.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_onlayn-kalkulyatory.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_onlayn-shkola.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_redizayn-sayta.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_sayt-vizitka.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    }
+  ],
+  "all": [
+    {
+      "page": "index.html",
+      "linked_from_count": 73,
+      "linked_from": [
+        "index.html",
+        "pages/akademiya.html",
+        "pages/akademiya_korporativnoe-obuchenie.html",
+        "pages/akademiya_obuchenie-r-builder.html",
+        "pages/akademiya_obuchenie-seo-aeo.html",
+        "pages/akademiya_obuchenie-sozdaniyu-saytov.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/faq.html",
+        "pages/faq_aeo.html",
+        "pages/faq_akademiya.html",
+        "pages/faq_crm.html",
+        "pages/faq_partnerstvo.html",
+        "pages/faq_sayty.html",
+        "pages/faq_seo.html",
+        "pages/keysy.html",
+        "pages/keysy_akademiya.html",
+        "pages/keysy_crm.html",
+        "pages/keysy_partnery.html",
+        "pages/keysy_prodvizhenie.html",
+        "pages/keysy_sayty.html",
+        "pages/kontakty.html",
+        "pages/o-kompanii.html",
+        "pages/o-kompanii_blagodarstvennye-pisma.html",
+        "pages/o-kompanii_blog.html",
+        "pages/o-kompanii_klienty.html",
+        "pages/o-kompanii_komanda.html",
+        "pages/o-kompanii_o-nas.html",
+        "pages/o-kompanii_vakansii.html",
+        "pages/partneram.html",
+        "pages/partneram_deystvuyushchie-partnery.html",
+        "pages/partneram_dlya-reklamnyh-agentstv.html",
+        "pages/partneram_franshiza.html",
+        "pages/partneram_pakety-partnerstva.html",
+        "pages/r-builder.html",
+        "pages/r-builder_ai-r-builder.html",
+        "pages/r-builder_chto-takoe-r-builder.html",
+        "pages/r-builder_dlya-biznesa.html",
+        "pages/r-builder_vozmozhnosti.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_aeo-geo-prodvizhenie.html",
+        "pages/web-studiya_digital-konsalting.html",
+        "pages/web-studiya_digital-konsalting_audit-prodvizheniya.html",
+        "pages/web-studiya_digital-konsalting_audit-sayta.html",
+        "pages/web-studiya_digital-konsalting_digital-strategiya.html",
+        "pages/web-studiya_digital-konsalting_konsultatsiya-dlya-biznesa.html",
+        "pages/web-studiya_dizayn.html",
+        "pages/web-studiya_dizayn_brendbuk.html",
+        "pages/web-studiya_dizayn_logotip.html",
+        "pages/web-studiya_dizayn_neyming.html",
+        "pages/web-studiya_kontekstnaya-reklama.html",
+        "pages/web-studiya_kontekstnaya-reklama_google-ads.html",
+        "pages/web-studiya_kontekstnaya-reklama_yandex-direct.html",
+        "pages/web-studiya_lidogeneratsiya.html",
+        "pages/web-studiya_podderzhka-saytov.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html",
+        "pages/web-studiya_sozdanie-saitov.html",
+        "pages/web-studiya_sozdanie-saitov_ai-konsultanty.html",
+        "pages/web-studiya_sozdanie-saitov_crm-sistemy.html",
+        "pages/web-studiya_sozdanie-saitov_integratsii.html",
+        "pages/web-studiya_sozdanie-saitov_internet-magazin.html",
+        "pages/web-studiya_sozdanie-saitov_korporativnyy-sayt.html",
+        "pages/web-studiya_sozdanie-saitov_landing.html",
+        "pages/web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html",
+        "pages/web-studiya_sozdanie-saitov_obsluzhivanie-saytov.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-kalkulyatory.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-shkola.html",
+        "pages/web-studiya_sozdanie-saitov_redizayn-sayta.html",
+        "pages/web-studiya_sozdanie-saitov_sayt-vizitka.html"
+      ]
+    },
+    {
+      "page": "pages/akademiya.html",
+      "linked_from_count": 73,
+      "linked_from": [
+        "index.html",
+        "pages/akademiya.html",
+        "pages/akademiya_korporativnoe-obuchenie.html",
+        "pages/akademiya_obuchenie-r-builder.html",
+        "pages/akademiya_obuchenie-seo-aeo.html",
+        "pages/akademiya_obuchenie-sozdaniyu-saytov.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/faq.html",
+        "pages/faq_aeo.html",
+        "pages/faq_akademiya.html",
+        "pages/faq_crm.html",
+        "pages/faq_partnerstvo.html",
+        "pages/faq_sayty.html",
+        "pages/faq_seo.html",
+        "pages/keysy.html",
+        "pages/keysy_akademiya.html",
+        "pages/keysy_crm.html",
+        "pages/keysy_partnery.html",
+        "pages/keysy_prodvizhenie.html",
+        "pages/keysy_sayty.html",
+        "pages/kontakty.html",
+        "pages/o-kompanii.html",
+        "pages/o-kompanii_blagodarstvennye-pisma.html",
+        "pages/o-kompanii_blog.html",
+        "pages/o-kompanii_klienty.html",
+        "pages/o-kompanii_komanda.html",
+        "pages/o-kompanii_o-nas.html",
+        "pages/o-kompanii_vakansii.html",
+        "pages/partneram.html",
+        "pages/partneram_deystvuyushchie-partnery.html",
+        "pages/partneram_dlya-reklamnyh-agentstv.html",
+        "pages/partneram_franshiza.html",
+        "pages/partneram_pakety-partnerstva.html",
+        "pages/r-builder.html",
+        "pages/r-builder_ai-r-builder.html",
+        "pages/r-builder_chto-takoe-r-builder.html",
+        "pages/r-builder_dlya-biznesa.html",
+        "pages/r-builder_vozmozhnosti.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_aeo-geo-prodvizhenie.html",
+        "pages/web-studiya_digital-konsalting.html",
+        "pages/web-studiya_digital-konsalting_audit-prodvizheniya.html",
+        "pages/web-studiya_digital-konsalting_audit-sayta.html",
+        "pages/web-studiya_digital-konsalting_digital-strategiya.html",
+        "pages/web-studiya_digital-konsalting_konsultatsiya-dlya-biznesa.html",
+        "pages/web-studiya_dizayn.html",
+        "pages/web-studiya_dizayn_brendbuk.html",
+        "pages/web-studiya_dizayn_logotip.html",
+        "pages/web-studiya_dizayn_neyming.html",
+        "pages/web-studiya_kontekstnaya-reklama.html",
+        "pages/web-studiya_kontekstnaya-reklama_google-ads.html",
+        "pages/web-studiya_kontekstnaya-reklama_yandex-direct.html",
+        "pages/web-studiya_lidogeneratsiya.html",
+        "pages/web-studiya_podderzhka-saytov.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html",
+        "pages/web-studiya_sozdanie-saitov.html",
+        "pages/web-studiya_sozdanie-saitov_ai-konsultanty.html",
+        "pages/web-studiya_sozdanie-saitov_crm-sistemy.html",
+        "pages/web-studiya_sozdanie-saitov_integratsii.html",
+        "pages/web-studiya_sozdanie-saitov_internet-magazin.html",
+        "pages/web-studiya_sozdanie-saitov_korporativnyy-sayt.html",
+        "pages/web-studiya_sozdanie-saitov_landing.html",
+        "pages/web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html",
+        "pages/web-studiya_sozdanie-saitov_obsluzhivanie-saytov.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-kalkulyatory.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-shkola.html",
+        "pages/web-studiya_sozdanie-saitov_redizayn-sayta.html",
+        "pages/web-studiya_sozdanie-saitov_sayt-vizitka.html"
+      ]
+    },
+    {
+      "page": "pages/akademiya_korporativnoe-obuchenie.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/akademiya.html"
+      ]
+    },
+    {
+      "page": "pages/akademiya_obuchenie-r-builder.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/akademiya.html"
+      ]
+    },
+    {
+      "page": "pages/akademiya_obuchenie-seo-aeo.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/akademiya.html"
+      ]
+    },
+    {
+      "page": "pages/akademiya_obuchenie-sozdaniyu-saytov.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/akademiya.html"
+      ]
+    },
+    {
+      "page": "pages/consent.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "index.html"
+      ]
+    },
+    {
+      "page": "pages/crm.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "index.html"
+      ]
+    },
+    {
+      "page": "pages/crm_avtomatizatsiya-prodazh.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/crm.html"
+      ]
+    },
+    {
+      "page": "pages/crm_integratsiya-s-crm.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/crm.html"
+      ]
+    },
+    {
+      "page": "pages/crm_vnedrenie-crm.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/crm.html"
+      ]
+    },
+    {
+      "page": "pages/faq.html",
+      "linked_from_count": 73,
+      "linked_from": [
+        "index.html",
+        "pages/akademiya.html",
+        "pages/akademiya_korporativnoe-obuchenie.html",
+        "pages/akademiya_obuchenie-r-builder.html",
+        "pages/akademiya_obuchenie-seo-aeo.html",
+        "pages/akademiya_obuchenie-sozdaniyu-saytov.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/faq.html",
+        "pages/faq_aeo.html",
+        "pages/faq_akademiya.html",
+        "pages/faq_crm.html",
+        "pages/faq_partnerstvo.html",
+        "pages/faq_sayty.html",
+        "pages/faq_seo.html",
+        "pages/keysy.html",
+        "pages/keysy_akademiya.html",
+        "pages/keysy_crm.html",
+        "pages/keysy_partnery.html",
+        "pages/keysy_prodvizhenie.html",
+        "pages/keysy_sayty.html",
+        "pages/kontakty.html",
+        "pages/o-kompanii.html",
+        "pages/o-kompanii_blagodarstvennye-pisma.html",
+        "pages/o-kompanii_blog.html",
+        "pages/o-kompanii_klienty.html",
+        "pages/o-kompanii_komanda.html",
+        "pages/o-kompanii_o-nas.html",
+        "pages/o-kompanii_vakansii.html",
+        "pages/partneram.html",
+        "pages/partneram_deystvuyushchie-partnery.html",
+        "pages/partneram_dlya-reklamnyh-agentstv.html",
+        "pages/partneram_franshiza.html",
+        "pages/partneram_pakety-partnerstva.html",
+        "pages/r-builder.html",
+        "pages/r-builder_ai-r-builder.html",
+        "pages/r-builder_chto-takoe-r-builder.html",
+        "pages/r-builder_dlya-biznesa.html",
+        "pages/r-builder_vozmozhnosti.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_aeo-geo-prodvizhenie.html",
+        "pages/web-studiya_digital-konsalting.html",
+        "pages/web-studiya_digital-konsalting_audit-prodvizheniya.html",
+        "pages/web-studiya_digital-konsalting_audit-sayta.html",
+        "pages/web-studiya_digital-konsalting_digital-strategiya.html",
+        "pages/web-studiya_digital-konsalting_konsultatsiya-dlya-biznesa.html",
+        "pages/web-studiya_dizayn.html",
+        "pages/web-studiya_dizayn_brendbuk.html",
+        "pages/web-studiya_dizayn_logotip.html",
+        "pages/web-studiya_dizayn_neyming.html",
+        "pages/web-studiya_kontekstnaya-reklama.html",
+        "pages/web-studiya_kontekstnaya-reklama_google-ads.html",
+        "pages/web-studiya_kontekstnaya-reklama_yandex-direct.html",
+        "pages/web-studiya_lidogeneratsiya.html",
+        "pages/web-studiya_podderzhka-saytov.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html",
+        "pages/web-studiya_sozdanie-saitov.html",
+        "pages/web-studiya_sozdanie-saitov_ai-konsultanty.html",
+        "pages/web-studiya_sozdanie-saitov_crm-sistemy.html",
+        "pages/web-studiya_sozdanie-saitov_integratsii.html",
+        "pages/web-studiya_sozdanie-saitov_internet-magazin.html",
+        "pages/web-studiya_sozdanie-saitov_korporativnyy-sayt.html",
+        "pages/web-studiya_sozdanie-saitov_landing.html",
+        "pages/web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html",
+        "pages/web-studiya_sozdanie-saitov_obsluzhivanie-saytov.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-kalkulyatory.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-shkola.html",
+        "pages/web-studiya_sozdanie-saitov_redizayn-sayta.html",
+        "pages/web-studiya_sozdanie-saitov_sayt-vizitka.html"
+      ]
+    },
+    {
+      "page": "pages/faq_aeo.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/faq.html"
+      ]
+    },
+    {
+      "page": "pages/faq_akademiya.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/faq.html"
+      ]
+    },
+    {
+      "page": "pages/faq_crm.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/faq.html"
+      ]
+    },
+    {
+      "page": "pages/faq_partnerstvo.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/faq.html"
+      ]
+    },
+    {
+      "page": "pages/faq_sayty.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/faq.html"
+      ]
+    },
+    {
+      "page": "pages/faq_seo.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/faq.html"
+      ]
+    },
+    {
+      "page": "pages/keysy.html",
+      "linked_from_count": 73,
+      "linked_from": [
+        "index.html",
+        "pages/akademiya.html",
+        "pages/akademiya_korporativnoe-obuchenie.html",
+        "pages/akademiya_obuchenie-r-builder.html",
+        "pages/akademiya_obuchenie-seo-aeo.html",
+        "pages/akademiya_obuchenie-sozdaniyu-saytov.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/faq.html",
+        "pages/faq_aeo.html",
+        "pages/faq_akademiya.html",
+        "pages/faq_crm.html",
+        "pages/faq_partnerstvo.html",
+        "pages/faq_sayty.html",
+        "pages/faq_seo.html",
+        "pages/keysy.html",
+        "pages/keysy_akademiya.html",
+        "pages/keysy_crm.html",
+        "pages/keysy_partnery.html",
+        "pages/keysy_prodvizhenie.html",
+        "pages/keysy_sayty.html",
+        "pages/kontakty.html",
+        "pages/o-kompanii.html",
+        "pages/o-kompanii_blagodarstvennye-pisma.html",
+        "pages/o-kompanii_blog.html",
+        "pages/o-kompanii_klienty.html",
+        "pages/o-kompanii_komanda.html",
+        "pages/o-kompanii_o-nas.html",
+        "pages/o-kompanii_vakansii.html",
+        "pages/partneram.html",
+        "pages/partneram_deystvuyushchie-partnery.html",
+        "pages/partneram_dlya-reklamnyh-agentstv.html",
+        "pages/partneram_franshiza.html",
+        "pages/partneram_pakety-partnerstva.html",
+        "pages/r-builder.html",
+        "pages/r-builder_ai-r-builder.html",
+        "pages/r-builder_chto-takoe-r-builder.html",
+        "pages/r-builder_dlya-biznesa.html",
+        "pages/r-builder_vozmozhnosti.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_aeo-geo-prodvizhenie.html",
+        "pages/web-studiya_digital-konsalting.html",
+        "pages/web-studiya_digital-konsalting_audit-prodvizheniya.html",
+        "pages/web-studiya_digital-konsalting_audit-sayta.html",
+        "pages/web-studiya_digital-konsalting_digital-strategiya.html",
+        "pages/web-studiya_digital-konsalting_konsultatsiya-dlya-biznesa.html",
+        "pages/web-studiya_dizayn.html",
+        "pages/web-studiya_dizayn_brendbuk.html",
+        "pages/web-studiya_dizayn_logotip.html",
+        "pages/web-studiya_dizayn_neyming.html",
+        "pages/web-studiya_kontekstnaya-reklama.html",
+        "pages/web-studiya_kontekstnaya-reklama_google-ads.html",
+        "pages/web-studiya_kontekstnaya-reklama_yandex-direct.html",
+        "pages/web-studiya_lidogeneratsiya.html",
+        "pages/web-studiya_podderzhka-saytov.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html",
+        "pages/web-studiya_sozdanie-saitov.html",
+        "pages/web-studiya_sozdanie-saitov_ai-konsultanty.html",
+        "pages/web-studiya_sozdanie-saitov_crm-sistemy.html",
+        "pages/web-studiya_sozdanie-saitov_integratsii.html",
+        "pages/web-studiya_sozdanie-saitov_internet-magazin.html",
+        "pages/web-studiya_sozdanie-saitov_korporativnyy-sayt.html",
+        "pages/web-studiya_sozdanie-saitov_landing.html",
+        "pages/web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html",
+        "pages/web-studiya_sozdanie-saitov_obsluzhivanie-saytov.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-kalkulyatory.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-shkola.html",
+        "pages/web-studiya_sozdanie-saitov_redizayn-sayta.html",
+        "pages/web-studiya_sozdanie-saitov_sayt-vizitka.html"
+      ]
+    },
+    {
+      "page": "pages/keysy_akademiya.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/keysy.html"
+      ]
+    },
+    {
+      "page": "pages/keysy_crm.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/keysy.html"
+      ]
+    },
+    {
+      "page": "pages/keysy_partnery.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/keysy.html"
+      ]
+    },
+    {
+      "page": "pages/keysy_prodvizhenie.html",
+      "linked_from_count": 4,
+      "linked_from": [
+        "pages/keysy.html",
+        "pages/keysy_akademiya.html",
+        "pages/keysy_crm.html",
+        "pages/keysy_partnery.html"
+      ]
+    },
+    {
+      "page": "pages/keysy_sayty.html",
+      "linked_from_count": 4,
+      "linked_from": [
+        "pages/keysy.html",
+        "pages/keysy_akademiya.html",
+        "pages/keysy_crm.html",
+        "pages/keysy_partnery.html"
+      ]
+    },
+    {
+      "page": "pages/kontakty.html",
+      "linked_from_count": 73,
+      "linked_from": [
+        "index.html",
+        "pages/akademiya.html",
+        "pages/akademiya_korporativnoe-obuchenie.html",
+        "pages/akademiya_obuchenie-r-builder.html",
+        "pages/akademiya_obuchenie-seo-aeo.html",
+        "pages/akademiya_obuchenie-sozdaniyu-saytov.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/faq.html",
+        "pages/faq_aeo.html",
+        "pages/faq_akademiya.html",
+        "pages/faq_crm.html",
+        "pages/faq_partnerstvo.html",
+        "pages/faq_sayty.html",
+        "pages/faq_seo.html",
+        "pages/keysy.html",
+        "pages/keysy_akademiya.html",
+        "pages/keysy_crm.html",
+        "pages/keysy_partnery.html",
+        "pages/keysy_prodvizhenie.html",
+        "pages/keysy_sayty.html",
+        "pages/kontakty.html",
+        "pages/o-kompanii.html",
+        "pages/o-kompanii_blagodarstvennye-pisma.html",
+        "pages/o-kompanii_blog.html",
+        "pages/o-kompanii_klienty.html",
+        "pages/o-kompanii_komanda.html",
+        "pages/o-kompanii_o-nas.html",
+        "pages/o-kompanii_vakansii.html",
+        "pages/partneram.html",
+        "pages/partneram_deystvuyushchie-partnery.html",
+        "pages/partneram_dlya-reklamnyh-agentstv.html",
+        "pages/partneram_franshiza.html",
+        "pages/partneram_pakety-partnerstva.html",
+        "pages/r-builder.html",
+        "pages/r-builder_ai-r-builder.html",
+        "pages/r-builder_chto-takoe-r-builder.html",
+        "pages/r-builder_dlya-biznesa.html",
+        "pages/r-builder_vozmozhnosti.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_aeo-geo-prodvizhenie.html",
+        "pages/web-studiya_digital-konsalting.html",
+        "pages/web-studiya_digital-konsalting_audit-prodvizheniya.html",
+        "pages/web-studiya_digital-konsalting_audit-sayta.html",
+        "pages/web-studiya_digital-konsalting_digital-strategiya.html",
+        "pages/web-studiya_digital-konsalting_konsultatsiya-dlya-biznesa.html",
+        "pages/web-studiya_dizayn.html",
+        "pages/web-studiya_dizayn_brendbuk.html",
+        "pages/web-studiya_dizayn_logotip.html",
+        "pages/web-studiya_dizayn_neyming.html",
+        "pages/web-studiya_kontekstnaya-reklama.html",
+        "pages/web-studiya_kontekstnaya-reklama_google-ads.html",
+        "pages/web-studiya_kontekstnaya-reklama_yandex-direct.html",
+        "pages/web-studiya_lidogeneratsiya.html",
+        "pages/web-studiya_podderzhka-saytov.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html",
+        "pages/web-studiya_sozdanie-saitov.html",
+        "pages/web-studiya_sozdanie-saitov_ai-konsultanty.html",
+        "pages/web-studiya_sozdanie-saitov_crm-sistemy.html",
+        "pages/web-studiya_sozdanie-saitov_integratsii.html",
+        "pages/web-studiya_sozdanie-saitov_internet-magazin.html",
+        "pages/web-studiya_sozdanie-saitov_korporativnyy-sayt.html",
+        "pages/web-studiya_sozdanie-saitov_landing.html",
+        "pages/web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html",
+        "pages/web-studiya_sozdanie-saitov_obsluzhivanie-saytov.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-kalkulyatory.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-shkola.html",
+        "pages/web-studiya_sozdanie-saitov_redizayn-sayta.html",
+        "pages/web-studiya_sozdanie-saitov_sayt-vizitka.html"
+      ]
+    },
+    {
+      "page": "pages/o-kompanii.html",
+      "linked_from_count": 73,
+      "linked_from": [
+        "index.html",
+        "pages/akademiya.html",
+        "pages/akademiya_korporativnoe-obuchenie.html",
+        "pages/akademiya_obuchenie-r-builder.html",
+        "pages/akademiya_obuchenie-seo-aeo.html",
+        "pages/akademiya_obuchenie-sozdaniyu-saytov.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/faq.html",
+        "pages/faq_aeo.html",
+        "pages/faq_akademiya.html",
+        "pages/faq_crm.html",
+        "pages/faq_partnerstvo.html",
+        "pages/faq_sayty.html",
+        "pages/faq_seo.html",
+        "pages/keysy.html",
+        "pages/keysy_akademiya.html",
+        "pages/keysy_crm.html",
+        "pages/keysy_partnery.html",
+        "pages/keysy_prodvizhenie.html",
+        "pages/keysy_sayty.html",
+        "pages/kontakty.html",
+        "pages/o-kompanii.html",
+        "pages/o-kompanii_blagodarstvennye-pisma.html",
+        "pages/o-kompanii_blog.html",
+        "pages/o-kompanii_klienty.html",
+        "pages/o-kompanii_komanda.html",
+        "pages/o-kompanii_o-nas.html",
+        "pages/o-kompanii_vakansii.html",
+        "pages/partneram.html",
+        "pages/partneram_deystvuyushchie-partnery.html",
+        "pages/partneram_dlya-reklamnyh-agentstv.html",
+        "pages/partneram_franshiza.html",
+        "pages/partneram_pakety-partnerstva.html",
+        "pages/r-builder.html",
+        "pages/r-builder_ai-r-builder.html",
+        "pages/r-builder_chto-takoe-r-builder.html",
+        "pages/r-builder_dlya-biznesa.html",
+        "pages/r-builder_vozmozhnosti.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_aeo-geo-prodvizhenie.html",
+        "pages/web-studiya_digital-konsalting.html",
+        "pages/web-studiya_digital-konsalting_audit-prodvizheniya.html",
+        "pages/web-studiya_digital-konsalting_audit-sayta.html",
+        "pages/web-studiya_digital-konsalting_digital-strategiya.html",
+        "pages/web-studiya_digital-konsalting_konsultatsiya-dlya-biznesa.html",
+        "pages/web-studiya_dizayn.html",
+        "pages/web-studiya_dizayn_brendbuk.html",
+        "pages/web-studiya_dizayn_logotip.html",
+        "pages/web-studiya_dizayn_neyming.html",
+        "pages/web-studiya_kontekstnaya-reklama.html",
+        "pages/web-studiya_kontekstnaya-reklama_google-ads.html",
+        "pages/web-studiya_kontekstnaya-reklama_yandex-direct.html",
+        "pages/web-studiya_lidogeneratsiya.html",
+        "pages/web-studiya_podderzhka-saytov.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html",
+        "pages/web-studiya_sozdanie-saitov.html",
+        "pages/web-studiya_sozdanie-saitov_ai-konsultanty.html",
+        "pages/web-studiya_sozdanie-saitov_crm-sistemy.html",
+        "pages/web-studiya_sozdanie-saitov_integratsii.html",
+        "pages/web-studiya_sozdanie-saitov_internet-magazin.html",
+        "pages/web-studiya_sozdanie-saitov_korporativnyy-sayt.html",
+        "pages/web-studiya_sozdanie-saitov_landing.html",
+        "pages/web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html",
+        "pages/web-studiya_sozdanie-saitov_obsluzhivanie-saytov.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-kalkulyatory.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-shkola.html",
+        "pages/web-studiya_sozdanie-saitov_redizayn-sayta.html",
+        "pages/web-studiya_sozdanie-saitov_sayt-vizitka.html"
+      ]
+    },
+    {
+      "page": "pages/o-kompanii_blagodarstvennye-pisma.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/o-kompanii.html"
+      ]
+    },
+    {
+      "page": "pages/o-kompanii_blog.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/o-kompanii.html"
+      ]
+    },
+    {
+      "page": "pages/o-kompanii_klienty.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/o-kompanii.html"
+      ]
+    },
+    {
+      "page": "pages/o-kompanii_komanda.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/o-kompanii.html"
+      ]
+    },
+    {
+      "page": "pages/o-kompanii_o-nas.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/o-kompanii.html"
+      ]
+    },
+    {
+      "page": "pages/o-kompanii_vakansii.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/o-kompanii.html"
+      ]
+    },
+    {
+      "page": "pages/partneram.html",
+      "linked_from_count": 73,
+      "linked_from": [
+        "index.html",
+        "pages/akademiya.html",
+        "pages/akademiya_korporativnoe-obuchenie.html",
+        "pages/akademiya_obuchenie-r-builder.html",
+        "pages/akademiya_obuchenie-seo-aeo.html",
+        "pages/akademiya_obuchenie-sozdaniyu-saytov.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/faq.html",
+        "pages/faq_aeo.html",
+        "pages/faq_akademiya.html",
+        "pages/faq_crm.html",
+        "pages/faq_partnerstvo.html",
+        "pages/faq_sayty.html",
+        "pages/faq_seo.html",
+        "pages/keysy.html",
+        "pages/keysy_akademiya.html",
+        "pages/keysy_crm.html",
+        "pages/keysy_partnery.html",
+        "pages/keysy_prodvizhenie.html",
+        "pages/keysy_sayty.html",
+        "pages/kontakty.html",
+        "pages/o-kompanii.html",
+        "pages/o-kompanii_blagodarstvennye-pisma.html",
+        "pages/o-kompanii_blog.html",
+        "pages/o-kompanii_klienty.html",
+        "pages/o-kompanii_komanda.html",
+        "pages/o-kompanii_o-nas.html",
+        "pages/o-kompanii_vakansii.html",
+        "pages/partneram.html",
+        "pages/partneram_deystvuyushchie-partnery.html",
+        "pages/partneram_dlya-reklamnyh-agentstv.html",
+        "pages/partneram_franshiza.html",
+        "pages/partneram_pakety-partnerstva.html",
+        "pages/r-builder.html",
+        "pages/r-builder_ai-r-builder.html",
+        "pages/r-builder_chto-takoe-r-builder.html",
+        "pages/r-builder_dlya-biznesa.html",
+        "pages/r-builder_vozmozhnosti.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_aeo-geo-prodvizhenie.html",
+        "pages/web-studiya_digital-konsalting.html",
+        "pages/web-studiya_digital-konsalting_audit-prodvizheniya.html",
+        "pages/web-studiya_digital-konsalting_audit-sayta.html",
+        "pages/web-studiya_digital-konsalting_digital-strategiya.html",
+        "pages/web-studiya_digital-konsalting_konsultatsiya-dlya-biznesa.html",
+        "pages/web-studiya_dizayn.html",
+        "pages/web-studiya_dizayn_brendbuk.html",
+        "pages/web-studiya_dizayn_logotip.html",
+        "pages/web-studiya_dizayn_neyming.html",
+        "pages/web-studiya_kontekstnaya-reklama.html",
+        "pages/web-studiya_kontekstnaya-reklama_google-ads.html",
+        "pages/web-studiya_kontekstnaya-reklama_yandex-direct.html",
+        "pages/web-studiya_lidogeneratsiya.html",
+        "pages/web-studiya_podderzhka-saytov.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html",
+        "pages/web-studiya_sozdanie-saitov.html",
+        "pages/web-studiya_sozdanie-saitov_ai-konsultanty.html",
+        "pages/web-studiya_sozdanie-saitov_crm-sistemy.html",
+        "pages/web-studiya_sozdanie-saitov_integratsii.html",
+        "pages/web-studiya_sozdanie-saitov_internet-magazin.html",
+        "pages/web-studiya_sozdanie-saitov_korporativnyy-sayt.html",
+        "pages/web-studiya_sozdanie-saitov_landing.html",
+        "pages/web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html",
+        "pages/web-studiya_sozdanie-saitov_obsluzhivanie-saytov.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-kalkulyatory.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-shkola.html",
+        "pages/web-studiya_sozdanie-saitov_redizayn-sayta.html",
+        "pages/web-studiya_sozdanie-saitov_sayt-vizitka.html"
+      ]
+    },
+    {
+      "page": "pages/partneram_deystvuyushchie-partnery.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/partneram.html"
+      ]
+    },
+    {
+      "page": "pages/partneram_dlya-reklamnyh-agentstv.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/partneram.html"
+      ]
+    },
+    {
+      "page": "pages/partneram_franshiza.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/partneram.html"
+      ]
+    },
+    {
+      "page": "pages/partneram_pakety-partnerstva.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/partneram.html"
+      ]
+    },
+    {
+      "page": "pages/r-builder.html",
+      "linked_from_count": 73,
+      "linked_from": [
+        "index.html",
+        "pages/akademiya.html",
+        "pages/akademiya_korporativnoe-obuchenie.html",
+        "pages/akademiya_obuchenie-r-builder.html",
+        "pages/akademiya_obuchenie-seo-aeo.html",
+        "pages/akademiya_obuchenie-sozdaniyu-saytov.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/faq.html",
+        "pages/faq_aeo.html",
+        "pages/faq_akademiya.html",
+        "pages/faq_crm.html",
+        "pages/faq_partnerstvo.html",
+        "pages/faq_sayty.html",
+        "pages/faq_seo.html",
+        "pages/keysy.html",
+        "pages/keysy_akademiya.html",
+        "pages/keysy_crm.html",
+        "pages/keysy_partnery.html",
+        "pages/keysy_prodvizhenie.html",
+        "pages/keysy_sayty.html",
+        "pages/kontakty.html",
+        "pages/o-kompanii.html",
+        "pages/o-kompanii_blagodarstvennye-pisma.html",
+        "pages/o-kompanii_blog.html",
+        "pages/o-kompanii_klienty.html",
+        "pages/o-kompanii_komanda.html",
+        "pages/o-kompanii_o-nas.html",
+        "pages/o-kompanii_vakansii.html",
+        "pages/partneram.html",
+        "pages/partneram_deystvuyushchie-partnery.html",
+        "pages/partneram_dlya-reklamnyh-agentstv.html",
+        "pages/partneram_franshiza.html",
+        "pages/partneram_pakety-partnerstva.html",
+        "pages/r-builder.html",
+        "pages/r-builder_ai-r-builder.html",
+        "pages/r-builder_chto-takoe-r-builder.html",
+        "pages/r-builder_dlya-biznesa.html",
+        "pages/r-builder_vozmozhnosti.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_aeo-geo-prodvizhenie.html",
+        "pages/web-studiya_digital-konsalting.html",
+        "pages/web-studiya_digital-konsalting_audit-prodvizheniya.html",
+        "pages/web-studiya_digital-konsalting_audit-sayta.html",
+        "pages/web-studiya_digital-konsalting_digital-strategiya.html",
+        "pages/web-studiya_digital-konsalting_konsultatsiya-dlya-biznesa.html",
+        "pages/web-studiya_dizayn.html",
+        "pages/web-studiya_dizayn_brendbuk.html",
+        "pages/web-studiya_dizayn_logotip.html",
+        "pages/web-studiya_dizayn_neyming.html",
+        "pages/web-studiya_kontekstnaya-reklama.html",
+        "pages/web-studiya_kontekstnaya-reklama_google-ads.html",
+        "pages/web-studiya_kontekstnaya-reklama_yandex-direct.html",
+        "pages/web-studiya_lidogeneratsiya.html",
+        "pages/web-studiya_podderzhka-saytov.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html",
+        "pages/web-studiya_sozdanie-saitov.html",
+        "pages/web-studiya_sozdanie-saitov_ai-konsultanty.html",
+        "pages/web-studiya_sozdanie-saitov_crm-sistemy.html",
+        "pages/web-studiya_sozdanie-saitov_integratsii.html",
+        "pages/web-studiya_sozdanie-saitov_internet-magazin.html",
+        "pages/web-studiya_sozdanie-saitov_korporativnyy-sayt.html",
+        "pages/web-studiya_sozdanie-saitov_landing.html",
+        "pages/web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html",
+        "pages/web-studiya_sozdanie-saitov_obsluzhivanie-saytov.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-kalkulyatory.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-shkola.html",
+        "pages/web-studiya_sozdanie-saitov_redizayn-sayta.html",
+        "pages/web-studiya_sozdanie-saitov_sayt-vizitka.html"
+      ]
+    },
+    {
+      "page": "pages/r-builder_ai-r-builder.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/r-builder.html"
+      ]
+    },
+    {
+      "page": "pages/r-builder_chto-takoe-r-builder.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/r-builder.html"
+      ]
+    },
+    {
+      "page": "pages/r-builder_dlya-biznesa.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/r-builder.html"
+      ]
+    },
+    {
+      "page": "pages/r-builder_vozmozhnosti.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/r-builder.html"
+      ]
+    },
+    {
+      "page": "pages/regulation.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "index.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya.html",
+      "linked_from_count": 73,
+      "linked_from": [
+        "index.html",
+        "pages/akademiya.html",
+        "pages/akademiya_korporativnoe-obuchenie.html",
+        "pages/akademiya_obuchenie-r-builder.html",
+        "pages/akademiya_obuchenie-seo-aeo.html",
+        "pages/akademiya_obuchenie-sozdaniyu-saytov.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/faq.html",
+        "pages/faq_aeo.html",
+        "pages/faq_akademiya.html",
+        "pages/faq_crm.html",
+        "pages/faq_partnerstvo.html",
+        "pages/faq_sayty.html",
+        "pages/faq_seo.html",
+        "pages/keysy.html",
+        "pages/keysy_akademiya.html",
+        "pages/keysy_crm.html",
+        "pages/keysy_partnery.html",
+        "pages/keysy_prodvizhenie.html",
+        "pages/keysy_sayty.html",
+        "pages/kontakty.html",
+        "pages/o-kompanii.html",
+        "pages/o-kompanii_blagodarstvennye-pisma.html",
+        "pages/o-kompanii_blog.html",
+        "pages/o-kompanii_klienty.html",
+        "pages/o-kompanii_komanda.html",
+        "pages/o-kompanii_o-nas.html",
+        "pages/o-kompanii_vakansii.html",
+        "pages/partneram.html",
+        "pages/partneram_deystvuyushchie-partnery.html",
+        "pages/partneram_dlya-reklamnyh-agentstv.html",
+        "pages/partneram_franshiza.html",
+        "pages/partneram_pakety-partnerstva.html",
+        "pages/r-builder.html",
+        "pages/r-builder_ai-r-builder.html",
+        "pages/r-builder_chto-takoe-r-builder.html",
+        "pages/r-builder_dlya-biznesa.html",
+        "pages/r-builder_vozmozhnosti.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_aeo-geo-prodvizhenie.html",
+        "pages/web-studiya_digital-konsalting.html",
+        "pages/web-studiya_digital-konsalting_audit-prodvizheniya.html",
+        "pages/web-studiya_digital-konsalting_audit-sayta.html",
+        "pages/web-studiya_digital-konsalting_digital-strategiya.html",
+        "pages/web-studiya_digital-konsalting_konsultatsiya-dlya-biznesa.html",
+        "pages/web-studiya_dizayn.html",
+        "pages/web-studiya_dizayn_brendbuk.html",
+        "pages/web-studiya_dizayn_logotip.html",
+        "pages/web-studiya_dizayn_neyming.html",
+        "pages/web-studiya_kontekstnaya-reklama.html",
+        "pages/web-studiya_kontekstnaya-reklama_google-ads.html",
+        "pages/web-studiya_kontekstnaya-reklama_yandex-direct.html",
+        "pages/web-studiya_lidogeneratsiya.html",
+        "pages/web-studiya_podderzhka-saytov.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html",
+        "pages/web-studiya_sozdanie-saitov.html",
+        "pages/web-studiya_sozdanie-saitov_ai-konsultanty.html",
+        "pages/web-studiya_sozdanie-saitov_crm-sistemy.html",
+        "pages/web-studiya_sozdanie-saitov_integratsii.html",
+        "pages/web-studiya_sozdanie-saitov_internet-magazin.html",
+        "pages/web-studiya_sozdanie-saitov_korporativnyy-sayt.html",
+        "pages/web-studiya_sozdanie-saitov_landing.html",
+        "pages/web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html",
+        "pages/web-studiya_sozdanie-saitov_obsluzhivanie-saytov.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-kalkulyatory.html",
+        "pages/web-studiya_sozdanie-saitov_onlayn-shkola.html",
+        "pages/web-studiya_sozdanie-saitov_redizayn-sayta.html",
+        "pages/web-studiya_sozdanie-saitov_sayt-vizitka.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_aeo-geo-prodvizhenie.html",
+      "linked_from_count": 9,
+      "linked_from": [
+        "index.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_digital-konsalting.html",
+      "linked_from_count": 9,
+      "linked_from": [
+        "index.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_digital-konsalting_audit-prodvizheniya.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_digital-konsalting.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_digital-konsalting_audit-sayta.html",
+      "linked_from_count": 6,
+      "linked_from": [
+        "index.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_digital-konsalting.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_digital-konsalting_digital-strategiya.html",
+      "linked_from_count": 10,
+      "linked_from": [
+        "index.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_digital-konsalting.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_digital-konsalting_konsultatsiya-dlya-biznesa.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_digital-konsalting.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_dizayn.html",
+      "linked_from_count": 13,
+      "linked_from": [
+        "index.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_dizayn.html",
+        "pages/web-studiya_dizayn_brendbuk.html",
+        "pages/web-studiya_dizayn_logotip.html",
+        "pages/web-studiya_dizayn_neyming.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_dizayn_brendbuk.html",
+      "linked_from_count": 6,
+      "linked_from": [
+        "index.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_dizayn.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_dizayn_logotip.html",
+      "linked_from_count": 10,
+      "linked_from": [
+        "index.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_dizayn.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_dizayn_neyming.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_dizayn.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_kontekstnaya-reklama.html",
+      "linked_from_count": 12,
+      "linked_from": [
+        "index.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_kontekstnaya-reklama.html",
+        "pages/web-studiya_kontekstnaya-reklama_google-ads.html",
+        "pages/web-studiya_kontekstnaya-reklama_yandex-direct.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_kontekstnaya-reklama_google-ads.html",
+      "linked_from_count": 6,
+      "linked_from": [
+        "index.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_kontekstnaya-reklama.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_kontekstnaya-reklama_yandex-direct.html",
+      "linked_from_count": 10,
+      "linked_from": [
+        "index.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_kontekstnaya-reklama.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_lidogeneratsiya.html",
+      "linked_from_count": 9,
+      "linked_from": [
+        "index.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_podderzhka-saytov.html",
+      "linked_from_count": 9,
+      "linked_from": [
+        "index.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_seo-prodvizhenie.html",
+      "linked_from_count": 9,
+      "linked_from": [
+        "index.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_seo-prodvizhenie_google.html",
+      "linked_from_count": 5,
+      "linked_from": [
+        "index.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_seo-prodvizhenie_yandex.html",
+      "linked_from_count": 9,
+      "linked_from": [
+        "index.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov.html",
+      "linked_from_count": 35,
+      "linked_from": [
+        "index.html",
+        "pages/akademiya.html",
+        "pages/akademiya_korporativnoe-obuchenie.html",
+        "pages/akademiya_obuchenie-r-builder.html",
+        "pages/akademiya_obuchenie-seo-aeo.html",
+        "pages/akademiya_obuchenie-sozdaniyu-saytov.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/o-kompanii.html",
+        "pages/o-kompanii_blagodarstvennye-pisma.html",
+        "pages/o-kompanii_blog.html",
+        "pages/o-kompanii_klienty.html",
+        "pages/o-kompanii_komanda.html",
+        "pages/o-kompanii_o-nas.html",
+        "pages/o-kompanii_vakansii.html",
+        "pages/partneram.html",
+        "pages/partneram_deystvuyushchie-partnery.html",
+        "pages/partneram_dlya-reklamnyh-agentstv.html",
+        "pages/partneram_franshiza.html",
+        "pages/partneram_pakety-partnerstva.html",
+        "pages/r-builder.html",
+        "pages/r-builder_ai-r-builder.html",
+        "pages/r-builder_chto-takoe-r-builder.html",
+        "pages/r-builder_dlya-biznesa.html",
+        "pages/r-builder_vozmozhnosti.html",
+        "pages/web-studiya.html",
+        "pages/web-studiya_dizayn.html",
+        "pages/web-studiya_dizayn_brendbuk.html",
+        "pages/web-studiya_dizayn_logotip.html",
+        "pages/web-studiya_dizayn_neyming.html",
+        "pages/web-studiya_seo-prodvizhenie.html",
+        "pages/web-studiya_seo-prodvizhenie_google.html",
+        "pages/web-studiya_seo-prodvizhenie_yandex.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_ai-konsultanty.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_crm-sistemy.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_integratsii.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_internet-magazin.html",
+      "linked_from_count": 6,
+      "linked_from": [
+        "index.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_korporativnyy-sayt.html",
+      "linked_from_count": 6,
+      "linked_from": [
+        "index.html",
+        "pages/crm.html",
+        "pages/crm_avtomatizatsiya-prodazh.html",
+        "pages/crm_integratsiya-s-crm.html",
+        "pages/crm_vnedrenie-crm.html",
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_landing.html",
+      "linked_from_count": 2,
+      "linked_from": [
+        "index.html",
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_obsluzhivanie-saytov.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_onlayn-kalkulyatory.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_onlayn-shkola.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_redizayn-sayta.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    },
+    {
+      "page": "pages/web-studiya_sozdanie-saitov_sayt-vizitka.html",
+      "linked_from_count": 1,
+      "linked_from": [
+        "pages/web-studiya_sozdanie-saitov.html"
+      ]
+    }
+  ]
+}

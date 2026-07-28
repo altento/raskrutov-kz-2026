@@ -1,0 +1,8 @@
+Found 1 linkRedirect in studio section
+
+link=pages/web-studiya_sozdanie-saitov.html
+<div class="m-button-wrapper " act="linkRedirect" onclick="return msJsWrapper(event,'d74d0185f0584d718928cab92b31505e','linkRedirect');" data-page-link="pages/web-studiya_sozdanie-saitov.html"> <div class="m-button m-button-b31j4Ld ms-ts-d74d0185f0584d718928cab92b31505e-701"> <div class="m-button__text m-button__text-b31j4Ld"> <span class="ms-active-string">⟶</span> </div> </div> </div> </div></div> </div></div></div> </div> </div> </div></div> </div> </div> </div></div> </div></div></div>
+                </div>
+            
+                <div class="m-card m-card-background--solid m-card-hover--up">
+                    <div id="97b265b7ad624cbea857be1916953f42" class="ms-slot ms-slot--param-slot"><div class="ms-slot__cell ms-slot__cell--table"><div class="blk blk_box skip-adapt" id="878

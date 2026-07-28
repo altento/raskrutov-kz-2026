@@ -1,0 +1,171 @@
+ПРОВЕРКА ВСЕХ 73 СТРАНИЦ ИЗ КАРТЫ САЙТА
+======================================================================
+Live 200: 1 из 73 (только главная)
+Локально в зеркале: 73 из 73
+Опубликовано в CSV, но 404 online: 23
+
+ЛЕГЕНДА:
+  готовая страница = есть pages/*.html
+  СИРОТА = файл есть, но ни одна кнопка/ссылка на неё не ведёт
+  только с X = доступна только со страницы X, не с главного меню
+
+✅ ЛОКАЛЬНО ЕСТЬ + ПРИВЯЗАНА К ГЛАВНОЙ
+--------------------------------------------------
+  /
+    Главная | CSV:Создана | live:OK live | главная ✓
+  /web-studiya
+    Вебстудия Raskrutov | CSV:Опубликована | live:404 | главная ✓
+  /web-studiya/sozdanie-saitov
+    Создание сайтов | CSV:Опубликована | live:404 | главная ✓
+  /web-studiya/sozdanie-saitov/landing
+    Создание лендингов | CSV:Опубликована | live:404 | главная ✓
+  /web-studiya/sozdanie-saitov/korporativnyy-sayt
+    Создание корпоративного сайта | CSV:Опубликована | live:404 | главная ✓
+  /web-studiya/sozdanie-saitov/internet-magazin
+    Создание интернет-магазинов | CSV:Запланировано | live:404 | главная ✓
+  /web-studiya/dizayn
+    Услуги дизайнера | CSV:Опубликована | live:404 | главная ✓
+  /web-studiya/dizayn/brendbuk
+    Создание брендбука | CSV:Запланировано | live:404 | главная ✓
+  /web-studiya/dizayn/logotip
+    Создание логотипа | CSV:Запланировано | live:404 | главная ✓
+  /web-studiya/seo-prodvizhenie
+    SEO-продвижение | CSV:Опубликована | live:404 | главная ✓
+  /web-studiya/seo-prodvizhenie/google
+    Продвижение в Google | CSV:Запланировано | live:404 | главная ✓
+  /web-studiya/seo-prodvizhenie/yandex
+    Продвижение в Яндекс | CSV:Запланировано | live:404 | главная ✓
+  /web-studiya/aeo-prodvizhenie
+    AEO-продвижение | CSV:Опубликована | live:404 | главная ✓
+  /web-studiya/kontekstnaya-reklama
+    Контекстная реклама | CSV:Опубликована | live:404 | главная ✓
+  /web-studiya/kontekstnaya-reklama/google-ads
+    Контекстная реклама в Google | CSV:Запланировано | live:404 | главная ✓
+  /web-studiya/kontekstnaya-reklama/yandex-direct
+    Контекстная реклама в Яндекс | CSV:Запланировано | live:404 | главная ✓
+  /web-studiya/lidogeneratsiya
+    Лидогенерация | CSV:Опубликована | live:404 | главная ✓
+  /web-studiya/podderzhka-saytov
+    Поддержка сайтов | CSV:Опубликована | live:404 | главная ✓
+  /web-studiya/digital-konsalting
+    Digital-консалтинг | CSV:Опубликована | live:404 | главная ✓
+  /web-studiya/digital-konsalting/audit-sayta
+    Аудит сайта | CSV:Запланировано | live:404 | главная ✓
+  /web-studiya/digital-konsalting/digital-strategiya
+    Digital-стратегия | CSV:Запланировано | live:404 | главная ✓
+  /crm
+    CRM и автоматизация | CSV:Запланировано | live:404 | главная ✓
+  /akademiya
+    Академия Raskrutov | CSV:Опубликована | live:404 | главная ✓
+  /r-builder
+    R-Builder | CSV:Опубликована | live:404 | главная ✓
+  /partneram
+    Партнёрам Raskrutov | CSV:Опубликована | live:404 | главная ✓
+  /keysy
+    Кейсы Raskrutov | CSV:Опубликована | live:404 | главная ✓
+  /faq
+    Вопросы и ответы | CSV:Опубликована | live:404 | главная ✓
+  /o-kompanii
+    О компании Raskrutov | CSV:Опубликована | live:404 | главная ✓
+  /kontakty
+    Контакты Raskrutov | CSV:Опубликована | live:404 | главная ✓
+
+⚠️ ЛОКАЛЬНО ЕСТЬ, НО НЕ С ГЛАВНОЙ (живут сами / только с хаба)
+--------------------------------------------------
+  /web-studiya/sozdanie-saitov/mnogostranichnye-sayty
+    Создание многостраничных сайтов | CSV:Опубликована | live:404 | только с pages/web-studiya_sozdanie-saitov.html
+  /web-studiya/sozdanie-saitov/onlayn-shkola
+    Создание онлайн-школ | CSV:Запланировано | live:404 | только с pages/web-studiya_sozdanie-saitov.html
+  /web-studiya/sozdanie-saitov/sayt-vizitka
+    Создание сайта-визитки | CSV:Запланировано | live:404 | только с pages/web-studiya_sozdanie-saitov.html
+  /web-studiya/sozdanie-saitov/redizayn-sayta
+    Редизайн сайтов | CSV:Запланировано | live:404 | только с pages/web-studiya_sozdanie-saitov.html
+  /web-studiya/sozdanie-saitov/obsluzhivanie-saytov
+    Обслуживание сайтов | CSV:Запланировано | live:404 | только с pages/web-studiya_sozdanie-saitov.html
+  /web-studiya/sozdanie-saitov/integratsii
+    Интеграции | CSV:Запланировано | live:404 | только с pages/web-studiya_sozdanie-saitov.html
+  /web-studiya/sozdanie-saitov/onlayn-kalkulyatory
+    Разработка онлайн-калькуляторов | CSV:Запланировано | live:404 | только с pages/web-studiya_sozdanie-saitov.html
+  /web-studiya/sozdanie-saitov/ai-konsultanty
+    Внедрение AI-консультантов | CSV:Запланировано | live:404 | только с pages/web-studiya_sozdanie-saitov.html
+  /web-studiya/sozdanie-saitov/crm-sistemy
+    Внедрение CRM-систем | CSV:Запланировано | live:404 | только с pages/web-studiya_sozdanie-saitov.html
+  /web-studiya/dizayn/neyming
+    Нейминг | CSV:Запланировано | live:404 | только с pages/web-studiya_dizayn.html
+  /web-studiya/digital-konsalting/audit-prodvizheniya
+    Аудит продвижения | CSV:Запланировано | live:404 | только с pages/web-studiya_digital-konsalting.html
+  /web-studiya/digital-konsalting/konsultatsiya-dlya-biznesa
+    Консультация для бизнеса | CSV:Запланировано | live:404 | только с pages/web-studiya_digital-konsalting.html
+  /crm/vnedrenie-crm
+    Внедрение CRM | CSV:Запланировано | live:404 | только с pages/crm.html
+  /crm/avtomatizatsiya-prodazh
+    Автоматизация продаж | CSV:Запланировано | live:404 | только с pages/crm.html
+  /crm/integratsiya-s-crm
+    Интеграция с CRM | CSV:Запланировано | live:404 | только с pages/crm.html
+  /akademiya/obuchenie-sozdaniyu-saytov
+    Обучение созданию сайтов | CSV:Запланировано | live:404 | только с pages/akademiya.html
+  /akademiya/obuchenie-seo-aeo
+    Обучение SEO и AEO | CSV:Запланировано | live:404 | только с pages/akademiya.html
+  /akademiya/obuchenie-r-builder
+    Обучение R-Builder | CSV:Запланировано | live:404 | только с pages/akademiya.html
+  /akademiya/korporativnoe-obuchenie
+    Корпоративное обучение | CSV:Запланировано | live:404 | только с pages/akademiya.html
+  /r-builder/chto-takoe-r-builder
+    Что такое R-Builder | CSV:Создана | live:404 | только с pages/r-builder.html
+  /r-builder/ai-r-builder
+    AI R-Builder | CSV:Создана | live:404 | только с pages/r-builder.html
+  /r-builder/vozmozhnosti
+    Возможности платформы | CSV:Создана | live:404 | только с pages/r-builder.html
+  /r-builder/dlya-biznesa
+    R-Builder для бизнеса | CSV:Создана | live:404 | только с pages/r-builder.html
+  /partneram/franshiza
+    Партнёрская программа — франшиза | CSV:Запланировано | live:404 | только с pages/partneram.html
+  /partneram/pakety-partnerstva
+    Пакеты партнёрства | CSV:Запланировано | live:404 | только с pages/partneram.html
+  /partneram/dlya-reklamnyh-agentstv
+    Для рекламных агентств | CSV:Запланировано | live:404 | только с pages/partneram.html
+  /partneram/deystvuyushchie-partnery
+    Действующие партнёры | CSV:Запланировано | live:404 | только с pages/partneram.html
+  /keysy/sayty
+    Кейсы: сайты | CSV:Опубликована | live:404 | только с pages/keysy.html
+  /keysy/prodvizhenie
+    Кейсы: продвижение | CSV:Опубликована | live:404 | только с pages/keysy.html
+  /keysy/crm
+    Кейсы: CRM | CSV:Запланировано | live:404 | только с pages/keysy.html
+  /keysy/akademiya
+    Кейсы: Академия | CSV:Запланировано | live:404 | только с pages/keysy.html
+  /keysy/partnery
+    Кейсы: партнёры | CSV:Запланировано | live:404 | только с pages/keysy.html
+  /faq/sayty
+    FAQ по сайтам | CSV:Запланировано | live:404 | только с pages/faq.html
+  /faq/seo
+    FAQ по SEO | CSV:Запланировано | live:404 | только с pages/faq.html
+  /faq/aeo
+    FAQ по AEO | CSV:Запланировано | live:404 | только с pages/faq.html
+  /faq/crm
+    FAQ по CRM | CSV:Запланировано | live:404 | только с pages/faq.html
+  /faq/akademiya
+    FAQ по Академии | CSV:Запланировано | live:404 | только с pages/faq.html
+  /faq/partnerstvo
+    FAQ по партнёрству | CSV:Запланировано | live:404 | только с pages/faq.html
+  /o-kompanii/o-nas
+    О нас | CSV:Опубликована | live:404 | только с pages/o-kompanii.html
+  /o-kompanii/komanda
+    Команда | CSV:Опубликована | live:404 | только с pages/o-kompanii.html
+  /o-kompanii/blagodarstvennye-pisma
+    Благодарственные письма | CSV:Запланировано | live:404 | только с pages/o-kompanii.html
+  /o-kompanii/klienty
+    Наши клиенты | CSV:Запланировано | live:404 | только с pages/o-kompanii.html
+  /o-kompanii/blog
+    Блог | CSV:Запланировано | live:404 | только с pages/o-kompanii.html
+  /o-kompanii/vakansii
+    Вакансии | CSV:Запланировано | live:404 | только с pages/o-kompanii.html
+
+ВАЖНО О КНОПКАХ НА ГЛАВНОЙ:
+  • «Вопросы» → pages/faq.html (linkRedirect)
+  • «Кейсы» → pages/keysy.html; подстраницы — с hub-навигации на keysy.html
+  • Карточка CRM → pages/crm.html (экосистема на главной)
+  • Услуги студии (landing, SEO, AEO…) — home-sub-link на главной + hub-child-links
+  • Подстраницы хабов доступны с соответствующих разделов (crm, faq, keysy…)
+
+Отчёты: site_mirror/full_sitemap_audit.json, crosslink_audit.json

@@ -1,0 +1,375 @@
+{
+  "created": {
+    "fetch": [],
+    "stub": [],
+    "exists": [
+      {
+        "url": "/web-studiya",
+        "file": "pages/web-studiya.html",
+        "title": "Вебстудия Raskrutov"
+      },
+      {
+        "url": "/web-studiya/sozdanie-saitov",
+        "file": "pages/web-studiya_sozdanie-saitov.html",
+        "title": "Создание сайтов"
+      },
+      {
+        "url": "/web-studiya/sozdanie-saitov/landing",
+        "file": "pages/web-studiya_sozdanie-saitov_landing.html",
+        "title": "Создание лендингов"
+      },
+      {
+        "url": "/web-studiya/sozdanie-saitov/mnogostranichnye-sayty",
+        "file": "pages/web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html",
+        "title": "Создание многостраничных сайтов"
+      },
+      {
+        "url": "/web-studiya/sozdanie-saitov/korporativnyy-sayt",
+        "file": "pages/web-studiya_sozdanie-saitov_korporativnyy-sayt.html",
+        "title": "Создание корпоративного сайта"
+      },
+      {
+        "url": "/web-studiya/sozdanie-saitov/internet-magazin",
+        "file": "pages/web-studiya_sozdanie-saitov_internet-magazin.html",
+        "title": "Создание интернет-магазинов"
+      },
+      {
+        "url": "/web-studiya/sozdanie-saitov/onlayn-shkola",
+        "file": "pages/web-studiya_sozdanie-saitov_onlayn-shkola.html",
+        "title": "Создание онлайн-школ"
+      },
+      {
+        "url": "/web-studiya/sozdanie-saitov/sayt-vizitka",
+        "file": "pages/web-studiya_sozdanie-saitov_sayt-vizitka.html",
+        "title": "Создание сайта-визитки"
+      },
+      {
+        "url": "/web-studiya/sozdanie-saitov/redizayn-sayta",
+        "file": "pages/web-studiya_sozdanie-saitov_redizayn-sayta.html",
+        "title": "Редизайн сайтов"
+      },
+      {
+        "url": "/web-studiya/sozdanie-saitov/obsluzhivanie-saytov",
+        "file": "pages/web-studiya_sozdanie-saitov_obsluzhivanie-saytov.html",
+        "title": "Обслуживание сайтов"
+      },
+      {
+        "url": "/web-studiya/sozdanie-saitov/integratsii",
+        "file": "pages/web-studiya_sozdanie-saitov_integratsii.html",
+        "title": "Интеграции"
+      },
+      {
+        "url": "/web-studiya/sozdanie-saitov/onlayn-kalkulyatory",
+        "file": "pages/web-studiya_sozdanie-saitov_onlayn-kalkulyatory.html",
+        "title": "Разработка онлайн-калькуляторов"
+      },
+      {
+        "url": "/web-studiya/sozdanie-saitov/ai-konsultanty",
+        "file": "pages/web-studiya_sozdanie-saitov_ai-konsultanty.html",
+        "title": "Внедрение AI-консультантов"
+      },
+      {
+        "url": "/web-studiya/sozdanie-saitov/crm-sistemy",
+        "file": "pages/web-studiya_sozdanie-saitov_crm-sistemy.html",
+        "title": "Внедрение CRM-систем"
+      },
+      {
+        "url": "/web-studiya/dizayn",
+        "file": "pages/web-studiya_dizayn.html",
+        "title": "Услуги дизайнера"
+      },
+      {
+        "url": "/web-studiya/dizayn/neyming",
+        "file": "pages/web-studiya_dizayn_neyming.html",
+        "title": "Нейминг"
+      },
+      {
+        "url": "/web-studiya/dizayn/brendbuk",
+        "file": "pages/web-studiya_dizayn_brendbuk.html",
+        "title": "Создание брендбука"
+      },
+      {
+        "url": "/web-studiya/dizayn/logotip",
+        "file": "pages/web-studiya_dizayn_logotip.html",
+        "title": "Создание логотипа"
+      },
+      {
+        "url": "/web-studiya/seo-prodvizhenie",
+        "file": "pages/web-studiya_seo-prodvizhenie.html",
+        "title": "SEO-продвижение"
+      },
+      {
+        "url": "/web-studiya/seo-prodvizhenie/google",
+        "file": "pages/web-studiya_seo-prodvizhenie_google.html",
+        "title": "Продвижение в Google"
+      },
+      {
+        "url": "/web-studiya/seo-prodvizhenie/yandex",
+        "file": "pages/web-studiya_seo-prodvizhenie_yandex.html",
+        "title": "Продвижение в Яндекс"
+      },
+      {
+        "url": "/web-studiya/aeo-prodvizhenie",
+        "file": "pages/web-studiya_aeo-geo-prodvizhenie.html",
+        "title": "AEO-продвижение"
+      },
+      {
+        "url": "/web-studiya/kontekstnaya-reklama",
+        "file": "pages/web-studiya_kontekstnaya-reklama.html",
+        "title": "Контекстная реклама"
+      },
+      {
+        "url": "/web-studiya/kontekstnaya-reklama/google-ads",
+        "file": "pages/web-studiya_kontekstnaya-reklama_google-ads.html",
+        "title": "Контекстная реклама в Google"
+      },
+      {
+        "url": "/web-studiya/kontekstnaya-reklama/yandex-direct",
+        "file": "pages/web-studiya_kontekstnaya-reklama_yandex-direct.html",
+        "title": "Контекстная реклама в Яндекс"
+      },
+      {
+        "url": "/web-studiya/lidogeneratsiya",
+        "file": "pages/web-studiya_lidogeneratsiya.html",
+        "title": "Лидогенерация"
+      },
+      {
+        "url": "/web-studiya/podderzhka-saytov",
+        "file": "pages/web-studiya_podderzhka-saytov.html",
+        "title": "Поддержка сайтов"
+      },
+      {
+        "url": "/web-studiya/digital-konsalting",
+        "file": "pages/web-studiya_digital-konsalting.html",
+        "title": "Digital-консалтинг"
+      },
+      {
+        "url": "/web-studiya/digital-konsalting/audit-sayta",
+        "file": "pages/web-studiya_digital-konsalting_audit-sayta.html",
+        "title": "Аудит сайта"
+      },
+      {
+        "url": "/web-studiya/digital-konsalting/audit-prodvizheniya",
+        "file": "pages/web-studiya_digital-konsalting_audit-prodvizheniya.html",
+        "title": "Аудит продвижения"
+      },
+      {
+        "url": "/web-studiya/digital-konsalting/digital-strategiya",
+        "file": "pages/web-studiya_digital-konsalting_digital-strategiya.html",
+        "title": "Digital-стратегия"
+      },
+      {
+        "url": "/web-studiya/digital-konsalting/konsultatsiya-dlya-biznesa",
+        "file": "pages/web-studiya_digital-konsalting_konsultatsiya-dlya-biznesa.html",
+        "title": "Консультация для бизнеса"
+      },
+      {
+        "url": "/crm",
+        "file": "pages/crm.html",
+        "title": "CRM и автоматизация"
+      },
+      {
+        "url": "/crm/vnedrenie-crm",
+        "file": "pages/crm_vnedrenie-crm.html",
+        "title": "Внедрение CRM"
+      },
+      {
+        "url": "/crm/avtomatizatsiya-prodazh",
+        "file": "pages/crm_avtomatizatsiya-prodazh.html",
+        "title": "Автоматизация продаж"
+      },
+      {
+        "url": "/crm/integratsiya-s-crm",
+        "file": "pages/crm_integratsiya-s-crm.html",
+        "title": "Интеграция с CRM"
+      },
+      {
+        "url": "/akademiya",
+        "file": "pages/akademiya.html",
+        "title": "Академия Raskrutov"
+      },
+      {
+        "url": "/akademiya/obuchenie-sozdaniyu-saytov",
+        "file": "pages/akademiya_obuchenie-sozdaniyu-saytov.html",
+        "title": "Обучение созданию сайтов"
+      },
+      {
+        "url": "/akademiya/obuchenie-seo-aeo",
+        "file": "pages/akademiya_obuchenie-seo-aeo.html",
+        "title": "Обучение SEO и AEO"
+      },
+      {
+        "url": "/akademiya/obuchenie-r-builder",
+        "file": "pages/akademiya_obuchenie-r-builder.html",
+        "title": "Обучение R-Builder"
+      },
+      {
+        "url": "/akademiya/korporativnoe-obuchenie",
+        "file": "pages/akademiya_korporativnoe-obuchenie.html",
+        "title": "Корпоративное обучение"
+      },
+      {
+        "url": "/r-builder",
+        "file": "pages/r-builder.html",
+        "title": "R-Builder"
+      },
+      {
+        "url": "/r-builder/chto-takoe-r-builder",
+        "file": "pages/r-builder_chto-takoe-r-builder.html",
+        "title": "Что такое R-Builder"
+      },
+      {
+        "url": "/r-builder/ai-r-builder",
+        "file": "pages/r-builder_ai-r-builder.html",
+        "title": "AI R-Builder"
+      },
+      {
+        "url": "/r-builder/vozmozhnosti",
+        "file": "pages/r-builder_vozmozhnosti.html",
+        "title": "Возможности платформы"
+      },
+      {
+        "url": "/r-builder/dlya-biznesa",
+        "file": "pages/r-builder_dlya-biznesa.html",
+        "title": "R-Builder для бизнеса"
+      },
+      {
+        "url": "/partneram",
+        "file": "pages/partneram.html",
+        "title": "Партнёрам Raskrutov"
+      },
+      {
+        "url": "/partneram/franshiza",
+        "file": "pages/partneram_franshiza.html",
+        "title": "Партнёрская программа — франшиза"
+      },
+      {
+        "url": "/partneram/pakety-partnerstva",
+        "file": "pages/partneram_pakety-partnerstva.html",
+        "title": "Пакеты партнёрства"
+      },
+      {
+        "url": "/partneram/dlya-reklamnyh-agentstv",
+        "file": "pages/partneram_dlya-reklamnyh-agentstv.html",
+        "title": "Для рекламных агентств"
+      },
+      {
+        "url": "/partneram/deystvuyushchie-partnery",
+        "file": "pages/partneram_deystvuyushchie-partnery.html",
+        "title": "Действующие партнёры"
+      },
+      {
+        "url": "/keysy",
+        "file": "pages/keysy.html",
+        "title": "Кейсы Raskrutov"
+      },
+      {
+        "url": "/keysy/sayty",
+        "file": "pages/keysy_sayty.html",
+        "title": "Кейсы: сайты"
+      },
+      {
+        "url": "/keysy/prodvizhenie",
+        "file": "pages/keysy_prodvizhenie.html",
+        "title": "Кейсы: продвижение"
+      },
+      {
+        "url": "/keysy/crm",
+        "file": "pages/keysy_crm.html",
+        "title": "Кейсы: CRM"
+      },
+      {
+        "url": "/keysy/akademiya",
+        "file": "pages/keysy_akademiya.html",
+        "title": "Кейсы: Академия"
+      },
+      {
+        "url": "/keysy/partnery",
+        "file": "pages/keysy_partnery.html",
+        "title": "Кейсы: партнёры"
+      },
+      {
+        "url": "/faq",
+        "file": "pages/faq.html",
+        "title": "Вопросы и ответы"
+      },
+      {
+        "url": "/faq/sayty",
+        "file": "pages/faq_sayty.html",
+        "title": "FAQ по сайтам"
+      },
+      {
+        "url": "/faq/seo",
+        "file": "pages/faq_seo.html",
+        "title": "FAQ по SEO"
+      },
+      {
+        "url": "/faq/aeo",
+        "file": "pages/faq_aeo.html",
+        "title": "FAQ по AEO"
+      },
+      {
+        "url": "/faq/crm",
+        "file": "pages/faq_crm.html",
+        "title": "FAQ по CRM"
+      },
+      {
+        "url": "/faq/akademiya",
+        "file": "pages/faq_akademiya.html",
+        "title": "FAQ по Академии"
+      },
+      {
+        "url": "/faq/partnerstvo",
+        "file": "pages/faq_partnerstvo.html",
+        "title": "FAQ по партнёрству"
+      },
+      {
+        "url": "/o-kompanii",
+        "file": "pages/o-kompanii.html",
+        "title": "О компании Raskrutov"
+      },
+      {
+        "url": "/o-kompanii/o-nas",
+        "file": "pages/o-kompanii_o-nas.html",
+        "title": "О нас"
+      },
+      {
+        "url": "/o-kompanii/komanda",
+        "file": "pages/o-kompanii_komanda.html",
+        "title": "Команда"
+      },
+      {
+        "url": "/o-kompanii/blagodarstvennye-pisma",
+        "file": "pages/o-kompanii_blagodarstvennye-pisma.html",
+        "title": "Благодарственные письма"
+      },
+      {
+        "url": "/o-kompanii/klienty",
+        "file": "pages/o-kompanii_klienty.html",
+        "title": "Наши клиенты"
+      },
+      {
+        "url": "/o-kompanii/blog",
+        "file": "pages/o-kompanii_blog.html",
+        "title": "Блог"
+      },
+      {
+        "url": "/o-kompanii/vakansii",
+        "file": "pages/o-kompanii_vakansii.html",
+        "title": "Вакансии"
+      },
+      {
+        "url": "/kontakty",
+        "file": "pages/kontakty.html",
+        "title": "Контакты Raskrutov"
+      }
+    ],
+    "failed": []
+  },
+  "wire_stats": {
+    "files": 19,
+    "list_items": 103,
+    "arrows": 50
+  },
+  "total_pages": 75
+}
