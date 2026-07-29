@@ -14,6 +14,7 @@ python add_schema.py        # JSON-LD Schema.org (Organization/Service/FAQPage/�
 python validate_schema.py   # проверка: 1 блок на страницу, валидный JSON
 python verify_webp.py       # нет битых ссылок на изображения
 python verify_links.py      # нет битых email/social ссылок
+python lazy_ymaps.py        # lazy-load Яндекс.Карт (гвард перед defer-бандлом)
 ```
 
 Все скрипты идемпотентны — повторный запуск безопасен.
@@ -21,6 +22,7 @@ python verify_links.py      # нет битых email/social ссылок
 Правила для новых страниц:
 - Изображения только в WebP (конвертация: `python convert_webp.py` + `python rewrite_refs.py`)
 - JS-бандлу `<script ... defer>`, инлайн-скрипты после бандла оборачивать в DOMContentLoaded (шаблон — любая существующая страница)
-- Первое изображение страницы (hero) — `<link rel="preload" as="image" fetchpriority="high">`
+- Первое изображение страницы (hero) — `<link rel="preload" as="image" fetchpriority="high">` на БАЗОВЫЙ вариант (без `__q_`-суффикса) — его реально рисует `div.section-image` на всех широтах; `__q_`-вариант — декоративный бэкдроп, не прелоадить
+- CSS-бандлу `<link rel="preload" as="style">` + JS-бандлу `<link rel="preload" as="script">` (шаблон — любая существующая страница)
 - Фавикон: две ссылки `rel="icon"` (PNG + ../favicon.ico) — шаблон в pages/*.html
 - После правок: синхронизировать deploy-ветку robocopy (site_mirror -> site_deploy, /MIR /XD .git /XF .git) и запушить обе ветки
