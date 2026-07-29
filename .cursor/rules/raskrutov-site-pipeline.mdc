@@ -1,0 +1,26 @@
+---
+description: Обязательный пайплайн SEO/Perf для новых страниц зеркала Raskrutov
+globs: site_mirror/**/*.html
+alwaysApply: false
+---
+
+# Пайплайн после создания/добавления страниц в site_mirror/
+
+После добавления любых новых HTML-страниц (вручную или скриптом) прогнать по порядку:
+
+```bash
+python fill_alts2.py        # alt-атрибуты из контекста (заголовки, H1, title)
+python add_schema.py        # JSON-LD Schema.org (Organization/Service/FAQPage/…)
+python validate_schema.py   # проверка: 1 блок на страницу, валидный JSON
+python verify_webp.py       # нет битых ссылок на изображения
+python verify_links.py      # нет битых email/social ссылок
+```
+
+Все скрипты идемпотентны — повторный запуск безопасен.
+
+Правила для новых страниц:
+- Изображения только в WebP (конвертация: `python convert_webp.py` + `python rewrite_refs.py`)
+- JS-бандлу `<script ... defer>`, инлайн-скрипты после бандла оборачивать в DOMContentLoaded (шаблон — любая существующая страница)
+- Первое изображение страницы (hero) — `<link rel="preload" as="image" fetchpriority="high">`
+- Фавикон: две ссылки `rel="icon"` (PNG + ../favicon.ico) — шаблон в pages/*.html
+- После правок: синхронизировать deploy-ветку robocopy (site_mirror -> site_deploy, /MIR /XD .git /XF .git) и запушить обе ветки
