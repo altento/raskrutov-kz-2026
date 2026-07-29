@@ -18,7 +18,15 @@ python lazy_ymaps.py        # lazy-load Яндекс.Карт (гвард пер
 python fix_green_zone.py    # canonical absolute, role=main, пустые ссылки, контраст, sr-H2
 python fix_green_zone2.py   # контраст кнопок/ссылок, aspect иконок футер-бара
 python minify_html.py       # комментарии и пустые строки (вне script/style)
+python audit_site.py        # аудит: дубли меню/ID, h1, JSON-LD, canonical, favicon
+python fix_site_errors.py   # фикс аудита: дубль-меню, лишние h1, dedupe JSON-LD
 ```
+
+Важно для стаб-страниц (генерация из родительской):
+- Один h1 на страницу — остальные h1 из шаблона понижать до h2 (fix_site_errors.py)
+- Не копировать чужую фикс-шапку (is_fixed MENU) — только стандартная c79b353f; иначе двойная шапка
+- Если на странице-доноре есть свой JSON-LD (`application/ld+json` без data-schema) — НЕ добавлять наш (dedupe делает fix_site_errors.py)
+- Дубли 32-hex block ID — норма конструктора (есть в оригинале), не трогать
 
 Все скрипты идемпотентны — повторный запуск безопасен.
 
