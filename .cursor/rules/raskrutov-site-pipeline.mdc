@@ -15,14 +15,19 @@ python validate_schema.py   # проверка: 1 блок на страницу
 python verify_webp.py       # нет битых ссылок на изображения
 python verify_links.py      # нет битых email/social ссылок
 python lazy_ymaps.py        # lazy-load Яндекс.Карт (гвард перед defer-бандлом)
+python fix_green_zone.py    # canonical absolute, role=main, пустые ссылки, контраст, sr-H2
+python fix_green_zone2.py   # контраст кнопок/ссылок, aspect иконок футер-бара
+python minify_html.py       # комментарии и пустые строки (вне script/style)
 ```
 
 Все скрипты идемпотентны — повторный запуск безопасен.
 
 Правила для новых страниц:
-- Изображения только в WebP (конвертация: `python convert_webp.py` + `python rewrite_refs.py`)
-- JS-бандлу `<script ... defer>`, инлайн-скрипты после бандла оборачивать в DOMContentLoaded (шаблон — любая существующая страница)
+- Изображения только в WebP (конвертация: `python convert_webp.py` + `python rewrite_refs.py`); крупные контентные картинки — не шире ~2x от размера показа (иконки ≤96px, карточки ~660px; скрипт-образец `downscale_flagged.py`)
+- JS-бандлу `<script ... defer>` БЕЗ preload (экономит канал для LCP), инлайн-скрипты после бандла оборачивать в DOMContentLoaded
 - Первое изображение страницы (hero) — `<link rel="preload" as="image" fetchpriority="high">` на БАЗОВЫЙ вариант (без `__q_`-суффикса) — его реально рисует `div.section-image` на всех широтах; `__q_`-вариант — декоративный бэкдроп, не прелоадить
-- CSS-бандлу `<link rel="preload" as="style">` + JS-бандлу `<link rel="preload" as="script">` (шаблон — любая существующая страница)
+- CSS-бандлу `<link rel="preload" as="style">` (шаблон — любая существующая страница)
 - Фавикон: две ссылки `rel="icon"` (PNG + ../favicon.ico) — шаблон в pages/*.html
+- Canonical всегда абсолютный: `https://raskrutov.kz/<путь>` (fix_green_zone.py)
+- Контраст: текст на белом минимум 4.5:1 — фирменный голубой #24A0FF/#1f89da только для крупных заголовков, для текста/кнопок #006FDC; зелёный rgb(14,122,9); фиолетовый rgba(127,63,242,1)
 - После правок: синхронизировать deploy-ветку robocopy (site_mirror -> site_deploy, /MIR /XD .git /XF .git) и запушить обе ветки
