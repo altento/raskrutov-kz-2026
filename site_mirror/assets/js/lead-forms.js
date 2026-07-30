@@ -7,6 +7,50 @@
 
   if (typeof window === "undefined" || typeof document === "undefined") return;
 
+  // If a GitHub Pages build was uploaded to Plesk, links become /raskrutov-kz-2026/...
+  // Strip that base on domain-root hosts so «Главная» and menu work.
+  var GH_BASE = "/raskrutov-kz-2026";
+  function shouldStripGhBase() {
+    try {
+      var h = window.location.hostname || "";
+      return !/github\.io$/i.test(h);
+    } catch (e) {
+      return false;
+    }
+  }
+  function stripGhPath(val) {
+    if (!val || typeof val !== "string") return val;
+    if (val === GH_BASE || val === GH_BASE + "/") return "/";
+    if (val.indexOf(GH_BASE + "/") === 0) return val.slice(GH_BASE.length);
+    return val;
+  }
+  function stripGhBaseFromDom(root) {
+    if (!shouldStripGhBase()) return;
+    var attrs = ["href", "src", "action", "data-page-link", "poster"];
+    var nodes = (root || document).querySelectorAll(
+      "[href],[src],[action],[data-page-link],[poster]"
+    );
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      for (var j = 0; j < attrs.length; j++) {
+        var a = attrs[j];
+        if (!el.hasAttribute(a)) continue;
+        var cur = el.getAttribute(a);
+        var next = stripGhPath(cur);
+        if (next !== cur) el.setAttribute(a, next);
+      }
+    }
+  }
+  if (shouldStripGhBase()) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", function () {
+        stripGhBaseFromDom(document);
+      });
+    } else {
+      stripGhBaseFromDom(document);
+    }
+  }
+
   var ENDPOINT =
     "https://rslemacnycrxzdatwarv.supabase.co/functions/v1/submit-lead";
   var UTM_KEYS = [
