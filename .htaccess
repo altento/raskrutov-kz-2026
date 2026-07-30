@@ -1,6 +1,110 @@
-# Serve the mirrored site from site_mirror/ at the domain root
-RewriteEngine On
+# Accidental GitHub Pages upload to Plesk: /raskrutov-kz-2026/... → /...
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^raskrutov-kz-2026/(.*)$ /$1 [R=301,L]
+  RewriteRule ^raskrutov-kz-2026/?$ / [R=301,L]
+</IfModule>
 
-# Do not rewrite requests that already target site_mirror
-RewriteCond %{REQUEST_URI} !^/site_mirror/ [NC]
-RewriteRule ^(.*)$ /site_mirror/$1 [L]
+# 301: legacy /pages/*.html -> pretty URLs
+<IfModule mod_alias.c>
+Redirect 301 /pages/akademiya.html /akademiya
+Redirect 301 /pages/akademiya_korporativnoe-obuchenie.html /akademiya/korporativnoe-obuchenie
+Redirect 301 /pages/akademiya_obuchenie-r-builder.html /akademiya/obuchenie-r-builder
+Redirect 301 /pages/akademiya_obuchenie-seo-aeo.html /akademiya/obuchenie-seo-aeo
+Redirect 301 /pages/akademiya_obuchenie-sozdaniyu-saytov.html /akademiya/obuchenie-sozdaniyu-saytov
+Redirect 301 /pages/consent.html /consent
+Redirect 301 /pages/crm.html /crm
+Redirect 301 /pages/crm_avtomatizatsiya-prodazh.html /crm/avtomatizatsiya-prodazh
+Redirect 301 /pages/crm_integratsiya-s-crm.html /crm/integratsiya-s-crm
+Redirect 301 /pages/crm_vnedrenie-crm.html /crm/vnedrenie-crm
+Redirect 301 /pages/faq.html /faq
+Redirect 301 /pages/faq_aeo.html /faq/aeo
+Redirect 301 /pages/faq_akademiya.html /faq/akademiya
+Redirect 301 /pages/faq_crm.html /faq/crm
+Redirect 301 /pages/faq_partnerstvo.html /faq/partnerstvo
+Redirect 301 /pages/faq_sayty.html /faq/sayty
+Redirect 301 /pages/faq_seo.html /faq/seo
+Redirect 301 /pages/keysy.html /keysy
+Redirect 301 /pages/keysy_akademiya.html /keysy/akademiya
+Redirect 301 /pages/keysy_crm.html /keysy/crm
+Redirect 301 /pages/keysy_partnery.html /keysy/partnery
+Redirect 301 /pages/keysy_prodvizhenie.html /keysy/prodvizhenie
+Redirect 301 /pages/keysy_sayty.html /keysy/sayty
+Redirect 301 /pages/kontakty.html /kontakty
+Redirect 301 /pages/o-kompanii.html /o-kompanii
+Redirect 301 /pages/o-kompanii_blagodarstvennye-pisma.html /o-kompanii/blagodarstvennye-pisma
+Redirect 301 /pages/o-kompanii_blog.html /o-kompanii/blog
+Redirect 301 /pages/o-kompanii_klienty.html /o-kompanii/klienty
+Redirect 301 /pages/o-kompanii_komanda.html /o-kompanii/komanda
+Redirect 301 /pages/o-kompanii_o-nas.html /o-kompanii/o-nas
+Redirect 301 /pages/o-kompanii_vakansii.html /o-kompanii/vakansii
+Redirect 301 /pages/partneram.html /partneram
+Redirect 301 /pages/partneram_deystvuyushchie-partnery.html /partneram/deystvuyushchie-partnery
+Redirect 301 /pages/partneram_dlya-reklamnyh-agentstv.html /partneram/dlya-reklamnyh-agentstv
+Redirect 301 /pages/partneram_franshiza.html /partneram/franshiza
+Redirect 301 /pages/partneram_pakety-partnerstva.html /partneram/pakety-partnerstva
+Redirect 301 /pages/r-builder.html /r-builder
+Redirect 301 /pages/r-builder_ai-r-builder.html /r-builder/ai-r-builder
+Redirect 301 /pages/r-builder_chto-takoe-r-builder.html /r-builder/chto-takoe-r-builder
+Redirect 301 /pages/r-builder_dlya-biznesa.html /r-builder/dlya-biznesa
+Redirect 301 /pages/r-builder_vozmozhnosti.html /r-builder/vozmozhnosti
+Redirect 301 /pages/regulation.html /regulation
+Redirect 301 /pages/web-studiya.html /web-studiya
+Redirect 301 /pages/web-studiya_aeo-geo-prodvizhenie.html /web-studiya/aeo-geo-prodvizhenie
+Redirect 301 /pages/web-studiya_digital-konsalting.html /web-studiya/digital-konsalting
+Redirect 301 /pages/web-studiya_digital-konsalting_audit-prodvizheniya.html /web-studiya/digital-konsalting/audit-prodvizheniya
+Redirect 301 /pages/web-studiya_digital-konsalting_audit-sayta.html /web-studiya/digital-konsalting/audit-sayta
+Redirect 301 /pages/web-studiya_digital-konsalting_digital-strategiya.html /web-studiya/digital-konsalting/digital-strategiya
+Redirect 301 /pages/web-studiya_digital-konsalting_konsultatsiya-dlya-biznesa.html /web-studiya/digital-konsalting/konsultatsiya-dlya-biznesa
+Redirect 301 /pages/web-studiya_dizayn.html /web-studiya/dizayn
+Redirect 301 /pages/web-studiya_dizayn_brendbuk.html /web-studiya/dizayn/brendbuk
+Redirect 301 /pages/web-studiya_dizayn_logotip.html /web-studiya/dizayn/logotip
+Redirect 301 /pages/web-studiya_dizayn_neyming.html /web-studiya/dizayn/neyming
+Redirect 301 /pages/web-studiya_kontekstnaya-reklama.html /web-studiya/kontekstnaya-reklama
+Redirect 301 /pages/web-studiya_kontekstnaya-reklama_google-ads.html /web-studiya/kontekstnaya-reklama/google-ads
+Redirect 301 /pages/web-studiya_kontekstnaya-reklama_yandex-direct.html /web-studiya/kontekstnaya-reklama/yandex-direct
+Redirect 301 /pages/web-studiya_lidogeneratsiya.html /web-studiya/lidogeneratsiya
+Redirect 301 /pages/web-studiya_podderzhka-saytov.html /web-studiya/podderzhka-saytov
+Redirect 301 /pages/web-studiya_seo-prodvizhenie.html /web-studiya/seo-prodvizhenie
+Redirect 301 /pages/web-studiya_seo-prodvizhenie_google.html /web-studiya/seo-prodvizhenie/google
+Redirect 301 /pages/web-studiya_seo-prodvizhenie_yandex.html /web-studiya/seo-prodvizhenie/yandex
+Redirect 301 /pages/web-studiya_sozdanie-saitov.html /web-studiya/sozdanie-saitov
+Redirect 301 /pages/web-studiya_sozdanie-saitov_ai-konsultanty.html /web-studiya/sozdanie-saitov/ai-konsultanty
+Redirect 301 /pages/web-studiya_sozdanie-saitov_crm-sistemy.html /web-studiya/sozdanie-saitov/crm-sistemy
+Redirect 301 /pages/web-studiya_sozdanie-saitov_integratsii.html /web-studiya/sozdanie-saitov/integratsii
+Redirect 301 /pages/web-studiya_sozdanie-saitov_internet-magazin.html /web-studiya/sozdanie-saitov/internet-magazin
+Redirect 301 /pages/web-studiya_sozdanie-saitov_korporativnyy-sayt.html /web-studiya/sozdanie-saitov/korporativnyy-sayt
+Redirect 301 /pages/web-studiya_sozdanie-saitov_landing.html /web-studiya/sozdanie-saitov/landing
+Redirect 301 /pages/web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html /web-studiya/sozdanie-saitov/mnogostranichnye-sayty
+Redirect 301 /pages/web-studiya_sozdanie-saitov_obsluzhivanie-saytov.html /web-studiya/sozdanie-saitov/obsluzhivanie-saytov
+Redirect 301 /pages/web-studiya_sozdanie-saitov_onlayn-kalkulyatory.html /web-studiya/sozdanie-saitov/onlayn-kalkulyatory
+Redirect 301 /pages/web-studiya_sozdanie-saitov_onlayn-shkola.html /web-studiya/sozdanie-saitov/onlayn-shkola
+Redirect 301 /pages/web-studiya_sozdanie-saitov_redizayn-sayta.html /web-studiya/sozdanie-saitov/redizayn-sayta
+Redirect 301 /pages/web-studiya_sozdanie-saitov_sayt-vizitka.html /web-studiya/sozdanie-saitov/sayt-vizitka
+</IfModule>
+
+# Performance: long cache for static assets (filenames are hash-versioned)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+</IfModule>
+
+# Compression for text resources
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+Redirect 301 /web-studiya/aeo-geo-prodvizhenie /web-studiya/aeo-prodvizhenie/
+Redirect 301 /web-studiya/aeo-geo-prodvizhenie/ /web-studiya/aeo-prodvizhenie/
+Redirect 301 /pages/web-studiya_aeo-geo-prodvizhenie.html /web-studiya/aeo-prodvizhenie/
+
+# Do NOT add: Redirect /index.html → /
+# That loops with DirectoryIndex (/ → index.html → / → …) → ERR_TOO_MANY_REDIRECTS
