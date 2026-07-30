@@ -98,3 +98,6 @@ Redirect 301 /pages/web-studiya_sozdanie-saitov_sayt-vizitka.html /web-studiya/s
 Redirect 301 /web-studiya/aeo-geo-prodvizhenie /web-studiya/aeo-prodvizhenie/
 Redirect 301 /web-studiya/aeo-prodvizhenie/ /web-studiya/aeo-prodvizhenie/
 Redirect 301 /pages/web-studiya_aeo-geo-prodvizhenie.html /web-studiya/aeo-prodvizhenie/
+
+# Prefer clean homepage URL
+Redirect 301 /index.html /
