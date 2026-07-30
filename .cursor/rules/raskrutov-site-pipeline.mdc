@@ -12,7 +12,8 @@ alwaysApply: false
 
 ```bash
 python fill_alts2.py        # alt-атрибуты из контекста (заголовки, H1, title)
-python add_schema.py        # JSON-LD Schema.org (Organization/Service/FAQPage/…)
+python fix_breadcrumbs.py   # визуальные крошки + скрытие Mottor «Главная →»; CSS assets/css/breadcrumbs.css
+python add_schema.py        # JSON-LD Schema.org (Organization/Service/FAQPage/… + BreadcrumbList)
 python validate_schema.py   # проверка: 1 блок на страницу, валидный JSON
 python verify_webp.py       # нет битых ссылок на изображения
 python verify_links.py      # нет битых email/social ссылок

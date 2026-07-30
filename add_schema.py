@@ -28,7 +28,7 @@ import json
 import re
 from pathlib import Path
 
-M = Path(r"C:\Users\user\Projects\раскрутов\site_mirror")
+M = Path(__file__).resolve().parent / "site_mirror"
 BASE = "https://raskrutov.kz"
 ORG_ID = f"{BASE}/#organization"
 SITE_ID = f"{BASE}/#website"
@@ -62,19 +62,73 @@ SERVICE_LINKS = [
 CRUMB_LABELS = {
     "web-studiya": "Студия",
     "sozdanie-saitov": "Создание сайтов",
+    "landing": "Лендинги",
+    "mnogostranichnye-sayty": "Многостраничные сайты",
+    "korporativnyy-sayt": "Корпоративный сайт",
+    "internet-magazin": "Интернет-магазин",
+    "onlayn-shkola": "Онлайн-школа",
+    "sayt-vizitka": "Сайт-визитка",
+    "redizayn-sayta": "Редизайн",
+    "obsluzhivanie-saytov": "Обслуживание сайтов",
+    "integratsii": "Интеграции",
+    "onlayn-kalkulyatory": "Онлайн-калькуляторы",
+    "ai-konsultanty": "AI-консультанты",
+    "crm-sistemy": "CRM для сайта",
     "seo-prodvizhenie": "SEO-продвижение",
     "aeo-prodvizhenie": "AEO-продвижение",
     "dizayn": "Дизайн",
+    "neyming": "Нейминг",
+    "brendbuk": "Брендбук",
+    "logotip": "Логотип",
     "kontekstnaya-reklama": "Контекстная реклама",
+    "google-ads": "Google Ads",
+    "yandex-direct": "Яндекс Директ",
+    "google": "Google",
+    "yandex": "Яндекс",
     "digital-konsalting": "Digital-консалтинг",
+    "audit-sayta": "Аудит сайта",
+    "audit-prodvizheniya": "Аудит продвижения",
+    "digital-strategiya": "Digital-стратегия",
+    "konsultatsiya-dlya-biznesa": "Консультация",
+    "lidogeneratsiya": "Лидогенерация",
+    "podderzhka-saytov": "Поддержка сайтов",
     "r-builder": "R-Builder",
+    "chto-takoe-r-builder": "Что такое R-Builder",
+    "ai-r-builder": "AI R-Builder",
+    "vozmozhnosti": "Возможности",
+    "dlya-biznesa": "Для бизнеса",
     "akademiya": "Академия",
+    "obuchenie-sozdaniyu-saytov": "Обучение созданию сайтов",
+    "obuchenie-seo-aeo": "Обучение SEO и AEO",
+    "obuchenie-r-builder": "Обучение R-Builder",
+    "korporativnoe-obuchenie": "Корпоративное обучение",
     "partneram": "Партнёрам",
+    "franshiza": "Франшиза",
+    "pakety-partnerstva": "Пакеты партнёрства",
+    "dlya-reklamnyh-agentstv": "Для рекламных агентств",
+    "deystvuyushchie-partnery": "Действующие партнёры",
     "o-kompanii": "О компании",
+    "o-nas": "О нас",
+    "komanda": "Команда",
+    "blagodarstvennye-pisma": "Благодарственные письма",
+    "klienty": "Клиенты",
+    "blog": "Блог",
+    "vakansii": "Вакансии",
     "keysy": "Кейсы",
+    "sayty": "Сайты",
+    "prodvizhenie": "Продвижение",
+    "partnery": "Партнёры",
     "kontakty": "Контакты",
     "faq": "FAQ",
+    "aeo": "AEO",
+    "seo": "SEO",
     "crm": "CRM",
+    "partnerstvo": "Партнёрство",
+    "vnedrenie-crm": "Внедрение CRM",
+    "avtomatizatsiya-prodazh": "Автоматизация продаж",
+    "integratsiya-s-crm": "Интеграция с CRM",
+    "consent": "Согласие",
+    "regulation": "Положение",
 }
 
 
@@ -276,14 +330,18 @@ def breadcrumb_chain(rel: str, self_html: str) -> list[tuple[str, str]]:
             parent_rel = "/".join(built)
             parent_file = M / parent_rel / "index.html"
             is_self = i == len(path_parts) - 1
+            # Prefer short canonical labels for hubs/parents
+            short = CRUMB_LABELS.get(part)
             if is_self:
-                label = page_h1(self_html) or page_title(self_html) or CRUMB_LABELS.get(part, part)
+                label = short or page_h1(self_html) or page_title(self_html) or part
+            elif short:
+                label = short
             elif parent_file.exists() and not is_redirect_stub(parent_file):
                 label = crumb_label(parent_file)
                 if label.lower() in ("redirect", ""):
-                    label = CRUMB_LABELS.get(part, part)
+                    label = part
             else:
-                label = CRUMB_LABELS.get(part, part)
+                label = part
             label = label.split("—")[0].split("|")[0].strip()[:60]
             chain.append((label, f"{BASE}/{parent_rel}"))
         return chain
@@ -422,11 +480,15 @@ def inject(path: Path) -> bool:
     payload = json.dumps(graph, ensure_ascii=False, indent=2)
     block = f'<script type="application/ld+json" data-schema="raskrutov">\n{payload}\n</script>\n'
     html = INJECT_RE.sub("", html)
+    # Also strip unmarked Mottor JSON-LD on pages that rebuilt without schema
+    html = ORIG_JSONLD_RE.sub("", html)
     head_end = html.find("</head>")
     if head_end == -1:
         return False
     html = html[:head_end] + block + html[head_end:]
-    path.write_text(html, encoding="utf-8")
+    tmp = path.with_suffix(".schema-tmp.html")
+    tmp.write_text(html, encoding="utf-8", newline="\n")
+    tmp.replace(path)
     return True
 
 
