@@ -9,6 +9,7 @@ site_mirror_build3/
 
 # Deploy worktree (checked out from deploy branch)
 site_deploy/
+site_plesk/
 
 # Distribution archive for manual hosting upload
 raskrutov-site.zip

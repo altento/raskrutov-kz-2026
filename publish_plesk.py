@@ -48,7 +48,7 @@ def main() -> int:
     if index.is_file() and "raskrutov-kz-2026" in index.read_text(encoding="utf-8", errors="ignore"):
         print("ERROR: site_plesk/index.html still has raskrutov-kz-2026 prefix", file=sys.stderr)
         return 1
-    print(f"OK: synced {SRC.name} → {DST.name} (Plesk-ready, no GH prefix)")
+    print(f"OK: synced {SRC.name} -> {DST.name} (Plesk-ready, no GH prefix)")
     print("Next: commit & push inside site_plesk (branch plesk)")
     return 0
 
