@@ -96,9 +96,8 @@ Redirect 301 /pages/web-studiya_sozdanie-saitov_sayt-vizitka.html /web-studiya/s
   AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
 </IfModule>
 Redirect 301 /web-studiya/aeo-geo-prodvizhenie /web-studiya/aeo-prodvizhenie/
-Redirect 301 /web-studiya/aeo-prodvizhenie/ /web-studiya/aeo-prodvizhenie/
+Redirect 301 /web-studiya/aeo-geo-prodvizhenie/ /web-studiya/aeo-prodvizhenie/
 Redirect 301 /pages/web-studiya_aeo-geo-prodvizhenie.html /web-studiya/aeo-prodvizhenie/
 
-# Prefer clean homepage URL
-Redirect 301 /index.html /
-Redirect 301 /web-studiya/aeo-prodvizhenie/ /web-studiya/aeo-prodvizhenie/
+# Do NOT add: Redirect /index.html → /
+# That loops with DirectoryIndex (/ → index.html → / → …) → ERR_TOO_MANY_REDIRECTS
