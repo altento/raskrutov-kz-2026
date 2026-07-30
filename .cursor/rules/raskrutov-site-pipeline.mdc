@@ -38,7 +38,8 @@ python audit_links_final.py # все href/src резолвятся в реаль
 
 Правила для новых страниц:
 - Изображения только в WebP (конвертация: `python convert_webp.py` + `python rewrite_refs.py`); крупные контентные картинки — не шире ~2x от размера показа (иконки ≤96px, карточки ~660px; скрипт-образец `downscale_flagged.py`)
-- JS-бандлу `<script ... defer>` БЕЗ preload (экономит канал для LCP), инлайн-скрипты после бандла оборачивать в DOMContentLoaded
+- JS-бандл public.bundle грузить СИНХРОННО (БЕЗ defer/async и БЕЗ preload)! Конструктор инициализирует блоки сразу при исполнении бандла, читая данные из инлайн-скриптов НИЖЕ по документу (addJsData/initMsJsScripts) — defer ломает порядок: MsJsPublishedManager.storage остаётся пустым, не работают ВСЕ кнопки/стрелки/попапы/формы. Инлайн-скрипты НЕ оборачивать в DOMContentLoaded (откат: fix_js_init.py)
+- Тач-таргеты ссылок в списках: `.home-sub-link{padding:8px 6px 8px 0;}` — БЕЗ display:inline-block (ломает перенос по словам и сдвигает текст относительно маркеров списка)
 - Первое изображение страницы (hero) — `<link rel="preload" as="image" fetchpriority="high">` на БАЗОВЫЙ вариант (без `__q_`-суффикса) — его реально рисует `div.section-image` на всех широтах; `__q_`-вариант — декоративный бэкдроп, не прелоадить
 - CSS-бандлу `<link rel="preload" as="style">` (шаблон — любая существующая страница)
 - Фавикон: две ссылки `rel="icon"` (PNG + ../favicon.ico) — шаблон в pages/*.html
