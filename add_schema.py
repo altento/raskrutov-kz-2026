@@ -48,15 +48,34 @@ H3_RE = re.compile(r"<h3\b[^>]*>(.*?)</h3>", re.IGNORECASE | re.DOTALL)
 INJECT_RE = re.compile(r'<script type="application/ld\+json" data-schema="raskrutov">.*?</script>\s*', re.DOTALL)
 
 SERVICE_LINKS = [
-    ("Создание сайтов", "pages/web-studiya_sozdanie-saitov.html"),
-    ("Услуги дизайнера", "pages/web-studiya_dizayn.html"),
-    ("SEO-продвижение", "pages/web-studiya_seo-prodvizhenie.html"),
-    ("AEO — оптимизация под ИИ-поиск", "pages/web-studiya_aeo-geo-prodvizhenie.html"),
-    ("Контекстная реклама", "pages/web-studiya_kontekstnaya-reklama.html"),
-    ("Лидогенерация", "pages/web-studiya_lidogeneratsiya.html"),
-    ("Поддержка сайтов", "pages/web-studiya_podderzhka-saytov.html"),
-    ("Digital-консалтинг", "pages/web-studiya_digital-konsalting.html"),
+    ("Создание сайтов", "web-studiya/sozdanie-saitov/"),
+    ("Услуги дизайнера", "web-studiya/dizayn/"),
+    ("SEO-продвижение", "web-studiya/seo-prodvizhenie/"),
+    ("AEO — оптимизация под ИИ-поиск", "web-studiya/aeo-prodvizhenie/"),
+    ("Контекстная реклама", "web-studiya/kontekstnaya-reklama/"),
+    ("Лидогенерация", "web-studiya/lidogeneratsiya/"),
+    ("Поддержка сайтов", "web-studiya/podderzhka-saytov/"),
+    ("Digital-консалтинг", "web-studiya/digital-konsalting/"),
 ]
+
+# Fallback labels when parent page title is a redirect stub / missing
+CRUMB_LABELS = {
+    "web-studiya": "Студия",
+    "sozdanie-saitov": "Создание сайтов",
+    "seo-prodvizhenie": "SEO-продвижение",
+    "aeo-prodvizhenie": "AEO-продвижение",
+    "dizayn": "Дизайн",
+    "kontekstnaya-reklama": "Контекстная реклама",
+    "digital-konsalting": "Digital-консалтинг",
+    "r-builder": "R-Builder",
+    "akademiya": "Академия",
+    "partneram": "Партнёрам",
+    "o-kompanii": "О компании",
+    "keysy": "Кейсы",
+    "kontakty": "Контакты",
+    "faq": "FAQ",
+    "crm": "CRM",
+}
 
 
 def clean(t: str) -> str:
@@ -216,23 +235,74 @@ def crumb_label(path: Path) -> str:
     return _title_cache[key]
 
 
+def is_redirect_stub(path: Path) -> bool:
+    if path.parent.name != "pages":
+        return False
+    head = path.read_text(encoding="utf-8", errors="ignore")[:800]
+    return 'http-equiv="refresh"' in head.lower() or "Страница переехала" in head
+
+
+def page_url(rel: str) -> str:
+    """Pretty canonical URL from mirror-relative path."""
+    if rel in ("index.html", ""):
+        return f"{BASE}/"
+    # Directory pages: web-studiya/sozdanie-saitov/landing/index.html
+    if rel.endswith("/index.html"):
+        return f"{BASE}/" + rel[: -len("/index.html")]
+    if rel.endswith("index.html") and "/" in rel:
+        return f"{BASE}/" + rel[: -len("index.html")].rstrip("/")
+    # Legacy flat pages/*.html (redirect stubs / rare leftovers)
+    if rel.startswith("pages/"):
+        stem = Path(rel).stem.replace("_", "/")
+        return f"{BASE}/{stem}"
+    stem = Path(rel).stem.replace("_", "/")
+    return f"{BASE}/{stem}"
+
+
 def breadcrumb_chain(rel: str, self_html: str) -> list[tuple[str, str]]:
     """Главная -> каждый существующий префикс-родитель -> текущая страница."""
     chain = [("Главная", f"{BASE}/")]
     if rel == "index.html":
         return chain
-    stem = Path(rel).stem  # e.g. web-studiya_sozdanie-saitov_landing
+
+    url = page_url(rel)
+    path_parts = [p for p in url.replace(BASE, "").strip("/").split("/") if p]
+
+    # Pretty directory layout
+    if rel.endswith("/index.html") or (rel.endswith("index.html") and "/" in rel):
+        built: list[str] = []
+        for i, part in enumerate(path_parts):
+            built.append(part)
+            parent_rel = "/".join(built)
+            parent_file = M / parent_rel / "index.html"
+            is_self = i == len(path_parts) - 1
+            if is_self:
+                label = page_h1(self_html) or page_title(self_html) or CRUMB_LABELS.get(part, part)
+            elif parent_file.exists() and not is_redirect_stub(parent_file):
+                label = crumb_label(parent_file)
+                if label.lower() in ("redirect", ""):
+                    label = CRUMB_LABELS.get(part, part)
+            else:
+                label = CRUMB_LABELS.get(part, part)
+            label = label.split("—")[0].split("|")[0].strip()[:60]
+            chain.append((label, f"{BASE}/{parent_rel}"))
+        return chain
+
+    # Legacy pages/*.html
+    stem = Path(rel).stem
     parts = stem.split("_")
     for i in range(1, len(parts)):
         parent = M / "pages" / ("_".join(parts[:i]) + ".html")
-        if parent.exists():
-            chain.append((crumb_label(parent), f"{BASE}/pages/{parent.name}"))
-    chain.append((crumb_label(M / rel), f"{BASE}/{rel}"))
+        pretty = "/".join(parts[:i])
+        if parent.exists() and not is_redirect_stub(parent):
+            chain.append((crumb_label(parent), f"{BASE}/{pretty}"))
+        else:
+            chain.append((CRUMB_LABELS.get(parts[i - 1], parts[i - 1]), f"{BASE}/{pretty}"))
+    self_label = page_h1(self_html) or page_title(self_html) or stem
+    self_label = self_label.split("—")[0].split("|")[0].strip()[:60]
+    if self_label.lower() != "redirect":
+        chain.append((self_label, url))
     return chain
-
-
-def page_url(rel: str) -> str:
-    return f"{BASE}/" if rel == "index.html" else f"{BASE}/{rel}"
 
 
 def service_node(rel: str, name: str, desc: str) -> dict:
@@ -247,6 +317,29 @@ def service_node(rel: str, name: str, desc: str) -> dict:
     if desc:
         node["description"] = desc
     return node
+
+
+def path_kind(rel: str) -> str:
+    """Classify page for schema type selection."""
+    pretty = page_url(rel).replace(BASE, "").strip("/")
+    parts = pretty.split("/") if pretty else []
+    joined = "/".join(parts)
+    stem = Path(rel).stem
+    if joined.startswith("web-studiya") or stem.startswith("web-studiya") or joined.startswith("crm") or stem.startswith("crm"):
+        return "service"
+    if "akademiya/obuchenie" in joined or stem.startswith("akademiya_obuchenie") or "korporativnoe-obuchenie" in joined:
+        return "course"
+    if joined.startswith("r-builder") or stem.startswith("r-builder"):
+        return "rbuilder"
+    if joined.startswith("keysy") or stem.startswith("keysy"):
+        return "keysy"
+    if joined.startswith("o-kompanii") or stem.startswith("o-kompanii"):
+        return "about"
+    if joined == "kontakty" or stem == "kontakty":
+        return "contact"
+    if joined.startswith("faq") or stem.startswith("faq"):
+        return "faq"
+    return "page"
 
 
 def build_graph(path: Path) -> dict:
@@ -277,11 +370,11 @@ def build_graph(path: Path) -> dict:
         })
         return {"@context": "https://schema.org", "@graph": graph}
 
-    stem = Path(rel).stem
-    if rel.startswith("pages/web-studiya") or stem.startswith("crm"):
+    kind = path_kind(rel)
+    if kind == "service":
         graph.append(service_node(rel, name, desc))
-        graph.append(webpage(url, title, desc))
-    elif stem.startswith("akademiya_obuchenie") or stem == "akademiya_korporativnoe-obuchenie":
+        graph.append(webpage(url, title or name, desc))
+    elif kind == "course":
         graph.append({
             "@type": "Course",
             "name": name,
@@ -294,8 +387,8 @@ def build_graph(path: Path) -> dict:
                 "courseWorkload": "P10H",
             },
         })
-        graph.append(webpage(url, title, desc))
-    elif stem.startswith("r-builder"):
+        graph.append(webpage(url, title or name, desc))
+    elif kind == "rbuilder":
         graph.append({
             "@type": "SoftwareApplication",
             "name": "R-Builder — конструктор сайтов",
@@ -305,20 +398,20 @@ def build_graph(path: Path) -> dict:
             "description": desc,
             "creator": {"@id": ORG_ID},
         })
-        graph.append(webpage(url, title, desc))
-    elif stem.startswith("keysy"):
-        graph.append(webpage(url, title, desc, "CollectionPage"))
-    elif stem.startswith("o-kompanii"):
-        graph.append(webpage(url, title, desc, "AboutPage"))
-    elif stem == "kontakty":
-        graph.append(webpage(url, title, desc, "ContactPage"))
-    elif stem.startswith("faq"):
-        graph.append(webpage(url, title, desc))
+        graph.append(webpage(url, title or name, desc))
+    elif kind == "keysy":
+        graph.append(webpage(url, title or name, desc, "CollectionPage"))
+    elif kind == "about":
+        graph.append(webpage(url, title or name, desc, "AboutPage"))
+    elif kind == "contact":
+        graph.append(webpage(url, title or name, desc, "ContactPage"))
+    elif kind == "faq":
+        graph.append(webpage(url, title or name, desc))
         faq = extract_faq(html)
         if faq:
             graph.append({"@type": "FAQPage", "mainEntity": faq})
     else:
-        graph.append(webpage(url, title, desc))
+        graph.append(webpage(url, title or name, desc))
 
     return {"@context": "https://schema.org", "@graph": graph}
 
@@ -337,21 +430,95 @@ def inject(path: Path) -> bool:
     return True
 
 
+FORCE_REPLACE_SCHEMA = {
+    "web-studiya/sozdanie-saitov/landing/index.html",
+    "web-studiya/sozdanie-saitov/internet-magazin/index.html",
+    "web-studiya/sozdanie-saitov/korporativnyy-sayt/index.html",
+}
+
+
+ORIG_JSONLD_RE = re.compile(
+    r'<script type="application/ld\+json">.*?</script>\s*',
+    re.DOTALL | re.IGNORECASE,
+)
+
+
+def strip_original_jsonld(path: Path) -> bool:
+    """Remove Mottor plain JSON-LD so our data-schema block is the source of truth."""
+    html = path.read_text(encoding="utf-8", errors="ignore")
+    html2, n = ORIG_JSONLD_RE.subn("", html)
+    if n:
+        path.write_text(html2, encoding="utf-8")
+    return n > 0
+
+
+def fix_title_from_h1(path: Path) -> bool:
+    """If title still looks like parent hub, set from H1."""
+    html = path.read_text(encoding="utf-8", errors="ignore")
+    h1 = page_h1(html)
+    title = page_title(html)
+    if not h1:
+        return False
+    if "лендинг" in h1.lower() or "интернет-магазин" in h1.lower().replace(" ", "") or "корпоративн" in h1.lower():
+        new_title = f"{h1} | Raskrutov"
+        if title == new_title:
+            return False
+        html2, n = re.subn(
+            r"<title[^>]*>.*?</title>",
+            f"<title>{new_title}</title>",
+            html,
+            count=1,
+            flags=re.I | re.S,
+        )
+        if n:
+            # og:title too
+            html2 = re.sub(
+                r'(property=["\']og:title["\']\s+content=["\'])[^"\']*(["\'])',
+                rf"\g<1>{new_title}\2",
+                html2,
+                flags=re.I,
+            )
+            path.write_text(html2, encoding="utf-8")
+            return True
+    return False
+
+
 def main() -> None:
-    done = faq_pages = 0
+    done = skipped = stripped = titled = 0
     for f in sorted(M.rglob("*.html")):
+        rel = f.relative_to(M).as_posix()
         if "assets" in f.relative_to(M).parts:
             continue
+        if is_redirect_stub(f):
+            skipped += 1
+            continue
+        if rel in FORCE_REPLACE_SCHEMA:
+            if strip_original_jsonld(f):
+                stripped += 1
+            if fix_title_from_h1(f):
+                titled += 1
         if inject(f):
             done += 1
-    print(f"pages with JSON-LD: {done}")
-    # summary of what was generated
+    print(
+        f"pages with JSON-LD: {done} (skipped stubs: {skipped}, "
+        f"stripped original: {stripped}, titles fixed: {titled})"
+    )
     sample = build_graph(M / "index.html")
     types = [n["@type"] for n in sample["@graph"]]
     faq_n = next((n for n in sample["@graph"] if n["@type"] == "FAQPage"), None)
     print(f"index.html graph: {types}")
     if faq_n:
         print(f"homepage FAQ questions: {len(faq_n['mainEntity'])}")
+    landing = M / "web-studiya" / "sozdanie-saitov" / "landing" / "index.html"
+    if landing.exists():
+        g = build_graph(landing)
+        print("landing graph:", [n["@type"] for n in g["@graph"]])
+        for n in g["@graph"]:
+            if n.get("@type") == "Service":
+                print("landing service:", n.get("name"), n.get("url"))
+            if n.get("@type") == "BreadcrumbList":
+                for it in n["itemListElement"]:
+                    print(" ", it["position"], it["name"], "->", it["item"])
 
 
 if __name__ == "__main__":

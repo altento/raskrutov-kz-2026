@@ -101,3 +101,4 @@ Redirect 301 /pages/web-studiya_aeo-geo-prodvizhenie.html /web-studiya/aeo-prodv
 
 # Prefer clean homepage URL
 Redirect 301 /index.html /
+Redirect 301 /web-studiya/aeo-prodvizhenie/ /web-studiya/aeo-prodvizhenie/
