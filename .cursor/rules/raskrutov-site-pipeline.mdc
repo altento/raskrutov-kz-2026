@@ -45,4 +45,5 @@ python audit_links_final.py # все href/src резолвятся в реаль
 - Фавикон: две ссылки `rel="icon"` (PNG + ../favicon.ico) — шаблон в pages/*.html
 - Canonical всегда абсолютный: `https://raskrutov.kz/<путь>` (fix_green_zone.py)
 - Контраст: текст на белом минимум 4.5:1 — фирменный голубой #24A0FF/#1f89da только для крупных заголовков, для текста/кнопок #006FDC; зелёный rgb(14,122,9); фиолетовый rgba(127,63,242,1)
+- Формы заявок: единый модуль `assets/js/lead-forms.js` + правило `.cursor/rules/raskrutov-lead-forms.mdc`. После добавления страниц с Mottor-формами прогнать `python wire_lead_forms.py`. Не публиковать секреты и не слать лиды напрямую в БД из браузера.
 - После правок: синхронизировать deploy-ветку robocopy (site_mirror -> site_deploy, /MIR /XD .git /XF .git), затем **обязательно** `python prefix_gh_pages.py` (корень-абсолютные `/web-studiya/` на GitHub Pages иначе уезжают на `altento.github.io/web-studiya/` без имени репо), и запушить обе ветки. `site_mirror` для Plesk/raskrutov.kz оставлять с `/…` без префикса.

@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Build unique sozdanie-saitov child pages from internet-magazin template."""
+# -*- coding: utf-8 -*-
+"""Build unique sozdanie-saitov child pages from landing/corporate templates."""
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import shutil
 from pathlib import Path
@@ -11,14 +13,22 @@ from sozdanie_content import PAGES
 
 ROOT = Path(__file__).resolve().parent
 MIRROR = ROOT / "site_mirror"
-TEMPLATE = MIRROR / "web-studiya" / "sozdanie-saitov" / "internet-magazin" / "index.html"
 OUT_DIR = MIRROR / "web-studiya" / "sozdanie-saitov"
 DOMAIN = "https://raskrutov.kz"
 BASE_PATH = "/web-studiya/sozdanie-saitov"
+GEN_ROOT = MIRROR / "assets" / "generated" / "sozdanie"
+
+TEMPLATES = {
+    "landing": OUT_DIR / "landing" / "index.html",
+    "corporate": OUT_DIR / "korporativnyy-sayt" / "index.html",
+    "shop": OUT_DIR / "internet-magazin" / "index.html",
+}
+
+# Depth from sozdanie/<slug>/ to site root assets = ../../../assets/...
+ASSET_PREFIX = "../../../assets/generated/sozdanie"
 
 
 def demote_extra_h1(html: str) -> str:
-    """Keep first <h1>…</h1>, demote the rest to h2."""
     count = [0]
 
     def repl(m: re.Match) -> str:
@@ -34,7 +44,6 @@ def replace_h1s(html: str, h1s: dict[int, str]) -> str:
     matches = list(re.finditer(r"<h1([^>]*)>(.*?)</h1>", html, flags=re.S))
     if not matches:
         raise RuntimeError("no h1 found in template")
-    # replace from end so offsets stay valid
     for i in range(len(matches) - 1, -1, -1):
         if i not in h1s:
             continue
@@ -97,64 +106,56 @@ def replace_meta(html: str, title: str, description: str, pretty: str) -> str:
     return html
 
 
-def replace_trust(html: str, trust: list[str]) -> str:
-    old = [
-        "10+ лет опыта в разработке и маркетинге",
-        "200+ магазинов <br>запущено <br>для клиентов",
-        "98% клиентов <br>продолжают <br>работу с нами",
-        "Поддержка и <br>развитие <br>после запуска",
-    ]
-    for a, b in zip(old, trust):
-        if a in html:
-            html = html.replace(a, b, 1)
+def replace_trust(html: str, trust: list[str], template: str) -> str:
+    if not trust:
+        return html
+    if template == "landing":
+        # landing trust texts vary; skip soft replace if unknown
+        old_candidates = [
+            [
+                "10+ лет опыта в разработке и маркетинге",
+                "200+ лендингов <br>запущено <br>для клиентов",
+                "98% клиентов <br>продолжают <br>работу с нами",
+                "Поддержка и <br>развитие <br>после запуска",
+            ],
+            [
+                "10+ лет опыта в разработке и маркетинге",
+                "200+ сайтов <br>запущено <br>для клиентов",
+                "98% клиентов <br>продолжают <br>работу с нами",
+                "Поддержка и <br>развитие <br>после запуска",
+            ],
+        ]
+    else:
+        old_candidates = [
+            [
+                "10+ лет опыта в разработке и маркетинге",
+                "200+ сайтов <br>запущено <br>для клиентов",
+                "98% клиентов <br>продолжают <br>работу с нами",
+                "Поддержка и <br>развитие <br>после запуска",
+            ],
+            [
+                "10+ лет опыта в разработке и маркетинге",
+                "200+ магазинов <br>запущено <br>для клиентов",
+                "98% клиентов <br>продолжают <br>работу с нами",
+                "Поддержка и <br>развитие <br>после запуска",
+            ],
+        ]
+    for old in old_candidates:
+        if all(a in html for a in old[:1]):
+            for a, b in zip(old, trust):
+                if a in html:
+                    html = html.replace(a, b, 1)
+            break
     return html
 
 
+def _json_str(s: str) -> str:
+    return json.dumps(s, ensure_ascii=False)
+
+
 def replace_faq(html: str, faq: list[tuple[str, str]]) -> str:
-    # Known leftover korporativnyy FAQ strings in IM template
-    old_pairs = [
-        (
-            "Сколько стоит создание корпоративного сайта?",
-            None,
-        ),
-        (
-            "Стоимость корпоративного сайта начинается от 550 000 ₸. Итоговая цена зависит от количества страниц,",
-            None,
-        ),
-        (
-            "Что входит в стоимость корпоративного сайта?",
-            None,
-        ),
-        (
-            "Да. Архитектура корпоративного сайта предусматривает дальнейшее развитие. Можно добавлять новые услуги, на",
-            None,
-        ),
-    ]
-    # Broader: replace any remaining "корпоративного сайта" FAQ titles if still present
-    # Apply new FAQ into first N known title/answer slots found in spoilers JSON + visible text.
     if not faq:
         return html
-
-    # Replace first FAQ Q/A visibly if korporativnyy leftovers exist
-    if faq:
-        html = html.replace(
-            "Сколько стоит создание корпоративного сайта?",
-            faq[0][0],
-        )
-        # Truncated answer start in template
-        html = html.replace(
-            "Стоимость корпоративного сайта начинается от 550 000 ₸. Итоговая цена зависит от количества страниц,",
-            faq[0][1][:120] if len(faq[0][1]) > 120 else faq[0][1],
-        )
-    if len(faq) > 1:
-        html = html.replace("Что входит в стоимость корпоративного сайта?", faq[1][0])
-    if len(faq) > 3:
-        html = html.replace(
-            "Да. Архитектура корпоративного сайта предусматривает дальнейшее развитие. Можно добавлять новые услуги, на",
-            faq[3][1][:120],
-        )
-
-    # Inject / replace spoilers JSON block if present
     spoilers = []
     for q, a in faq:
         spoilers.append(
@@ -171,76 +172,186 @@ def replace_faq(html: str, faq: list[tuple[str, str]]) -> str:
     )
     if n:
         html = html2
-    else:
-        # Try alternate spoilers embedding
-        html2, n = re.subn(
-            r'"spoilers":\{[^}]*\}',
-            '"spoilers":' + payload,
-            html,
-            count=1,
-            flags=re.S,
-        )
-        if n:
-            html = html2
+
+    # Visible FAQ question titles — replace first N known FAQ title strings loosely
+    # by rewriting <summary>/<spoiler> titles if present as plain text near "Часто"
     return html
 
 
-def _json_str(s: str) -> str:
-    import json
-
-    return json.dumps(s, ensure_ascii=False)
-
-
 def apply_phrase_map(html: str, pairs: list[tuple[str, str]]) -> str:
-    # longest first
     for old, new in sorted(pairs, key=lambda x: len(x[0]), reverse=True):
         html = html.replace(old, new)
     return html
 
 
 def strip_old_schema(html: str) -> str:
-    html = re.sub(
+    return re.sub(
         r'<script type="application/ld\+json"[^>]*>.*?</script>\s*',
         "",
         html,
         flags=re.I | re.S,
     )
+
+
+def rewrite_path_refs(html: str, slug: str, template: str) -> str:
+    mapping = {
+        "landing": f"{BASE_PATH}/landing",
+        "corporate": f"{BASE_PATH}/korporativnyy-sayt",
+        "shop": f"{BASE_PATH}/internet-magazin",
+    }
+    old = mapping[template]
+    new = f"{BASE_PATH}/{slug}"
+    html = html.replace(old, new)
+    # also absolute domain variants
+    html = html.replace(
+        f"{DOMAIN}{old}",
+        f"{DOMAIN}{new}",
+    )
     return html
 
 
-def rewrite_path_refs(html: str, slug: str) -> str:
-    """Fix any remaining internet-magazin path leftovers in canonical-ish places."""
-    old = f"{BASE_PATH}/internet-magazin"
-    new = f"{BASE_PATH}/{slug}"
-    return html.replace(old, new)
+def replace_hash_urls(html: str, hashes: list[str], new_url: str) -> tuple[str, int]:
+    """Replace any URL containing one of the hashes with new_url."""
+    count = 0
+    for h in hashes:
+        pattern = re.compile(rf'[^\s"\'<>]*{re.escape(h)}[^\s"\'<>]*')
+
+        def repl(_m: re.Match, url: str = new_url) -> str:
+            nonlocal count
+            count += 1
+            return url
+
+        html, n = pattern.subn(repl, html)
+        count += max(0, n - n)  # keep nonlocal increments from repl
+    return html, count
+
+
+def inject_images(html: str, slug: str, pack: dict) -> str:
+    hero = f"{ASSET_PREFIX}/{slug}/hero.webp"
+    v1 = f"{ASSET_PREFIX}/{slug}/v1.webp"
+    v2 = f"{ASSET_PREFIX}/{slug}/v2.webp"
+
+    hero_hashes = pack.get("hero_hashes") or []
+    mid_hashes = pack.get("mid_hashes") or []
+
+    if hero_hashes:
+        html, n = replace_hash_urls(html, hero_hashes, hero)
+        print(f"  hero replacements: {n}")
+
+    if mid_hashes:
+        # first mid hash -> v1, rest -> v2
+        html, n1 = replace_hash_urls(html, [mid_hashes[0]], v1)
+        print(f"  mid v1 replacements: {n1}")
+        if len(mid_hashes) > 1:
+            html, n2 = replace_hash_urls(html, mid_hashes[1:], v2)
+            print(f"  mid v2 replacements: {n2}")
+    return html
+
+
+def inject_hero_lead(html: str, lead: str, template: str) -> str:
+    if not lead:
+        return html
+    known = [
+        (
+            "Корпоративный сайт - это имидж компании, инструмент<br>"
+            "продаж и удобная пощадка для ваших клиентов и партнеров.<br>"
+            "Создаём сайты, которые повышают доверие и приносят заявки."
+        ),
+        (
+            "Разрабатываем лендинги, которые последовательно <br>"
+            "ведут пользователя от первого знакомства с предложением <br>"
+            "до заявки. Продумываем оффер, структуру, тексты, дизайн, <br>"
+            "формы и аналитику."
+        ),
+        "Лендинг — это одностраничный сайт, посвящённый одному конкретному предложению: услуге, продукту, акции, мероприятию или новому направлению бизнеса.",
+    ]
+    for old in known:
+        if old in html:
+            html = html.replace(old, lead, 1)
+            return html
+    return html
+
+
+TYPO_FIXES = [
+    ("попучаем донные", "получаем данные"),
+    ("попучаем данные", "получаем данные"),
+    ("оклайн", "онлайн"),
+    ("Лендниг", "Лендинг"),
+    ("Лендниги", "Лендинги"),
+    ("создаем сайт-визитка", "создаём сайт-визитку"),
+    ("Как мы создаем сайт-визитка", "Как мы создаём сайт-визитку"),
+    ("Вы делаете сайт-визитка под рекламу?", "Вы делаете сайт-визитку под рекламу?"),
+]
+
+
+def apply_typo_fixes(html: str) -> str:
+    for a, b in TYPO_FIXES:
+        html = html.replace(a, b)
+    return html
+
+
+def rewrite_breadcrumbs(html: str, slug: str, label: str) -> str:
+    # Soft: replace trailing corporate/landing breadcrumb labels when present
+    for old in (
+        "Корпоративные сайты",
+        "корпоративные сайты",
+        "Лендинги",
+        "лендинги",
+        "Интернет-магазины",
+    ):
+        # only last breadcrumb-ish occurrences — replace all is ok for cloned pages
+        if old in html:
+            html = html.replace(old, label)
+    return html
+
+
+SLUG_LABEL = {
+    "mnogostranichnye-sayty": "Многостраничные сайты",
+    "sayt-vizitka": "Сайт-визитка",
+    "onlayn-shkola": "Онлайн-школа",
+    "onlayn-kalkulyatory": "Онлайн-калькуляторы",
+    "ai-konsultanty": "AI-консультанты",
+    "redizayn-sayta": "Редизайн сайта",
+    "obsluzhivanie-saytov": "Обслуживание сайтов",
+    "integratsii": "Интеграции",
+    "crm-sistemy": "CRM для сайта",
+}
+
+
+def ensure_assets(slug: str) -> None:
+    d = GEN_ROOT / slug
+    for name in ("hero.webp", "v1.webp", "v2.webp"):
+        p = d / name
+        if not p.exists():
+            raise FileNotFoundError(p)
 
 
 def build_one(slug: str) -> Path:
     if slug not in PAGES:
         raise KeyError(slug)
     pack = PAGES[slug]
-    if not TEMPLATE.exists():
-        raise FileNotFoundError(TEMPLATE)
-    html = TEMPLATE.read_text(encoding="utf-8", errors="replace")
+    template = pack.get("template", "corporate")
+    tpl_path = TEMPLATES[template]
+    if not tpl_path.exists():
+        raise FileNotFoundError(tpl_path)
+    ensure_assets(slug)
+
+    html = tpl_path.read_text(encoding="utf-8", errors="replace")
     pretty = f"{BASE_PATH}/{slug}/"
 
-    html = replace_h1s(html, pack["h1s"])
-    if pack.get("hero_lead"):
-        old_lead = (
-            "Разрабатываем интернет-магазины под ключ: удобный каталог, быстрый заказ, "
-            "онлайн-оплата, интеграции с CRM и маркетплейсами — всё для стабильного роста ваших продаж"
-        )
-        # after phrase_map hero may already change; try both
-        html = html.replace(old_lead, pack["hero_lead"])
+    html = replace_h1s(html, pack.get("h1s", {}))
+    html = inject_hero_lead(html, pack.get("hero_lead", ""), template)
     html = apply_phrase_map(html, pack.get("phrase_map", []))
-    # hero_lead again in case phrase_map changed the old lead first
+    # re-apply lead if phrase_map changed it
     if pack.get("hero_lead") and pack["hero_lead"] not in html:
-        # try shortened unique prefix
-        pass
-    html = replace_trust(html, pack.get("trust", []))
+        html = inject_hero_lead(html, pack["hero_lead"], template)
+    html = apply_typo_fixes(html)
+    html = replace_trust(html, pack.get("trust", []), template)
     html = replace_faq(html, pack.get("faq", []))
+    html = inject_images(html, slug, pack)
     html = replace_meta(html, pack["title"], pack["description"], pretty)
-    html = rewrite_path_refs(html, slug)
+    html = rewrite_path_refs(html, slug, template)
+    html = rewrite_breadcrumbs(html, slug, SLUG_LABEL.get(slug, slug))
     html = strip_old_schema(html)
     html = demote_extra_h1(html)
 
@@ -254,15 +365,22 @@ def verify(path: Path, slug: str) -> None:
     t = path.read_text(encoding="utf-8", errors="replace")
     h1s = re.findall(r"<h1[^>]*>(.*?)</h1>", t, flags=re.S)
     plains = [re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", h)).strip() for h in h1s]
-    print(f"OK {slug}: size={path.stat().st_size} h1_count={len(plains)} first={plains[0][:70]!r}")
-    if "корпоративного сайта" in t and slug != "korporativnyy-sayt":
-        print(f"  WARN leftover korporativnyy phrases in {slug}")
-    if "internet-magazin" in t and f"/{slug}" not in t[t.find("canonical") : t.find("canonical") + 200]:
-        # soft check
-        pass
-    bad_parent = "Создание сайтов под ключ" in (plains[0] if plains else "")
-    if bad_parent:
-        print("  ERROR still parent H1")
+    gen = f"generated/sozdanie/{slug}/"
+    print(
+        f"OK {slug}: size={path.stat().st_size} h1={len(plains)} "
+        f"gen_imgs={t.count(gen)} first={plains[0][:60]!r}"
+    )
+    if gen not in t:
+        print(f"  ERROR: no generated images for {slug}")
+    leftover_map = {
+        "landing": "Создание лендингов",
+        "corporate": "Создание корпоративного",
+    }
+    pack = PAGES[slug]
+    tpl = pack.get("template")
+    bad = leftover_map.get(tpl, "")
+    if bad and plains and bad in plains[0]:
+        print(f"  WARN first H1 still template: {plains[0]!r}")
 
 
 def main() -> None:
@@ -271,6 +389,7 @@ def main() -> None:
     args = ap.parse_args()
     slugs = args.slugs or list(PAGES.keys())
     for slug in slugs:
+        print("building", slug, "template=", PAGES[slug].get("template"))
         out = build_one(slug)
         verify(out, slug)
 
