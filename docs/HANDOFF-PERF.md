@@ -97,7 +97,7 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Cache-Control для `home-*` в `.htaccess` задуман короткий; nginx Plesk всё ещё может отдавать длинный `max-age` — жить с этим или править nginx в панели
 
 ### Известные баги / долги
-1. **Формы «Не удалось отправить»** — фронт ок, Edge Function `submit-lead` иногда **HTTP 500** (бэкенд Supabase / RLS / секреты). Не путать с CSS.
+1. **Формы «Не удалось отправить»** — **НЕ фронт / НЕ CSS.** Проверено 2026-07-31: live HTML имеет `data-lead-form` + honeypot + status + `lead-forms.js`; прямой POST на `https://rslemacnycrxzdatwarv.supabase.co/functions/v1/submit-lead` → **HTTP 500** `{"success":false,"error":"Не удалось сохранить заявку"}`, `sb-error-code: EDGE_FUNCTION_ERROR`. Исходников Edge Function в этом репо **нет**. Чинить в Supabase Dashboard / отдельном бэкенд-репо (таблица leads / RLS / service_role / логи функции).
 2. Тонкий critical CSS (~47 KiB) **ломал** мобилку — текущий ~74 KiB с ID hero-subtree OK. Не режь critical вслепую.
 3. `publish_plesk.py /MIR` может затянуть кучу мусорных untracked `lpfile/` — для точечных релизов лучше **копировать только нужные файлы**.
 4. Куча `_psi_*.py` / `_check_*.py` локально untracked — утилиты аудита, в git не всё нужно.
@@ -178,5 +178,11 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Feature `92a5ff60`
 - Ждём свежий PSI mobile от юзера
 - Правило: мат обязателен; этот файл — бэкап между компами
+
+### 2026-07-31 — формы: снова «не отправляется», но это бэкенд
+- Юзер: «сломал формы» после perf-деплоя
+- Аудит: разметка форм на live/local ок; CSS split формы не отключал
+- POST probe → Supabase `submit-lead` **500** «Не удалось сохранить заявку»
+- Дальше: логи Edge Function в Supabase + доступ к коду функции/БД
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
