@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-07-31 (UTC+6)  
+**Последнее обновление:** 2026-07-31 (UTC+5) — stage 2 cleanup + publish  
 **Рабочая ветка:** `performance/pagespeed-raskrutov`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -74,8 +74,8 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 
 ## 3. Текущее состояние на проде (после 2026-07-31)
 
-**Задеплоено в `plesk`:** `c65e5db6`  
-**В фиче-ветке:** `92a5ff60`
+**Задеплоено в `plesk`:** см. последний push (stage 2 cleanup)  
+**В фиче-ветке:** stage 2 cleanup поверх `f5a7cd57`
 
 ### CSS стратегия homepage
 | Файл | Роль | Размер ~ |
@@ -86,15 +86,16 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 | `assets/css/home-popup-2773676.v2.css` | deferred print/onload | ~137 KiB |
 | `assets/css/hero-home-mobile.webp` | LCP mobile bg | ~20 KiB |
 
-Старый монолит `home-all-blocks.v2.css` на главной **больше не подключен** (файл может лежать в зеркале).
+Монолит `home-all-blocks*.css` **удалён** из зеркала (нигде не подключался). Старые `home-popup-*.css` без `.v2` тоже удалены.
 
 ### Прочие перф-фиксы уже в бою
 - HEAD без мегабайтного inline CSS (вынесен в файлы)
-- Early preload: critical CSS, popup-2782231, hero mobile/desktop, Montserrat **bold**, public.bundle.css
+- Early preload: critical CSS, popup-2782231, hero mobile/desktop, Montserrat **bold** (preload `public.bundle.css` снят на stage 2 — stylesheet sync остаётся)
 - Phone mockup `27e940bf…`: `loading="lazy" fetchpriority="low"` (не гоняется с LCP)
 - Video player scripts: lazy через `data-rk-video-lazy` (не грузить заранее)
 - Gzip/brotli на проде работает (HTML gzip, CSS br)
 - Cache-Control для `home-*` в `.htaccess` задуман короткий; nginx Plesk всё ещё может отдавать длинный `max-age` — жить с этим или править nginx в панели
+- Stage 2: пустые style-заглушки Mottor + мёртвый gtag/ga sniffer убраны с главной
 
 ### Известные баги / долги
 1. **Формы «Не удалось отправить»** — **НЕ фронт / НЕ CSS.** Проверено 2026-07-31: live HTML имеет `data-lead-form` + honeypot + status + `lead-forms.js`; прямой POST на `https://rslemacnycrxzdatwarv.supabase.co/functions/v1/submit-lead` → **HTTP 500** `{"success":false,"error":"Не удалось сохранить заявку"}`, `sb-error-code: EDGE_FUNCTION_ERROR`. Исходников Edge Function в этом репо **нет**. Чинить в Supabase Dashboard / отдельном бэкенд-репо (таблица leads / RLS / service_role / логи функции).
@@ -215,5 +216,12 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 ### 2026-07-31 — юзер просит всегда писать его дальнейшие действия
 - Расширен §5: чеклисты A–D для юзера + обязанности агента
 - Агенту: не забывать обновлять §5.1 / §7 и пушить
+
+### 2026-07-31 — stage 2 cleanup (unused Mottor leftovers) + publish
+- Удалены: preload `public.bundle.css`, пустые `#head-blocks-style` / `#site_style_text`, мёртвый gtag/ga sniffer
+- Удалены файлы: `home-all-blocks*.css`, старые `home-popup-*.css` (без v2), `.motortest.bak`
+- `public.bundle.js/css` stylesheet **оставлены** (зависимости меню/попапов/слайдеров)
+- QA локально: 195/195 assets 200, меню/формы/WA/tel на 360–1920, console clean
+- Пуш: feature + `plesk`
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
