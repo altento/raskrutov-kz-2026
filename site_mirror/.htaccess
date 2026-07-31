@@ -98,6 +98,16 @@ Redirect 301 /pages/web-studiya_sozdanie-saitov_sayt-vizitka.html /web-studiya/s
   ExpiresByType application/font-woff "access plus 1 year"
 </IfModule>
 
+# Cache-Control for hashed/static assets (PSI / repeat views)
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|mjs|webp|png|jpe?g|gif|svg|woff2?|ttf|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
 # Compression for text resources
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
