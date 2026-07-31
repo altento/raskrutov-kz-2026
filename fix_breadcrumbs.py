@@ -177,8 +177,17 @@ def _esc(s: str) -> str:
 
 def ensure_css(html: str, rel: str) -> str:
     html = CSS_RE.sub("", html)
-    href = depth_prefix(rel) + "assets/css/breadcrumbs.css"
-    tag = f'<link rel="stylesheet" href="{href}" {CSS_MARK}/>\n'
+    html = re.sub(
+        r'<style\s+data-rk-breadcrumbs-inline=["\']1["\']\s*>.*?</style>\s*',
+        "",
+        html,
+        flags=re.I | re.S,
+    )
+    css_path = MIRROR / "assets/css/breadcrumbs.css"
+    css = css_path.read_text(encoding="utf-8") if css_path.exists() else ""
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    css = re.sub(r"\s+", " ", css).strip()
+    tag = f'<style data-rk-breadcrumbs-inline="1">{css}</style>\n'
     if re.search(r"</head>", html, re.I):
         return re.sub(r"</head>", tag + "</head>", html, count=1, flags=re.I)
     return tag + html

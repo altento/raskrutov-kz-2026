@@ -158,27 +158,36 @@ def patch_form(match: re.Match, rel: str) -> str:
     return f"{open_tag}{attrs}{gt}{body}{close}"
 
 
+def _lead_css_inline() -> str:
+    css = (MIRROR / "assets/css/lead-forms.css").read_text(encoding="utf-8")
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    css = re.sub(r"\s+", " ", css).strip()
+    return f'<style data-lead-forms-inline="1">{css}</style>'
+
+
 def inject_assets(html: str, rel: str) -> str:
     pref = depth_prefix(rel)
-    css_href = f'{pref}assets/css/lead-forms.css'
     js_src = f'{pref}assets/js/lead-forms.js'
-    css_tag = f'<link rel="stylesheet" href="{css_href}" data-lead-forms-css/>'
+    css_tag = _lead_css_inline()
     js_tag = f'<script src="{js_src}" defer data-lead-forms-js></script>'
 
-    if "data-lead-forms-css" not in html:
-        if "</head>" in html:
-            html = html.replace("</head>", css_tag + "\n</head>", 1)
-        else:
-            html = css_tag + html
+    # Drop old blocking stylesheet if present
+    html = re.sub(
+        r'<link[^>]*(?:data-lead-forms-css|lead-forms\.css)[^>]*/?>',
+        "",
+        html,
+        flags=re.I,
+    )
+    html = re.sub(
+        r'<style\s+data-lead-forms-inline=["\']1["\']\s*>.*?</style>',
+        "",
+        html,
+        flags=re.I | re.S,
+    )
+    if "</head>" in html:
+        html = html.replace("</head>", css_tag + "\n</head>", 1)
     else:
-        # refresh path
-        html = re.sub(
-            r'<link[^>]*data-lead-forms-css[^>]*/?>',
-            css_tag,
-            html,
-            count=1,
-            flags=re.I,
-        )
+        html = css_tag + html
 
     if "data-lead-forms-js" not in html:
         if "</body>" in html:

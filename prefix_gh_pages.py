@@ -3,7 +3,7 @@
 
 raskrutov.kz lives at domain root → href=\"/web-studiya/\" is correct there.
 GitHub Pages serves from /raskrutov-kz-2026/ → the same href jumps to
-https://altento.github.io/web-studiya/ (broken). Rewrite ONLY inside site_deploy.
+https://raskrutovstudio-collab.github.io/web-studiya/ (broken). Rewrite ONLY inside site_deploy.
 """
 from __future__ import annotations
 

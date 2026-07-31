@@ -14,6 +14,7 @@ IMPORTS = {
     "web-studiya_sozdanie-saitov_landing.html": "/web-studiya/sozdanie-saitov/landing/",
     "web-studiya_sozdanie-saitov_internet-magazin.html": "/web-studiya/sozdanie-saitov/internet-magazin/",
     "web-studiya_sozdanie-saitov_korporativnyy-sayt.html": "/web-studiya/sozdanie-saitov/korporativnyy-sayt/",
+    "web-studiya_sozdanie-saitov_mnogostranichnye-sayty.html": "/web-studiya/sozdanie-saitov/mnogostranichnye-sayty/",
 }
 
 # Known good sprite used across production pages (if present)
