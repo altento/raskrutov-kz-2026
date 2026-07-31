@@ -118,13 +118,13 @@ Cursor должен создать файл со следующей логико
 ## Статусы этапов
 - Этап 1 — COMPLETED ранее
 - Этап 2 — COMPLETED ранее, изменения применены
-- Этап 3 — PENDING
-- Этап 4 — PENDING
-- Этап 5 — PENDING
-- Этап 6 — PENDING
-- Этап 7 — PENDING
-- Этап 8 — PENDING
-- Этап 9 — PENDING
+- Этап 3 — COMPLETED (локально; см. PERFORMANCE_STATUS.md)
+- Этап 4 — COMPLETED (локально)
+- Этап 5 — COMPLETED (локально)
+- Этап 6 — PARTIAL (bundle CSS сохранён; lite отвергнут QA)
+- Этап 7 — PARTIAL (lead-forms idle; bundle JS сохранён)
+- Этап 8 — PARTIAL (reduced-motion; DOM ~4291)
+- Этап 9 — COMPLETED (отчёт + .htaccess; PSI POST-DEPLOY)
 
 ## Журнал этапов
 ### Этап N

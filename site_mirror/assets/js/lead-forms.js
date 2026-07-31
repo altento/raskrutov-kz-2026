@@ -477,13 +477,22 @@
     scan();
   }
 
-  // Re-scan for dynamically injected popups
-  try {
-    var mo = new MutationObserver(function () {
-      scan();
-    });
-    mo.observe(document.documentElement, { childList: true, subtree: true });
-  } catch (e) {}
+  // Re-scan for dynamically injected popups (idle + debounced to cut main-thread work)
+  function attachPopupRescan() {
+    try {
+      var t = 0;
+      var mo = new MutationObserver(function () {
+        if (t) clearTimeout(t);
+        t = setTimeout(scan, 120);
+      });
+      mo.observe(document.documentElement, { childList: true, subtree: true });
+    } catch (e) {}
+  }
+  if (typeof window.requestIdleCallback === "function") {
+    window.requestIdleCallback(attachPopupRescan, { timeout: 2500 });
+  } else {
+    setTimeout(attachPopupRescan, 1);
+  }
 
   window.RaskrutovLeadForms = {
     scan: scan,
