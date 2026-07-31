@@ -139,6 +139,8 @@ def main() -> None:
             print("WARN missing style", sid)
             continue
         css_m = minify_css(css)
+        # Mottor urls are page-root relative (assets/...). From assets/css/ need ../
+        css_m = re.sub(r"""url\(\s*(['"]?)assets/""", r"url(\1../", css_m)
         out = CSS_DIR / fname
         out.write_text(css_m, encoding="utf-8")
         extracted[sid] = fname
