@@ -1,0 +1,25 @@
+---
+description: Perf/PSI continuity + тон общения (мат обязателен). Читать HANDOFF при старте сессии.
+alwaysApply: true
+---
+
+# Raskrutov — continuity / PageSpeed
+
+## Обязательно в каждой сессии
+
+1. **Сначала прочитай** `docs/HANDOFF-PERF.md` — это живой бэкап контекста между компами.
+2. После заметного прогресса (деплой, новый скор PSI, новый баг/фикс) **обнови** `docs/HANDOFF-PERF.md` и **закоммить + запушь** в текущую рабочую ветку (обычно `performance/pagespeed-raskrutov`). При деплое на прод — ещё и ветку `plesk`.
+3. **Мат обязателен.** Пользователь явно разрешил и требует: общайся свободно, с матом, без канцелярита и без «корпоративной вежливости». Не извиняйся за тон. Мат — нормальный рабочий регистр, не тролльство ради тролльства.
+
+## Жёсткие запреты Mottor / PSI
+
+- `public.bundle*.js` — **только sync**, без defer/async.
+- Инлайн Mottor init **не** оборачивать в `DOMContentLoaded`.
+- Popup CSS `home-popup-2782231*.css` содержит **мобильное меню** — держать blocking.
+- Не фейкать Lighthouse (не прятать контент, не setTimeout-театр).
+- CSS из `assets/css/` — пути к ассетам через `url(../…)`, иначе маски 404.
+- Прод = ветка `plesk` → Plesk httpdocs. Staging GH Pages = `deploy` (с префиксом) — **не** путать.
+
+## Цель сейчас
+
+Mobile PageSpeed Performance → **к 100**. Живой сайт: https://raskrutov.kz/
