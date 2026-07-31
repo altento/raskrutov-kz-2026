@@ -100,8 +100,13 @@ Redirect 301 /pages/web-studiya_sozdanie-saitov_sayt-vizitka.html /web-studiya/s
 
 # Cache-Control for hashed/static assets (PSI / repeat views)
 <IfModule mod_headers.c>
-  <FilesMatch "\.(css|js|mjs|webp|png|jpe?g|gif|svg|woff2?|ttf|ico)$">
+  # Versioned Mottor bundles & hashed lpfile paths — long cache
+  <FilesMatch "(__q_v_|/-/|lpfile/).+\.(css|js|webp|png|jpe?g|svg|woff2?)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # Site-owned CSS/JS without content-hash in filename — short cache so hotfixes propagate
+  <FilesMatch "^(home-|lead-forms|breadcrumbs|hero-).+\.(css|js|webp)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
   </FilesMatch>
   <FilesMatch "\.(html|htm)$">
     Header set Cache-Control "public, max-age=0, must-revalidate"
