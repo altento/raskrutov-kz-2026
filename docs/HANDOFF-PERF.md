@@ -133,16 +133,41 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 
 ---
 
-## 5. Следующие шаги (приоритет)
+## 5. Следующие шаги
 
-1. **Замерить PSI mobile 2–3 раза** после critical/deferred — зафиксировать скор/LCP сюда
-2. Если скор вырос слабо:
-   - урезать/сплитнуть blocking `home-popup-2782231` (осторожно: меню)
-   - ниже fold: ещё жёстче lazy картинок
-   - проверить конкурентов LCP в waterfall
-3. **Не трогать** sync Mottor JS без плана «как не убить кнопки»
-4. Разобрать Supabase `submit-lead` 500 (отдельный трек)
-5. По желанию: nginx Cache-Control для `home-*.css` в панели Plesk
+### 5.1 Действия ЮЗЕРА (чеклист — отмечать по мере)
+
+#### A. Формы (сейчас блокер лидов)
+- [ ] Зайти в Supabase: https://supabase.com/dashboard/project/rslemacnycrxzdatwarv
+- [ ] Edge Functions → **`submit-lead`** → **Logs** — скрин/текст ошибки после сабмита формы
+- [ ] Открыть **Code** функции `submit-lead` — скинуть агенту исходник (или дать доступ / репо бэкенда)
+- [ ] **Secrets** функции: проверить что заданы нужные (часто `SUPABASE_SERVICE_ROLE_KEY` / URL проекта)
+- [ ] **Table Editor**: найти таблицу лидов (`leads` или аналог) — есть ли вообще, есть ли свежие строки
+- [ ] **Authentication → Policies / RLS** на таблице лидов — не режет ли INSERT
+- [ ] Если в аккаунт не пускает — выяснить у того, кто создавал Supabase для заявок, и дать доступ агенту/себе
+- [ ] После фикса бэка: отправить тест с попапа «Обсудим Ваш проект?» и с блока Контакты → зелёный success, не красный
+
+#### B. PageSpeed (гон к 100)
+- [ ] Прогнать PSI mobile 2–3 раза: https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fraskrutov.kz%2F&form_factor=mobile
+- [ ] Скинуть агенту: Performance / LCP / FCP / TBT / CLS (+ скрин или цифры)
+- [ ] Если скор уже ок — зафиксировать в журнале ниже и решить, долбим дальше или стоп
+
+#### C. Мультикомп / бэкап контекста
+- [ ] На другом компе: `git checkout performance/pagespeed-raskrutov && git pull`
+- [ ] Читать этот файл + `.cursor/rules/raskrutov-perf-continuity.mdc`
+- [ ] После любого заметного шага — агент обновляет HANDOFF и пушит (требовать, если забыл)
+
+#### D. По желанию / позже
+- [ ] Plesk: Cache-Control для `home-*.css` (сейчас nginx может держать длинный max-age)
+- [ ] Не заливать на Plesk ветку `deploy` / `site_deploy` (там GH prefix)
+- [ ] Не коммитить мусорные untracked `lpfile/` и одноразовые `_psi_check_*.py` без нужды
+
+### 5.2 Действия АГЕНТА (когда юзер дал ввод)
+1. По логам/коду Supabase — починить `submit-lead` (или задеплоить исправленную функцию)
+2. После фикса форм — прогнать живой сабмит, обновить HANDOFF
+3. По цифрам PSI — следующий перф-слой (popup CSS / LCP waterfall / lazy), **не** трогать sync Mottor JS вслепую
+4. Деплой сайта: точечный copy в `site_plesk` или осторожный `publish_plesk.py` → commit/push `plesk`
+5. **Всегда** дописывать журнал §7 + чеклист §5.1 и пушить feature-ветку
 
 ---
 
@@ -155,6 +180,7 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 | `site_mirror/assets/css/home-deferred.v3.css` | Deferred CSS |
 | `site_mirror/assets/css/hero-home-mobile.webp` | Mobile LCP |
 | `site_mirror/.htaccess` | cache/compress/redirects |
+| `site_mirror/assets/js/lead-forms.js` | фронт форм → Supabase |
 | `_psi_split_critical_css.py` | Пересборка critical/deferred + wiring HTML |
 | `publish_plesk.py` | sync mirror→plesk |
 | `.cursor/rules/raskrutov-site-pipeline.mdc` | пайплайн страниц |
@@ -165,7 +191,7 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] Mobile 390 + desktop визуально (hero, mockups, меню)
 - [ ] Нет `home-all-blocks` в index, есть critical + deferred print
 - [ ] CSS urls `../` из `assets/css/`
-- [ ] Forms UI не разъебан (бэкенд 500 — отдельно)
+- [ ] Forms UI не разъебан (бэкенд 500 — отдельно, см. §5.1 A)
 - [ ] Commit `plesk` + push
 - [ ] Обновить **этот** HANDOFF + push feature branch
 
@@ -183,6 +209,11 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Юзер: «сломал формы» после perf-деплоя
 - Аудит: разметка форм на live/local ок; CSS split формы не отключал
 - POST probe → Supabase `submit-lead` **500** «Не удалось сохранить заявку»
-- Дальше: логи Edge Function в Supabase + доступ к коду функции/БД
+- Консоль юзера: `[lead-forms] submit failed Не удалось сохранить заявку` + POST 500 на submit-lead
+- Дальше: см. чеклист §5.1 A (Supabase Logs / Code / Secrets / RLS)
+
+### 2026-07-31 — юзер просит всегда писать его дальнейшие действия
+- Расширен §5: чеклисты A–D для юзера + обязанности агента
+- Агенту: не забывать обновлять §5.1 / §7 и пушить
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
