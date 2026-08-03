@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-03 (UTC+5) — deploy `index-clean.html` на `plesk`, push в remote  
+**Последнее обновление:** 2026-08-03 (UTC+5) — publish contacts polish + remove bottom CTA (`v=19`)  
 **Рабочая ветка:** `homepage-clean-rebuild`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -159,20 +159,21 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] После любого заметного шага — агент обновляет HANDOFF и пушит (требовать, если забыл)
 
 #### D. Clean rebuild главной (тестовая страница, 2026-07-31 → 2026-08-03)
-- [ ] Hard-refresh локально: `http://127.0.0.1:8767/index-clean.html?v=16` (Ctrl+F5)
+- [ ] Hard-refresh локально: `http://127.0.0.1:8767/index-clean.html?v=19` (Ctrl+F5)
 - [ ] Сверить «Ключевые направления»: заголовок 36px, карточки title 16px / текст 12px / иконки ~61×62
-- [ ] Сверить «Веб-студия»: 8 карточек с цветными иконками (perf-img webp) слева сверху, как на `index.html`
+- [ ] Сверить «Веб-студия»: 8 карточки с цветными иконками (perf-img webp) слева сверху, как на `index.html`
 - [ ] Сверить «Академия»: perks с иконками (онлайн/наставники/сертификаты) + 4 карточки курсов с perf-img и стрелкой
 - [ ] Сверить «Партнёрам»: hero bg globe + 2 perks с иконками; панель «Пакеты» (3 пакета + карточка агентств) + франшиза CTA
+- [ ] Сверить «Контакты»: фон mesh+white 0.7, линия #9867F3, форма 35%, карточки/карта/соц 65%, lazy Yandex map; **без** нижней CTA «Давайте создадим…»
 - [ ] Сверить плавающие виджеты: soc-widget + scroll-top (#7439e2)
 - [ ] Просмотреть блоки ниже (студия → контакты) vs `index.html` на 1440
 - [ ] Решить: допиливаем clean / заменяем `index.html` / откладываем
 
 #### D2. Деплой clean на прод (2026-08-03)
-- [x] Push `homepage-clean-rebuild` → `81c1bd79`
-- [x] Push `plesk` → `4ed5fc48` (index-clean + home-clean.css/js)
+- [x] Push `homepage-clean-rebuild` → contacts `v=19` + HANDOFF
+- [x] Push `plesk` → index-clean + home-clean.css/js (`v=19`)
 - [ ] **Plesk:** подтянуть ветку `plesk` в `httpdocs` (Git pull / Deploy в панели)
-- [ ] Проверить live: https://raskrutov.kz/index-clean.html?v=16#partners (Ctrl+F5)
+- [ ] Проверить live: https://raskrutov.kz/index-clean.html?v=19#contacts (Ctrl+F5)
 - [ ] Убедиться что **главная** https://raskrutov.kz/ (Mottor `index.html`) жива — меню, формы, мокапы
 - [ ] Если главная отвалилась — сказать агенту (MIR мог снести старые bundle/png, которые не в mirror)
 
@@ -315,5 +316,19 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - MIR также убрал ~83 legacy png + 2 старых `public.bundle*` из plesk (не в mirror); главная ссылается на `1784122059/2069` — они на месте
 - Commit: feature `81c1bd79`, plesk `4ed5fc48`; push обеих веток в GitHub
 - **Ждём:** pull `plesk` на сервере → live https://raskrutov.kz/index-clean.html?v=16
+
+### 2026-08-03 — clean #contacts: как на эталоне
+- Фон секции: `6eea3ed3…webp` + white overlay 0.7
+- Layout 35/65, gap 10; фиолетовая линия `#9867F3` над intro
+- Форма: border `#9867F3`, pad 17, кнопка gradient 60deg centered (не full-width)
+- Карточки `#ccc`/10px/7px + perf-img иконки; офис 16px
+- Карта: lazy Yandex iframe (54.8746, 69.135701) через `initMap()`
+- Соцкнопки: SVG mask + brand colors (TG/IG/YT/TT)
+- Убрана нижняя CTA «Давайте создадим что-то выдающееся…»
+- Локально: `index-clean.html?v=19#contacts`
+
+### 2026-08-03 — publish contacts polish на plesk (`v=19`)
+- Точечный copy (без MIR): `index-clean.html`, `home-clean.css`, `home-clean.js`
+- Feature + `plesk` push; live после pull на сервере: https://raskrutov.kz/index-clean.html?v=19#contacts
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->

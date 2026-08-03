@@ -19,7 +19,7 @@
   <link rel="preload" as="image" href="assets/css/hero-home-mobile.webp" media="(max-width: 500px)" fetchpriority="high">
   <link rel="preload" as="image" href="assets/m-files.cdn1.cc/lpfile/6/e/e/6eea3ed3de3e5cbe118d06eb148fe963.webp" media="(min-width: 501px)" fetchpriority="high">
   <link rel="preload" href="assets/m-files.cdn1.cc/web/user/fonts/montserrat/montserrat_bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/home-clean.css?v=16">
+  <link rel="stylesheet" href="assets/css/home-clean.css?v=19">
   <link rel="stylesheet" href="assets/css/lead-forms.css">
   <script type="application/ld+json" data-schema="raskrutov">
 {
@@ -1008,76 +1008,91 @@
       </div>
     </section>
 
-    <section class="rk-section" id="contacts">
+    <section class="rk-section rk-section--contacts" id="contacts">
       <div class="rk-container">
         <h2 class="rk-h2">Контакты</h2>
-        <p class="rk-lead">Готовы обсудить ваш проект? Свяжитесь с нами удобным для вас способом или отправьте заявку - мы ответим в ближайшее время.</p>
         <div class="rk-contacts">
-          <div>
-            <div class="rk-channel">
-              <strong>Позвоните нам</strong>
-              <a href="tel:+77000216900">+7 700 021 69 00</a>
-              <span>Пн-Пт: 10:00 - 19:00</span>
+          <div class="rk-contacts__aside">
+            <div class="rk-contacts__line" aria-hidden="true"></div>
+            <p class="rk-contacts__intro">Готовы обсудить ваш проект? Свяжитесь с нами удобным для вас способом или отправьте заявку - мы ответим в ближайшее время.</p>
+            <div class="rk-form rk-form--contacts">
+              <p class="rk-form__title">Отправьте заявку</p>
+              <p class="rk-form__lead">Расскажите о вашем проекте - мы предложим лучшее решение.</p>
+              <form data-lead-form data-form-name="Контакты — отправьте заявку — главная-clean" novalidate>
+                <div class="rk-field">
+                  <label for="rk-contact-name">Имя: <span class="rk-req" aria-hidden="true">*</span></label>
+                  <input id="rk-contact-name" type="text" name="name" maxlength="200" autocomplete="name">
+                </div>
+                <div class="rk-field">
+                  <label for="rk-contact-phone">Телефон: <span class="rk-req" aria-hidden="true">*</span></label>
+                  <input id="rk-contact-phone" type="tel" name="phone" required maxlength="40" autocomplete="tel" data-rk-phone-mask inputmode="tel" placeholder="+7 (___) ___ __ __">
+                </div>
+                <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" class="lead-form-honeypot" value="">
+                <div class="rk-form__actions">
+                  <button class="rk-btn rk-btn--contacts" type="submit">Отправить заявку</button>
+                </div>
+                <div data-form-status aria-live="polite" class="lead-form-status"></div>
+              </form>
             </div>
-            <div class="rk-channel">
-              <strong>Напишите в WhatsApp</strong>
-              <a href="https://wa.me/77000216900" target="_blank" rel="noopener noreferrer">+7 700 021 69 00</a>
-              <span>Быстрый ответ в чате</span>
+          </div>
+          <div class="rk-contacts__main">
+            <div class="rk-contact-cards">
+              <a class="rk-contact-card" href="tel:+77000216900">
+                <img class="rk-contact-card__icon" src="assets/css/perf-img/42w2x_f__q_62138191.webp" alt="" width="42" height="42" loading="lazy" decoding="async">
+                <span class="rk-contact-card__body">
+                  <strong class="rk-contact-card__title">Позвоните нам</strong>
+                  <span class="rk-contact-card__value">+7 700 021 6900</span>
+                  <span class="rk-contact-card__note">Пн-Пт: 10:00 - 19:00</span>
+                </span>
+              </a>
+              <a class="rk-contact-card" href="https://wa.me/77000216900" target="_blank" rel="noopener noreferrer">
+                <img class="rk-contact-card__icon" src="assets/css/perf-img/43w2x_f__q_4144924.webp" alt="" width="43" height="43" loading="lazy" decoding="async">
+                <span class="rk-contact-card__body">
+                  <strong class="rk-contact-card__title">Напишите в WhatsApp</strong>
+                  <span class="rk-contact-card__value">+7 700 021 6900</span>
+                  <span class="rk-contact-card__note">Быстрый ответ в чате</span>
+                </span>
+              </a>
+              <a class="rk-contact-card" href="mailto:info@raskrutov.kz">
+                <img class="rk-contact-card__icon" src="assets/css/perf-img/42w2x_f__q_5617179.webp" alt="" width="42" height="42" loading="lazy" decoding="async">
+                <span class="rk-contact-card__body">
+                  <strong class="rk-contact-card__title">Напишите нам</strong>
+                  <span class="rk-contact-card__value">info@raskrutov.kz</span>
+                  <span class="rk-contact-card__note">Ответим в течение часа</span>
+                </span>
+              </a>
             </div>
-            <div class="rk-channel">
-              <strong>Напишите нам</strong>
-              <a href="mailto:info@raskrutov.kz">info@raskrutov.kz</a>
-              <span>Ответим в течение часа</span>
-            </div>
-            <div class="rk-channel">
-              <strong>Наш офис</strong>
-              <span>Казахстан, Петропавловск, ул. М. Жумабаева, 109, 6 этаж, офис 606а.</span>
-            </div>
-            <div class="rk-channel">
-              <strong>Мы в соцсетях</strong>
-              <div class="rk-social">
-                <a href="https://t.me/Raskrutov_web" target="_blank" rel="noopener noreferrer">Telegram</a>
-                <a href="https://www.instagram.com/raskrutov.kz/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a href="https://www.youtube.com/@raskrutov-kz" target="_blank" rel="noopener noreferrer">YouTube</a>
-                <a href="https://www.tiktok.com/@raskrutov.kz" target="_blank" rel="noopener noreferrer">TikTok</a>
-              </div>
-            </div>
-            <div class="rk-map">
-              <div>
-                <p>Петропавловск, ул. М. Жумабаева, 109</p>
-                <a href="https://yandex.ru/maps/?pt=69.162,54.8753&z=16&l=map" target="_blank" rel="noopener noreferrer">Открыть карту в Яндекс.Картах</a>
+            <p class="rk-contacts__office"><strong>Наш офис:</strong> Казахстан, Петропавловск, ул. М. Жумабаева, 109, 6 этаж, офис 606а.</p>
+            <div
+              class="rk-map"
+              data-rk-map
+              data-lat="54.8746"
+              data-lon="69.135701"
+              data-zoom="16"
+              aria-label="Карта офиса Raskrutov"
+            ></div>
+            <div class="rk-contacts-social">
+              <p class="rk-contacts-social__title">Мы в соцсетях</p>
+              <div class="rk-contacts-social__row">
+                <a class="rk-contact-soc" href="https://t.me/Raskrutov_web" target="_blank" rel="noopener noreferrer">
+                  <span class="rk-contact-soc__icon rk-contact-soc__icon--tg" aria-hidden="true"></span>
+                  Telegram
+                </a>
+                <a class="rk-contact-soc" href="https://www.instagram.com/raskrutov.kz/" target="_blank" rel="noopener noreferrer">
+                  <span class="rk-contact-soc__icon rk-contact-soc__icon--ig" aria-hidden="true"></span>
+                  Instagram
+                </a>
+                <a class="rk-contact-soc" href="https://www.youtube.com/@raskrutov-kz" target="_blank" rel="noopener noreferrer">
+                  <span class="rk-contact-soc__icon rk-contact-soc__icon--yt" aria-hidden="true"></span>
+                  YouTube
+                </a>
+                <a class="rk-contact-soc" href="https://www.tiktok.com/@raskrutov.kz" target="_blank" rel="noopener noreferrer">
+                  <span class="rk-contact-soc__icon rk-contact-soc__icon--tt" aria-hidden="true"></span>
+                  TikTok
+                </a>
               </div>
             </div>
           </div>
-          <div class="rk-form">
-            <p class="rk-form__title">Отправьте заявку</p>
-            <p>Расскажите о вашем проекте - мы предложим лучшее решение.</p>
-            <form data-lead-form data-form-name="Контакты — отправьте заявку — главная-clean" novalidate>
-              <div class="rk-field">
-                <label for="rk-contact-name">Имя</label>
-                <input id="rk-contact-name" type="text" name="name" maxlength="200" autocomplete="name">
-              </div>
-              <div class="rk-field">
-                <label for="rk-contact-phone">Телефон</label>
-                <input id="rk-contact-phone" type="tel" name="phone" required maxlength="40" autocomplete="tel" data-rk-phone-mask inputmode="tel" placeholder="+7 (___) ___ __ __">
-              </div>
-              <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" class="lead-form-honeypot" value="">
-              <button class="rk-btn rk-btn--primary" type="submit">Отправить заявку</button>
-              <div data-form-status aria-live="polite" class="lead-form-status"></div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="rk-section rk-section--tight">
-      <div class="rk-container">
-        <div class="rk-cta-panel rk-cta-panel--bottom">
-          <div>
-            <p class="rk-cta-panel__title">Давайте создадим что-то выдающееся вместе</p>
-            <p>Наша команда поможет вывести ваш бизнес на новый уровень в digital.</p>
-          </div>
-          <button class="rk-btn rk-btn--light" type="button" data-rk-open-modal="rk-modal-lead">Обсудить проект</button>
         </div>
       </div>
     </section>
@@ -1175,7 +1190,7 @@
     </div>
   </div>
 
-  <script src="assets/js/home-clean.js" defer></script>
+  <script src="assets/js/home-clean.js?v=18" defer></script>
   <script src="assets/js/lead-forms.js" defer></script>
 </body>
 </html>
