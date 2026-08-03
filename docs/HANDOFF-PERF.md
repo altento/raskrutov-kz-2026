@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-07-31 (UTC+5) — stage 2 cleanup + publish  
+**Последнее обновление:** 2026-08-03 (UTC+5) — clean #partners layout + иконки + фоны как этalon  
 **Рабочая ветка:** `performance/pagespeed-raskrutov`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -158,7 +158,18 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] Читать этот файл + `.cursor/rules/raskrutov-perf-continuity.mdc`
 - [ ] После любого заметного шага — агент обновляет HANDOFF и пушит (требовать, если забыл)
 
-#### D. По желанию / позже
+#### D. Clean rebuild главной (тестовая страница, 2026-07-31 → 2026-08-03)
+- [ ] Hard-refresh: `http://127.0.0.1:8767/index-clean.html?v=16` (Ctrl+F5)
+- [ ] Сверить «Ключевые направления»: заголовок 36px, карточки title 16px / текст 12px / иконки ~61×62
+- [ ] Сверить «Веб-студия»: 8 карточек с цветными иконками (perf-img webp) слева сверху, как на `index.html`
+- [ ] Сверить «Академия»: perks с иконками (онлайн/наставники/сертификаты) + 4 карточки курсов с perf-img и стрелкой
+- [ ] Сверить «Партнёрам»: hero bg globe + 2 perks с иконками; панель «Пакеты» (3 пакета + карточка агентств) + франшиза CTA
+- [ ] Сверить плавающие виджеты: soc-widget + scroll-top (#7439e2)
+- [ ] Просмотреть блоки ниже (студия → контакты) vs `index.html` на 1440
+- [ ] Решить: допиливаем clean / заменяем `index.html` / откладываем
+- [ ] Commit/push по clean-rebuild — **только когда скажешь**
+
+#### E. По желанию / позже
 - [ ] Plesk: Cache-Control для `home-*.css` (сейчас nginx может держать длинный max-age)
 - [ ] Не заливать на Plesk ветку `deploy` / `site_deploy` (там GH prefix)
 - [ ] Не коммитить мусорные untracked `lpfile/` и одноразовые `_psi_check_*.py` без нужды
@@ -176,7 +187,9 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 
 | Файл | Зачем |
 |---|---|
-| `site_mirror/index.html` | Главная |
+| `site_mirror/index.html` | Главная (боевая Mottor) |
+| `site_mirror/index-clean.html` | Тестовая чистая повторная вёрстка главной |
+| `HOMEPAGE_CLEAN_REBUILD_STATUS.md` | Отчёт clean rebuild |
 | `site_mirror/assets/css/home-critical.v3.css` | Critical CSS |
 | `site_mirror/assets/css/home-deferred.v3.css` | Deferred CSS |
 | `site_mirror/assets/css/hero-home-mobile.webp` | Mobile LCP |
@@ -223,5 +236,68 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - `public.bundle.js/css` stylesheet **оставлены** (зависимости меню/попапов/слайдеров)
 - QA локально: 195/195 assets 200, меню/формы/WA/tel на 360–1920, console clean
 - Пуш: feature + `plesk`
+
+### 2026-07-31 — clean rebuild главной (тестовая страница)
+- Созданы: `site_mirror/index-clean.html`, `assets/css/home-clean.css`, `assets/js/home-clean.js`
+- Отчёт: `HOMEPAGE_CLEAN_REBUILD_STATUS.md`
+- `index.html` **не трогали**; commit/push/deploy/реальная отправка форм — по просьбе юзера **не** делали
+- DOM ~653 / depth ~11; CSS ~23 KB; JS ~6.5 KB; без Mottor bundles
+- Стрелки студии → hub URL, без нумерации 01–08
+- Локальный LH mobile median Perf **77** (LCP ~4.5s), desktop Perf **86** (CLS desk 0.228 — долг)
+- Дальше: ручная проверка юзером (§5.1 D)
+
+### 2026-08-01 — clean visual polish (WA / phone mask / popup / sections)
+- WA в шапке: статичный `30w2x_f__q_4144924.webp`, без зелёного круга/анимации
+- Телефон/ноут: как Mottor — `.rk-device__viewport` + `mask-image` (`390bd2d6…` / `28dae1e5…`), экран 82%/90%
+- Попап: класс `.rk-consent` (больше не давится стилями `.rk-check`); кнопка ниже текста, gap ~24–28px
+- Направления: стрелки-кружки снизу справа; остальная страница — radius/shadow/типографика ближе к эталону
+- Локально: `index-clean.html?v=8`; commit/push **не** делали
+
+### 2026-08-01 — clean typography/layout below hero = etalon px
+- Сняты computed с `index.html` @1440: dirs H2 36 / H3 16 / p 12/500 / icon 61×62 / card pad 10 radius 10
+- Секции: studio/advantages 36; academy/r-builder/about/partners/contacts 60; blog/vacancies 18; FAQ 40; FAQ q Inter 16
+- Body Montserrat 13px #111; badges 527/348/439; team avatars 122; studio links 14/500
+- Локально: `index-clean.html?v=9`; commit/push **не** делали
+
+### 2026-08-01 — clean studio cards: иконки (пропуск закрыт)
+- В `#studio` добавлены 8 `<img class="rk-studio-card__icon">` — те же `assets/css/perf-img/*.webp`, что на Mottor-эталоне
+- CSS: `.rk-studio-card__icon` — max 63×62, margin-bottom 9px (как на оригинале: иконка → заголовок)
+- Локально: `index-clean.html?v=10`; commit/push **не** делали
+
+### 2026-08-01 — clean studio cards: компоновка как на эталоне
+- Layout: иконка → заголовок → список; стрелка `.rk-studio-card__more` снизу справа (белый круг, border #c2c2c2, 36px)
+- Ссылки в списке синие `#3288e6` (как Mottor); нумерацию 01–08 не ставим
+- Локально: `index-clean.html?v=11`; commit/push **не** делали
+
+### 2026-08-01 — clean #about: карточная сетка как на эталоне
+- Статистика 3 карточки с perf-img иконками (календарь/люди/ракета)
+- Сетка 3×2: О нас, Команда, Письма, Клиенты, Блог, Вакансии — белые карточки, иконка+стрелка, footer-ссылки
+- Блог/вакансии внутри #about (отдельные секции убраны); фон секции — blob webp как Mottor
+- Локально: `index-clean.html?v=12`; commit/push **не** делали
+
+### 2026-08-01 — clean #r-builder: layout + иконки как на эталоне
+- Hero: gradient H2, soft eyebrow, CTA + demo с play, 2×2 perks с perf-img иконками слева
+- Низ: 4 карточки `.rk-rb-card` — icon → title (R-Builder синий) → текст → стрелка #24a0ff снизу справа
+- Фон секции: light gradient; mockup справа с shadow
+- Локально: `index-clean.html?v=13`; commit/push **не** делали
+
+### 2026-08-03 — clean #academy + float widgets как на эталоне
+- Perks: Онлайн-уроки / Наставники / Сертификаты — `.rk-feature--icon` + perf-img (51/48/44 w2x)
+- 4 карточки `.rk-academy-card`: icon слева + title, текст, footer-ссылка + стрелка #24a0ff (65/66/63/62 w2x)
+- `.rk-float` (WA/Позвонить glass) заменён на `.rk-soc-widget` (#7439e2, toggle + 4 соцсети) и `.rk-scroll-top`
+- JS: `initSocWidget()` + `initScrollTop()` в `home-clean.js`
+- Локально: `index-clean.html?v=14`; commit/push **не** делали
+
+### 2026-08-03 — clean #partners: компоновка + иконки + фоны как этalon
+- Hero `.rk-section--partners-hero`: bg `c4ed9801…webp`, 2 glass-perks с perf-img (67/70 w2x)
+- Panel `.rk-section--partners-panel`: bg `d1630e6a…webp`, белая панель 15px radius
+- Сетка: 3 `.rk-partner-pack` (64w2x icons, синие %) + `.rk-partners-agency` (icon, стрелка, illus 128px)
+- Франшиза CTA оставлена под панелью
+- Локально: `index-clean.html?v=15`; commit/push **не** делали
+
+### 2026-08-03 — clean #partners: единый фон на hero + карточки
+- Hero + panel объединены в одну `.rk-section--partners`
+- Два слоя фона: globe (`c4ed…`) сверху через `::before`, soft orbs (`d163…`) на всю секцию включая карточки
+- Локально: `index-clean.html?v=16`; commit/push **не** делали
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
