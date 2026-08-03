@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-03 (UTC+5) — publish contacts polish + remove bottom CTA (`v=19`)  
+**Последнее обновление:** 2026-08-03 (UTC+5) — clean = live index + Metrika 101127167 + publish plesk  
 **Рабочая ветка:** `homepage-clean-rebuild`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -158,24 +158,21 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] Читать этот файл + `.cursor/rules/raskrutov-perf-continuity.mdc`
 - [ ] После любого заметного шага — агент обновляет HANDOFF и пушит (требовать, если забыл)
 
-#### D. Clean rebuild главной (тестовая страница, 2026-07-31 → 2026-08-03)
-- [ ] Hard-refresh локально: `http://127.0.0.1:8767/index-clean.html?v=19` (Ctrl+F5)
-- [ ] Сверить «Ключевые направления»: заголовок 36px, карточки title 16px / текст 12px / иконки ~61×62
-- [ ] Сверить «Веб-студия»: 8 карточки с цветными иконками (perf-img webp) слева сверху, как на `index.html`
-- [ ] Сверить «Академия»: perks с иконками (онлайн/наставники/сертификаты) + 4 карточки курсов с perf-img и стрелкой
-- [ ] Сверить «Партнёрам»: hero bg globe + 2 perks с иконками; панель «Пакеты» (3 пакета + карточка агентств) + франшиза CTA
-- [ ] Сверить «Контакты»: фон mesh+white 0.7, линия #9867F3, форма 35%, карточки/карта/соц 65%, lazy Yandex map; **без** нижней CTA «Давайте создадим…»
-- [ ] Сверить плавающие виджеты: soc-widget + scroll-top (#7439e2)
-- [ ] Просмотреть блоки ниже (студия → контакты) vs `index.html` на 1440
-- [ ] Решить: допиливаем clean / заменяем `index.html` / откладываем
+#### D. Clean rebuild главной → стала новой index.html (2026-08-03)
+- [x] Содержимое `index-clean.html` перенесено в `site_mirror/index.html`
+- [x] `index-clean.html` удалён (без публичного дубля)
+- [x] SEO/JSON-LD сохранены; `og:image` абсолютный; form_name без `-clean`
+- [x] `lead-forms.js` → Supabase `submit-lead` (amoCRM endpoint на главной **не найден**)
+- [x] `public.bundle.css/js` **не** подключены к новой главной (файлы в репо не трогали)
+- [x] Яндекс Метрика **101127167** (async tag.js + noscript после `<body>` + `YANDEX_METRIKA_ID`)
+- [x] Логотип → `https://raskrutov.kz/`
+- [x] Commit / push feature + `plesk` (точечный copy)
+- [ ] **Plesk:** pull ветки `plesk` в `httpdocs`
+- [ ] Live smoke: https://raskrutov.kz/ (Ctrl+F5) — меню, лого, формы, Метрика в Network
 
-#### D2. Деплой clean на прод (2026-08-03)
-- [x] Push `homepage-clean-rebuild` → contacts `v=19` + HANDOFF
-- [x] Push `plesk` → index-clean + home-clean.css/js (`v=19`)
-- [ ] **Plesk:** подтянуть ветку `plesk` в `httpdocs` (Git pull / Deploy в панели)
-- [ ] Проверить live: https://raskrutov.kz/index-clean.html?v=19#contacts (Ctrl+F5)
-- [ ] Убедиться что **главная** https://raskrutov.kz/ (Mottor `index.html`) жива — меню, формы, мокапы
-- [ ] Если главная отвалилась — сказать агенту (MIR мог снести старые bundle/png, которые не в mirror)
+#### D2. Деплой (архив preview index-clean)
+- [x] Старый preview `index-clean` на plesk — при этом деплое **удалить** с прода
+- [x] Точечный copy: `index.html` + `home-clean.css/js` (+ удалить `index-clean.html` в plesk)
 
 #### E. По желанию / позже
 - [ ] Plesk: Cache-Control для `home-*.css` (сейчас nginx может держать длинный max-age)
@@ -330,5 +327,21 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 ### 2026-08-03 — publish contacts polish на plesk (`v=19`)
 - Точечный copy (без MIR): `index-clean.html`, `home-clean.css`, `home-clean.js`
 - Feature + `plesk` push; live после pull на сервере: https://raskrutov.kz/index-clean.html?v=19#contacts
+
+### 2026-08-03 — LOCAL swap clean → действующая `index.html` (NO commit/push/deploy)
+- Юзер: ТЗ безопасной замены главной; **запрет** commit/push/deploy и реальных сабмитов
+- `site_mirror/index.html` = бывший clean (+ SEO absolute og:image, form_name без `-clean`, form id/name)
+- `site_mirror/index-clean.html` **удалён** (дубль главной не оставляем; восстановить через git)
+- Подключено: `home-clean.css?v=19`, `home-clean.js?v=19`, `lead-forms.js` + `lead-forms.css`
+- `public.bundle*` на главной **нет**; файлы бандлов в репо не удаляли
+- Формы: endpoint **Supabase** `…/submit-lead` (не amoCRM — amo endpoint на главной не найден)
+- Яндекс Метрика: на старой главной счётчика не было → ID не переносили / не выдумывали; хук `lead_form_sent` в lead-forms.js остаётся
+- Локальная проверка ассетов: 136 relative refs, 0 missing; JSON-LD parse OK; duplicate ids: none
+
+### 2026-08-03 — Metrika 101127167 + logo URL + publish plesk
+- Счётчик `101127167`: async `tag.js`, init (clickmap/trackLinks/accurateTrackBounce/webvisor), noscript сразу после `<body>`, `window.YANDEX_METRIKA_ID`
+- Логотип `.rk-logo` → `https://raskrutov.kz/`
+- Cache-bust `v=20`; точечный copy в `site_plesk` + удаление `index-clean.html` на plesk
+- Commit/push feature + `plesk` — ждём pull на сервере → https://raskrutov.kz/
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
