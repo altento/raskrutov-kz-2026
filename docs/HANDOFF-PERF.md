@@ -158,7 +158,13 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] Читать этот файл + `.cursor/rules/raskrutov-perf-continuity.mdc`
 - [ ] После любого заметного шага — агент обновляет HANDOFF и пушит (требовать, если забыл)
 
-#### D. По желанию / позже
+#### D. Региональное размножение (отдельный трек)
+- Полный handoff: **`docs/HANDOFF-REGIONAL.md`**
+- Карта: `docs/seo-regional/SEO-карта_Raskrutov_региональная_2026-07-27.xlsx` + CSV
+- [ ] Подтвердить старт с этапа 1 (P1, 15 URL) и политику legacy vs pretty URL
+- [ ] Дальше по чеклистам в `HANDOFF-REGIONAL.md` §4–§5
+
+#### E. По желанию / позже
 - [ ] Plesk: Cache-Control для `home-*.css` (сейчас nginx может держать длинный max-age)
 - [ ] Не заливать на Plesk ветку `deploy` / `site_deploy` (там GH prefix)
 - [ ] Не коммитить мусорные untracked `lpfile/` и одноразовые `_psi_check_*.py` без нужды
@@ -223,5 +229,11 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - `public.bundle.js/css` stylesheet **оставлены** (зависимости меню/попапов/слайдеров)
 - QA локально: 195/195 assets 200, меню/формы/WA/tel на 360–1920, console clean
 - Пуш: feature + `plesk`
+
+### 2026-08-03 — региональная SEO-карта подключена к continuity
+- Источник: Downloads `SEO-карта_Raskrutov_региональная_2026-07-27.xlsx`
+- Выгрузка + handoff: `docs/seo-regional/`, `docs/HANDOFF-REGIONAL.md`
+- Масштаб: 18 городов × 9 направлений, 152 NEW / 10 UPDATE
+- Следующее от юзера: подтвердить этап 1 + политику URL (см. §5.1 D)
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
