@@ -16,11 +16,15 @@
   <meta property="og:locale" content="ru_RU">
   <link href="assets/m-files.cdn1.cc/lpfile/favicon/favicon__q_1.png" type="image/png" rel="icon">
   <link href="favicon.ico" sizes="16x16 32x32 48x48" rel="icon" type="image/x-icon">
+  <link rel="preload" as="style" href="assets/css/home-clean-critical.v1.css?v=1">
   <link rel="preload" as="image" href="assets/css/hero-home-mobile.webp" media="(max-width: 500px)" fetchpriority="high">
   <link rel="preload" as="image" href="assets/m-files.cdn1.cc/lpfile/6/e/e/6eea3ed3de3e5cbe118d06eb148fe963.webp" media="(min-width: 501px)" fetchpriority="high">
   <link rel="preload" href="assets/m-files.cdn1.cc/web/user/fonts/montserrat/montserrat_bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/home-clean.css?v=23">
-  <link rel="stylesheet" href="assets/css/lead-forms.css">
+  <link rel="stylesheet" href="assets/css/home-clean-critical.v1.css?v=1">
+  <link rel="stylesheet" href="assets/css/home-clean-deferred.v1.css?v=1" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/css/home-clean-deferred.v1.css?v=1"></noscript>
+  <link rel="stylesheet" href="assets/css/lead-forms.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="assets/css/lead-forms.css"></noscript>
   <script type="application/ld+json" data-schema="raskrutov">
 {
   "@context": "https://schema.org",
@@ -222,7 +226,7 @@
   <header class="rk-header">
     <div class="rk-container rk-header__bar">
       <a class="rk-logo" href="https://raskrutov.kz/" aria-label="Raskrutov — на главную">
-        <img src="assets/m-files.cdn1.cc/lpfile/8/1/a/81a3fe2ab76d8a7d4df2ea1900ce0265/-/crop/0x0x955x221/-/resize/211/-/scale/x3/-/resize/1920/f.webp" alt="Raskrutov" width="211" height="49" decoding="async">
+        <img src="assets/m-files.cdn1.cc/lpfile/8/1/a/81a3fe2ab76d8a7d4df2ea1900ce0265/-/crop/0x0x955x221/-/resize/211/-/scale/x3/-/resize/1920/f.webp" alt="Raskrutov" width="211" height="49" decoding="async" fetchpriority="low">
       </a>
       <nav class="rk-nav" aria-label="Основное меню">
         <a href="/" aria-current="page">Главная</a>
@@ -299,16 +303,19 @@
         </a>
 
         <div class="rk-hero__ecosystem">
-          <img
-            class="rk-hero__ecosystem-img"
-            src="assets/img/hero-ecosystem.webp"
-            alt="Экосистема цифрового роста Raskrutov"
-            width="531"
-            height="470"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-          >
+          <picture>
+            <source media="(max-width: 500px)" srcset="assets/img/hero-ecosystem-mobile.webp" type="image/webp" width="451" height="400">
+            <img
+              class="rk-hero__ecosystem-img"
+              src="assets/img/hero-ecosystem.webp"
+              alt="Экосистема цифрового роста Raskrutov"
+              width="531"
+              height="470"
+              loading="eager"
+              decoding="async"
+              fetchpriority="low"
+            >
+          </picture>
         </div>
 
         <article class="rk-metric-card rk-metric-card--1">
@@ -1194,26 +1201,41 @@
 
   <script>
     window.YANDEX_METRIKA_ID = 101127167;
-    (function (m, e, t, r, i, k, a) {
-      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
-      m[i].l = 1 * new Date();
-      for (var j = 0; j < document.scripts.length; j++) {
-        if (document.scripts[j].src === r) { return; }
+    (function () {
+      function bootMetrika() {
+        if (window.__rkMetrikaBooted) return;
+        window.__rkMetrikaBooted = true;
+        (function (m, e, t, r, i, k, a) {
+          m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+          m[i].l = 1 * new Date();
+          for (var j = 0; j < document.scripts.length; j++) {
+            if (document.scripts[j].src === r) { return; }
+          }
+          k = e.createElement(t);
+          a = e.getElementsByTagName(t)[0];
+          k.async = 1;
+          k.src = r;
+          a.parentNode.insertBefore(k, a);
+        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(101127167, "init", {
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true,
+          webvisor: true
+        });
       }
-      k = e.createElement(t);
-      a = e.getElementsByTagName(t)[0];
-      k.async = 1;
-      k.src = r;
-      a.parentNode.insertBefore(k, a);
-    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    ym(101127167, "init", {
-      clickmap: true,
-      trackLinks: true,
-      accurateTrackBounce: true,
-      webvisor: true
-    });
+      function schedule() {
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(bootMetrika, { timeout: 4000 });
+        } else {
+          setTimeout(bootMetrika, 2000);
+        }
+      }
+      if (document.readyState === "complete") schedule();
+      else window.addEventListener("load", schedule, { once: true });
+    })();
   </script>
-  <script src="assets/js/home-clean.js?v=20" defer></script>
+  <script src="assets/js/home-clean.js?v=21" defer></script>
   <script src="assets/js/lead-forms.js" defer></script>
 </body>
 </html>

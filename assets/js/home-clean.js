@@ -210,7 +210,17 @@
       btn.classList.toggle("rk-scroll-top--visible", window.scrollY > showAt);
     }
 
-    window.addEventListener("scroll", toggle, { passive: true });
+    var ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        toggle();
+      });
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
     toggle();
 
     btn.addEventListener("click", function () {
