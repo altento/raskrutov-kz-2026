@@ -309,4 +309,8 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Точечный деплой на `plesk` (хабы + parent + sitemap)
 - Детали: `HANDOFF-REGIONAL.md`. Дальше P2 (dizayn/PPC…) или QA глазками
 
+### 2026-08-03 — регионалка: дизайн `/web-studiya/dizayn/{city}`
+- 18 geo + parent cities; hubs wired на geo; `generate_regional_dizayn.py`
+- Деплой `plesk` точечно. Дальше: контекст/лидоген/…
+
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->

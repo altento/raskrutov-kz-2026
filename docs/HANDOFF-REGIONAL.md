@@ -97,7 +97,9 @@ CSV-копии: `docs/seo-regional/`.
 - [ ] Глазами: `/web-studiya/seo-prodvizhenie/` + Алматы/Астана + 301 legacy
 - [x] Следующее направление: **хабы** `/web-studiya/{city}`
 - [ ] Глазами: `/web-studiya/astana/` + `/web-studiya/` (сетка городов) + крошки/услуги
-- [ ] После QA — следующее P2 (dizayn / PPC / …)
+- [x] Следующее: **дизайн** `/web-studiya/dizayn/{city}`
+- [ ] Глазами: `/web-studiya/dizayn/astana/` + parent cities
+- [ ] После QA — следующее P2 (контекст / лидоген / …)
 
 ## 5. Чеклист АГЕНТА
 
@@ -118,6 +120,9 @@ CSV-копии: `docs/seo-regional/`.
 - [x] Хабы: parent `/web-studiya/` сетка городов; блок услуг → sozdanie/seo geo + parent services
 - [x] Хабы: scoped pipeline `_pipeline_hubs_geo.py` (leads/crumbs/schema)
 - [x] Деплой хабов на `plesk`
+- [x] Дизайн: `generate_regional_dizayn.py` — 18× `/web-studiya/dizayn/{slug}`
+- [x] Дизайн: parent cities + hubs → geo dizayn; `_pipeline_dizayn_geo.py`
+- [x] Деплой дизайна на `plesk`
 - [ ] Обновлять этот handoff после каждого пакета городов/направлений
 
 ---
@@ -172,3 +177,14 @@ CSV-копии: `docs/seo-regional/`.
 - Локально: `http://127.0.0.1:8765/web-studiya/astana/`
 - Деплой `plesk`: точечный copy 18 хабов + parent + sitemap
 - Дальше: P2 (dizayn / контекст / …)
+
+### 2026-08-03 — пакет дизайн geo
+- Юзер: «давай следующий хаб» → **Услуги дизайнера**
+- Pretty: `/web-studiya/dizayn/{slug}` × 18 (все NEW, без legacy)
+- Скрипт: `generate_regional_dizayn.py` + `_pipeline_dizayn_geo.py`
+- Parent `/web-studiya/dizayn/`: сетка городов; showPopup → showSectionPopup
+- Хабы `/web-studiya/{city}/`: ссылка «Дизайн» → geo `/dizayn/{city}/`
+- Локально: `http://127.0.0.1:8765/web-studiya/dizayn/astana/`
+- Деплой `plesk`: точечный copy dizayn/* + hubs + sitemap
+- Дальше: контекст / лидоген / поддержка / консалтинг / AEO
+
