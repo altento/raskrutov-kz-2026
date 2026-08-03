@@ -273,4 +273,8 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Mottor CDN src recipes не ломать (scale/x3/1920 обязателен)
 - plesk 869edcd1
 
+
+### 2026-08-03 — sozdanie menu-lite split
+- Blocking popup-menu 110KiB → menu-lite ~58KiB + deferred heavy; plesk e43a0cbc
+
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
