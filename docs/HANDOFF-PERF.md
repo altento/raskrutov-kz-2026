@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-03 (UTC+5) — mobile PSI polish `v=37` → publish plesk  
+**Последнее обновление:** 2026-08-03 (UTC+5) — desktop CLS fix `v=38` → publish plesk  
 **Рабочая ветка:** `homepage-clean-rebuild`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -185,6 +185,14 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] Live smoke: https://raskrutov.kz/ (Ctrl+F5) — hero/LCP, формы, Метрика 101127167
 - [ ] PSI mobile 2–3 раза на проде и скинуть цифры
 - [ ] Plesk: MIME `image/avif` + долгий cache для `/assets/img/perf/*` (см. `.htaccess`)
+
+#### D5. Desktop CLS fix `v=38` (2026-08-03) → publish
+- [x] Blocking CSS (убран print/onload); desktop critical header; transitions transform/opacity
+- [x] Лок. desktop LH CLS **0** (медиана Perf ~98); mobile CLS 0
+- [x] Commit / push feature + точечный publish `plesk`
+- [ ] **Plesk:** pull `plesk` → httpdocs
+- [ ] Live smoke Ctrl+F5: шапка не прыгает; `home-clean.css?v=38`
+- [ ] PSI desktop: CLS ≤0.05; скинуть цифры
 
 #### D2. Деплой (архив preview index-clean)
 - [x] Старый preview `index-clean` на plesk — при этом деплое **удалить** с прода
@@ -400,5 +408,12 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Plesk: `checkpoint/plesk-v37-2026-08-03` → `3be65547` (`v=37`)
 - Откат feature: `git checkout checkpoint/pagespeed-v37-2026-08-03` или `git reset --hard 022b8b4a`
 - Откат plesk worktree: `git -C site_plesk reset --hard checkpoint/plesk-v37-2026-08-03`
+
+### 2026-08-03 — desktop CLS fix → publish plesk (`v=38`)
+- Причина CLS 0.865: async `media=print` CSS + mobile critical → desktop header jump → `#main` shift
+- Blocking `home-clean.css?v=38`; desktop critical header (`min-height` 64, nowrap nav/phone); font-weight 400/700; transitions без color/visibility
+- Лок. desk LH: CLS **0**, Perf ~98; mobile CLS 0 (Perf ~86 — trade-off blocking CSS)
+- Точечный copy → `site_plesk` + push feature + `plesk`
+- **Ждём:** pull `plesk` на сервере → https://raskrutov.kz/ (Ctrl+F5) + PSI desktop CLS
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
