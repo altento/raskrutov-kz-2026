@@ -99,9 +99,9 @@ SHOWPOPUP_RE = re.compile(
 
 CITIES_CSS = """
 <style data-rk-cities="1">
-.rk-cities{display:flow-root;margin:56px auto 0 !important;max-width:1200px;padding:16px 16px 72px !important;box-sizing:border-box}
-.rk-cities__title{margin:0 0 40px !important;padding:0;font:700 28px/1.25 Montserrat,"Open Sans",Arial,sans-serif;color:#1e1e1e;text-align:center}
-.rk-cities__grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin:0}
+.rk-cities{display:flow-root;margin:56px auto 0 !important;max-width:1200px;padding:16px 16px 72px !important;box-sizing:border-box;text-align:center}
+.rk-cities__title{display:block;width:100%;margin:0 0 40px !important;padding:0;font:700 28px/1.25 Montserrat,"Open Sans",Arial,sans-serif;color:#1e1e1e;text-align:center !important}
+.rk-cities__grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;margin:0;text-align:left}
 @media(max-width:1100px){.rk-cities__grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:640px){.rk-cities__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.rk-cities{margin:40px auto 0 !important;padding:12px 16px 48px !important}.rk-cities__title{margin:0 0 28px !important;font-size:22px}}
 .rk-cities__card{display:flex;flex-direction:column;background:#006fdc;border-radius:14px;overflow:hidden;text-decoration:none;color:#fff;box-shadow:0 8px 24px rgba(0,111,220,.16);transition:transform .2s ease,box-shadow .2s ease}
@@ -109,11 +109,16 @@ CITIES_CSS = """
 .rk-cities__photo{display:block;width:100%;height:auto;aspect-ratio:4/3;min-height:140px;object-fit:cover;background:#d7ebff}
 .rk-cities__label{padding:12px 10px 14px;font:600 14px/1.35 "Open Sans",Arial,sans-serif;text-align:center;background:#006fdc;color:#fff}
 .rk-cities + h2,.rk-cities + h2.blk-data{margin-top:32px !important;padding-top:16px !important}
-.rk-hub-services{margin:32px auto 8px;max-width:1200px;padding:0 16px;box-sizing:border-box}
-.rk-hub-services__title{margin:0 0 16px;font:700 24px/1.3 Montserrat,"Open Sans",Arial,sans-serif;color:#1e1e1e;text-align:center}
-.rk-hub-services__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-@media(max-width:700px){.rk-hub-services__grid{grid-template-columns:1fr}}
-.rk-hub-services__card{display:block;padding:16px 18px;border-radius:12px;background:#f7f9fc;border:1px solid #d7e6f7;color:#1e1e1e;text-decoration:none;font:600 15px/1.35 "Open Sans",Arial,sans-serif;transition:border-color .15s ease,box-shadow .15s ease}
+</style>
+"""
+
+HUB_CSS = """
+<style data-rk-hub-services-css="1">
+.rk-hub-services{display:flow-root !important;width:100% !important;max-width:1200px !important;margin:48px auto 8px !important;padding:0 16px 8px !important;box-sizing:border-box !important;float:none !important;clear:both !important;text-align:center !important}
+.rk-hub-services__title{display:block !important;width:100% !important;margin:0 0 28px !important;padding:0 !important;font:700 28px/1.25 Montserrat,"Open Sans",Arial,sans-serif !important;color:#1e1e1e !important;text-align:center !important}
+.rk-hub-services__grid{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;text-align:left;margin:0 auto;max-width:100%}
+@media(max-width:700px){.rk-hub-services__grid{grid-template-columns:1fr}.rk-hub-services__title{font-size:22px !important;margin:0 0 20px !important}}
+.rk-hub-services__card{display:block;padding:16px 18px;border-radius:12px;background:#f7f9fc;border:1px solid #d7e6f7;color:#1e1e1e;text-decoration:none;font:600 15px/1.35 "Open Sans",Arial,sans-serif;transition:border-color .15s ease,box-shadow .15s ease;text-align:left}
 .rk-hub-services__card:hover{border-color:#006fdc;box-shadow:0 6px 18px rgba(0,111,220,.12);color:#006fdc}
 .rk-hub-services__card span{display:block;margin-top:4px;font:400 13px/1.4 "Open Sans",Arial,sans-serif;color:#5a6b7d}
 </style>
@@ -333,7 +338,8 @@ def hub_services_block(slug: str, city: str, in_phrase: str) -> str:
             f"{title}<span>{sub}</span></a>"
         )
     return (
-        '<div class="rk-hub-services" data-rk-hub-services="1">'
+        HUB_CSS
+        + '<div class="rk-hub-services" data-rk-hub-services="1">'
         f'<h2 class="rk-hub-services__title">Услуги веб-студии {in_phrase}</h2>'
         f'<div class="rk-hub-services__grid">{"".join(cards)}</div></div>'
     )
@@ -341,6 +347,7 @@ def hub_services_block(slug: str, city: str, in_phrase: str) -> str:
 
 def inject_before_contacts(html: str, block: str) -> str:
     html = re.sub(r'<style data-rk-cities="1">[\s\S]*?</style>\s*', "", html)
+    html = re.sub(r'<style data-rk-hub-services-css="1">[\s\S]*?</style>\s*', "", html)
     html = re.sub(
         r'<div class="rk-cities"[^>]*data-rk-cities-grid="1"[\s\S]*?</div>\s*</div>\s*',
         "",
@@ -351,7 +358,14 @@ def inject_before_contacts(html: str, block: str) -> str:
         "",
         html,
     )
-    m = re.search(r"<h2[^>]*>\s*Контакты\s*</h2>", html, flags=re.I)
+    # Outside Mottor header-slot: before contacts section (tpl 1087)
+    m = re.search(
+        r'<div\s+blk_class="section"[^>]*data-tpl-id="1087"[^>]*>',
+        html,
+        flags=re.I,
+    )
+    if not m:
+        m = re.search(r"<h2[^>]*>\s*Контакты\s*</h2>", html, flags=re.I)
     if m:
         return html[: m.start()] + block + html[m.start() :]
     return html.replace("</body>", block + "</body>", 1)
