@@ -414,6 +414,7 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Blocking `home-clean.css?v=38`; desktop critical header (`min-height` 64, nowrap nav/phone); font-weight 400/700; transitions без color/visibility
 - Лок. desk LH: CLS **0**, Perf ~98; mobile CLS 0 (Perf ~86 — trade-off blocking CSS)
 - Точечный copy → `site_plesk` + push feature + `plesk`
+- Feature `1e9e0149`, plesk `5ff5fde8` (`home-clean.css?v=38`)
 - **Ждём:** pull `plesk` на сервере → https://raskrutov.kz/ (Ctrl+F5) + PSI desktop CLS
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
