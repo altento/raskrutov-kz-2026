@@ -395,4 +395,10 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Feature `9ccfed12` / HANDOFF `91051141`, plesk `3be65547` (`home-clean.css?v=37`; rebase поверх geo SEO pages)
 - **Ждём:** pull `plesk` на сервере → https://raskrutov.kz/ (Ctrl+F5) + PSI mobile
 
+### 2026-08-03 — checkpoint tags перед следующим заданием
+- Feature: `checkpoint/pagespeed-v37-2026-08-03` → `022b8b4a`
+- Plesk: `checkpoint/plesk-v37-2026-08-03` → `3be65547` (`v=37`)
+- Откат feature: `git checkout checkpoint/pagespeed-v37-2026-08-03` или `git reset --hard 022b8b4a`
+- Откат plesk worktree: `git -C site_plesk reset --hard checkpoint/plesk-v37-2026-08-03`
+
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
