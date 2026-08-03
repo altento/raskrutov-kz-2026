@@ -295,4 +295,9 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Ссылка: https://pagespeed.web.dev/analysis/https-raskrutov-kz-web-studiya-sozdanie-saitov/r1gftbmx9y?form_factor=mobile
 - Дальше: к ~100 нужен **clean sozdanie** как home; Mottor потолок ~80–90 (CLS 0.11 ещё кусает)
 
+### 2026-08-03 — sozdanie CTA: убрать «Написать» + починить попап
+- «Написать» (`eb58a54c…`, sectionScroll) выпилен с parent+18 geo
+- «Получить консультацию»: Mottor `msJsWrapper(...,'showPopup')` → `ReferenceError: showPopup is not defined`; переведено на `showSectionPopup(popupId)` (8 кнопок/страница)
+- `plesk` **`670e6a92`**; live smoke: Napisat gone, popup `open`
+
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
