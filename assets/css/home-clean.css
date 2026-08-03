@@ -731,6 +731,25 @@ body.rk-menu-open {
   border-color: transparent transparent transparent #fff;
 }
 
+.rk-hero__ecosystem {
+  position: absolute;
+  top: 121px;
+  left: 784px;
+  width: auto;
+  height: 478px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.rk-hero__ecosystem-img {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  object-position: left center;
+}
+
 .rk-device {
   position: absolute;
   overflow: visible;
@@ -3250,6 +3269,13 @@ body.rk-modal-open {
     height: 45px;
   }
 
+  .rk-hero__ecosystem {
+    top: 215px;
+    left: 93px;
+    width: auto;
+    height: 200px;
+  }
+
   .rk-device--laptop {
     top: 215px;
     left: -7px;
@@ -3258,10 +3284,7 @@ body.rk-modal-open {
   }
 
   .rk-device--phone {
-    top: 241px;
-    left: 256px;
-    width: 102px;
-    height: 200px;
+    display: none;
   }
 
 
