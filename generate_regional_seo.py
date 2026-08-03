@@ -76,15 +76,15 @@ CITY_ORDER = [
 
 CITIES_CSS = """
 <style data-rk-cities="1">
-.rk-cities{margin:24px auto 8px;max-width:1200px;padding:0 16px;box-sizing:border-box}
-.rk-cities__title{margin:0 0 16px;font:700 28px/1.25 Montserrat,"Open Sans",Arial,sans-serif;color:#222;text-align:center}
+.rk-cities{margin:48px auto 56px;max-width:1200px;padding:8px 16px 0;box-sizing:border-box}
+.rk-cities__title{margin:0 0 28px;font:700 28px/1.25 Montserrat,"Open Sans",Arial,sans-serif;color:#1e1e1e;text-align:center}
 .rk-cities__grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
 @media(max-width:1100px){.rk-cities__grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:640px){.rk-cities__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
-.rk-cities__card{display:flex;flex-direction:column;background:#6b2fd6;border-radius:14px;overflow:hidden;text-decoration:none;color:#fff;box-shadow:0 8px 24px rgba(60,20,120,.18);transition:transform .2s ease,box-shadow .2s ease}
-.rk-cities__card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(60,20,120,.28);color:#fff}
-.rk-cities__photo{aspect-ratio:4/3;background:#4a1fa0 center/cover no-repeat}
-.rk-cities__label{padding:12px 10px 14px;font:600 14px/1.35 "Open Sans",Arial,sans-serif;text-align:center}
+@media(max-width:640px){.rk-cities__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.rk-cities{margin:36px auto 44px}.rk-cities__title{margin:0 0 20px;font-size:22px}}
+.rk-cities__card{display:flex;flex-direction:column;background:#006fdc;border-radius:14px;overflow:hidden;text-decoration:none;color:#fff;box-shadow:0 8px 24px rgba(0,111,220,.16);transition:transform .2s ease,box-shadow .2s ease}
+.rk-cities__card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,111,220,.26);color:#fff}
+.rk-cities__photo{display:block;width:100%;height:auto;aspect-ratio:4/3;min-height:140px;object-fit:cover;background:#d7ebff}
+.rk-cities__label{padding:12px 10px 14px;font:600 14px/1.35 "Open Sans",Arial,sans-serif;text-align:center;background:#006fdc;color:#fff}
 </style>
 """
 
