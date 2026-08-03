@@ -95,7 +95,9 @@ CSV-копии: `docs/seo-regional/`.
 - [x] Подтвердить деплой sozdanie на `plesk` (+ UI-фиксы)
 - [x] Следующее направление: **SEO-продвижение** (P1 leftover + legacy GSC)
 - [ ] Глазами: `/web-studiya/seo-prodvizhenie/` + Алматы/Астана + 301 legacy
-- [ ] После QA — подтвердить деплой SEO-пакета / следующее направление (хабы `/web-studiya/{city}` или дизайн)
+- [x] Следующее направление: **хабы** `/web-studiya/{city}`
+- [ ] Глазами: `/web-studiya/astana/` + `/web-studiya/` (сетка городов) + крошки/услуги
+- [ ] После QA — следующее P2 (dizayn / PPC / …)
 
 ## 5. Чеклист АГЕНТА
 
@@ -112,6 +114,10 @@ CSV-копии: `docs/seo-regional/`.
 - [x] SEO: parent H1 починен; сетка 18 городов; showPopup → showSectionPopup
 - [x] SEO: scoped pipeline crumbs/leads/schema (`_pipeline_seo_geo.py`)
 - [x] Деплой SEO на `plesk` (`db724212`)
+- [x] Хабы: `generate_regional_hubs.py` — 18× `/web-studiya/{slug}`
+- [x] Хабы: parent `/web-studiya/` сетка городов; блок услуг → sozdanie/seo geo + parent services
+- [x] Хабы: scoped pipeline `_pipeline_hubs_geo.py` (leads/crumbs/schema)
+- [x] Деплой хабов на `plesk`
 - [ ] Обновлять этот handoff после каждого пакета городов/направлений
 
 ---
@@ -154,3 +160,15 @@ CSV-копии: `docs/seo-regional/`.
 - Локально смотреть: `http://127.0.0.1:8765/web-studiya/seo-prodvizhenie/astana/`
 - Деплой `plesk` **`db724212`**
 - Дальше по матрице P1: хабы `/web-studiya/{city}`
+
+### 2026-08-03 — пакет хабов «Веб-студия» (geo)
+- Юзер: «хабы»
+- Pretty: `/web-studiya/{slug}` × 18 (все NEW)
+- Скрипт: `generate_regional_hubs.py` (donor parent depth1 → hub depth2 `../../assets/`)
+- Meta H1/Title/Description из FINAL_SEO_MAP («Веб-студия в …»)
+- На хабе: блок услуг (sozdanie+seo geo, остальное → parent services) + сетка городов
+- Parent `/web-studiya/`: сетка «Веб-студия в городах Казахстана»
+- Pipeline: `_pipeline_hubs_geo.py`
+- Локально: `http://127.0.0.1:8765/web-studiya/astana/`
+- Деплой `plesk`: точечный copy 18 хабов + parent + sitemap
+- Дальше: P2 (dizayn / контекст / …)

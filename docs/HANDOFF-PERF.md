@@ -168,9 +168,9 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 #### D. Региональное размножение (отдельный трек)
 - Полный handoff: **`docs/HANDOFF-REGIONAL.md`**
 - Карта: `docs/seo-regional/SEO-карта_Raskrutov_региональная_2026-07-27.xlsx` + CSV
-- [ ] Подтвердить старт с этапа 1 (P1, 15 URL) и политику legacy vs pretty URL
-- [ ] Дальше по чеклистам в `HANDOFF-REGIONAL.md` §4–§5
-
+- [x] Старт: sozdanie + SEO + хабы (pretty) — задеплоены
+- [ ] Глазами: хабы `/web-studiya/astana/` + parent `/web-studiya/`
+- [ ] Дальше P2 по чеклистам в `HANDOFF-REGIONAL.md`
 #### E. По желанию / позже
 - [ ] Plesk: Cache-Control для `home-*.css` (сейчас nginx может держать длинный max-age)
 - [ ] Не заливать на Plesk ветку `deploy` / `site_deploy` (там GH prefix)
@@ -303,5 +303,10 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 ### 2026-08-03 — регионалка: пакет SEO geo (локально)
 - 18× `/web-studiya/seo-prodvizhenie/{city}` + 301 legacy `seo-prodvizhenie-sajtov-v-*`
 - См. `HANDOFF-REGIONAL.md`; ждём QA глазками → деплой plesk
+
+### 2026-08-03 — регионалка: хабы `/web-studiya/{city}`
+- 18 хабов + parent cities grid; `generate_regional_hubs.py` + `_pipeline_hubs_geo.py`
+- Точечный деплой на `plesk` (хабы + parent + sitemap)
+- Детали: `HANDOFF-REGIONAL.md`. Дальше P2 (dizayn/PPC…) или QA глазками
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
