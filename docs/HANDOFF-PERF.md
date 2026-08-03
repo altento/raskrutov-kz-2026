@@ -156,6 +156,9 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] Ещё 1–2 прогона для стабильности (лаб гуляет ±1–2)
 - [ ] Глазами: hero/ecosystem/меню на мобилке без FOUC
 - [ ] Решить: долбим до ровной 100 или стоп
+- [x] **Sozdanie mobile:** hotfix `9e68614b` — с **53 → 86** (было из‑за width=1920)
+- [ ] Решить: clean-rebuild sozdanie (как home) vs жить с Mottor-потолком ~80–90
+
 
 #### C. Мультикомп / бэкап контекста
 - [ ] На другом компе: `git checkout performance/pagespeed-raskrutov && git pull`
@@ -279,8 +282,17 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 
 
 ### 2026-08-03 — sozdanie: menu-lite FAIL → revert
-- menu-lite дал lab **59** (LCP 10.8) — откат на full popup-menu blocking 81563e1
+- menu-lite дал lab **59** (LCP 10.8) — откат на full popup-menu blocking `f81563e1`
 - Рабочий пик: **86** после CLS dims/hero/cities (869edcd1)
 - Потолок без clean-rebuild / без defer Mottor JS: TBT+bundle
+
+### 2026-08-03 — sozdanie hotfix после регрессии ~53
+- Юзер: mobile PSI **53** на `/web-studiya/sozdanie-saitov/`
+- Причина: pass2 повесил `width="1920" height="1152"` на галерею; при deferred CSS браузер рисовал гигантский layout → LCP/CLS в жопу
+- Фикс: сняли все img width/height; hero reserve 280/360 вместо 520/640; parent+18 geo
+- `plesk` **`9e68614b`** (live: `w1920=0`, soft reserve ок)
+- **PSI mobile после hotfix: 86** (FCP 2.5 / LCP 3.1 / TBT 20 / CLS 0.11)
+- Ссылка: https://pagespeed.web.dev/analysis/https-raskrutov-kz-web-studiya-sozdanie-saitov/r1gftbmx9y?form_factor=mobile
+- Дальше: к ~100 нужен **clean sozdanie** как home; Mottor потолок ~80–90 (CLS 0.11 ещё кусает)
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
