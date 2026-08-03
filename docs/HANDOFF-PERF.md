@@ -3,8 +3,8 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-03 (UTC+5) — clean #partners layout + иконки + фоны как этalon  
-**Рабочая ветка:** `performance/pagespeed-raskrutov`  
+**Последнее обновление:** 2026-08-03 (UTC+5) — deploy `index-clean.html` на `plesk`, push в remote  
+**Рабочая ветка:** `homepage-clean-rebuild`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
 
@@ -159,7 +159,7 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] После любого заметного шага — агент обновляет HANDOFF и пушит (требовать, если забыл)
 
 #### D. Clean rebuild главной (тестовая страница, 2026-07-31 → 2026-08-03)
-- [ ] Hard-refresh: `http://127.0.0.1:8767/index-clean.html?v=16` (Ctrl+F5)
+- [ ] Hard-refresh локально: `http://127.0.0.1:8767/index-clean.html?v=16` (Ctrl+F5)
 - [ ] Сверить «Ключевые направления»: заголовок 36px, карточки title 16px / текст 12px / иконки ~61×62
 - [ ] Сверить «Веб-студия»: 8 карточек с цветными иконками (perf-img webp) слева сверху, как на `index.html`
 - [ ] Сверить «Академия»: perks с иконками (онлайн/наставники/сертификаты) + 4 карточки курсов с perf-img и стрелкой
@@ -167,7 +167,14 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] Сверить плавающие виджеты: soc-widget + scroll-top (#7439e2)
 - [ ] Просмотреть блоки ниже (студия → контакты) vs `index.html` на 1440
 - [ ] Решить: допиливаем clean / заменяем `index.html` / откладываем
-- [ ] Commit/push по clean-rebuild — **только когда скажешь**
+
+#### D2. Деплой clean на прод (2026-08-03)
+- [x] Push `homepage-clean-rebuild` → `81c1bd79`
+- [x] Push `plesk` → `4ed5fc48` (index-clean + home-clean.css/js)
+- [ ] **Plesk:** подтянуть ветку `plesk` в `httpdocs` (Git pull / Deploy в панели)
+- [ ] Проверить live: https://raskrutov.kz/index-clean.html?v=16#partners (Ctrl+F5)
+- [ ] Убедиться что **главная** https://raskrutov.kz/ (Mottor `index.html`) жива — меню, формы, мокапы
+- [ ] Если главная отвалилась — сказать агенту (MIR мог снести старые bundle/png, которые не в mirror)
 
 #### E. По желанию / позже
 - [ ] Plesk: Cache-Control для `home-*.css` (сейчас nginx может держать длинный max-age)
@@ -298,6 +305,15 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 ### 2026-08-03 — clean #partners: единый фон на hero + карточки
 - Hero + panel объединены в одну `.rk-section--partners`
 - Два слоя фона: globe (`c4ed…`) сверху через `::before`, soft orbs (`d163…`) на всю секцию включая карточки
-- Локально: `index-clean.html?v=16`; commit/push **не** делали
+- Локально: `index-clean.html?v=16`
+
+### 2026-08-03 — publish clean page на prod (plesk)
+- Юзер: «опубликуй страницу»
+- `robocopy /MIR site_mirror → site_plesk` (вместо python — нет py в PATH)
+- Залито на `plesk`: `index-clean.html`, `assets/css/home-clean.css`, `assets/js/home-clean.js`
+- `index.html` (Mottor) **не меняли** — clean доступен отдельным URL
+- MIR также убрал ~83 legacy png + 2 старых `public.bundle*` из plesk (не в mirror); главная ссылается на `1784122059/2069` — они на месте
+- Commit: feature `81c1bd79`, plesk `4ed5fc48`; push обеих веток в GitHub
+- **Ждём:** pull `plesk` на сервере → live https://raskrutov.kz/index-clean.html?v=16
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
