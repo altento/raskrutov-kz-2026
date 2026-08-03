@@ -375,6 +375,7 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - JSON-LD заменён из `микруха.txt` (Organization+ProfessionalService, FAQ, ItemList)
 - Cache-bust `home-clean.css?v=30`
 - Точечный copy → `site_plesk` + commit/push feature + `plesk`
+- Feature `02bda28d`, plesk `8c803bc8` (merge: remote был впереди — оставили clean homepage `v=30`)
 - **Ждём:** pull `plesk` на сервере → https://raskrutov.kz/ (Ctrl+F5)
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
