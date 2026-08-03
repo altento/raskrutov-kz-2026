@@ -111,7 +111,7 @@ CSV-копии: `docs/seo-regional/`.
 - [x] SEO: 301 `/seo-prodvizhenie-sajtov-v-*` → pretty; sitemap; pages stubs; url_mapping
 - [x] SEO: parent H1 починен; сетка 18 городов; showPopup → showSectionPopup
 - [x] SEO: scoped pipeline crumbs/leads/schema (`_pipeline_seo_geo.py`)
-- [ ] Деплой SEO на `plesk` после QA / команды юзера
+- [x] Деплой SEO на `plesk` (`db724212`)
 - [ ] Обновлять этот handoff после каждого пакета городов/направлений
 
 ---
@@ -152,4 +152,5 @@ CSV-копии: `docs/seo-regional/`.
 - Legacy 301: `/seo-prodvizhenie-sajtov-v-almaty` и остальные 17 → pretty
 - Pipeline: `_pipeline_seo_geo.py` (lead-forms / breadcrumbs / schema)
 - Локально смотреть: `http://127.0.0.1:8765/web-studiya/seo-prodvizhenie/astana/`
+- Деплой `plesk` **`db724212`**
 - Дальше по матрице P1: хабы `/web-studiya/{city}`
