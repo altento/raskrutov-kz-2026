@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-03 (UTC+5) — clean = live index + Metrika 101127167 + publish plesk  
+**Последнее обновление:** 2026-08-03 (UTC+5) — hero ecosystem +100px right, publish plesk `v=23`  
 **Рабочая ветка:** `homepage-clean-rebuild`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -343,5 +343,11 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Логотип `.rk-logo` → `https://raskrutov.kz/`
 - Cache-bust `v=20`; точечный copy в `site_plesk` + удаление `index-clean.html` на plesk
 - Commit/push feature + `plesk` — ждём pull на сервере → https://raskrutov.kz/
+
+### 2026-08-03 — hero: laptop+phone → ecosystem webp
+- Ноут/телефон заменены на `assets/img/hero-ecosystem.webp` (531×470 VP8X)
+- Высота слота как у ноута (478/200), ширина по original AR (`object-fit: contain`)
+- Сдвиг +100px вправо (desk left 784, mob 93); `?v=23`
+- Publish: точечный copy index + css/js + img → `plesk`
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
