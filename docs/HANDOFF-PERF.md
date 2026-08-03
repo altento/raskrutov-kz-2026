@@ -3,10 +3,13 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-07-31 (UTC+5) — stage 2 cleanup + publish  
+**Последнее обновление:** 2026-08-03 — clean homepage PSI pass (critical CSS)  
 **Рабочая ветка:** `performance/pagespeed-raskrutov`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
+
+> **Важно:** живая главная = **clean rebuild** (`rk-clean`, `home-clean-*.css`), не старый Mottor `index.html`.  
+> Mottor-копия сохранена как `site_mirror/index.mottor-legacy.html`.
 
 ---
 
@@ -35,7 +38,7 @@ git pull
 
 | Критерий | Статус |
 |---|---|
-| Mobile PSI Performance → **к 100** | В процессе (было ~74 → ~80 → ждём замер после critical CSS) |
+| Mobile PSI Performance → **к 100** | Baseline 2026-08-03 mobile **73** (FCP 3.3 / LCP 4.8 / TBT 0 / CLS 0). Ждём замер после critical split |
 | LCP вниз без поломки дизайна Mottor | Главный рычаг |
 | Не ломать меню / формы / WhatsApp / мокапы | Обязательно |
 | Не фейкать Lighthouse | Обязательно |
@@ -149,8 +152,9 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] После фикса бэка: отправить тест с попапа «Обсудим Ваш проект?» и с блока Контакты → зелёный success, не красный
 
 #### B. PageSpeed (гон к 100)
-- [ ] Прогнать PSI mobile 2–3 раза: https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fraskrutov.kz%2F&form_factor=mobile
+- [ ] Прогнать PSI mobile 2–3 раза после деплоя critical CSS: https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fraskrutov.kz%2F&form_factor=mobile
 - [ ] Скинуть агенту: Performance / LCP / FCP / TBT / CLS (+ скрин или цифры)
+- [ ] Глазами: hero/ecosystem/меню на мобилке без FOUC после deferred CSS
 - [ ] Если скор уже ок — зафиксировать в журнале ниже и решить, долбим дальше или стоп
 
 #### C. Мультикомп / бэкап контекста
@@ -239,5 +243,16 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 ### 2026-08-03 — geo «Создание сайтов» pretty (локально)
 - 18 URL `/web-studiya/sozdanie-saitov/{city}` + 301 с legacy
 - Ждём проверку глазами и ОК на plesk (см. `HANDOFF-REGIONAL.md`)
+
+### 2026-08-03 — деплой geo + UI на plesk
+- Push `plesk` `b11c88ce` (после rebase на remote hero/clean homepage)
+- Live smoke: Astana/parent, rk-cities, 301 legacy, case URLs
+
+### 2026-08-03 — PageSpeed: clean homepage baseline + critical split
+- Live homepage = **clean** (`home-clean.css`), не Mottor. Baseline mobile PSI **73** (LCP 4.8, FCP 3.3, TBT 0)
+- Главный аудит: render-blocking `home-clean.css` (~1.8s) + fonts Inter/Open Sans в критическом пути + ecosystem `fetchpriority=high`
+- Сделано: `home-clean-critical.v1.css` (~14 KiB) + `home-clean-deferred.v1.css` (print/onload); lead-forms.css deferred; Metrika после `load`+idle; ecosystem `fetchpriority=low` + mobile webp; scroll rAF
+- Mottor index → `site_mirror/index.mottor-legacy.html`; clean index синкнут в `site_mirror/`
+- Дальше: замер PSI mobile после деплоя; при необходимости допилить LCP image / font subset
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
