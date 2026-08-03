@@ -16,49 +16,97 @@
   <meta property="og:locale" content="ru_RU">
   <link href="assets/m-files.cdn1.cc/lpfile/favicon/favicon__q_1.png" type="image/png" rel="icon">
   <link href="favicon.ico" sizes="16x16 32x32 48x48" rel="icon" type="image/x-icon">
-  <link rel="preload" as="image" href="assets/css/hero-home-mobile.webp" media="(max-width: 500px)" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/m-files.cdn1.cc/lpfile/6/e/e/6eea3ed3de3e5cbe118d06eb148fe963.webp" media="(min-width: 501px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/css/hero-home-mobile.webp" media="(max-width: 767px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/m-files.cdn1.cc/lpfile/6/e/e/6eea3ed3de3e5cbe118d06eb148fe963.webp" media="(min-width: 768px)" fetchpriority="high">
   <link rel="preload" href="assets/m-files.cdn1.cc/web/user/fonts/montserrat/montserrat_bold.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/home-clean.css?v=23">
+  <link rel="stylesheet" href="assets/css/home-clean.css?v=30">
   <link rel="stylesheet" href="assets/css/lead-forms.css">
   <script type="application/ld+json" data-schema="raskrutov">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
       "@id": "https://raskrutov.kz/#organization",
       "name": "Raskrutov",
       "alternateName": "Raskrutov — экосистема цифрового роста бизнеса",
       "url": "https://raskrutov.kz/",
       "logo": {
         "@type": "ImageObject",
+        "@id": "https://raskrutov.kz/#logo",
         "url": "https://raskrutov.kz/assets/m-files.cdn1.cc/web/images/raskrutov/logo.png"
       },
-      "description": "Digital-агентство полного цикла: создание сайтов, SEO и AEO-продвижение, контекстная реклама, CRM, обучение digital-навыкам и конструктор сайтов R-Builder.",
-      "email": "info@raskrutov.kz",
+      "image": {
+        "@id": "https://raskrutov.kz/#logo"
+      },
+      "description": "Digital-агентство полного цикла: создание сайтов, SEO- и AEO-продвижение, контекстная реклама, CRM, автоматизация, обучение digital-навыкам и конструктор сайтов R-Builder.",
+      "email": "ceo@raskrutov.kz",
       "telephone": "+7 700 021 69 00",
+      "priceRange": "от 180 000 ₸",
+      "currenciesAccepted": "KZT",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "KZ",
+        "addressRegion": "Северо-Казахстанская область",
         "addressLocality": "Петропавловск",
         "streetAddress": "ул. М. Жумабаева, 109, 6 этаж, офис 606а"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 54.8746,
+        "longitude": 69.135701
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "https://schema.org/Monday",
+            "https://schema.org/Tuesday",
+            "https://schema.org/Wednesday",
+            "https://schema.org/Thursday",
+            "https://schema.org/Friday"
+          ],
+          "opens": "10:00",
+          "closes": "19:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Казахстан"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+7 700 021 69 00",
+          "contactType": "customer service",
+          "availableLanguage": [
+            "Russian",
+            "Kazakh"
+          ],
+          "areaServed": "KZ"
+        }
+      ],
       "sameAs": [
         "https://www.instagram.com/raskrutov.kz/",
         "https://www.youtube.com/@raskrutov-kz",
         "https://t.me/Raskrutov_web",
-        "https://www.tiktok.com/@raskrutov.kz",
-        "https://wa.me/77000216900"
+        "https://www.tiktok.com/@raskrutov.kz"
       ],
       "knowsAbout": [
         "создание сайтов",
-        "SEO",
-        "AEO",
+        "разработка интернет-магазинов",
+        "SEO-продвижение",
+        "AEO-продвижение",
+        "оптимизация под AI-поиск",
         "контекстная реклама",
+        "лидогенерация",
         "CRM",
+        "автоматизация бизнеса",
         "digital-маркетинг",
-        "обучение digital"
+        "обучение digital-навыкам"
       ]
     },
     {
@@ -66,71 +114,36 @@
       "@id": "https://raskrutov.kz/#website",
       "url": "https://raskrutov.kz/",
       "name": "Raskrutov",
-      "publisher": { "@id": "https://raskrutov.kz/#organization" },
-      "inLanguage": "ru"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Главная",
-          "item": "https://raskrutov.kz/"
-        }
-      ]
-    },
-    {
-      "@type": "ProfessionalService",
-      "@id": "https://raskrutov.kz/#localbusiness",
-      "name": "Raskrutov — digital-агентство",
-      "image": "https://raskrutov.kz/assets/m-files.cdn1.cc/web/images/raskrutov/logo.png",
-      "url": "https://raskrutov.kz/",
-      "telephone": "+7 700 021 69 00",
-      "email": "info@raskrutov.kz",
-      "priceRange": "от 180 000 KZT",
-      "currenciesAccepted": "KZT",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "KZ",
-        "addressLocality": "Петропавловск",
-        "streetAddress": "ул. М. Жумабаева, 109, 6 этаж, офис 606а"
+      "publisher": {
+        "@id": "https://raskrutov.kz/#organization"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 54.8753,
-        "longitude": 69.162
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "10:00",
-          "closes": "19:00"
-        }
-      ],
-      "areaServed": { "@type": "Country", "name": "Казахстан" },
-      "sameAs": [
-        "https://www.instagram.com/raskrutov.kz/",
-        "https://www.youtube.com/@raskrutov-kz",
-        "https://t.me/Raskrutov_web",
-        "https://www.tiktok.com/@raskrutov.kz",
-        "https://wa.me/77000216900"
-      ],
-      "parentOrganization": { "@id": "https://raskrutov.kz/#organization" }
+      "inLanguage": "ru-KZ"
     },
     {
       "@type": "WebPage",
-      "@id": "https://raskrutov.kz/",
+      "@id": "https://raskrutov.kz/#webpage",
       "url": "https://raskrutov.kz/",
       "name": "Raskrutov — экосистема цифрового роста бизнеса",
-      "isPartOf": { "@id": "https://raskrutov.kz/#website" },
-      "about": { "@id": "https://raskrutov.kz/#organization" },
-      "inLanguage": "ru",
-      "description": "Raskrutov объединяет создание сайтов, SEO, AEO, рекламу, CRM, автоматизацию, обучение и R-Builder в единую digital-систему для роста бизнеса."
+      "description": "Raskrutov объединяет создание сайтов, SEO, AEO, рекламу, CRM, автоматизацию, обучение и R-Builder в единую digital-систему для роста бизнеса.",
+      "isPartOf": {
+        "@id": "https://raskrutov.kz/#website"
+      },
+      "about": {
+        "@id": "https://raskrutov.kz/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://raskrutov.kz/#organization"
+      },
+      "inLanguage": "ru-KZ"
     },
     {
       "@type": "FAQPage",
+      "@id": "https://raskrutov.kz/#faq",
+      "url": "https://raskrutov.kz/#faq",
+      "isPartOf": {
+        "@id": "https://raskrutov.kz/#webpage"
+      },
+      "inLanguage": "ru-KZ",
       "mainEntity": [
         {
           "@type": "Question",
@@ -200,21 +213,161 @@
     },
     {
       "@type": "ItemList",
+      "@id": "https://raskrutov.kz/#services",
       "name": "Услуги Raskrutov",
+      "url": "https://raskrutov.kz/#services",
+      "numberOfItems": 8,
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "item": { "@type": "Service", "name": "Создание сайтов", "url": "https://raskrutov.kz/sozdanie-saitov", "provider": { "@id": "https://raskrutov.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" }, "serviceType": "Создание сайтов" } },
-        { "@type": "ListItem", "position": 2, "item": { "@type": "Service", "name": "Услуги дизайнера", "url": "https://raskrutov.kz/dizayn", "provider": { "@id": "https://raskrutov.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" }, "serviceType": "Услуги дизайнера" } },
-        { "@type": "ListItem", "position": 3, "item": { "@type": "Service", "name": "SEO-продвижение", "url": "https://raskrutov.kz/seo-prodvizhenie", "provider": { "@id": "https://raskrutov.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" }, "serviceType": "SEO-продвижение" } },
-        { "@type": "ListItem", "position": 4, "item": { "@type": "Service", "name": "AEO — оптимизация под ИИ-поиск", "url": "https://raskrutov.kz/aeo-prodvizhenie", "provider": { "@id": "https://raskrutov.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" }, "serviceType": "AEO — оптимизация под ИИ-поиск" } },
-        { "@type": "ListItem", "position": 5, "item": { "@type": "Service", "name": "Контекстная реклама", "url": "https://raskrutov.kz/kontekstnaya-reklama", "provider": { "@id": "https://raskrutov.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" }, "serviceType": "Контекстная реклама" } },
-        { "@type": "ListItem", "position": 6, "item": { "@type": "Service", "name": "Лидогенерация", "url": "https://raskrutov.kz/lidogeneratsiya", "provider": { "@id": "https://raskrutov.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" }, "serviceType": "Лидогенерация" } },
-        { "@type": "ListItem", "position": 7, "item": { "@type": "Service", "name": "Поддержка сайтов", "url": "https://raskrutov.kz/podderzhka-saytov", "provider": { "@id": "https://raskrutov.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" }, "serviceType": "Поддержка сайтов" } },
-        { "@type": "ListItem", "position": 8, "item": { "@type": "Service", "name": "Digital-консалтинг", "url": "https://raskrutov.kz/digital-konsalting", "provider": { "@id": "https://raskrutov.kz/#organization" }, "areaServed": { "@type": "Country", "name": "Казахстан" }, "serviceType": "Digital-консалтинг" } }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "@id": "https://raskrutov.kz/web-studiya/sozdanie-saitov/#service",
+            "name": "Создание сайтов",
+            "serviceType": "Создание сайтов",
+            "url": "https://raskrutov.kz/web-studiya/sozdanie-saitov/",
+            "provider": {
+              "@id": "https://raskrutov.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "@id": "https://raskrutov.kz/web-studiya/dizayn/#service",
+            "name": "Услуги дизайнера",
+            "serviceType": "Веб-дизайн и графический дизайн",
+            "url": "https://raskrutov.kz/web-studiya/dizayn/",
+            "provider": {
+              "@id": "https://raskrutov.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "@id": "https://raskrutov.kz/web-studiya/seo-prodvizhenie/#service",
+            "name": "SEO-продвижение сайтов",
+            "serviceType": "SEO-продвижение",
+            "url": "https://raskrutov.kz/web-studiya/seo-prodvizhenie/",
+            "provider": {
+              "@id": "https://raskrutov.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "@id": "https://raskrutov.kz/web-studiya/aeo-prodvizhenie/#service",
+            "name": "AEO-продвижение",
+            "serviceType": "Оптимизация сайта под AI-поиск и системы генеративных ответов",
+            "url": "https://raskrutov.kz/web-studiya/aeo-prodvizhenie/",
+            "provider": {
+              "@id": "https://raskrutov.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Service",
+            "@id": "https://raskrutov.kz/web-studiya/kontekstnaya-reklama/#service",
+            "name": "Контекстная реклама",
+            "serviceType": "Настройка и ведение контекстной рекламы",
+            "url": "https://raskrutov.kz/web-studiya/kontekstnaya-reklama/",
+            "provider": {
+              "@id": "https://raskrutov.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Service",
+            "@id": "https://raskrutov.kz/web-studiya/lidogeneratsiya/#service",
+            "name": "Лидогенерация",
+            "serviceType": "Привлечение целевых обращений и заявок",
+            "url": "https://raskrutov.kz/web-studiya/lidogeneratsiya/",
+            "provider": {
+              "@id": "https://raskrutov.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Service",
+            "@id": "https://raskrutov.kz/web-studiya/podderzhka-saytov/#service",
+            "name": "Поддержка сайтов",
+            "serviceType": "Техническая поддержка и развитие сайтов",
+            "url": "https://raskrutov.kz/web-studiya/podderzhka-saytov/",
+            "provider": {
+              "@id": "https://raskrutov.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Service",
+            "@id": "https://raskrutov.kz/web-studiya/digital-konsalting/#service",
+            "name": "Digital-консалтинг",
+            "serviceType": "Digital-стратегия, аудит и консультации",
+            "url": "https://raskrutov.kz/web-studiya/digital-konsalting/",
+            "provider": {
+              "@id": "https://raskrutov.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            }
+          }
+        }
       ]
     }
   ]
 }
-  </script>
+</script>
+
 </head>
 <body class="rk-clean">
   <!-- Yandex.Metrika counter -->
@@ -268,7 +421,7 @@
     <section class="rk-hero" aria-label="Главный экран">
       <div class="rk-hero__bg" aria-hidden="true">
         <picture>
-          <source media="(max-width: 500px)" srcset="assets/css/hero-home-mobile.webp" type="image/webp" width="1100" height="506">
+          <source media="(max-width: 767px)" srcset="assets/css/hero-home-mobile.webp" type="image/webp" width="1100" height="506">
           <img src="assets/m-files.cdn1.cc/lpfile/6/e/e/6eea3ed3de3e5cbe118d06eb148fe963.webp" alt="" width="1536" height="707" decoding="async" fetchpriority="high" loading="eager">
         </picture>
       </div>
@@ -276,17 +429,19 @@
         <h1 class="rk-hero__title">Raskrutov - экосистема цифрового роста бизнеса</h1>
         <p class="rk-hero__lead">Создаём сайты, продвигаем бизнес, запускаем рекламу, внедряем CRM, автоматизируем продажи, обучаем digital-навыкам.</p>
 
-        <div class="rk-hero__trust rk-hero__trust--1">
-          <svg class="rk-check-ico" viewBox="0 0 52 52" aria-hidden="true"><path d="M26 0C11.664 0 0 11.663 0 26s11.664 26 26 26 26-11.663 26-26S40.336 0 26 0zm0 50C12.767 50 2 39.233 2 26S12.767 2 26 2s24 10.767 24 24-10.767 24-24 24z"/><path d="M38.252 15.336l-15.369 17.29-9.259-7.407a1 1 0 10-1.249 1.562l10 8a1 1 0 001.332-.18l16-18a1 1 0 10-1.455-1.265z"/></svg>
-          <span>Комплексный подход</span>
-        </div>
-        <div class="rk-hero__trust rk-hero__trust--2">
-          <svg class="rk-check-ico" viewBox="0 0 52 52" aria-hidden="true"><path d="M26 0C11.664 0 0 11.663 0 26s11.664 26 26 26 26-11.663 26-26S40.336 0 26 0zm0 50C12.767 50 2 39.233 2 26S12.767 2 26 2s24 10.767 24 24-10.767 24-24 24z"/><path d="M38.252 15.336l-15.369 17.29-9.259-7.407a1 1 0 10-1.249 1.562l10 8a1 1 0 001.332-.18l16-18a1 1 0 10-1.455-1.265z"/></svg>
-          <span>Прозрачная аналитика</span>
-        </div>
-        <div class="rk-hero__trust rk-hero__trust--3">
-          <svg class="rk-check-ico" viewBox="0 0 52 52" aria-hidden="true"><path d="M26 0C11.664 0 0 11.663 0 26s11.664 26 26 26 26-11.663 26-26S40.336 0 26 0zm0 50C12.767 50 2 39.233 2 26S12.767 2 26 2s24 10.767 24 24-10.767 24-24 24z"/><path d="M38.252 15.336l-15.369 17.29-9.259-7.407a1 1 0 10-1.249 1.562l10 8a1 1 0 001.332-.18l16-18a1 1 0 10-1.455-1.265z"/></svg>
-          <span>Гарантируем результат</span>
+        <div class="rk-hero__trusts">
+          <div class="rk-hero__trust rk-hero__trust--1">
+            <svg class="rk-check-ico" viewBox="0 0 52 52" aria-hidden="true"><path d="M26 0C11.664 0 0 11.663 0 26s11.664 26 26 26 26-11.663 26-26S40.336 0 26 0zm0 50C12.767 50 2 39.233 2 26S12.767 2 26 2s24 10.767 24 24-10.767 24-24 24z"/><path d="M38.252 15.336l-15.369 17.29-9.259-7.407a1 1 0 10-1.249 1.562l10 8a1 1 0 001.332-.18l16-18a1 1 0 10-1.455-1.265z"/></svg>
+            <span>Комплексный подход</span>
+          </div>
+          <div class="rk-hero__trust rk-hero__trust--2">
+            <svg class="rk-check-ico" viewBox="0 0 52 52" aria-hidden="true"><path d="M26 0C11.664 0 0 11.663 0 26s11.664 26 26 26 26-11.663 26-26S40.336 0 26 0zm0 50C12.767 50 2 39.233 2 26S12.767 2 26 2s24 10.767 24 24-10.767 24-24 24z"/><path d="M38.252 15.336l-15.369 17.29-9.259-7.407a1 1 0 10-1.249 1.562l10 8a1 1 0 001.332-.18l16-18a1 1 0 10-1.455-1.265z"/></svg>
+            <span>Прозрачная аналитика</span>
+          </div>
+          <div class="rk-hero__trust rk-hero__trust--3">
+            <svg class="rk-check-ico" viewBox="0 0 52 52" aria-hidden="true"><path d="M26 0C11.664 0 0 11.663 0 26s11.664 26 26 26 26-11.663 26-26S40.336 0 26 0zm0 50C12.767 50 2 39.233 2 26S12.767 2 26 2s24 10.767 24 24-10.767 24-24 24z"/><path d="M38.252 15.336l-15.369 17.29-9.259-7.407a1 1 0 10-1.249 1.562l10 8a1 1 0 001.332-.18l16-18a1 1 0 10-1.455-1.265z"/></svg>
+            <span>Гарантируем результат</span>
+          </div>
         </div>
 
         <button class="rk-hero__cta rk-hero__cta--primary" type="button" data-rk-open-modal="rk-modal-lead">
@@ -1099,6 +1254,11 @@
       </div>
     </section>
   </main>
+
+  <nav class="rk-sticky-cta" aria-label="Быстрая связь">
+    <a class="rk-sticky-cta__btn rk-sticky-cta__btn--call" href="tel:+77000216900">Позвонить</a>
+    <a class="rk-sticky-cta__btn rk-sticky-cta__btn--wa" href="https://wa.me/77000216900" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  </nav>
 
   <button class="rk-scroll-top" type="button" data-rk-scroll-top aria-label="Наверх">
     <span class="rk-scroll-top__icon" aria-hidden="true"></span>

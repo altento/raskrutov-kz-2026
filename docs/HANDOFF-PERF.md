@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-03 (UTC+5) — hero ecosystem +100px right, publish plesk `v=23`  
+**Последнее обновление:** 2026-08-03 (UTC+5) — mobile polish + sticky CTA + schema → publish plesk `v=30`  
 **Рабочая ветка:** `homepage-clean-rebuild`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -169,6 +169,13 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [x] Commit / push feature + `plesk` (точечный copy)
 - [ ] **Plesk:** pull ветки `plesk` в `httpdocs`
 - [ ] Live smoke: https://raskrutov.kz/ (Ctrl+F5) — меню, лого, формы, Метрика в Network
+
+#### D3. Mobile adaptive polish (2026-08-03)
+- [x] Локально: адаптив + badges slider + sticky Call/WA + JSON-LD из микруха.txt (`?v=30`)
+- [x] Commit / push feature + точечный publish `plesk`
+- [ ] **Plesk:** pull ветки `plesk` в `httpdocs` (если не авто)
+- [ ] Live smoke: https://raskrutov.kz/ (Ctrl+F5) — мобилка, бургер, слайдеры, липкий Call/WA, «Наверх»
+- [ ] Проверить JSON-LD в исходнике страницы (ProfessionalService / FAQ / ItemList)
 
 #### D2. Деплой (архив preview index-clean)
 - [x] Старый preview `index-clean` на plesk — при этом деплое **удалить** с прода
@@ -349,5 +356,25 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Высота слота как у ноута (478/200), ширина по original AR (`object-fit: contain`)
 - Сдвиг +100px вправо (desk left 784, mob 93); `?v=23`
 - Publish: точечный copy index + css/js + img → `plesk`
+
+### 2026-08-03 — mobile adaptive polish clean homepage (NO commit/push/deploy)
+- Юзер: ТЗ профессиональной мобильной доработки; **запрет** commit/push/deploy и реальных сабмитов
+- Убраны `body min-width: 1400px` (≥501) и `min-width: 370px` (≤500) — реальный источник горизонтального скролла
+- Hero: absolute Mottor-canvas только ≥1400; ниже — flow/grid; directions 1-col ≤767
+- Бургер до 1099; gutters 16/20; компактные секции/типографика; inputs 16px; safe-area у виджетов/меню
+- Contact cards 3-col сдвинуты на ≥1024 (фикс overflow @768)
+- Cache-bust `home-clean.css?v=26`; picture/preload media → 767
+- Playwright QA: overflow **false** на 320/360/375/390/412/430/768/1024/1440; меню/модалка ок; Метрика 101127167; формы ids сохранены
+- Скрины: `_perf_tools/mobile-qa/*.png`
+- **Дальше юзеру:** глянуть локально → сказать «коммить/пушь/деплой» когда ок
+
+### 2026-08-03 — mobile polish UI + schema + publish plesk (`v=30`)
+- Trusts в 1 линию; directions + badges → слайдеры; badges равная высота; radius 10px
+- Кнопка «Стать партнёром» видима (бывший hover → default)
+- Sticky Call/WA (`tel:+77000216900` / `wa.me/77000216900`); «Наверх» на уровне soc-widget
+- JSON-LD заменён из `микруха.txt` (Organization+ProfessionalService, FAQ, ItemList)
+- Cache-bust `home-clean.css?v=30`
+- Точечный copy → `site_plesk` + commit/push feature + `plesk`
+- **Ждём:** pull `plesk` на сервере → https://raskrutov.kz/ (Ctrl+F5)
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
