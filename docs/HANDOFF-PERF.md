@@ -392,6 +392,7 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Лок. LH mobile медиана Perf **92** / A11y 100 / SEO 100; desk 100
 - Метрика **101127167** (idle inject); формы → Supabase `submit-lead`
 - Точечный copy → `site_plesk` + commit/push feature + `plesk`
+- Feature `9ccfed12`, plesk `f39e061c` (`home-clean.css?v=37`)
 - **Ждём:** pull `plesk` на сервере → https://raskrutov.kz/ (Ctrl+F5) + PSI mobile
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
