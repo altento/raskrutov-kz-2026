@@ -38,7 +38,7 @@ git pull
 
 | Критерий | Статус |
 |---|---|
-| Mobile PSI Performance → **к 100** | **99** (2026-08-03, lab): FCP 1.0s / LCP 2.0s / TBT 10ms / CLS 0.001. Было 73 |
+| Mobile PSI Performance → **к 100** | Homepage **99**. Sozdanie parent baseline **66** → после CSS extract ждём замер |
 | LCP вниз без поломки дизайна Mottor | Главный рычаг |
 | Не ломать меню / формы / WhatsApp / мокапы | Обязательно |
 | Не фейкать Lighthouse | Обязательно |
@@ -256,5 +256,13 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Деплой `plesk` `15cfcd90` + feature `d16cd0de`
 - **PSI mobile после деплоя: Performance 99** (FCP 1.0 / LCP 2.0 / TBT 10 / CLS 0.001). Ссылка: https://pagespeed.web.dev/analysis/https-raskrutov-kz/0rvrfexh7h?form_factor=mobile
 - Дальше: дожать до 100 (мелочи image delivery / font) или стоп по команде юзера
+
+### 2026-08-03 — sozdanie + 18 geo: Mottor CSS extract (как на home)
+- Baseline parent mobile PSI **66** (LCP 7.8 / FCP 2.6 / CLS 0.124)
+- HEAD был ~566 KiB inline CSS → вынесено: `sozdanie-critical.v1.css` (~48 KiB) + deferred/extra/popup; HEAD ~10 KiB
+- LCP preload починен на реальный hero bg `00e5f308…webp`; video players → lazy; `public.bundle.js` sync
+- Применено к parent + 18 geo; деплой `plesk` `0bcb2ee9`
+- Скрипты: `_psi_opt_sozdanie.py`, `_psi_fix_sozdanie_perf.py`
+- Дальше: PSI mobile на `/web-studiya/sozdanie-saitov/` (+ Astana)
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
