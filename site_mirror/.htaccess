@@ -139,3 +139,79 @@ Redirect 301 /pages/web-studiya_aeo-geo-prodvizhenie.html /web-studiya/aeo-prodv
 
 # Do NOT add: Redirect /index.html → /
 # That loops with DirectoryIndex (/ → index.html → / → …) → ERR_TOO_MANY_REDIRECTS
+
+# Regional sozdanie-saitov pretty redirects (auto)
+Redirect 301 /sozdanie-saitov-v-almaty /web-studiya/sozdanie-saitov/almaty/
+Redirect 301 /sozdanie-saitov-v-almaty/ /web-studiya/sozdanie-saitov/almaty/
+Redirect 301 /sozdanie-saitov-v-astane /web-studiya/sozdanie-saitov/astana/
+Redirect 301 /sozdanie-saitov-v-astane/ /web-studiya/sozdanie-saitov/astana/
+Redirect 301 /sozdanie-saitov-v-shimkente /web-studiya/sozdanie-saitov/shymkent/
+Redirect 301 /sozdanie-saitov-v-shimkente/ /web-studiya/sozdanie-saitov/shymkent/
+Redirect 301 /sozdanie-saitov-v-aktau /web-studiya/sozdanie-saitov/aktau/
+Redirect 301 /sozdanie-saitov-v-aktau/ /web-studiya/sozdanie-saitov/aktau/
+Redirect 301 /sozdanie-saitov-v-aktobe /web-studiya/sozdanie-saitov/aktobe/
+Redirect 301 /sozdanie-saitov-v-aktobe/ /web-studiya/sozdanie-saitov/aktobe/
+Redirect 301 /sozdanie-saitov-v-atyrau /web-studiya/sozdanie-saitov/atyrau/
+Redirect 301 /sozdanie-saitov-v-atyrau/ /web-studiya/sozdanie-saitov/atyrau/
+Redirect 301 /sozdanie-saitov-v-karagande /web-studiya/sozdanie-saitov/karaganda/
+Redirect 301 /sozdanie-saitov-v-karagande/ /web-studiya/sozdanie-saitov/karaganda/
+Redirect 301 /sozdanie-saitov-v-kokshetau /web-studiya/sozdanie-saitov/kokshetau/
+Redirect 301 /sozdanie-saitov-v-kokshetau/ /web-studiya/sozdanie-saitov/kokshetau/
+Redirect 301 /sozdanie-saitov-v-kostanae /web-studiya/sozdanie-saitov/kostanay/
+Redirect 301 /sozdanie-saitov-v-kostanae/ /web-studiya/sozdanie-saitov/kostanay/
+Redirect 301 /sozdanie-saitov-v-kyzylorde /web-studiya/sozdanie-saitov/kyzylorda/
+Redirect 301 /sozdanie-saitov-v-kyzylorde/ /web-studiya/sozdanie-saitov/kyzylorda/
+Redirect 301 /sozdanie-saitov-v-pavlodare /web-studiya/sozdanie-saitov/pavlodar/
+Redirect 301 /sozdanie-saitov-v-pavlodare/ /web-studiya/sozdanie-saitov/pavlodar/
+Redirect 301 /sozdanie-saitov-v-Petropavlovske /web-studiya/sozdanie-saitov/petropavlovsk/
+Redirect 301 /sozdanie-saitov-v-Petropavlovske/ /web-studiya/sozdanie-saitov/petropavlovsk/
+Redirect 301 /sozdanie-saitov-v-semee /web-studiya/sozdanie-saitov/semey/
+Redirect 301 /sozdanie-saitov-v-semee/ /web-studiya/sozdanie-saitov/semey/
+Redirect 301 /sozdanie-saitov-v-taldykorgane /web-studiya/sozdanie-saitov/taldykorgan/
+Redirect 301 /sozdanie-saitov-v-taldykorgane/ /web-studiya/sozdanie-saitov/taldykorgan/
+Redirect 301 /sozdanie-saitov-v-taraze /web-studiya/sozdanie-saitov/taraz/
+Redirect 301 /sozdanie-saitov-v-taraze/ /web-studiya/sozdanie-saitov/taraz/
+Redirect 301 /sozdanie-saitov-v-turkestane /web-studiya/sozdanie-saitov/turkestan/
+Redirect 301 /sozdanie-saitov-v-turkestane/ /web-studiya/sozdanie-saitov/turkestan/
+Redirect 301 /sozdanie-saitov-v-uralske /web-studiya/sozdanie-saitov/uralsk/
+Redirect 301 /sozdanie-saitov-v-uralske/ /web-studiya/sozdanie-saitov/uralsk/
+Redirect 301 /sozdanie-saitov-v-ust-kamenogorske /web-studiya/sozdanie-saitov/ust-kamenogorsk/
+Redirect 301 /sozdanie-saitov-v-ust-kamenogorske/ /web-studiya/sozdanie-saitov/ust-kamenogorsk/
+
+# Regional seo-prodvizhenie pretty redirects (auto)
+Redirect 301 /seo-prodvizhenie-sajtov-v-almaty /web-studiya/seo-prodvizhenie/almaty/
+Redirect 301 /seo-prodvizhenie-sajtov-v-almaty/ /web-studiya/seo-prodvizhenie/almaty/
+Redirect 301 /seo-prodvizhenie-sajtov-v-astane /web-studiya/seo-prodvizhenie/astana/
+Redirect 301 /seo-prodvizhenie-sajtov-v-astane/ /web-studiya/seo-prodvizhenie/astana/
+Redirect 301 /seo-prodvizhenie-sajtov-v-shimkente /web-studiya/seo-prodvizhenie/shymkent/
+Redirect 301 /seo-prodvizhenie-sajtov-v-shimkente/ /web-studiya/seo-prodvizhenie/shymkent/
+Redirect 301 /seo-prodvizhenie-sajtov-v-aktau /web-studiya/seo-prodvizhenie/aktau/
+Redirect 301 /seo-prodvizhenie-sajtov-v-aktau/ /web-studiya/seo-prodvizhenie/aktau/
+Redirect 301 /seo-prodvizhenie-sajtov-v-aktobe /web-studiya/seo-prodvizhenie/aktobe/
+Redirect 301 /seo-prodvizhenie-sajtov-v-aktobe/ /web-studiya/seo-prodvizhenie/aktobe/
+Redirect 301 /seo-prodvizhenie-sajtov-v-atyrau /web-studiya/seo-prodvizhenie/atyrau/
+Redirect 301 /seo-prodvizhenie-sajtov-v-atyrau/ /web-studiya/seo-prodvizhenie/atyrau/
+Redirect 301 /seo-prodvizhenie-sajtov-v-karagande /web-studiya/seo-prodvizhenie/karaganda/
+Redirect 301 /seo-prodvizhenie-sajtov-v-karagande/ /web-studiya/seo-prodvizhenie/karaganda/
+Redirect 301 /seo-prodvizhenie-sajtov-v-kokshetau /web-studiya/seo-prodvizhenie/kokshetau/
+Redirect 301 /seo-prodvizhenie-sajtov-v-kokshetau/ /web-studiya/seo-prodvizhenie/kokshetau/
+Redirect 301 /seo-prodvizhenie-sajtov-v-kostanae /web-studiya/seo-prodvizhenie/kostanay/
+Redirect 301 /seo-prodvizhenie-sajtov-v-kostanae/ /web-studiya/seo-prodvizhenie/kostanay/
+Redirect 301 /seo-prodvizhenie-sajtov-v-kyzylorde /web-studiya/seo-prodvizhenie/kyzylorda/
+Redirect 301 /seo-prodvizhenie-sajtov-v-kyzylorde/ /web-studiya/seo-prodvizhenie/kyzylorda/
+Redirect 301 /seo-prodvizhenie-sajtov-v-pavlodare /web-studiya/seo-prodvizhenie/pavlodar/
+Redirect 301 /seo-prodvizhenie-sajtov-v-pavlodare/ /web-studiya/seo-prodvizhenie/pavlodar/
+Redirect 301 /seo-prodvizhenie-sajtov-v-petropavlovske /web-studiya/seo-prodvizhenie/petropavlovsk/
+Redirect 301 /seo-prodvizhenie-sajtov-v-petropavlovske/ /web-studiya/seo-prodvizhenie/petropavlovsk/
+Redirect 301 /seo-prodvizhenie-sajtov-v-semee /web-studiya/seo-prodvizhenie/semey/
+Redirect 301 /seo-prodvizhenie-sajtov-v-semee/ /web-studiya/seo-prodvizhenie/semey/
+Redirect 301 /seo-prodvizhenie-sajtov-v-taldykorgane /web-studiya/seo-prodvizhenie/taldykorgan/
+Redirect 301 /seo-prodvizhenie-sajtov-v-taldykorgane/ /web-studiya/seo-prodvizhenie/taldykorgan/
+Redirect 301 /seo-prodvizhenie-sajtov-v-taraze /web-studiya/seo-prodvizhenie/taraz/
+Redirect 301 /seo-prodvizhenie-sajtov-v-taraze/ /web-studiya/seo-prodvizhenie/taraz/
+Redirect 301 /seo-prodvizhenie-sajtov-v-turkestane /web-studiya/seo-prodvizhenie/turkestan/
+Redirect 301 /seo-prodvizhenie-sajtov-v-turkestane/ /web-studiya/seo-prodvizhenie/turkestan/
+Redirect 301 /seo-prodvizhenie-sajtov-v-uralske /web-studiya/seo-prodvizhenie/uralsk/
+Redirect 301 /seo-prodvizhenie-sajtov-v-uralske/ /web-studiya/seo-prodvizhenie/uralsk/
+Redirect 301 /seo-prodvizhenie-sajtov-v-ust-kamenogorske /web-studiya/seo-prodvizhenie/ust-kamenogorsk/
+Redirect 301 /seo-prodvizhenie-sajtov-v-ust-kamenogorske/ /web-studiya/seo-prodvizhenie/ust-kamenogorsk/
