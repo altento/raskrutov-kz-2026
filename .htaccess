@@ -105,7 +105,7 @@ Redirect 301 /pages/web-studiya_sozdanie-saitov_sayt-vizitka.html /web-studiya/s
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
   # Site-owned CSS/JS/images without content-hash in filename — short cache so hotfixes propagate
-  <FilesMatch "^(home-|lead-forms|breadcrumbs|hero-|perf-img).+\.(css|js|webp)$">
+  <FilesMatch "^(home-|sozdanie-|lead-forms|breadcrumbs|hero-|perf-img).+\.(css|js|webp)$">
     Header set Cache-Control "public, max-age=3600, must-revalidate"
   </FilesMatch>
   <FilesMatch "\.(html|htm)$">
