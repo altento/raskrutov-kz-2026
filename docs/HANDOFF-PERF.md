@@ -38,7 +38,7 @@ git pull
 
 | Критерий | Статус |
 |---|---|
-| Mobile PSI Performance → **к 100** | Homepage **99**. Sozdanie **66→82**, CLS-pass задеплоен (dims/hero/cities) — ждём замер |
+| Mobile PSI Performance → **к 100** | Homepage **99**. Sozdanie peak **86** (CLS pass); menu-lite откатили после просадки lab |
 | LCP вниз без поломки дизайна Mottor | Главный рычаг |
 | Не ломать меню / формы / WhatsApp / мокапы | Обязательно |
 | Не фейкать Lighthouse | Обязательно |
@@ -276,5 +276,11 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 
 ### 2026-08-03 — sozdanie menu-lite split
 - Blocking popup-menu 110KiB → menu-lite ~58KiB + deferred heavy; plesk e43a0cbc
+
+
+### 2026-08-03 — sozdanie: menu-lite FAIL → revert
+- menu-lite дал lab **59** (LCP 10.8) — откат на full popup-menu blocking 81563e1
+- Рабочий пик: **86** после CLS dims/hero/cities (869edcd1)
+- Потолок без clean-rebuild / без defer Mottor JS: TBT+bundle
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
