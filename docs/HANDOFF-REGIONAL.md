@@ -80,20 +80,22 @@ CSV-копии: `docs/seo-regional/`.
 
 ## 4. Чеклист ЮЗЕРА
 
-- [ ] Подтвердить: стартуем с **этапа 1 (P1, 15 страниц)** или сразу шире
-- [ ] Подтвердить политику URL: legacy geo (`/sozdanie-saitov-v-astane`) vs pretty (`/web-studiya/sozdanie-saitov/astana`)
-- [ ] Дать/подтвердить список уникализации контента (город в H1/Title/тексте/кейсах/адресе — что обязательно уникально)
-- [ ] Скинуть доступы/материалы по городам (телефон, адрес, 2ГИС), если нужны локальные NAP
-- [ ] После генерации этапа 1 — проверить 2–3 URL глазами + Search Console
+- [x] Подтвердить: стартуем с направления **«Создание сайтов»**
+- [x] Подтвердить политику URL: **pretty** `/web-studiya/sozdanie-saitov/{city}`
+- [ ] Глазами проверить 2–3 города (Алматы / Астана / Петропавловск) на проде или локально
+- [ ] Подтвердить деплой на `plesk` этого пакета
+- [ ] Дальше: следующее направление (SEO / веб-студия / …) или уникализация контента глубже (не только H1/Title/Desc)
 
 ## 5. Чеклист АГЕНТА
 
-- [ ] Скопировать xlsx в `docs/seo-regional/` (бэкап) + держать CSV актуальными
-- [ ] Свести REGIONAL_MATRIX этап 1 → конкретный список URL vs файлы в `site_mirror`
-- [ ] Не плодить thin-дубли: уникальные H1/Title/Description + локальные блоки
-- [ ] Прогнать пайплайн из `raskrutov-site-pipeline.mdc` (schema, breadcrumbs, alts, audit)
-- [ ] Редиректы из листа REDIRECTS → `.htaccess`
-- [ ] Деплой через `plesk`, обновить этот handoff + `docs/HANDOFF-PERF.md` §5
+- [x] Скопировать xlsx в `docs/seo-regional/` + CSV
+- [x] Решение pretty зафиксировано: `/web-studiya/sozdanie-saitov/{slug}`
+- [x] Сгенерировать 18 geo-страниц «Создание сайтов» (`generate_regional_sozdanie.py`)
+- [x] 301 legacy `/sozdanie-saitov-v-*` → pretty в `.htaccess` + pages stubs + `url_mapping.json` + sitemap
+- [x] Прогнать wire_lead_forms / breadcrumbs / schema / green_zone / fix_site_errors
+- [ ] Перелинковка с родителя `/web-studiya/sozdanie-saitov` на города (блок ссылок)
+- [ ] Деплой `plesk` после ОК юзера
+- [ ] Обновлять этот handoff после каждого пакета городов/направлений
 
 ---
 
@@ -103,3 +105,12 @@ CSV-копии: `docs/seo-regional/`.
 - Юзер указал на xlsx региональной SEO-карты
 - Распарсили листы, выгрузили CSV в `docs/seo-regional/`
 - Зафиксировали масштаб: 18 городов × 9 направлений, 152 NEW / 10 UPDATE
+
+### 2026-08-03 — старт: Создание сайтов + pretty URL
+- Решение юзера: направление «Создание сайтов», URL pretty
+- Скрипт: `generate_regional_sozdanie.py`
+- Создано **18** страниц: `/web-studiya/sozdanie-saitov/{almaty,astana,shymkent,…}`
+- Legacy 301: `/sozdanie-saitov-v-astane` и остальные → pretty
+- SEO: H1/Title/Description/canonical из FINAL_SEO_MAP; schema areaServed + breadcrumbs
+- Пайплайн: lead-forms, breadcrumbs, schema, green_zone, fix_site_errors — прогнан
+- **Не задеплоено на plesk** — ждём ОК / проверку глазами
