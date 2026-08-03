@@ -38,7 +38,7 @@ git pull
 
 | Критерий | Статус |
 |---|---|
-| Mobile PSI Performance → **к 100** | Baseline 2026-08-03 mobile **73** (FCP 3.3 / LCP 4.8 / TBT 0 / CLS 0). Ждём замер после critical split |
+| Mobile PSI Performance → **к 100** | **99** (2026-08-03, lab): FCP 1.0s / LCP 2.0s / TBT 10ms / CLS 0.001. Было 73 |
 | LCP вниз без поломки дизайна Mottor | Главный рычаг |
 | Не ломать меню / формы / WhatsApp / мокапы | Обязательно |
 | Не фейкать Lighthouse | Обязательно |
@@ -152,10 +152,10 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] После фикса бэка: отправить тест с попапа «Обсудим Ваш проект?» и с блока Контакты → зелёный success, не красный
 
 #### B. PageSpeed (гон к 100)
-- [ ] Прогнать PSI mobile 2–3 раза после деплоя critical CSS: https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fraskrutov.kz%2F&form_factor=mobile
-- [ ] Скинуть агенту: Performance / LCP / FCP / TBT / CLS (+ скрин или цифры)
-- [ ] Глазами: hero/ecosystem/меню на мобилке без FOUC после deferred CSS
-- [ ] Если скор уже ок — зафиксировать в журнале ниже и решить, долбим дальше или стоп
+- [x] Прогнать PSI mobile после деплоя critical CSS — **99** (2026-08-03)
+- [ ] Ещё 1–2 прогона для стабильности (лаб гуляет ±1–2)
+- [ ] Глазами: hero/ecosystem/меню на мобилке без FOUC
+- [ ] Решить: долбим до ровной 100 или стоп
 
 #### C. Мультикомп / бэкап контекста
 - [ ] На другом компе: `git checkout performance/pagespeed-raskrutov && git pull`
@@ -253,6 +253,8 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Главный аудит: render-blocking `home-clean.css` (~1.8s) + fonts Inter/Open Sans в критическом пути + ecosystem `fetchpriority=high`
 - Сделано: `home-clean-critical.v1.css` (~14 KiB) + `home-clean-deferred.v1.css` (print/onload); lead-forms.css deferred; Metrika после `load`+idle; ecosystem `fetchpriority=low` + mobile webp; scroll rAF
 - Mottor index → `site_mirror/index.mottor-legacy.html`; clean index синкнут в `site_mirror/`
-- Дальше: замер PSI mobile после деплоя; при необходимости допилить LCP image / font subset
+- Деплой `plesk` `15cfcd90` + feature `d16cd0de`
+- **PSI mobile после деплоя: Performance 99** (FCP 1.0 / LCP 2.0 / TBT 10 / CLS 0.001). Ссылка: https://pagespeed.web.dev/analysis/https-raskrutov-kz/0rvrfexh7h?form_factor=mobile
+- Дальше: дожать до 100 (мелочи image delivery / font) или стоп по команде юзера
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
