@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-03 (UTC+5) — mobile polish + sticky CTA + schema → publish plesk `v=30`  
+**Последнее обновление:** 2026-08-03 (UTC+5) — mobile PSI polish `v=37` → publish plesk  
 **Рабочая ветка:** `homepage-clean-rebuild`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -176,6 +176,15 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] **Plesk:** pull ветки `plesk` в `httpdocs` (если не авто)
 - [ ] Live smoke: https://raskrutov.kz/ (Ctrl+F5) — мобилка, бургер, слайдеры, липкий Call/WA, «Наверх»
 - [ ] Проверить JSON-LD в исходнике страницы (ProfessionalService / FAQ / ItemList)
+
+#### D4. Mobile PageSpeed polish `v=37` (2026-08-03) → publish
+- [x] Локально: critical CSS, LCP AVIF, шрифты Montserrat-only, perf images, a11y, Metrika idle
+- [x] Локальный LH mobile медиана Perf **92** (цель 90+); A11y 100; SEO 100; desk 100
+- [x] Commit / push feature + точечный publish `plesk` (`home-clean.css?v=37`)
+- [ ] **Plesk:** pull ветки `plesk` в `httpdocs` (если не авто)
+- [ ] Live smoke: https://raskrutov.kz/ (Ctrl+F5) — hero/LCP, формы, Метрика 101127167
+- [ ] PSI mobile 2–3 раза на проде и скинуть цифры
+- [ ] Plesk: MIME `image/avif` + долгий cache для `/assets/img/perf/*` (см. `.htaccess`)
 
 #### D2. Деплой (архив preview index-clean)
 - [x] Старый preview `index-clean` на plesk — при этом деплое **удалить** с прода
@@ -377,5 +386,12 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Точечный copy → `site_plesk` + commit/push feature + `plesk`
 - Feature `02bda28d`, plesk `8c803bc8` (merge: remote был впереди — оставили clean homepage `v=30`)
 - **Ждём:** pull `plesk` на сервере → https://raskrutov.kz/ (Ctrl+F5)
+
+### 2026-08-03 — mobile PageSpeed polish → publish plesk (`v=37`)
+- Critical CSS + deferred full CSS; `lead-forms.css` вмержен; LCP `hero-lcp-780.avif`; Montserrat only; `assets/img/perf/*`
+- Лок. LH mobile медиана Perf **92** / A11y 100 / SEO 100; desk 100
+- Метрика **101127167** (idle inject); формы → Supabase `submit-lead`
+- Точечный copy → `site_plesk` + commit/push feature + `plesk`
+- **Ждём:** pull `plesk` на сервере → https://raskrutov.kz/ (Ctrl+F5) + PSI mobile
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->

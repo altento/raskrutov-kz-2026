@@ -104,9 +104,13 @@ Redirect 301 /pages/web-studiya_sozdanie-saitov_sayt-vizitka.html /web-studiya/s
   <FilesMatch "(__q_v_|/-/|lpfile/).+\.(css|js|webp|png|jpe?g|svg|woff2?)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
-  # Site-owned CSS/JS/images without content-hash in filename — short cache so hotfixes propagate
+  # Optimized perf images (content-addressed via new filenames)
+  <FilesMatch "perf/.+\.(webp|avif)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # Site-owned CSS/JS — medium cache; bump ?v= on change
   <FilesMatch "^(home-|lead-forms|breadcrumbs|hero-|perf-img).+\.(css|js|webp)$">
-    Header set Cache-Control "public, max-age=3600, must-revalidate"
+    Header set Cache-Control "public, max-age=604800, must-revalidate"
   </FilesMatch>
   <FilesMatch "\.(html|htm)$">
     Header set Cache-Control "public, max-age=0, must-revalidate"
