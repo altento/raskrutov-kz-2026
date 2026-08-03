@@ -42,12 +42,17 @@
     }
   }
   if (shouldStripGhBase()) {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", function () {
+    var needsStrip = document.querySelector(
+      '[href*="/raskrutov-kz-2026"],[src*="/raskrutov-kz-2026"],[action*="/raskrutov-kz-2026"],[data-page-link*="/raskrutov-kz-2026"],[poster*="/raskrutov-kz-2026"]'
+    );
+    if (needsStrip) {
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
+          stripGhBaseFromDom(document);
+        });
+      } else {
         stripGhBaseFromDom(document);
-      });
-    } else {
-      stripGhBaseFromDom(document);
+      }
     }
   }
 
