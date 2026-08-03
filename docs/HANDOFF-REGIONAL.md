@@ -78,13 +78,22 @@ CSV-копии: `docs/seo-regional/`.
 
 ---
 
+### 2026-08-03 — UI-фиксы geo + parent sozdanie-saitov
+- **Скрин 1 (пустые мониторы):** по HTTP мокапы живые. Пустота была от `file://` (mask-image SVG). Пути relative (`../../assets/` / `../../../assets/`), не root-absolute.
+- **Скрин 2 (цены):** названия типов сайтов — кликабельные ссылки на `landing` / `mnogostranichnye-sayty` / `internet-magazin` / `korporativnyy-sayt`; на geo добавлено «в Городе».
+- **Скрин 3 (превью = скачать):** галерея кейсов вела на битые зеркала Google Drive → заменено на живые сайты: keysy/sayty, chiochiosan-astana.kz, kesler.kz, sherdar.kz.
+- **Скрин 4 (города):** блок «Мы работаем по всему Казахстану» — сетка **18** городов с фото + pretty-URL; старый Mottor 5-колоночный блок выпилен (фиолетовая полоска справа).
+- Крошки: slug `astana` → **Астана** (и остальные 17 городов в `fix_breadcrumbs.py`).
+- Скрипт: `fix_sozdanie_regional_ui.py` (+ `fix_breadcrumbs.py`).
+- **Деплой `plesk`:** точечный copy sozdanie + `assets/rk-cities` + `.htaccess` + sitemap + pages stubs → push `plesk`.
+
 ## 4. Чеклист ЮЗЕРА
 
 - [x] Подтвердить: стартуем с направления **«Создание сайтов»**
 - [x] Подтвердить политику URL: **pretty** `/web-studiya/sozdanie-saitov/{city}`
-- [ ] Глазами проверить 2–3 города (Алматы / Астана / Петропавловск) на проде или локально
-- [ ] Подтвердить деплой на `plesk` этого пакета
-- [ ] Дальше: следующее направление (SEO / веб-студия / …) или уникализация контента глубже (не только H1/Title/Desc)
+- [ ] Глазами проверить 2–3 города (Алматы / Астана / Петропавловск) на проде или локально (`http://127.0.0.1:8765/...`)
+- [x] Подтвердить деплой на `plesk` этого пакета (+ UI-фиксы)
+- [ ] Дальше: PageSpeed → 100 (desktop + mobile), потом следующее направление
 
 ## 5. Чеклист АГЕНТА
 
@@ -93,8 +102,9 @@ CSV-копии: `docs/seo-regional/`.
 - [x] Сгенерировать 18 geo-страниц «Создание сайтов» (`generate_regional_sozdanie.py`)
 - [x] 301 legacy `/sozdanie-saitov-v-*` → pretty в `.htaccess` + pages stubs + `url_mapping.json` + sitemap
 - [x] Прогнать wire_lead_forms / breadcrumbs / schema / green_zone / fix_site_errors
-- [ ] Перелинковка с родителя `/web-studiya/sozdanie-saitov` на города (блок ссылок)
-- [ ] Деплой `plesk` после ОК юзера
+- [x] Перелинковка с родителя `/web-studiya/sozdanie-saitov` на города (блок 18 карточек)
+- [x] Цены кликабельны + региональны; кейсы → живые URL; крошки по-русски
+- [x] Деплой `plesk` после ОК юзера (2026-08-03)
 - [ ] Обновлять этот handoff после каждого пакета городов/направлений
 
 ---
@@ -113,4 +123,16 @@ CSV-копии: `docs/seo-regional/`.
 - Legacy 301: `/sozdanie-saitov-v-astane` и остальные → pretty
 - SEO: H1/Title/Description/canonical из FINAL_SEO_MAP; schema areaServed + breadcrumbs
 - Пайплайн: lead-forms, breadcrumbs, schema, green_zone, fix_site_errors — прогнан
-- **Не задеплоено на plesk** — ждём ОК / проверку глазами
+- Создано **18** geo-страниц; legacy 301 + stubs + sitemap
+
+### 2026-08-03 — UI-фиксы (скрины 1–4)
+- См. блок выше; локально проверено на `127.0.0.1:8765` (Астана)
+
+### 2026-08-03 — hotfix: сломанный `/assets/`
+- Абсолютные `/assets/` разъебали локальный просмотр через `file://` (лого/CSS/фото 404).
+- Вернули relative: donor `../../assets/`, geo `../../../assets/`.
+- Смотреть только через локальный сервер (`http://127.0.0.1:8765/...`), не двойным кликом по html.
+
+### 2026-08-03 — деплой plesk
+- Точечный sync (без `/MIR`): `web-studiya/sozdanie-saitov/`, `assets/rk-cities/`, `.htaccess`, `sitemap.xml`, `pages/sozdanie-saitov-v-*.html`
+- Push ветки `plesk` → GitHub → Plesk pull

@@ -92,6 +92,25 @@ CRUMB_LABELS: dict[str, str] = {
     "kontakty": "Контакты",
     "consent": "Согласие",
     "regulation": "Положение",
+    # Regional sozdanie-saitov / other geo slugs
+    "almaty": "Алматы",
+    "astana": "Астана",
+    "shymkent": "Шымкент",
+    "aktau": "Актау",
+    "aktobe": "Актобе",
+    "atyrau": "Атырау",
+    "karaganda": "Караганда",
+    "kokshetau": "Кокшетау",
+    "kostanay": "Костанай",
+    "kyzylorda": "Кызылорда",
+    "pavlodar": "Павлодар",
+    "petropavlovsk": "Петропавловск",
+    "semey": "Семей",
+    "taldykorgan": "Талдыкорган",
+    "taraz": "Тараз",
+    "turkestan": "Туркестан",
+    "uralsk": "Уральск",
+    "ust-kamenogorsk": "Усть-Каменогорск",
 }
 
 SKIP_VISUAL = {
