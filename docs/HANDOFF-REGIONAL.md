@@ -91,9 +91,11 @@ CSV-копии: `docs/seo-regional/`.
 
 - [x] Подтвердить: стартуем с направления **«Создание сайтов»**
 - [x] Подтвердить политику URL: **pretty** `/web-studiya/sozdanie-saitov/{city}`
-- [ ] Глазами проверить 2–3 города (Алматы / Астана / Петропавловск) на проде или локально (`http://127.0.0.1:8765/...`)
-- [x] Подтвердить деплой на `plesk` этого пакета (+ UI-фиксы)
-- [ ] Дальше: PageSpeed → 100 (desktop + mobile), потом следующее направление
+- [ ] Глазами проверить 2–3 города sozdanie (Алматы / Астана / Петропавловск)
+- [x] Подтвердить деплой sozdanie на `plesk` (+ UI-фиксы)
+- [x] Следующее направление: **SEO-продвижение** (P1 leftover + legacy GSC)
+- [ ] Глазами: `/web-studiya/seo-prodvizhenie/` + Алматы/Астана + 301 legacy
+- [ ] После QA — подтвердить деплой SEO-пакета / следующее направление (хабы `/web-studiya/{city}` или дизайн)
 
 ## 5. Чеклист АГЕНТА
 
@@ -105,6 +107,11 @@ CSV-копии: `docs/seo-regional/`.
 - [x] Перелинковка с родителя `/web-studiya/sozdanie-saitov` на города (блок 18 карточек)
 - [x] Цены кликабельны + региональны; кейсы → живые URL; крошки по-русски
 - [x] Деплой `plesk` после ОК юзера (2026-08-03)
+- [x] SEO: `generate_regional_seo.py` — 18 pretty `/web-studiya/seo-prodvizhenie/{slug}`
+- [x] SEO: 301 `/seo-prodvizhenie-sajtov-v-*` → pretty; sitemap; pages stubs; url_mapping
+- [x] SEO: parent H1 починен; сетка 18 городов; showPopup → showSectionPopup
+- [x] SEO: scoped pipeline crumbs/leads/schema (`_pipeline_seo_geo.py`)
+- [ ] Деплой SEO на `plesk` после QA / команды юзера
 - [ ] Обновлять этот handoff после каждого пакета городов/направлений
 
 ---
@@ -136,3 +143,13 @@ CSV-копии: `docs/seo-regional/`.
 ### 2026-08-03 — деплой plesk
 - Точечный sync (без `/MIR`): `web-studiya/sozdanie-saitov/`, `assets/rk-cities/`, `.htaccess`, `sitemap.xml`, `pages/sozdanie-saitov-v-*.html`
 - Push ветки `plesk` → GitHub → Plesk pull
+
+### 2026-08-03 — пакет SEO-продвижение (geo)
+- Юзер: «дальше региональные пилить» → взяли **SEO** (P1 + legacy UPDATE в матрице)
+- Pretty: `/web-studiya/seo-prodvizhenie/{slug}` (как sozdanie)
+- Скрипт: `generate_regional_seo.py`
+- 18 городов + parent: H1/Title/Description из FINAL_SEO_MAP; сетка rk-cities; CTA showSectionPopup
+- Legacy 301: `/seo-prodvizhenie-sajtov-v-almaty` и остальные 17 → pretty
+- Pipeline: `_pipeline_seo_geo.py` (lead-forms / breadcrumbs / schema)
+- Локально смотреть: `http://127.0.0.1:8765/web-studiya/seo-prodvizhenie/astana/`
+- Дальше по матрице P1: хабы `/web-studiya/{city}`

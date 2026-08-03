@@ -300,4 +300,8 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - «Получить консультацию»: Mottor `msJsWrapper(...,'showPopup')` → `ReferenceError: showPopup is not defined`; переведено на `showSectionPopup(popupId)` (8 кнопок/страница)
 - `plesk` **`670e6a92`**; live smoke: Napisat gone, popup `open`
 
+### 2026-08-03 — регионалка: пакет SEO geo (локально)
+- 18× `/web-studiya/seo-prodvizhenie/{city}` + 301 legacy `seo-prodvizhenie-sajtov-v-*`
+- См. `HANDOFF-REGIONAL.md`; ждём QA глазками → деплой plesk
+
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
