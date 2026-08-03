@@ -2286,27 +2286,61 @@ body.rk-menu-open {
 }
 
 /* Contacts */
+.rk-section--contacts {
+  position: relative;
+  isolation: isolate;
+  padding-top: 63px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  background-image: url("../m-files.cdn1.cc/lpfile/6/e/e/6eea3ed3de3e5cbe118d06eb148fe963.webp");
+  background-position: 50% 0%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.rk-section--contacts::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+.rk-section--contacts > .rk-container {
+  position: relative;
+  z-index: 1;
+}
+
 .rk-contacts {
   display: grid;
   gap: 20px;
+  margin-top: 18px;
+  align-items: start;
 }
 
-.rk-channel {
+.rk-contacts__aside {
   display: grid;
-  gap: 4px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--rk-border);
+  gap: 14px;
+  align-content: start;
 }
 
-.rk-channel strong {
+.rk-contacts__line {
+  width: calc(100% - 24px);
+  max-width: 100%;
+  height: 0;
+  margin: 0 21px 1px 3px;
+  border: 0;
+  border-top: 2px solid #9867f3;
+}
+
+.rk-contacts__intro {
+  margin: 0;
   font-family: var(--rk-font-head);
-}
-
-.rk-social {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--rk-text);
 }
 
 .rk-form {
@@ -2315,6 +2349,80 @@ body.rk-menu-open {
   padding: 24px;
   box-shadow: var(--rk-shadow);
   border: 1px solid var(--rk-border);
+}
+
+.rk-form--contacts {
+  padding: 17px;
+  border: 1px solid #9867f3;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.rk-form--contacts .rk-form__title {
+  margin: 0 0 8px;
+  font-family: var(--rk-font-head);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #282a2f;
+}
+
+.rk-form--contacts .rk-form__lead {
+  margin: 0 0 17px;
+  font-family: var(--rk-font-head);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #7b7b7b;
+}
+
+.rk-form--contacts .rk-field {
+  margin-bottom: 15px;
+}
+
+.rk-form--contacts .rk-field label {
+  font-family: var(--rk-font-head);
+  font-size: 14px;
+  font-weight: 500;
+  color: #282a2f;
+}
+
+.rk-form--contacts .rk-field input {
+  min-height: 37px;
+  height: 37px;
+  padding: 0 14px;
+  border: 1px solid #c7c7c7;
+  border-radius: 10px;
+  font-family: "Open Sans", "Open Sans Fallback", Arial, sans-serif;
+  font-size: 14px;
+  color: #282a2f;
+}
+
+.rk-form__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.rk-btn--contacts {
+  min-height: 0;
+  min-width: 0;
+  width: auto;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(60deg, #9867f3 10%, #df62e2 92%);
+  color: #fff;
+  font-family: var(--rk-font-head);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.rk-btn--contacts:hover {
+  opacity: 0.92;
+  color: #fff;
+  transform: none;
 }
 
 .rk-field {
@@ -2345,6 +2453,184 @@ body.rk-menu-open {
   min-height: 110px;
   resize: vertical;
 }
+
+.rk-contacts__main {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.rk-contact-cards {
+  display: grid;
+  gap: 3px;
+}
+
+.rk-contact-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rk-contact-card:hover {
+  border-color: #b5b5b5;
+  box-shadow: 0 2px 10px rgba(40, 20, 80, 0.06);
+  color: inherit;
+}
+
+.rk-contact-card__icon {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.rk-contact-card__body {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.rk-contact-card__title,
+.rk-contact-card__note {
+  font-family: var(--rk-font-head);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--rk-text);
+}
+
+.rk-contact-card__value {
+  font-family: var(--rk-font-head);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #3a3a3a;
+}
+
+.rk-contact-card[href^="mailto:"] .rk-contact-card__value {
+  color: var(--rk-link);
+}
+
+.rk-contacts__office {
+  margin: 4px 0 0;
+  font-family: var(--rk-font-head);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--rk-text);
+}
+
+.rk-contacts__office strong {
+  font-weight: 700;
+}
+
+.rk-map {
+  position: relative;
+  width: 100%;
+  height: 262px;
+  min-height: 262px;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #eef1f7;
+}
+
+.rk-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.rk-contacts-social {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.rk-contacts-social__title {
+  margin: 0 0 12px;
+  padding-top: 3px;
+  font-family: var(--rk-font-head);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--rk-text);
+}
+
+.rk-contacts-social__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.rk-contact-soc {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 7px 15px;
+  border: 1px solid rgba(196, 196, 196, 0.4);
+  border-radius: 8px;
+  background: #fff;
+  font-family: var(--rk-font-head);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rk-contact-soc:hover {
+  border-color: rgba(150, 150, 150, 0.7);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.rk-contact-soc__icon {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  background: currentColor;
+  -webkit-mask: center / contain no-repeat;
+  mask: center / contain no-repeat;
+}
+
+.rk-contact-soc__icon--tg {
+  color: #24a0ff;
+  -webkit-mask-image: url("../m-files.cdn1.cc/lpfile/f/d/9/fd9fedea05b117d3e04a183cd3c83a3d.svg");
+  mask-image: url("../m-files.cdn1.cc/lpfile/f/d/9/fd9fedea05b117d3e04a183cd3c83a3d.svg");
+}
+
+.rk-contact-soc__icon--ig {
+  color: #df62e2;
+  -webkit-mask-image: url("../m-files.cdn1.cc/lpfile/e/a/b/eab2f7775db05e2f32ee435ef46ec912.svg");
+  mask-image: url("../m-files.cdn1.cc/lpfile/e/a/b/eab2f7775db05e2f32ee435ef46ec912.svg");
+}
+
+.rk-contact-soc__icon--yt {
+  color: #e70000;
+  -webkit-mask-image: url("../m-files.cdn1.cc/lpfile/f/e/1/fe15ff57c84cb329f6089cb16a626c7c.svg");
+  mask-image: url("../m-files.cdn1.cc/lpfile/f/e/1/fe15ff57c84cb329f6089cb16a626c7c.svg");
+}
+
+.rk-contact-soc__icon--tt {
+  color: #1e1e1e;
+  -webkit-mask-image: url("../m-files.cdn1.cc/lpfile/d/d/b/ddbb4a541f587cbb566bba9316170e95.svg");
+  mask-image: url("../m-files.cdn1.cc/lpfile/d/d/b/ddbb4a541f587cbb566bba9316170e95.svg");
+}
+
+.rk-contact-soc:has(.rk-contact-soc__icon--tg) { color: #24a0ff; }
+.rk-contact-soc:has(.rk-contact-soc__icon--ig) { color: #df62e2; }
+.rk-contact-soc:has(.rk-contact-soc__icon--yt) { color: #e70000; }
+.rk-contact-soc:has(.rk-contact-soc__icon--tt) { color: #1e1e1e; }
 
 .rk-consent {
   display: flex;
@@ -2380,25 +2666,6 @@ body.rk-menu-open {
 .rk-modal__dialog form .rk-btn {
   width: 100%;
   margin-top: 4px;
-}
-
-.rk-map {
-  border-radius: var(--rk-radius);
-  overflow: hidden;
-  background: #eef1f7;
-  min-height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-}
-
-.rk-map a {
-  display: inline-flex;
-  min-height: 44px;
-  align-items: center;
-  font-weight: 600;
 }
 
 /* Floating widgets — scroll-top + soc like Mottor */
@@ -2782,7 +3049,12 @@ body.rk-modal-open {
   }
 
   .rk-contacts {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 0.35fr) minmax(0, 0.65fr);
+    gap: 10px;
+  }
+
+  .rk-contact-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .rk-grid--4 {
@@ -3058,6 +3330,26 @@ body.rk-modal-open {
 
   #faq .rk-h2 {
     font-size: 28px;
+  }
+
+  .rk-section--contacts {
+    padding-top: 40px;
+    background-position: 70% 0%;
+  }
+
+  .rk-contacts__line {
+    width: 100%;
+    margin: 0 0 1px;
+  }
+
+  .rk-map {
+    height: 220px;
+    min-height: 220px;
+  }
+
+  .rk-contact-soc {
+    flex: 1 1 calc(50% - 10px);
+    justify-content: center;
   }
 }
 

@@ -237,6 +237,53 @@
     });
   }
 
+  /* ---------- Yandex map (lazy iframe) ---------- */
+  function initMap() {
+    var el = $("[data-rk-map]");
+    if (!el || el.getAttribute("data-ready") === "1") return;
+
+    function mount() {
+      if (el.getAttribute("data-ready") === "1") return;
+      el.setAttribute("data-ready", "1");
+      var lat = el.getAttribute("data-lat") || "54.8746";
+      var lon = el.getAttribute("data-lon") || "69.135701";
+      var zoom = el.getAttribute("data-zoom") || "16";
+      var iframe = doc.createElement("iframe");
+      iframe.src =
+        "https://yandex.ru/map-widget/v1/?ll=" +
+        encodeURIComponent(lon + "," + lat) +
+        "&z=" +
+        zoom +
+        "&pt=" +
+        encodeURIComponent(lon + "," + lat + ",pm2rdm") +
+        "&l=map";
+      iframe.title = el.getAttribute("aria-label") || "Карта офиса Raskrutov";
+      iframe.loading = "lazy";
+      iframe.setAttribute("allowfullscreen", "");
+      iframe.referrerPolicy = "no-referrer-when-downgrade";
+      el.appendChild(iframe);
+    }
+
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(
+        function (entries) {
+          if (
+            entries.some(function (entry) {
+              return entry.isIntersecting;
+            })
+          ) {
+            io.disconnect();
+            mount();
+          }
+        },
+        { rootMargin: "240px 0px" }
+      );
+      io.observe(el);
+    } else {
+      mount();
+    }
+  }
+
   /* ---------- Init ---------- */
   function init() {
     initMenu();
@@ -244,6 +291,7 @@
     initPhoneMask();
     initScrollTop();
     initSocWidget();
+    initMap();
   }
 
   if (doc.readyState === "loading") {
