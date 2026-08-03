@@ -38,7 +38,7 @@ git pull
 
 | Критерий | Статус |
 |---|---|
-| Mobile PSI Performance → **к 100** | Homepage **99**. Sozdanie parent **66→82** (LCP 7.8→2.3s). Дальше CLS/TBT |
+| Mobile PSI Performance → **к 100** | Homepage **99**. Sozdanie **66→82**, CLS-pass задеплоен (dims/hero/cities) — ждём замер |
 | LCP вниз без поломки дизайна Mottor | Главный рычаг |
 | Не ломать меню / формы / WhatsApp / мокапы | Обязательно |
 | Не фейкать Lighthouse | Обязательно |
@@ -266,5 +266,11 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - **PSI mobile после деплоя: 82** (FCP 1.7 / LCP 2.3 / TBT 250 / CLS 0.218). Было 66 / LCP 7.8
 - Ссылка: https://pagespeed.web.dev/analysis/https-raskrutov-kz-web-studiya-sozdanie-saitov/aa0x6tppqr?form_factor=mobile
 - Дальше: CLS (hero reserve / dims), image delivery; TBT упирается в sync `public.bundle.js`
+
+
+### 2026-08-03 — sozdanie CLS pass 2
+- width/height на img; hero min-height 640 mobile; Montserrat+fallback в critical; rk-cities jpeg сжаты
+- Mottor CDN src recipes не ломать (scale/x3/1920 обязателен)
+- plesk 869edcd1
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
