@@ -169,7 +169,10 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Полный handoff: **`docs/HANDOFF-REGIONAL.md`**
 - Карта: `docs/seo-regional/SEO-карта_Raskrutov_региональная_2026-07-27.xlsx` + CSV
 - [x] Старт: sozdanie + SEO + хабы (pretty) — задеплоены
-- [ ] Глазами: хабы `/web-studiya/astana/` + parent `/web-studiya/`
+- [x] Visual QA 4 представителей × 360–1920 (локально, CSS-extract hub/seo/dizayn) — см. `reports/geo-pages-performance-final.md`
+- [x] Mobile H1 hub/seo geo **FIXED** (inline `data-rk-mobile-h1-fix`, 36 city pages)
+- [ ] **Commit / push / deploy** CSS-extract + H1 fix — в процессе (команда юзера 2026-08-04)
+- [ ] После деплоя: PSI mobile/desktop representatives — **POST-DEPLOY**
 - [ ] Дальше P2 по чеклистам в `HANDOFF-REGIONAL.md`
 #### E. По желанию / позже
 - [ ] Plesk: Cache-Control для `home-*.css` (сейчас nginx может держать длинный max-age)
@@ -312,5 +315,21 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 ### 2026-08-03 — регионалка: дизайн `/web-studiya/dizayn/{city}`
 - 18 geo + parent cities; hubs wired на geo; `generate_regional_dizayn.py`
 - Деплой `plesk` точечно. Дальше: контекст/лидоген/…
+
+### 2026-08-03 — geo perf: CSS-extract hub/seo/dizayn + visual QA (локально, без commit)
+- Extract critical/deferred/popup/extra на **57** страниц (19 hub + 19 seo + 19 dizayn); sozdanie уже было
+- HTML: hub/seo ~379 KiB HEAD ~9; dizayn ~420 / ~9; `public.bundle.js` sync
+- Visual QA: Astana hub / Almaty sozdanie / Shymkent seo / Petropavlovsk dizayn × 360–1920
+- Вердикт: **PASS WITH WARN** — на hub+seo mobile H1 `display:none`, виден Mottor «полного цикла…» (контент, не CSS)
+- Popup/меню/формы/FAQ/0×404 sampled — ок; CLS формальный → Lighthouse
+- Отчёты: `reports/geo-pages-performance-final.md`, `geo-pages-visual-qa-matrix.md`
+- **PSI = POST-DEPLOY**; commit/push/deploy **не** делали (ждём команду юзера)
+
+### 2026-08-04 — mobile H1 FIXED (hub + seo geo)
+- Причина: Mottor `@media(max-width:500px)` — `.blk-data--pc` hide / `.blk-data--mobile370` show
+- Фикс: `<style data-rk-mobile-h1-fix>` на 18 hub + 18 seo cities (блок `b-aa35398c…`); CSS-extract не трогали
+- QA: Astana + Shymkent @360/390/430 — гео-H1 visible, дубль hidden; sozdanie/dizayn не трогали
+- Скрипт: `_fix_mobile_h1_geo.py`; отчёты обновлены → **PASS / FIXED**
+- Commit/push/deploy — всё ещё ждём команду
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->

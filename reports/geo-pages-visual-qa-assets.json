@@ -1,0 +1,1037 @@
+{
+  "base": "http://127.0.0.1:8767",
+  "pages": {
+    "/web-studiya/astana/": {
+      "http": 200,
+      "bundle": [
+        {
+          "src": "../../assets/m-files.cdn1.cc/web/build/pages/public.bundle__q_v_1784010954.js",
+          "abs": "http://127.0.0.1:8767/assets/m-files.cdn1.cc/web/build/pages/public.bundle__q_v_1784010954.js",
+          "status": 200,
+          "len": "506371"
+        }
+      ],
+      "css_critical": [
+        {
+          "href": "../../assets/css/hub-critical.v1.css",
+          "status": 200,
+          "len": "122181"
+        },
+        {
+          "href": "../../assets/css/hub-popup-menu.v1.css",
+          "status": 200,
+          "len": "113560"
+        },
+        {
+          "href": "../../assets/css/hub-popup-menu.v1.css",
+          "status": 200,
+          "len": "113560"
+        },
+        {
+          "href": "../../assets/css/hub-critical.v1.css",
+          "status": 200,
+          "len": "122181"
+        },
+        {
+          "href": "../../assets/css/hub-deferred.v1.css",
+          "status": 200,
+          "len": "148832"
+        },
+        {
+          "href": "../../assets/css/hub-extra.v1.css",
+          "status": 200,
+          "len": "22450"
+        },
+        {
+          "href": "../../assets/css/hub-extra.v1.css",
+          "status": 200,
+          "len": "22450"
+        },
+        {
+          "href": "../../assets/css/hub-deferred.v1.css",
+          "status": 200,
+          "len": "148832"
+        }
+      ],
+      "asset_checks": [
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/0/0/e/00e5f3089b7608f6ea110e879c58caea.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/hub-critical.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/hub-popup-menu.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/hub-deferred.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/hub-extra.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/hub-popup-other.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/favicon/favicon__q_1.png",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/web/user/fonts/montserrat/montserrat_bold.woff",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/web/build/pages/public.bundle__q_v_1784010924.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/6/e/e/6eea3ed3de3e5cbe118d06eb148fe963.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/8/1/a/81a3fe2ab76d8a7d4df2ea1900ce0265/-/crop/0x0x955x221/-/resize/211/-/scale/x3/-/resize/1920/f.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/1/5/3/15322ad6ca66f9fb2d0eae7a4fa3acd5/-/crop/0x0x511x488/-/resize/30/-/scale/x3/-/resize/1920/f__q_4144924.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/1/5/3/15322ad6ca66f9fb2d0eae7a4fa3acd5/-/crop/0x0x511x488/-/resize/55/-/scale/x3/-/resize/1920/f__q_4144924.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/8/8/7/8872f5416bc8a1fbb07d6c0509896103__q_13466018.svg",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/d/1/c/d1cbe283f2e7f3e691ab26abf773bc60/-/resize/1000/f__q_57244759.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/d/4/cd4943032d5eb309a855252aa82e3856__q_83523922.svg",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/2/7/e/27e940bfca13c46588cbb867b1d4c3d6/-/resize/1000/f__q_80115761.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/3/2/e/32e8eac576d37936896bba2a35b52bdc/-/crop/0x21x650x391/-/resize/330/f__q_47567714.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/0/5/f/05fba2f37e0d0ebf16bf74efc995e0b9/-/crop/384x0x1154x700/-/resize/330/f__q_36994489.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/d/8/e/d8eb27b3bca04551081de512908b16a5/-/crop/0x38x1280x779/-/resize/330/f__q_10804456.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/4/1/6/4164fcbd8cd10da83d49ff55b12a2220/-/crop/25x94x689x418/-/resize/330/f__q_78422993.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/6/9/c6937ec1201641a5666bc4606abdb165/-/crop/0x6x1024x607/-/resize/327/f__q_73159820.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/aktobe.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/atyrau.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/pavlodar.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/ust-kamenogorsk.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/semey.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/kostanay.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/kyzylorda.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/uralsk.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/taraz.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/aktau.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/turkestan.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/kokshetau.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/taldykorgan.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/f/c/cfc2e3afbda4e80f27599b2c7f56e0f6/-/crop/8x0x489x501/-/resize/61/-/scale/x3/-/resize/1920/f__q_8567452.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/4/4/0/440b54990fd45e0fcbed23b63bdefdfe/-/crop/0x0x495x512/-/resize/60/-/scale/x3/-/resize/1920/f__q_91337242.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/0/f/3/0f32f26c136b8a88f490b535a08567f7/-/crop/0x0x495x512/-/resize/60/-/scale/x3/-/resize/1920/f__q_40395660.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/0/c/9/0c986e8be16bd1c933217e6128bfcd17/-/crop/0x0x499x508/-/resize/61/-/scale/x3/-/resize/1920/f__q_30990018.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/1/c/d/1cdc00fa4c6978da384d0565dbdbaabd/-/crop/0x0x505x494/-/resize/63/-/scale/x3/-/resize/1920/f__q_9026286.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/7/b/c7be05f297326e42d51ebb5e780e2bea/-/crop/0x0x495x512/-/resize/60/-/scale/x3/-/resize/1920/f__q_60428948.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/f/a/3/fa316a27d90856a6fd602ae54ad1c77e/-/crop/0x0x489x510/-/resize/59/-/scale/x3/-/resize/1920/f__q_19538958.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/1/e/e/1eecd35f5665f89c3c3142cb6a7a086f/-/crop/0x0x487x520/-/resize/58/-/scale/x3/-/resize/1920/f__q_50188939.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/8/e/9/8e95826bad8608513302019ec703fdc3/-/crop/0x0x507x501/-/resize/54/-/resize/1920/f__q_54149640.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/7/e/9/7e9476741a21bf7b628438c549ea26de/-/crop/0x0x498x510/-/resize/52/-/resize/1920/f__q_77606509.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/3/d/3/3d38e54cc0b8aff8ec264c25929c9fb0/-/crop/0x0x489x520/-/resize/50/-/resize/1920/f__q_15961196.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/7/d/c7da38a588c9d13018435243735ea646/-/crop/0x0x500x499/-/resize/53/-/resize/1920/f__q_91846408.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/7/d/c7da38a588c9d13018435243735ea646/-/crop/0x0x443x499/-/resize/47/-/resize/1920/f__q_91846408.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/e/c/8/ec8ca9dde3e16890e180bb6074553cdc/-/crop/0x0x494x515/-/resize/47/-/resize/1920/f__q_36524513.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/e/c/8/ec8ca9dde3e16890e180bb6074553cdc/-/crop/0x0x494x505/-/resize/71/-/resize/1920/f__q_36524513.webp",
+          "status": 200
+        }
+      ],
+      "failed": [],
+      "asset_ok": 50,
+      "asset_sampled": 50
+    },
+    "/web-studiya/sozdanie-saitov/almaty/": {
+      "http": 200,
+      "bundle": [
+        {
+          "src": "../../../assets/m-files.cdn1.cc/web/build/pages/public.bundle__q_v_1784010912.js",
+          "abs": "http://127.0.0.1:8767/assets/m-files.cdn1.cc/web/build/pages/public.bundle__q_v_1784010912.js",
+          "status": 200,
+          "len": "506371"
+        }
+      ],
+      "css_critical": [
+        {
+          "href": "../../../assets/css/sozdanie-critical.v1.css",
+          "status": 200,
+          "len": "50537"
+        },
+        {
+          "href": "../../../assets/css/sozdanie-popup-menu.v1.css",
+          "status": 200,
+          "len": "113488"
+        },
+        {
+          "href": "../../../assets/css/sozdanie-popup-menu.v1.css",
+          "status": 200,
+          "len": "113488"
+        },
+        {
+          "href": "../../../assets/css/sozdanie-critical.v1.css",
+          "status": 200,
+          "len": "50537"
+        },
+        {
+          "href": "../../../assets/css/sozdanie-deferred.v1.css",
+          "status": 200,
+          "len": "56264"
+        },
+        {
+          "href": "../../../assets/css/sozdanie-deferred.v1.css",
+          "status": 200,
+          "len": "56264"
+        },
+        {
+          "href": "../../../assets/css/sozdanie-extra.v1.css",
+          "status": 200,
+          "len": "208204"
+        },
+        {
+          "href": "../../../assets/css/sozdanie-extra.v1.css",
+          "status": 200,
+          "len": "208204"
+        }
+      ],
+      "asset_checks": [
+        {
+          "url": "/assets/css/sozdanie-critical.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/sozdanie-popup-menu.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/sozdanie-deferred.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/sozdanie-popup-other.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/sozdanie-extra.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/favicon/favicon__q_1.png",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/web/user/fonts/montserrat/montserrat_bold.woff",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/web/build/pages/public.bundle__q_v_1784010884.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/0/0/e/00e5f3089b7608f6ea110e879c58caea.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/8/1/a/81a3fe2ab76d8a7d4df2ea1900ce0265/-/crop/0x0x955x221/-/resize/211/-/scale/x3/-/resize/1920/f.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/1/5/3/15322ad6ca66f9fb2d0eae7a4fa3acd5/-/crop/0x0x511x488/-/resize/30/-/scale/x3/-/resize/1920/f__q_4144924.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/1/5/3/15322ad6ca66f9fb2d0eae7a4fa3acd5/-/crop/0x0x511x488/-/resize/55/-/scale/x3/-/resize/1920/f__q_4144924.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/0/3/b/03b607a656f42dcc8f5a1951ec973002__q_26843706.svg",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/9/e/8/9e819c500b6d2f5c465ad7f32136a670/-/resize/1000/f__q_49894227.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/7/c/c/7cc724d11d9959dbcb32c955e38dd81c__q_71359041.svg",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/2/1/b/21b73f51d3369746caeaa3e66ad952b2/-/resize/1000/f__q_38642432.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/e/c/8/ec8ca9dde3e16890e180bb6074553cdc/-/crop/0x0x441x515/-/resize/42/-/resize/1920/f__q_36524513.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/e/c/8/ec8ca9dde3e16890e180bb6074553cdc/-/crop/0x0x487x505/-/resize/70/-/resize/1920/f__q_36524513.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/3/d/3/3d38e54cc0b8aff8ec264c25929c9fb0/-/crop/0x0x489x498/-/resize/39/-/resize/1920/f__q_15961196.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/3/d/3/3d38e54cc0b8aff8ec264c25929c9fb0/-/crop/72x20x416x479/-/resize/40/-/resize/1920/f__q_15961196.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/3/d/3/3d38e54cc0b8aff8ec264c25929c9fb0/-/crop/11x0x477x511/-/resize/41/-/resize/1920/f__q_15961196.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/3/d/3/3d38e54cc0b8aff8ec264c25929c9fb0/-/crop/23x0x477x522/-/resize/40/-/resize/1920/f__q_15961196.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/f/b/3/fb36339c594870417aef5df0be7c3053/-/resize/1920/f__q_41983714.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/f/a/e/fae0797e8eeef189f0b4a405f223cc99/-/resize/1920/f__q_25500860.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/1/f/2/1f27e9917863c0e99f496c9e16450784/-/resize/1920/f__q_59770745.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/b/e/4/be474c254557b08bd5c64a877fca66f8/-/resize/1920/f__q_66372288.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/b/b/cbbafece9ebe4c53f1dd4cc96fb6940c/-/crop/0x0x1200x851/-/resize/307/f__q_91024422.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/b/b/cbbafece9ebe4c53f1dd4cc96fb6940c/-/crop/425x128x646x359/-/resize/311/f__q_91024422.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/5/4/b/54bf40700e8e987e359d73bd97e57a13/-/crop/0x0x791x1083/-/resize/258/-/scale/x3/-/resize/1920/f__q_96003179.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/5/4/b/54bf40700e8e987e359d73bd97e57a13/-/crop/3x0x783x1080/-/resize/220/-/scale/x3/-/resize/1920/f__q_96003179.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/d/c/1/dc1bdd1fad117dd9b72d143c4046181a__q_69570304.svg",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/b/5/1/b5186d124bd7b548d25a20d6b095a3fb/-/crop/21x0x946x1283/-/resize/261/-/scale/x3/-/resize/1920/f__q_95599514.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/b/5/1/b5186d124bd7b548d25a20d6b095a3fb/-/crop/37x0x911x1280/-/resize/219/-/scale/x3/-/resize/1920/f__q_95599514.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/b/1/f/b1fccd4e8418812ce4ee0f9e09501a9d/-/crop/0x3x790x1076/-/resize/260/-/scale/x3/-/resize/1920/f__q_6528052.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/b/1/f/b1fccd4e8418812ce4ee0f9e09501a9d/-/crop/3x0x790x1083/-/resize/220/-/scale/x3/-/resize/1920/f__q_6528052.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/b/3/1/b31d83bd90e50afb268a6d633fbaa5cc/-/crop/0x14x907x1251/-/resize/255/-/scale/x3/-/resize/1920/f__q_9353247.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/b/3/1/b31d83bd90e50afb268a6d633fbaa5cc/-/crop/0x0x907x1284/-/resize/214/-/scale/x3/-/resize/1920/f__q_9353247.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/9/a/c9a59117d0bda607ec821368b659adea/-/crop/0x3x804x1073/-/resize/264/-/scale/x3/-/resize/1920/f__q_60587978.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/9/a/c9a59117d0bda607ec821368b659adea/-/crop/24x0x758x1080/-/resize/216/-/scale/x3/-/resize/1920/f__q_60587978.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/3/2/e/32e8eac576d37936896bba2a35b52bdc/-/crop/0x21x650x391/-/resize/330/f__q_47567714.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/0/5/f/05fba2f37e0d0ebf16bf74efc995e0b9/-/crop/384x0x1154x700/-/resize/330/f__q_36994489.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/d/8/e/d8eb27b3bca04551081de512908b16a5/-/crop/0x38x1280x779/-/resize/330/f__q_10804456.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/4/1/6/4164fcbd8cd10da83d49ff55b12a2220/-/crop/25x94x689x418/-/resize/330/f__q_78422993.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/6/9/c6937ec1201641a5666bc4606abdb165/-/crop/0x6x1024x607/-/resize/327/f__q_73159820.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/aktobe.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/atyrau.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/pavlodar.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/ust-kamenogorsk.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/semey.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/kostanay.jpg",
+          "status": 200
+        }
+      ],
+      "failed": [],
+      "asset_ok": 50,
+      "asset_sampled": 50
+    },
+    "/web-studiya/seo-prodvizhenie/shymkent/": {
+      "http": 200,
+      "bundle": [
+        {
+          "src": "../../../assets/m-files.cdn1.cc/web/build/pages/public.bundle__q_v_1784010954.js",
+          "abs": "http://127.0.0.1:8767/assets/m-files.cdn1.cc/web/build/pages/public.bundle__q_v_1784010954.js",
+          "status": 200,
+          "len": "506371"
+        }
+      ],
+      "css_critical": [
+        {
+          "href": "../../../assets/css/seo-critical.v1.css",
+          "status": 200,
+          "len": "122153"
+        },
+        {
+          "href": "../../../assets/css/seo-popup-menu.v1.css",
+          "status": 200,
+          "len": "113483"
+        },
+        {
+          "href": "../../../assets/css/seo-popup-menu.v1.css",
+          "status": 200,
+          "len": "113483"
+        },
+        {
+          "href": "../../../assets/css/seo-critical.v1.css",
+          "status": 200,
+          "len": "122153"
+        },
+        {
+          "href": "../../../assets/css/seo-deferred.v1.css",
+          "status": 200,
+          "len": "148825"
+        },
+        {
+          "href": "../../../assets/css/seo-extra.v1.css",
+          "status": 200,
+          "len": "22310"
+        },
+        {
+          "href": "../../../assets/css/seo-extra.v1.css",
+          "status": 200,
+          "len": "22310"
+        },
+        {
+          "href": "../../../assets/css/seo-deferred.v1.css",
+          "status": 200,
+          "len": "148825"
+        }
+      ],
+      "asset_checks": [
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/0/0/e/00e5f3089b7608f6ea110e879c58caea.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/seo-critical.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/seo-popup-menu.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/seo-deferred.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/seo-extra.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/seo-popup-other.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/favicon/favicon__q_1.png",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/web/user/fonts/montserrat/montserrat_bold.woff",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/web/build/pages/public.bundle__q_v_1784010924.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/6/e/e/6eea3ed3de3e5cbe118d06eb148fe963.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/8/1/a/81a3fe2ab76d8a7d4df2ea1900ce0265/-/crop/0x0x955x221/-/resize/211/-/scale/x3/-/resize/1920/f.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/1/5/3/15322ad6ca66f9fb2d0eae7a4fa3acd5/-/crop/0x0x511x488/-/resize/30/-/scale/x3/-/resize/1920/f__q_4144924.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/1/5/3/15322ad6ca66f9fb2d0eae7a4fa3acd5/-/crop/0x0x511x488/-/resize/55/-/scale/x3/-/resize/1920/f__q_4144924.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/8/8/7/8872f5416bc8a1fbb07d6c0509896103__q_13466018.svg",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/d/1/c/d1cbe283f2e7f3e691ab26abf773bc60/-/resize/1000/f__q_57244759.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/d/4/cd4943032d5eb309a855252aa82e3856__q_83523922.svg",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/2/7/e/27e940bfca13c46588cbb867b1d4c3d6/-/resize/1000/f__q_80115761.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/f/c/cfc2e3afbda4e80f27599b2c7f56e0f6/-/crop/8x0x489x501/-/resize/61/-/scale/x3/-/resize/1920/f__q_8567452.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/4/4/0/440b54990fd45e0fcbed23b63bdefdfe/-/crop/0x0x495x512/-/resize/60/-/scale/x3/-/resize/1920/f__q_91337242.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/0/f/3/0f32f26c136b8a88f490b535a08567f7/-/crop/0x0x495x512/-/resize/60/-/scale/x3/-/resize/1920/f__q_40395660.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/0/c/9/0c986e8be16bd1c933217e6128bfcd17/-/crop/0x0x499x508/-/resize/61/-/scale/x3/-/resize/1920/f__q_30990018.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/1/c/d/1cdc00fa4c6978da384d0565dbdbaabd/-/crop/0x0x505x494/-/resize/63/-/scale/x3/-/resize/1920/f__q_9026286.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/7/b/c7be05f297326e42d51ebb5e780e2bea/-/crop/0x0x495x512/-/resize/60/-/scale/x3/-/resize/1920/f__q_60428948.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/f/a/3/fa316a27d90856a6fd602ae54ad1c77e/-/crop/0x0x489x510/-/resize/59/-/scale/x3/-/resize/1920/f__q_19538958.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/1/e/e/1eecd35f5665f89c3c3142cb6a7a086f/-/crop/0x0x487x520/-/resize/58/-/scale/x3/-/resize/1920/f__q_50188939.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/8/e/9/8e95826bad8608513302019ec703fdc3/-/crop/0x0x507x501/-/resize/54/-/resize/1920/f__q_54149640.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/7/e/9/7e9476741a21bf7b628438c549ea26de/-/crop/0x0x498x510/-/resize/52/-/resize/1920/f__q_77606509.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/3/d/3/3d38e54cc0b8aff8ec264c25929c9fb0/-/crop/0x0x489x520/-/resize/50/-/resize/1920/f__q_15961196.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/7/d/c7da38a588c9d13018435243735ea646/-/crop/0x0x500x499/-/resize/53/-/resize/1920/f__q_91846408.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/7/d/c7da38a588c9d13018435243735ea646/-/crop/0x0x443x499/-/resize/47/-/resize/1920/f__q_91846408.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/e/c/8/ec8ca9dde3e16890e180bb6074553cdc/-/crop/0x0x494x515/-/resize/47/-/resize/1920/f__q_36524513.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/e/c/8/ec8ca9dde3e16890e180bb6074553cdc/-/crop/0x0x494x505/-/resize/71/-/resize/1920/f__q_36524513.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/3/d/3/3d38e54cc0b8aff8ec264c25929c9fb0/-/crop/0x0x489x498/-/resize/39/-/resize/1920/f__q_15961196.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/3/d/3/3d38e54cc0b8aff8ec264c25929c9fb0/-/crop/72x20x416x479/-/resize/40/-/resize/1920/f__q_15961196.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/3/d/3/3d38e54cc0b8aff8ec264c25929c9fb0/-/crop/0x0x489x511/-/resize/42/-/resize/1920/f__q_15961196.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/3/d/3/3d38e54cc0b8aff8ec264c25929c9fb0/-/crop/23x0x477x522/-/resize/40/-/resize/1920/f__q_15961196.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/3/2/e/32e8eac576d37936896bba2a35b52bdc/-/crop/0x21x650x391/-/resize/330/f__q_47567714.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/0/5/f/05fba2f37e0d0ebf16bf74efc995e0b9/-/crop/384x0x1154x700/-/resize/330/f__q_36994489.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/d/8/e/d8eb27b3bca04551081de512908b16a5/-/crop/0x38x1280x779/-/resize/330/f__q_10804456.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/4/1/6/4164fcbd8cd10da83d49ff55b12a2220/-/crop/25x94x689x418/-/resize/330/f__q_78422993.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/6/9/c6937ec1201641a5666bc4606abdb165/-/crop/0x6x1024x607/-/resize/327/f__q_73159820.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/aktobe.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/atyrau.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/pavlodar.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/ust-kamenogorsk.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/semey.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/kostanay.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/kyzylorda.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/uralsk.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/taraz.jpg",
+          "status": 200
+        }
+      ],
+      "failed": [],
+      "asset_ok": 50,
+      "asset_sampled": 50
+    },
+    "/web-studiya/dizayn/petropavlovsk/": {
+      "http": 200,
+      "bundle": [
+        {
+          "src": "../../../assets/m-files.cdn1.cc/web/build/pages/public.bundle__q_v_1784010893.js",
+          "abs": "http://127.0.0.1:8767/assets/m-files.cdn1.cc/web/build/pages/public.bundle__q_v_1784010893.js",
+          "status": 200,
+          "len": "506371"
+        }
+      ],
+      "css_critical": [
+        {
+          "href": "../../../assets/css/dizayn-critical.v1.css",
+          "status": 200,
+          "len": "68125"
+        },
+        {
+          "href": "../../../assets/css/dizayn-popup-menu.v1.css",
+          "status": 200,
+          "len": "113486"
+        },
+        {
+          "href": "../../../assets/css/dizayn-popup-menu.v1.css",
+          "status": 200,
+          "len": "113486"
+        },
+        {
+          "href": "../../../assets/css/dizayn-critical.v1.css",
+          "status": 200,
+          "len": "68125"
+        },
+        {
+          "href": "../../../assets/css/dizayn-deferred.v1.css",
+          "status": 200,
+          "len": "79986"
+        },
+        {
+          "href": "../../../assets/css/dizayn-extra.v1.css",
+          "status": 200,
+          "len": "131529"
+        },
+        {
+          "href": "../../../assets/css/dizayn-extra.v1.css",
+          "status": 200,
+          "len": "131529"
+        },
+        {
+          "href": "../../../assets/css/dizayn-deferred.v1.css",
+          "status": 200,
+          "len": "79986"
+        }
+      ],
+      "asset_checks": [
+        {
+          "url": "/assets/css/dizayn-critical.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/dizayn-popup-menu.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/dizayn-deferred.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/dizayn-extra.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/css/dizayn-popup-other.v1.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/favicon/favicon__q_1.png",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/web/user/fonts/montserrat/montserrat_bold.woff",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/web/build/pages/public.bundle__q_v_1784010882.css",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/6/e/e/6eea3ed3de3e5cbe118d06eb148fe963.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/8/1/a/81a3fe2ab76d8a7d4df2ea1900ce0265/-/crop/0x0x955x221/-/resize/211/-/scale/x3/-/resize/1920/f.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/1/5/3/15322ad6ca66f9fb2d0eae7a4fa3acd5/-/crop/0x0x511x488/-/resize/30/-/scale/x3/-/resize/1920/f__q_4144924.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/1/5/3/15322ad6ca66f9fb2d0eae7a4fa3acd5/-/crop/0x0x511x488/-/resize/55/-/scale/x3/-/resize/1920/f__q_4144924.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/f/8/4/f84c1d06edbb90a7bf2a49639a2dfba6/-/crop/0x0x1672x935/-/resize/330/-/resize/1920/f.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/f/8/4/f84c1d06edbb90a7bf2a49639a2dfba6/-/crop/0x103x1672x736/-/resize/678/-/resize/1920/f.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/0/4/2/042dc9162e5a0ef7c269ac522d649a19/-/crop/0x0x813x834/-/resize/55/-/resize/1920/f__q_8617374.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/6/f/d/6fd17a256faab7a84832596cc975dca5/-/crop/0x0x894x909/-/resize/55/-/resize/1920/f__q_11870914.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/f/b/9/fb9daa9bd2aef1292f374937899e7c32/-/crop/0x0x892x906/-/resize/55/-/resize/1920/f__q_54760525.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/3/2/e/32e8eac576d37936896bba2a35b52bdc/-/crop/0x21x650x391/-/resize/330/f__q_47567714.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/0/5/f/05fba2f37e0d0ebf16bf74efc995e0b9/-/crop/384x0x1154x700/-/resize/330/f__q_36994489.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/d/8/e/d8eb27b3bca04551081de512908b16a5/-/crop/0x38x1280x779/-/resize/330/f__q_10804456.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/4/1/6/4164fcbd8cd10da83d49ff55b12a2220/-/crop/25x94x689x418/-/resize/330/f__q_78422993.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/c/6/9/c6937ec1201641a5666bc4606abdb165/-/crop/0x6x1024x607/-/resize/327/f__q_73159820.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/aktobe.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/atyrau.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/pavlodar.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/ust-kamenogorsk.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/semey.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/kostanay.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/kyzylorda.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/uralsk.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/taraz.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/aktau.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/turkestan.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/kokshetau.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/rk-cities/taldykorgan.jpg",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/4/7/6/4762f4e3c85f2c75d4897395b6de92c6/-/crop/0x0x890x901/-/resize/59/-/scale/x3/-/resize/1920/f__q_39963485.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/1/d/2/1d28d79954690f99e3d2c3abd6a75272/-/crop/0x0x882x904/-/resize/59/-/scale/x3/-/resize/1920/f__q_94866819.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/6/3/8/638b6fbc171b9a894f4d443f13e95e76/-/crop/0x0x884x905/-/resize/59/-/scale/x3/-/resize/1920/f__q_52215748.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/0/e/3/0e3467bc3ddfca64e5aa1a357af3c536/-/crop/0x0x880x897/-/resize/59/-/scale/x3/-/resize/1920/f__q_28873983.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/2/5/8/258a7f698706fed363de1aabfcce63f7/-/crop/0x0x900x940/-/resize/47/-/scale/x3/-/resize/1920/f__q_15815530.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/8/d/0/8d0bd7948798850a3235e0932125cbc0/-/crop/0x0x890x900/-/resize/48/-/scale/x3/-/resize/1920/f__q_45390147.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/3/b/6/3b6d698dcc0cc8ca30201beea5c449bf/-/crop/0x0x892x918/-/resize/48/-/scale/x3/-/resize/1920/f__q_84870631.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/a/0/1/a01605f92449f0f85326d4c41b1abf52/-/crop/0x0x889x928/-/resize/47/-/scale/x3/-/resize/1920/f__q_8530586.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/0/c/5/0c567aece04d273c5c5ff43f4ab0d536/-/crop/0x0x888x926/-/resize/47/-/scale/x3/-/resize/1920/f__q_81826899.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/2/a/a/2aa0be7b981445f6a36545cb634d9714/-/crop/0x0x891x928/-/resize/47/-/scale/x3/-/resize/1920/f__q_2438311.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/5/b/9/5b99fa8d95df45d376053e61902d796d/-/crop/16x0x1645x946/-/resize/308/-/scale/x3/f__q_55932084.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/5/b/9/5b99fa8d95df45d376053e61902d796d/-/crop/5x0x1660x941/-/resize/301/-/scale/x3/f__q_55932084.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/7/1/3/71358f735a1ba65e5938e2d437d94cfe/-/crop/16x0x1645x946/-/resize/308/-/scale/x3/f__q_65169517.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/7/1/3/71358f735a1ba65e5938e2d437d94cfe/-/crop/5x0x1660x941/-/resize/301/-/scale/x3/f__q_65169517.webp",
+          "status": 200
+        },
+        {
+          "url": "/assets/m-files.cdn1.cc/lpfile/1/0/d/10de9baa71885eaea5929db9043bba2b/-/crop/21x0x1640x941/-/resize/308/-/scale/x3/f__q_81913524.webp",
+          "status": 200
+        }
+      ],
+      "failed": [],
+      "asset_ok": 50,
+      "asset_sampled": 50
+    }
+  }
+}

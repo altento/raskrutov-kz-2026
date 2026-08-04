@@ -1,0 +1,49 @@
+{
+  "date": "2026-08-04",
+  "base": "http://127.0.0.1:8767",
+  "widths": [360, 390, 430, 768, 1024, 1440, 1920],
+  "verdict": {
+    "css_extract": "COMPLETED",
+    "visual_qa": "PASS",
+    "mobile_h1": "FIXED",
+    "psi": "POST_DEPLOY"
+  },
+  "mobile_h1_fix": {
+    "cause": "Mottor @media(max-width:500px) hides .blk-data--pc (geo H1), shows .blk-data--mobile370 parent title",
+    "block_id": "b-aa35398c497a44568f98430c09d8d76c",
+    "marker": "data-rk-mobile-h1-fix",
+    "pages_patched": 36,
+    "scope": "18 hub cities + 18 seo cities",
+    "untouched": ["sozdanie-saitov", "dizayn", "parents", "css-extract files"]
+  },
+  "pages": {
+    "/web-studiya/astana/": {
+      "template": "hub",
+      "status": "PASS",
+      "mobile_h1": "FIXED",
+      "checked_widths": [360, 390, 430]
+    },
+    "/web-studiya/sozdanie-saitov/almaty/": {
+      "template": "sozdanie",
+      "status": "PASS",
+      "untouched_by_h1_fix": true
+    },
+    "/web-studiya/seo-prodvizhenie/shymkent/": {
+      "template": "seo",
+      "status": "PASS",
+      "mobile_h1": "FIXED",
+      "checked_widths": [360, 390, 430, 1440]
+    },
+    "/web-studiya/dizayn/petropavlovsk/": {
+      "template": "dizayn",
+      "status": "PASS",
+      "untouched_by_h1_fix": true
+    }
+  },
+  "remaining_limits": [
+    "PSI/Lighthouse only POST-DEPLOY",
+    "no mass image srcset/dims",
+    "public.bundle.js must stay sync",
+    "formal CLS via Lighthouse after deploy"
+  ]
+}

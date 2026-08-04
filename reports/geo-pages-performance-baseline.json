@@ -1,0 +1,152 @@
+{
+  "date": "2026-08-03",
+  "runs_requested": 3,
+  "quota_hit": true,
+  "note": "PageSpeed Insights API (no key). If quota_hit — remaining checks are POST-DEPLOY. Local Lighthouse/npx unavailable on this machine.",
+  "results": [
+    {
+      "template": "web-studiya",
+      "url": "https://raskrutov.kz/web-studiya/astana/",
+      "strategy": "mobile",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "web-studiya",
+      "url": "https://raskrutov.kz/web-studiya/astana/",
+      "strategy": "desktop",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "web-studiya",
+      "url": "https://raskrutov.kz/web-studiya/almaty/",
+      "strategy": "mobile",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "web-studiya",
+      "url": "https://raskrutov.kz/web-studiya/almaty/",
+      "strategy": "desktop",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "web-studiya",
+      "url": "https://raskrutov.kz/web-studiya/petropavlovsk/",
+      "strategy": "mobile",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "web-studiya",
+      "url": "https://raskrutov.kz/web-studiya/petropavlovsk/",
+      "strategy": "desktop",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "sozdanie-saitov",
+      "url": "https://raskrutov.kz/web-studiya/sozdanie-saitov/astana/",
+      "strategy": "mobile",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "sozdanie-saitov",
+      "url": "https://raskrutov.kz/web-studiya/sozdanie-saitov/astana/",
+      "strategy": "desktop",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "sozdanie-saitov",
+      "url": "https://raskrutov.kz/web-studiya/sozdanie-saitov/almaty/",
+      "strategy": "mobile",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "sozdanie-saitov",
+      "url": "https://raskrutov.kz/web-studiya/sozdanie-saitov/almaty/",
+      "strategy": "desktop",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "sozdanie-saitov",
+      "url": "https://raskrutov.kz/web-studiya/sozdanie-saitov/petropavlovsk/",
+      "strategy": "mobile",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "sozdanie-saitov",
+      "url": "https://raskrutov.kz/web-studiya/sozdanie-saitov/petropavlovsk/",
+      "strategy": "desktop",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "seo-prodvizhenie",
+      "url": "https://raskrutov.kz/web-studiya/seo-prodvizhenie/astana/",
+      "strategy": "mobile",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "seo-prodvizhenie",
+      "url": "https://raskrutov.kz/web-studiya/seo-prodvizhenie/astana/",
+      "strategy": "desktop",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "seo-prodvizhenie",
+      "url": "https://raskrutov.kz/web-studiya/seo-prodvizhenie/almaty/",
+      "strategy": "mobile",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "seo-prodvizhenie",
+      "url": "https://raskrutov.kz/web-studiya/seo-prodvizhenie/almaty/",
+      "strategy": "desktop",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "seo-prodvizhenie",
+      "url": "https://raskrutov.kz/web-studiya/seo-prodvizhenie/petropavlovsk/",
+      "strategy": "mobile",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "seo-prodvizhenie",
+      "url": "https://raskrutov.kz/web-studiya/seo-prodvizhenie/petropavlovsk/",
+      "strategy": "desktop",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "dizayn",
+      "url": "https://raskrutov.kz/web-studiya/dizayn/astana/",
+      "strategy": "mobile",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "dizayn",
+      "url": "https://raskrutov.kz/web-studiya/dizayn/astana/",
+      "strategy": "desktop",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "dizayn",
+      "url": "https://raskrutov.kz/web-studiya/dizayn/almaty/",
+      "strategy": "mobile",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "dizayn",
+      "url": "https://raskrutov.kz/web-studiya/dizayn/almaty/",
+      "strategy": "desktop",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "dizayn",
+      "url": "https://raskrutov.kz/web-studiya/dizayn/petropavlovsk/",
+      "strategy": "mobile",
+      "status": "FAILED_OR_QUOTA"
+    },
+    {
+      "template": "dizayn",
+      "url": "https://raskrutov.kz/web-studiya/dizayn/petropavlovsk/",
+      "strategy": "desktop",
+      "status": "FAILED_OR_QUOTA"
+    }
+  ]
+}

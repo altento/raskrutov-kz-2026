@@ -1,0 +1,99 @@
+{
+  "base": "http://127.0.0.1:8767",
+  "pages": {
+    "/web-studiya/astana/": {
+      "url": "http://127.0.0.1:8767/web-studiya/astana/",
+      "http": 200,
+      "html_kib": 383.0,
+      "checks": {
+        "h1": 1,
+        "canonical": true,
+        "critical_css": true,
+        "popup_menu_css": true,
+        "bundle_js": true,
+        "bundle_js_defer": false,
+        "lead_forms": true,
+        "cities_grid": true,
+        "breadcrumbs": true,
+        "jsonld": true,
+        "all_blocks_inline": false,
+        "hero_reserve": true
+      },
+      "asset_404": [],
+      "asset_ok": 67
+    },
+    "/web-studiya/sozdanie-saitov/almaty/": {
+      "url": "http://127.0.0.1:8767/web-studiya/sozdanie-saitov/almaty/",
+      "http": 200,
+      "html_kib": 444.4,
+      "checks": {
+        "h1": 1,
+        "canonical": true,
+        "critical_css": true,
+        "popup_menu_css": true,
+        "bundle_js": true,
+        "bundle_js_defer": false,
+        "lead_forms": true,
+        "cities_grid": true,
+        "breadcrumbs": true,
+        "jsonld": true,
+        "all_blocks_inline": false,
+        "hero_reserve": true
+      },
+      "asset_404": [],
+      "asset_ok": 69
+    },
+    "/web-studiya/seo-prodvizhenie/shymkent/": {
+      "url": "http://127.0.0.1:8767/web-studiya/seo-prodvizhenie/shymkent/",
+      "http": 200,
+      "html_kib": 379.6,
+      "checks": {
+        "h1": 1,
+        "canonical": true,
+        "critical_css": true,
+        "popup_menu_css": true,
+        "bundle_js": true,
+        "bundle_js_defer": false,
+        "lead_forms": true,
+        "cities_grid": true,
+        "breadcrumbs": true,
+        "jsonld": true,
+        "all_blocks_inline": false,
+        "hero_reserve": true
+      },
+      "asset_404": [],
+      "asset_ok": 67
+    },
+    "/web-studiya/dizayn/petropavlovsk/": {
+      "url": "http://127.0.0.1:8767/web-studiya/dizayn/petropavlovsk/",
+      "http": 200,
+      "html_kib": 422.7,
+      "checks": {
+        "h1": 1,
+        "canonical": true,
+        "critical_css": true,
+        "popup_menu_css": true,
+        "bundle_js": true,
+        "bundle_js_defer": false,
+        "lead_forms": true,
+        "cities_grid": true,
+        "breadcrumbs": true,
+        "jsonld": true,
+        "all_blocks_inline": false,
+        "hero_reserve": true
+      },
+      "asset_404": [],
+      "asset_ok": 69
+    }
+  },
+  "ok": true,
+  "widths_planned": [
+    360,
+    390,
+    430,
+    768,
+    1024,
+    1440,
+    1920
+  ]
+}

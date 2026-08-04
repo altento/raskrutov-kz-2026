@@ -99,6 +99,10 @@ CSV-копии: `docs/seo-regional/`.
 - [ ] Глазами: `/web-studiya/astana/` + `/web-studiya/` (сетка городов) + крошки/услуги
 - [x] Следующее: **дизайн** `/web-studiya/dizayn/{city}`
 - [ ] Глазами: `/web-studiya/dizayn/astana/` + parent cities
+- [x] Visual QA perf-представителей (Astana hub / Almaty sozdanie / Shymkent seo / Petropavlovsk dizayn × 360–1920) — локально после CSS-extract
+- [x] Mobile H1 на hub/seo geo **FIXED**
+- [ ] Дать команду на **commit + deploy** (CSS-extract + H1 fix)
+- [ ] После деплоя — PSI
 - [ ] После QA — следующее P2 (контекст / лидоген / …)
 
 ## 5. Чеклист АГЕНТА
@@ -187,4 +191,14 @@ CSV-копии: `docs/seo-regional/`.
 - Локально: `http://127.0.0.1:8765/web-studiya/dizayn/astana/`
 - Деплой `plesk`: точечный copy dizayn/* + hubs + sitemap
 - Дальше: контекст / лидоген / поддержка / консалтинг / AEO
+
+### 2026-08-03 — CSS-extract + visual QA (локально, без commit/deploy)
+- Perf-пакет на 76 geo/parents: extract hub/seo/dizayn (57 HTML); sozdanie уже extract
+- QA: 4 представителей × 360–1920 — PASS WITH WARN (mobile H1 duplicate на hub+seo)
+- Отчёт: `reports/geo-pages-performance-final.md`
+- Ждём: commit/push/deploy + PSI POST-DEPLOY
+
+### 2026-08-04 — mobile H1 FIXED
+- Override на 18 hub + 18 seo city; Astana/Shymkent @360–430 OK
+- sozdanie/dizayn не трогали; commit/deploy всё ещё ждут команду
 
