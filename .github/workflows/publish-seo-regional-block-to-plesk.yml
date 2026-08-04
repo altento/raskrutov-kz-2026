@@ -31,7 +31,7 @@ jobs:
           path: main-source
           fetch-depth: 1
 
-      - name: Apply regional block without overwriting Plesk page
+      - name: Insert regional block before FAQ
         shell: python
         run: |
           from pathlib import Path
@@ -51,6 +51,7 @@ jobs:
           source = source_path.read_text(encoding='utf-8')
           target = target_path.read_text(encoding='utf-8')
           bundle_count_before = target.count('public.bundle')
+          faq_count_before = target.count('id="faq"')
 
           def extract_marked(text, start, end):
               a = text.find(start)
@@ -59,6 +60,15 @@ jobs:
                   raise SystemExit(f'Marked source fragment missing: {start}')
               return text[a:b + len(end)]
 
+          def replace_marked(text, start, end, replacement):
+              a = text.find(start)
+              if a < 0:
+                  return None
+              b = text.find(end, a)
+              if b < 0:
+                  raise SystemExit(f'End marker missing: {end}')
+              return text[:a] + replacement + text[b + len(end):]
+
           css = extract_marked(source, css_start, css_end)
           block = extract_marked(source, html_start, html_end)
           if block.count('class="rk-seo-regions__card"') != 18:
@@ -66,40 +76,23 @@ jobs:
           if block.count('seo-prodvizhenie-sajtov-v-') != 36:
               raise SystemExit('Source regional block URL count is unexpected')
 
-          def replace_or_insert_marked(text, start, end, replacement, insert_at):
-              a = text.find(start)
-              if a >= 0:
-                  b = text.find(end, a)
-                  if b < 0:
-                      raise SystemExit(f'End marker missing: {end}')
-                  return text[:a] + replacement + text[b + len(end):]
-              return text[:insert_at] + replacement + '\n' + text[insert_at:]
-
-          head_end = target.lower().find('</head>')
-          if head_end < 0:
-              raise SystemExit('Plesk page has no closing head tag')
-          target = replace_or_insert_marked(target, css_start, css_end, css, head_end)
-
-          if html_start in target:
-              a = target.find(html_start)
-              b = target.find(html_end, a)
-              if b < 0:
-                  raise SystemExit('Existing regional block has no end marker')
-              target = target[:a] + block + target[b + len(html_end):]
+          updated = replace_marked(target, css_start, css_end, css)
+          if updated is None:
+              head_end = target.lower().find('</head>')
+              if head_end < 0:
+                  raise SystemExit('Plesk page has no closing head tag')
+              target = target[:head_end] + css + '\n' + target[head_end:]
           else:
-              sections = list(re.finditer(r'<section\b[^>]*>.*?</section>', target, re.I | re.S))
-              if not sections:
-                  raise SystemExit('No semantic sections found in Plesk page')
-              scored = []
-              for match in sections:
-                  fragment = match.group(0)
-                  score = fragment.lower().count('seo-prodvizhenie')
-                  scored.append((score, match.start(), match.end(), fragment[:180]))
-              score, legacy_start, legacy_end, excerpt = max(scored, key=lambda row: row[0])
-              print(f'Best regional section candidate: score={score}; excerpt={re.sub(chr(92)+"s+", " ", excerpt)}')
-              if score < 10:
-                  raise SystemExit('No semantic section with at least 10 regional SEO links was found')
-              target = target[:legacy_start] + block + '\n' + target[legacy_end:]
+              target = updated
+
+          updated = replace_marked(target, html_start, html_end, block)
+          if updated is None:
+              faq = re.search(r'<section\b(?=[^>]*\bid=["\']faq["\'])[^>]*>', target, re.I)
+              if not faq:
+                  raise SystemExit('FAQ section with id="faq" was not found')
+              target = target[:faq.start()] + block + '\n\n' + target[faq.start():]
+          else:
+              target = updated
 
           if target.count(html_start) != 1 or target.count(html_end) != 1:
               raise SystemExit('Regional HTML marker count is invalid')
@@ -107,6 +100,12 @@ jobs:
               raise SystemExit('Regional CSS marker count is invalid')
           if target.count('class="rk-seo-regions__card"') != 18:
               raise SystemExit('Final Plesk page does not contain 18 cards')
+          if target.count('seo-prodvizhenie-sajtov-v-') != 36:
+              raise SystemExit('Final Plesk page does not contain exactly 18 regional URLs in two link attributes')
+          if target.count('id="faq"') != faq_count_before or faq_count_before != 1:
+              raise SystemExit('FAQ section count changed unexpectedly')
+          if target.find(html_start) > target.find('id="faq"'):
+              raise SystemExit('Regional block is not positioned before FAQ')
           if target.count('public.bundle') != bundle_count_before:
               raise SystemExit('public.bundle references changed unexpectedly')
 
@@ -125,10 +124,8 @@ jobs:
           missing = [image.name for image in images if f'assets/images/seo-cities/{image.name}' not in final]
           if missing:
               raise SystemExit('Images not referenced by final HTML: ' + ', '.join(missing))
-          if final.count('seo-prodvizhenie-sajtov-v-') != 36:
-              raise SystemExit('Final Plesk page does not contain exactly 18 regional URLs in two link attributes')
 
-          print('OK: patched current clean Plesk HTML without replacing unrelated page changes')
+          print('OK: regional block inserted directly before FAQ')
           print('OK: 18 final regional URLs and 18 WebP images validated')
 
       - name: Remove temporary source and one-time workflow
