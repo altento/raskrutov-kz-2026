@@ -72,12 +72,13 @@ jobs:
 
           for path in targets:
               source = path.read_text(encoding='utf-8')
-              contact_heading = re.search(r'>\s*Контакты\s*<', source, re.I)
-              if not contact_heading:
+              contact_headings = list(re.finditer(r'>\s*Контакты\s*<', source, re.I))
+              if not contact_headings:
                   raise SystemExit(f'{path}: contact heading not found')
+              contact_heading = contact_headings[-1]
               starts = [m.start() for m in section_pattern.finditer(source) if m.start() < contact_heading.start()]
               if len(starts) < 2:
-                  raise SystemExit(f'{path}: cannot locate section before contacts')
+                  raise SystemExit(f'{path}: cannot locate section before bottom contacts')
               contact_start = starts[-1]
               legacy_start = starts[-2]
               legacy = source[legacy_start:contact_start]
@@ -91,9 +92,10 @@ jobs:
           installer = Path('/tmp/apply_seo_regional_block.py')
           code = installer.read_text(encoding='utf-8')
           replacement = '''def locate_faq(source: str) -> int:
-              marker = re.search(r">\\s*Контакты\\s*<", source, re.I)
-              if not marker:
+              markers = list(re.finditer(r">\\s*Контакты\\s*<", source, re.I))
+              if not markers:
                   raise SystemExit("Не найден блок Контакты для установки регионального блока.")
+              marker = markers[-1]
               starts = [s for s in section_starts(source, 0) if s < marker.start()]
               if not starts:
                   raise SystemExit("Не найдена секция Контакты для установки регионального блока.")
@@ -111,7 +113,7 @@ jobs:
           if count != 1:
               raise SystemExit(f'Installer target patch failed: replacements={count}')
           installer.write_text(code, encoding='utf-8')
-          print('Installer target changed from FAQ scoring to the Contacts section')
+          print('Installer target changed to the bottom Contacts section')
 
       - name: Apply and validate regional block
         run: python /tmp/apply_seo_regional_block.py
