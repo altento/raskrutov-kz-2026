@@ -1,0 +1,73 @@
+name: Fix regional style wrapper
+
+on:
+  pull_request:
+    branches:
+      - plesk
+    types:
+      - synchronize
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    env:
+      TARGET_BRANCH: ${{ github.head_ref }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Wrap and validate regional CSS
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('web-studiya/seo-prodvizhenie/index.html')
+          text = path.read_text(encoding='utf-8')
+          start = '/* rk-seo-regions:start */'
+          end = '/* rk-seo-regions:end */'
+          style_open = '<style id="rk-seo-regions-styles">'
+          style_close = '</style>'
+
+          a = text.find(start)
+          b = text.find(end, a)
+          if a < 0 or b < 0:
+              raise SystemExit('Regional CSS markers were not found')
+          b += len(end)
+
+          before = text[max(0, a - 80):a]
+          after = text[b:b + 80]
+          if style_open not in before:
+              text = text[:a] + style_open + '\n' + text[a:b] + '\n' + style_close + text[b:]
+
+          if text.count(style_open) != 1:
+              raise SystemExit('Regional style wrapper count is invalid')
+          style_start = text.find(style_open)
+          style_end = text.find(style_close, style_start)
+          head_end = text.lower().find('</head>')
+          if not (0 <= style_start < style_end < head_end):
+              raise SystemExit('Regional style element is not fully inside head')
+          if text.count('<!-- rk-seo-regions:start -->') != 1:
+              raise SystemExit('Regional HTML block count changed unexpectedly')
+          if text.count('class="rk-seo-regions__card"') != 18:
+              raise SystemExit('Regional card count changed unexpectedly')
+          if text.find('<!-- rk-seo-regions:start -->') > text.find('id="faq"'):
+              raise SystemExit('Regional block is not before FAQ')
+
+          path.write_text(text, encoding='utf-8', newline='\n')
+          print('OK: regional CSS is wrapped in a style element inside head')
+
+      - name: Remove one-time workflow and commit
+        run: |
+          rm -f .github/workflows/fix-plesk-regional-style.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "fix: wrap regional block CSS in style element"
+          git push origin HEAD:"$TARGET_BRANCH"
