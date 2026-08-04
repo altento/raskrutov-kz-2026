@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-03 (UTC+5) — desktop CLS fix `v=38` → publish plesk  
+**Последнее обновление:** 2026-08-04 (UTC+5) — agency card: remove overlapping illus `v=39` → publish plesk  
 **Рабочая ветка:** `homepage-clean-rebuild`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -193,6 +193,13 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] **Plesk:** pull `plesk` → httpdocs
 - [ ] Live smoke Ctrl+F5: шапка не прыгает; `home-clean.css?v=38`
 - [ ] PSI desktop: CLS ≤0.05; скинуть цифры
+
+#### D6. Agency card illus remove `v=39` (2026-08-04) → publish
+- [x] Удалена декоративная картинка `.rk-partners-agency__illus` (налезала на текст в «Для рекламных агентств»)
+- [x] Убраны CSS-правила illus; cache-bust `home-clean.css?v=39`
+- [x] Commit / push feature + точечный publish `plesk`
+- [ ] **Plesk:** pull `plesk` → httpdocs (если не авто)
+- [ ] Live smoke Ctrl+F5: карточка «Для рекламных агентств» без картинки справа, текст читается; `?v=39`
 
 #### D2. Деплой (архив preview index-clean)
 - [x] Старый preview `index-clean` на plesk — при этом деплое **удалить** с прода
@@ -416,5 +423,11 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Точечный copy → `site_plesk` + push feature + `plesk`
 - Feature `1e9e0149`, plesk `5ff5fde8` (`home-clean.css?v=38`)
 - **Ждём:** pull `plesk` на сервере → https://raskrutov.kz/ (Ctrl+F5) + PSI desktop CLS
+
+### 2026-08-04 — agency card: remove overlapping illus → publish plesk (`v=39`)
+- Юзер: картинка в «Для рекламных агентств» наложилась на текст → удалить совсем
+- Удалён `<img class="rk-partners-agency__illus">` + CSS `.rk-partners-agency__illus`
+- Cache-bust `home-clean.css?v=39`; точечный copy index + css → `site_plesk`
+- **Ждём:** pull `plesk` на сервере → https://raskrutov.kz/ (Ctrl+F5) — карточка без иллюстрации
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
