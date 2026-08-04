@@ -442,13 +442,12 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Feature `2a51c8fc`, plesk `a6872dcc` (`home-clean.css?v=39`)
 - **Ждём:** pull `plesk` на сервере → https://raskrutov.kz/ (Ctrl+F5) — карточка без иллюстрации
 
-### 2026-08-04 — clean migration SEO `/web-studiya/seo-prodvizhenie/` (локально)
+### 2026-08-04 — clean migration SEO `/web-studiya/seo-prodvizhenie/` → publish plesk
 - Эталон: Motor test URL; реконструкция без `public.bundle` / Mottor DOM
-- Файлы: `site_mirror/web-studiya/seo-prodvizhenie/index.html`, `assets/css/seo-clean.css`, `assets/img/seo-prodvizhenie/*`
-- Переиспользованы: `home-clean.css/js`, `lead-forms.js`, header/contacts/faq/modal паттерны
-- Backup Motor: `_qa_out/seo-motor-index.backup.html`
-- QA: console clean, 0×404, нет запросов на lpmotortest; DOM ~429–456; 2 формы `data-lead-form`
-- LH mobile медиана (лок.): Perf **86**, FCP ~1.86s, LCP ~3.79s, SI ~3.01s, TBT ~100ms, CLS **0**, вес ~544KB / 43 req
-- **Commit/push/publish не делали** — ждут команды юзера (§5.1 D7)
+- Файлы: `web-studiya/seo-prodvizhenie/index.html`, `assets/css/seo-clean.css`, `assets/img/seo-prodvizhenie/*`
+- Переиспользованы: `home-clean.css/js`, `lead-forms.js`, header/contacts/faq/modal
+- KPI/synergy картинки разведены (+86/+63/+42/+92 vs иконки); альты проставлены
+- Feature `10a71385`, plesk `fa71857e` (rebase поверх geo-perf `a424184b`)
+- **Ждём:** pull `plesk` на сервере → https://raskrutov.kz/web-studiya/seo-prodvizhenie/ (Ctrl+F5)
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
