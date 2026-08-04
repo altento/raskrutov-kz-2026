@@ -52,9 +52,66 @@ jobs:
           good = 'M9V5/DG' + 'N' + 'dzi42'
           if bad not in payload:
               raise SystemExit('Expected transfer artifact was not found')
-          payload = payload.replace(bad, good, 1)
-          path.write_text(payload, encoding='ascii')
+          path.write_text(payload.replace(bad, good, 1), encoding='ascii')
           print('Archive part 04 normalized')
+
+      - name: Replace legacy regional section target
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          section_pattern = re.compile(
+              r'<div\b(?=[^>]*(?:blk_class=["\']section["\']|class=["\'][^"\']*\bblk_section\b[^"\']*["\']))[^>]*>',
+              re.I,
+          )
+          targets = [Path('site_mirror/web-studiya/seo-prodvizhenie/index.html')]
+          optional = Path('site_deploy/web-studiya/seo-prodvizhenie/index.html')
+          if optional.is_file():
+              targets.append(optional)
+
+          for path in targets:
+              source = path.read_text(encoding='utf-8')
+              contact_heading = re.search(r'>\s*Контакты\s*<', source, re.I)
+              if not contact_heading:
+                  raise SystemExit(f'{path}: contact heading not found')
+              starts = [m.start() for m in section_pattern.finditer(source) if m.start() < contact_heading.start()]
+              if len(starts) < 2:
+                  raise SystemExit(f'{path}: cannot locate section before contacts')
+              contact_start = starts[-1]
+              legacy_start = starts[-2]
+              legacy = source[legacy_start:contact_start]
+              regional_links = legacy.lower().count('seo-prodvizhenie')
+              if regional_links < 10:
+                  excerpt = re.sub(r'\s+', ' ', legacy[:500])
+                  raise SystemExit(f'{path}: previous section is not the legacy regional block; links={regional_links}; {excerpt}')
+              path.write_text(source[:legacy_start] + source[contact_start:], encoding='utf-8', newline='\n')
+              print(f'{path}: removed legacy regional section with {regional_links} SEO links')
+
+          installer = Path('/tmp/apply_seo_regional_block.py')
+          code = installer.read_text(encoding='utf-8')
+          replacement = '''def locate_faq(source: str) -> int:
+              marker = re.search(r">\\s*Контакты\\s*<", source, re.I)
+              if not marker:
+                  raise SystemExit("Не найден блок Контакты для установки регионального блока.")
+              starts = [s for s in section_starts(source, 0) if s < marker.start()]
+              if not starts:
+                  raise SystemExit("Не найдена секция Контакты для установки регионального блока.")
+              return starts[-1]
+
+
+          def build_block'''
+          code, count = re.subn(
+              r'def locate_faq\(source: str\) -> int:.*?\n\ndef build_block',
+              replacement,
+              code,
+              count=1,
+              flags=re.S,
+          )
+          if count != 1:
+              raise SystemExit(f'Installer target patch failed: replacements={count}')
+          installer.write_text(code, encoding='utf-8')
+          print('Installer target changed from FAQ scoring to the Contacts section')
 
       - name: Apply and validate regional block
         run: python /tmp/apply_seo_regional_block.py
