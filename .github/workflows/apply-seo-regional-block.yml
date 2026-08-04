@@ -105,7 +105,7 @@ jobs:
           def build_block'''
           code, count = re.subn(
               r'def locate_faq\(source: str\) -> int:.*?\n\ndef build_block',
-              replacement,
+              lambda _match: replacement,
               code,
               count=1,
               flags=re.S,
