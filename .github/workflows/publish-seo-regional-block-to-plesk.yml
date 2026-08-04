@@ -1,0 +1,156 @@
+name: Publish SEO regional block to Plesk
+
+on:
+  pull_request:
+    branches:
+      - plesk
+    types:
+      - opened
+      - synchronize
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    env:
+      TARGET_BRANCH: ${{ github.head_ref }}
+    steps:
+      - name: Checkout Plesk working branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Checkout main source snapshot
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main-source
+          fetch-depth: 1
+
+      - name: Apply regional block without overwriting Plesk page
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          import shutil
+
+          css_start = '/* rk-seo-regions:start */'
+          css_end = '/* rk-seo-regions:end */'
+          html_start = '<!-- rk-seo-regions:start -->'
+          html_end = '<!-- rk-seo-regions:end -->'
+
+          source_path = Path('main-source/site_mirror/web-studiya/seo-prodvizhenie/index.html')
+          target_path = Path('web-studiya/seo-prodvizhenie/index.html')
+          if not source_path.is_file() or not target_path.is_file():
+              raise SystemExit('Required source or Plesk HTML file is missing')
+
+          source = source_path.read_text(encoding='utf-8')
+          target = target_path.read_text(encoding='utf-8')
+          bundle_count_before = target.count('public.bundle')
+
+          def extract_marked(text, start, end):
+              a = text.find(start)
+              b = text.find(end, a)
+              if a < 0 or b < 0:
+                  raise SystemExit(f'Marked source fragment missing: {start}')
+              return text[a:b + len(end)]
+
+          css = extract_marked(source, css_start, css_end)
+          block = extract_marked(source, html_start, html_end)
+
+          if block.count('class="rk-seo-regions__card"') != 18:
+              raise SystemExit('Source regional block does not contain 18 cards')
+          if block.count('seo-prodvizhenie-sajtov-v-') != 36:
+              # Every URL appears in href and data-page-link.
+              raise SystemExit('Source regional block URL count is unexpected')
+
+          def replace_or_insert_marked(text, start, end, replacement, insert_at):
+              a = text.find(start)
+              if a >= 0:
+                  b = text.find(end, a)
+                  if b < 0:
+                      raise SystemExit(f'End marker missing: {end}')
+                  return text[:a] + replacement + text[b + len(end):]
+              return text[:insert_at] + replacement + '\n' + text[insert_at:]
+
+          head_end = target.lower().find('</head>')
+          if head_end < 0:
+              raise SystemExit('Plesk page has no closing head tag')
+          target = replace_or_insert_marked(target, css_start, css_end, css, head_end)
+
+          if html_start in target:
+              a = target.find(html_start)
+              b = target.find(html_end, a)
+              if b < 0:
+                  raise SystemExit('Existing regional block has no end marker')
+              target = target[:a] + block + target[b + len(html_end):]
+          else:
+              section_pattern = re.compile(
+                  r'<div\b(?=[^>]*(?:blk_class=["\']section["\']|class=["\'][^"\']*\bblk_section\b[^"\']*["\']))[^>]*>',
+                  re.I,
+              )
+              contact_headings = list(re.finditer(r'>\s*Контакты\s*<', target, re.I))
+              if not contact_headings:
+                  raise SystemExit('Bottom Contacts heading was not found')
+              contact_heading = contact_headings[-1]
+              starts = [m.start() for m in section_pattern.finditer(target) if m.start() < contact_heading.start()]
+              if len(starts) < 2:
+                  raise SystemExit('Cannot locate legacy regional section before Contacts')
+              contact_start = starts[-1]
+              legacy_start = starts[-2]
+              legacy = target[legacy_start:contact_start]
+              legacy_plain = re.sub(r'<[^>]+>', ' ', legacy)
+              legacy_plain = re.sub(r'\s+', ' ', legacy_plain)
+              if 'SEO-продвижение по городам Казахстана' not in legacy_plain:
+                  raise SystemExit('The section before Contacts is not the legacy regional section')
+              if legacy.lower().count('seo-prodvizhenie') < 10:
+                  raise SystemExit('Legacy regional section contains too few SEO links')
+              target = target[:legacy_start] + block + '\n' + target[contact_start:]
+
+          if target.count(html_start) != 1 or target.count(html_end) != 1:
+              raise SystemExit('Regional HTML marker count is invalid')
+          if target.count(css_start) != 1 or target.count(css_end) != 1:
+              raise SystemExit('Regional CSS marker count is invalid')
+          if target.count('class="rk-seo-regions__card"') != 18:
+              raise SystemExit('Final Plesk page does not contain 18 cards')
+          if 'SEO-продвижение по городам Казахстана' in target:
+              raise SystemExit('Legacy regional heading remains in final page')
+          if target.count('public.bundle') != bundle_count_before:
+              raise SystemExit('public.bundle references changed unexpectedly')
+
+          target_path.write_text(target, encoding='utf-8', newline='\n')
+
+          src_images = Path('main-source/site_mirror/assets/images/seo-cities')
+          dst_images = Path('assets/images/seo-cities')
+          images = sorted(src_images.glob('*.webp'))
+          if len(images) != 18:
+              raise SystemExit(f'Expected 18 WebP images in main, found {len(images)}')
+          dst_images.mkdir(parents=True, exist_ok=True)
+          for image in images:
+              shutil.copy2(image, dst_images / image.name)
+
+          final = target_path.read_text(encoding='utf-8')
+          missing = [image.name for image in images if f'assets/images/seo-cities/{image.name}' not in final]
+          if missing:
+              raise SystemExit('Images not referenced by final HTML: ' + ', '.join(missing))
+
+          print('OK: patched current Plesk HTML without replacing unrelated page changes')
+          print('OK: 18 final regional URLs and 18 WebP images validated')
+
+      - name: Remove temporary source and one-time workflow
+        run: |
+          rm -rf main-source
+          rm -f .github/workflows/publish-seo-regional-block-to-plesk.yml
+
+      - name: Commit Plesk publication
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "feat: publish regional SEO city navigation block"
+          git push origin HEAD:"$TARGET_BRANCH"
