@@ -1,0 +1,55 @@
+name: Apply SEO regional block
+
+on:
+  push:
+    branches:
+      - agent/seo-regional-block
+    paths:
+      - .github/workflows/apply-seo-regional-block.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout working branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/seo-regional-block
+          fetch-depth: 0
+
+      - name: Reconstruct and verify installer
+        shell: python
+        run: |
+          from pathlib import Path
+          import base64
+          import hashlib
+
+          parts = sorted(Path('.tmp/seo-regional-cities').glob('script.py.b64.part*'))
+          if len(parts) != 6:
+              raise SystemExit(f'Expected 6 installer parts, found {len(parts)}')
+          encoded = ''.join(p.read_text(encoding='ascii') for p in parts)
+          data = base64.b64decode(encoded)
+          digest = hashlib.sha256(data).hexdigest()
+          expected = 'dafe8390eff7affd0845162eb0480a20893a3909d3b2a8f80f254db757ab557b'
+          if digest != expected:
+              raise SystemExit(f'Installer checksum mismatch: {digest}')
+          Path('/tmp/apply_seo_regional_block.py').write_bytes(data)
+          print(f'Installer verified: {digest}')
+
+      - name: Apply and validate regional block
+        run: python /tmp/apply_seo_regional_block.py
+
+      - name: Remove one-time inputs
+        run: rm -rf .tmp/seo-regional-cities
+
+      - name: Commit generated page and images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "feat: add regional SEO city navigation block"
+          git push origin HEAD:agent/seo-regional-block
