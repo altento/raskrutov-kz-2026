@@ -428,6 +428,7 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Юзер: картинка в «Для рекламных агентств» наложилась на текст → удалить совсем
 - Удалён `<img class="rk-partners-agency__illus">` + CSS `.rk-partners-agency__illus`
 - Cache-bust `home-clean.css?v=39`; точечный copy index + css → `site_plesk`
+- Feature `2a51c8fc`, plesk `a6872dcc` (`home-clean.css?v=39`)
 - **Ждём:** pull `plesk` на сервере → https://raskrutov.kz/ (Ctrl+F5) — карточка без иллюстрации
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
