@@ -1899,15 +1899,6 @@ body.rk-modal-open {
 .rk-partners-agency__foot a:hover {
   color: var(--rk-purple);
 }
-.rk-partners-agency__illus {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  width: 128px;
-  height: auto;
-  object-fit: contain;
-  pointer-events: none;
-}
 .rk-faq {
   margin-top: 8px;
 }
@@ -3133,9 +3124,6 @@ body.rk-modal-open {
   .rk-cta-panel .rk-btn--light {
     min-width: 0;
     width: 100%;
-  }
-  .rk-partners-agency__illus {
-    max-width: min(150px, 40vw);
   }
   .rk-sticky-cta {
     display: flex;
