@@ -47,7 +47,7 @@ jobs:
               suffix = part.name.rsplit('.', 1)[-1]
               payload = part.read_bytes()
               digest = hashlib.sha256(payload).hexdigest()
-              print(f'{suffix}: bytes={len(payload)} sha256={digest}')
+              print(f'installer {suffix}: bytes={len(payload)} sha256={digest}')
               if digest != expected_parts[suffix]:
                   bad.append(suffix)
           if bad:
@@ -60,6 +60,50 @@ jobs:
               raise SystemExit(f'Installer checksum mismatch: {digest}')
           Path('/tmp/apply_seo_regional_block.py').write_bytes(data)
           print(f'Installer verified: {digest}')
+
+      - name: Verify city archive chunks
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib
+
+          expected = {
+              'part01': 'ea0f8b07e05c8dc8987e0a9d304a02853f4d011a91cdbd38bc329b7adbdd1fd1',
+              'part02': 'b5d949d8154d4290919a5e3b3606c5c7c9e6a672b917c1699745e02c7c554b65',
+              'part03': 'a4b550b1049e40d8216179f9e27fa5fc530f5e5a5e4735a16ffcadad1d717b08',
+              'part04': '5fa4ebc42e90dd57fa0cb981b64c9d4c87e171746248edc1fe9a3a49d2272db3',
+              'part05': 'b0ec17890ef722aabd3701a915b4ac9c0791be8d6d249f2007f3ea882415cf80',
+              'part06': '01d9eea2dec79dba96b5ac39b1e7a255068fe89e34ad5cf06ba95d153706a4ba',
+              'part07': '4f81f17f34136d3285612b92cc174ef78cbf2a94960214569fbc09d9882444d9',
+              'part08': '466903e21d7c7afd2d35e0ae9ae9f1ffc9dd029c5af25d9716c128a8e1be28ea',
+              'part09': '3940d61e4e71e7bd8faccbf877888fc125cc8e043c2b5322ed38d6e259681591',
+              'part10': '22a988b4da77175914041c41a11a8a7101a7fa2a8e38fe95f69f698db035d9b8',
+              'part11': '044d235de76d0e5c26be1c340cbb2bbd448fdcd441338b853b894c92dc171404',
+              'part12': '118f9570871691b00810c9ee93a111225324197acaddd01d78ef7fbe3230172e',
+              'part13': 'ba4b40b5c66a8f1f59003fff896f783405d8e1b130b2eb358d0febdc336a5c69',
+              'part14': '6d3f3ae8c403814ac16f2ffeb49964956abda7e805b96d55a6bc6e08041ee8d2',
+              'part15': '0405ee9e3ebc74d642dba563597d008b14e14b4b5a917276b65e4d3c66a63111',
+              'part16': '0d2a5a1eee13dc71a233b6462eb509ca66c9cea45fab38c81ada62d8d9f7b2ca',
+              'part17': '45295183d4e9756ced9703bcc7a79c4a8b90985885204b6d08293db53f89c0dc',
+              'part18': 'a593ef1883ca89d6593fdba8e52558afc867f9320313b0587976ab678ed71ce0',
+              'part19': '2e894687929d9171909efb13a0480725bbe80a39ef46fd5ef24c9fd0195a9f6e',
+              'part20': '412c662166f0022769b4d563560a429aa36039e513fc1a672528f10415c5415d',
+              'part21': '3c69eb777bb422787cc4ca595c921547da3b64cabb3f9c87a07cc3d5504d8efd',
+              'part22': '620bda7bf3de010c2a37762c2747d1a2c524c38fbd6d7b02bd367d80bbfd9329',
+          }
+          parts = sorted(Path('.tmp/seo-regional-cities').glob('assets.zip.b64.part*'))
+          if len(parts) != 22:
+              raise SystemExit(f'Expected 22 archive parts, found {len(parts)}')
+          bad = []
+          for part in parts:
+              suffix = part.name.rsplit('.', 1)[-1]
+              payload = part.read_bytes()
+              digest = hashlib.sha256(payload).hexdigest()
+              print(f'archive {suffix}: bytes={len(payload)} sha256={digest}')
+              if digest != expected[suffix]:
+                  bad.append(suffix)
+          if bad:
+              raise SystemExit('Archive part checksum mismatch: ' + ', '.join(bad))
 
       - name: Apply and validate regional block
         run: python /tmp/apply_seo_regional_block.py
