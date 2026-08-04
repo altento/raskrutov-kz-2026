@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-04 (UTC+5) — agency card: remove overlapping illus `v=39` → publish plesk  
+**Последнее обновление:** 2026-08-04 (UTC+5) — clean migration `/web-studiya/seo-prodvizhenie/` (без commit)  
 **Рабочая ветка:** `homepage-clean-rebuild`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -205,10 +205,21 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [x] Старый preview `index-clean` на plesk — при этом деплое **удалить** с прода
 - [x] Точечный copy: `index.html` + `home-clean.css/js` (+ удалить `index-clean.html` в plesk)
 
+#### D7. Clean migration SEO-продвижение (2026-08-04) → publish plesk
+- [x] SOURCE: `https://m65176a2c628d6.lpmotortest.com/web-studiya/seo-prodvizhenie`
+- [x] TARGET: `site_mirror/web-studiya/seo-prodvizhenie/index.html` (чистый HTML, без Mottor)
+- [x] CSS/ассеты: `assets/css/seo-clean.css`, `assets/img/seo-prodvizhenie/*`
+- [x] Формы: `data-lead-form` + `lead-forms.js` (реальную отправку не гоняли)
+- [x] Commit / push feature + точечный publish `plesk`
+- [ ] **Plesk:** pull ветки `plesk` в `httpdocs` (если не авто)
+- [ ] Live smoke Ctrl+F5: https://raskrutov.kz/web-studiya/seo-prodvizhenie/ — меню/FAQ/формы/крошки/KPI
+- [ ] Сверить секции с SOURCE; если что-то плывёт — скинуть скрин
+
 #### E. По желанию / позже
 - [ ] Plesk: Cache-Control для `home-*.css` (сейчас nginx может держать длинный max-age)
 - [ ] Не заливать на Plesk ветку `deploy` / `site_deploy` (там GH prefix)
 - [ ] Не коммитить мусорные untracked `lpfile/` и одноразовые `_psi_check_*.py` без нужды
+- [ ] Удалить локальный мусор `site_mirror/assets/img/seo-prodvizhenie/*.{png,approach,syn,kpi-chart,trust-*.webp}` если не нужен
 
 ### 5.2 Действия АГЕНТА (когда юзер дал ввод)
 1. По логам/коду Supabase — починить `submit-lead` (или задеплоить исправленную функцию)
@@ -430,5 +441,14 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Cache-bust `home-clean.css?v=39`; точечный copy index + css → `site_plesk`
 - Feature `2a51c8fc`, plesk `a6872dcc` (`home-clean.css?v=39`)
 - **Ждём:** pull `plesk` на сервере → https://raskrutov.kz/ (Ctrl+F5) — карточка без иллюстрации
+
+### 2026-08-04 — clean migration SEO `/web-studiya/seo-prodvizhenie/` (локально)
+- Эталон: Motor test URL; реконструкция без `public.bundle` / Mottor DOM
+- Файлы: `site_mirror/web-studiya/seo-prodvizhenie/index.html`, `assets/css/seo-clean.css`, `assets/img/seo-prodvizhenie/*`
+- Переиспользованы: `home-clean.css/js`, `lead-forms.js`, header/contacts/faq/modal паттерны
+- Backup Motor: `_qa_out/seo-motor-index.backup.html`
+- QA: console clean, 0×404, нет запросов на lpmotortest; DOM ~429–456; 2 формы `data-lead-form`
+- LH mobile медиана (лок.): Perf **86**, FCP ~1.86s, LCP ~3.79s, SI ~3.01s, TBT ~100ms, CLS **0**, вес ~544KB / 43 req
+- **Commit/push/publish не делали** — ждут команды юзера (§5.1 D7)
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
