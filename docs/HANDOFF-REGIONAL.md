@@ -101,7 +101,7 @@ CSV-копии: `docs/seo-regional/`.
 - [ ] Глазами: `/web-studiya/dizayn/astana/` + parent cities
 - [x] Visual QA perf-представителей (Astana hub / Almaty sozdanie / Shymkent seo / Petropavlovsk dizayn × 360–1920) — локально после CSS-extract
 - [x] Mobile H1 на hub/seo geo **FIXED**
-- [ ] Дать команду на **commit + deploy** (CSS-extract + H1 fix)
+- [x] Commit + deploy CSS-extract + H1 fix (feature `193f7e04`, plesk `a424184b`)
 - [ ] После деплоя — PSI
 - [ ] После QA — следующее P2 (контекст / лидоген / …)
 

@@ -171,7 +171,7 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [x] Старт: sozdanie + SEO + хабы (pretty) — задеплоены
 - [x] Visual QA 4 представителей × 360–1920 (локально, CSS-extract hub/seo/dizayn) — см. `reports/geo-pages-performance-final.md`
 - [x] Mobile H1 hub/seo geo **FIXED** (inline `data-rk-mobile-h1-fix`, 36 city pages)
-- [ ] **Commit / push / deploy** CSS-extract + H1 fix — в процессе (команда юзера 2026-08-04)
+- [x] **Commit / push / deploy** CSS-extract + H1 fix — feature `193f7e04`, plesk `a424184b` (2026-08-04)
 - [ ] После деплоя: PSI mobile/desktop representatives — **POST-DEPLOY**
 - [ ] Дальше P2 по чеклистам в `HANDOFF-REGIONAL.md`
 #### E. По желанию / позже
@@ -330,6 +330,11 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Фикс: `<style data-rk-mobile-h1-fix>` на 18 hub + 18 seo cities (блок `b-aa35398c…`); CSS-extract не трогали
 - QA: Astana + Shymkent @360/390/430 — гео-H1 visible, дубль hidden; sozdanie/dizayn не трогали
 - Скрипт: `_fix_mobile_h1_geo.py`; отчёты обновлены → **PASS / FIXED**
-- Commit/push/deploy — всё ещё ждём команду
+
+### 2026-08-04 — COMMIT + DEPLOY geo CSS-extract + mobile H1
+- Feature `performance/pagespeed-raskrutov` **`193f7e04`**: 87 files (57 HTML + 15 CSS + reports/scripts/HANDOFF)
+- Plesk **`a424184b`**: точечный copy 72 site files (без akademiya/crm MIR)
+- Live: Astana / sozdanie Almaty / seo Shymkent / dizayn Petropavlovsk → **HTTP 200**; critical CSS на проде; hub+seo `data-rk-mobile-h1-fix` live
+- Дальше: **PSI POST-DEPLOY**
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
