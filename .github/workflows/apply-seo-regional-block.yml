@@ -6,6 +6,7 @@ on:
       - main
     types:
       - opened
+      - synchronize
 
 permissions:
   contents: write
@@ -30,9 +31,27 @@ jobs:
           import base64
           import hashlib
 
+          expected_parts = {
+              'part01': '20c658d155a7f85384abace77e87b24da7cd38423a85b23fbe1672331c1df150',
+              'part02': '63038e9854385241ab9605afde9f572d128085b36afdccb50ad372e0ecec0f4b',
+              'part03': '9dac116b474e66f2f85b2018ea26c0b747c167d94869a97c3b345544dfed141a',
+              'part04': '65ded5687301e9a3b18879709306e020a9353b0b6221bf38e654f37b7f6e44d8',
+              'part05': 'fc665dcae15576995f088e039c5bcf20f7fae5f338243fc89b967627c99c0c78',
+              'part06': 'fbcef9a82ab1835ddaa01d77a3ebc98c310feca7929e6d6b7256a3d15497ec06',
+          }
           parts = sorted(Path('.tmp/seo-regional-cities').glob('script.py.b64.part*'))
           if len(parts) != 6:
               raise SystemExit(f'Expected 6 installer parts, found {len(parts)}')
+          bad = []
+          for part in parts:
+              suffix = part.name.rsplit('.', 1)[-1]
+              payload = part.read_bytes()
+              digest = hashlib.sha256(payload).hexdigest()
+              print(f'{suffix}: bytes={len(payload)} sha256={digest}')
+              if digest != expected_parts[suffix]:
+                  bad.append(suffix)
+          if bad:
+              raise SystemExit('Installer part checksum mismatch: ' + ', '.join(bad))
           encoded = ''.join(p.read_text(encoding='ascii') for p in parts)
           data = base64.b64decode(encoded)
           digest = hashlib.sha256(data).hexdigest()
