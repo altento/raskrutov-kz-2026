@@ -18,13 +18,19 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
-      - name: Rebuild and validate skill bundle
+      - name: Download and validate skill bundle
         shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          cat .github/skills-import/agent-skills.part{1,2,3,4,5} > /tmp/agent-skills.b64
-          base64 --decode /tmp/agent-skills.b64 > /tmp/agent-skills.tar.gz
-          echo 'e6afd77d061fb6c5aab78d508ff35cbf7e14c9d52c4526a47e2c1a667469ec75  /tmp/agent-skills.tar.gz' | sha256sum --check --strict
+          curl --fail --silent --show-error --location \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/git/blobs/1377c9aa8b4b4d177bc10012f3dbc01ef70b7ac8" \
+            | jq -r '.content' | tr -d '\n' | base64 --decode > /tmp/agent-skills.tar.gz
+
+          echo 'd5483cd94a1b32ce8ea81e28124064718760a7ec924c4419b42da17bf8035c42  /tmp/agent-skills.tar.gz' | sha256sum --check --strict
           tar -xzf /tmp/agent-skills.tar.gz -C .
 
           skill_count=$(find .agents/skills -mindepth 2 -maxdepth 2 -type f -name SKILL.md | wc -l)
