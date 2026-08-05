@@ -1,0 +1,371 @@
+/* Regional studio hub (/web-studiya/{city}/) — page-specific layer */
+
+body.rk-clean.rk-hub-city {
+  min-width: 320px;
+}
+
+.rk-hub-prose {
+  max-width: 760px;
+}
+
+.rk-hub-prose p {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--rk-text, #1e1e1e);
+}
+
+.rk-hub-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.rk-hub-note {
+  margin: 1.25rem 0 0;
+  padding: 0.9rem 1.1rem;
+  border-left: 3px solid #6a5cea;
+  background: rgba(106, 92, 234, 0.06);
+  border-radius: 0 10px 10px 0;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.rk-hub-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rk-hub-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(106, 92, 234, 0.1);
+  color: #3d348b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.rk-hub-tasks {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 700px) {
+  .rk-hub-tasks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.rk-hub-task {
+  margin: 0;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--rk-border, #e6e6ef);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.rk-hub-task h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.rk-hub-task p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4a4a55;
+}
+
+.rk-hub-dirs {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+}
+
+@media (min-width: 700px) {
+  .rk-hub-dirs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .rk-hub-dirs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.rk-hub-dir {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 1.25rem 1.3rem;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--rk-border, #e6e6ef);
+  box-shadow: 0 8px 24px rgba(40, 35, 90, 0.04);
+}
+
+.rk-hub-dir h3 {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.3;
+}
+
+.rk-hub-dir p {
+  margin: 0;
+  flex: 1 1 auto;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4a4a55;
+}
+
+.rk-hub-dir__link {
+  align-self: flex-start;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: #6a5cea;
+}
+
+.rk-hub-dir__link:hover,
+.rk-hub-dir__link:focus-visible {
+  text-decoration: underline;
+}
+
+.rk-hub-split {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .rk-hub-split {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: start;
+  }
+}
+
+.rk-hub-list {
+  margin: 0.75rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.rk-hub-list li {
+  margin: 0 0 0.45rem;
+  line-height: 1.5;
+}
+
+.rk-hub-list a {
+  color: #6a5cea;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.rk-hub-list a:hover,
+.rk-hub-list a:focus-visible {
+  text-decoration: underline;
+}
+
+.rk-hub-steps {
+  counter-reset: hub-step;
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 800px) {
+  .rk-hub-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.rk-hub-step {
+  position: relative;
+  margin: 0;
+  padding: 1rem 1rem 1rem 3.4rem;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--rk-border, #e6e6ef);
+}
+
+.rk-hub-step::before {
+  counter-increment: hub-step;
+  content: counter(hub-step);
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(270deg, rgb(223, 98, 226) 9%, rgb(106, 92, 234) 90%);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.rk-hub-step h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.rk-hub-step p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #4a4a55;
+}
+
+.rk-hub-audience {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 700px) {
+  .rk-hub-audience {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.rk-hub-audience li {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: rgba(106, 92, 234, 0.06);
+  line-height: 1.45;
+}
+
+.rk-hub-why {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 800px) {
+  .rk-hub-why {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.rk-hub-why li {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+  border: 1px solid var(--rk-border, #e6e6ef);
+  background: #fff;
+}
+
+.rk-hub-why strong {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.rk-hub-why span {
+  color: #4a4a55;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.rk-hub-faq {
+  margin: 1.5rem 0 0;
+  max-width: 820px;
+}
+
+.rk-hub-faq details {
+  margin: 0 0 0.65rem;
+  padding: 0.95rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid var(--rk-border, #e6e6ef);
+  background: #fff;
+}
+
+.rk-hub-faq summary {
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1.4;
+  list-style: none;
+}
+
+.rk-hub-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.rk-hub-faq summary:focus-visible {
+  outline: 2px solid #6a5cea;
+  outline-offset: 2px;
+}
+
+.rk-hub-faq details[open] summary {
+  margin-bottom: 0.55rem;
+}
+
+.rk-hub-faq p {
+  margin: 0;
+  color: #4a4a55;
+  line-height: 1.55;
+}
+
+.rk-hub-cases {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 800px) {
+  .rk-hub-cases {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+  }
+}
+
+.rk-section--soft {
+  background:
+    radial-gradient(ellipse 55% 40% at 8% 15%, rgba(180, 210, 255, 0.28), transparent 60%),
+    radial-gradient(ellipse 45% 35% at 92% 75%, rgba(210, 190, 255, 0.22), transparent 55%),
+    #f7f8ff;
+}
+
+.rk-hub-lead-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin: 1rem 0 0;
+}
+
+.rk-hub-lead-links a {
+  font-weight: 600;
+  color: #6a5cea;
+  text-decoration: none;
+}
+
+.rk-hub-lead-links a:hover,
+.rk-hub-lead-links a:focus-visible {
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rk-hub-dir,
+  .rk-hub-task,
+  .rk-hub-step {
+    transition: none;
+  }
+}
