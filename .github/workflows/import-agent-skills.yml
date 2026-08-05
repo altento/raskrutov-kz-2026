@@ -1,7 +1,7 @@
 name: Import project agent skills
 
 on:
-  push:
+  pull_request:
     branches: [main]
     paths:
       - '.github/workflows/import-agent-skills.yml'
@@ -15,6 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
 
       - name: Rebuild and validate skill bundle
@@ -49,4 +50,4 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A .agents/skills .github/skills-import .github/workflows/import-agent-skills.yml
           git commit -m 'feat: add complete project agent skills bundle'
-          git push origin main
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
