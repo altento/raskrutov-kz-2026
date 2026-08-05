@@ -161,6 +161,9 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] Решить: долбим до ровной 100 или стоп
 - [x] **Sozdanie mobile:** hotfix `9e68614b` — с **53 → 86** (было из‑за width=1920)
 - [ ] Решить: clean-rebuild sozdanie (как home) vs жить с Mottor-потолком ~80–90
+- [x] **/web-studiya/ mobile POST-DEPLOY:** clean swap → **стабильно 90+** (2026-08-05, юзер)
+- [ ] **/web-studiya/:** решить — добивать до 100 или стоп / следующий URL
+- [ ] **/web-studiya/:** скинуть desktop + CWV (FCP/LCP/TBT/CLS), если будем пилить дальше
 
 
 #### C. Мультикомп / бэкап контекста
@@ -408,5 +411,12 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Plesk-пуш выполнен шелл-агентом: коммит `01f8e6ec` (26 файлов: index.html + studio-clean.css + 18 cities + 6 studio), rebase поверх Astana `e02fd250`, push `e02fd250..01f8e6ec`.
 - Prod smoke `https://raskrutov.kz/web-studiya/`: HTTP 200, отдаётся clean (rk-clean, studio-clean.css, без public.bundle/GH-префикса). **42/42 картинки грузятся, 0 битых, 18/18 городов ок** (был кратковременный лаг пропагации бинарников — прошёл). Sticky Позвонить/WhatsApp, крошки, hero-laptop, формы на месте.
 - PSI: POST-DEPLOY, мерить руками на живом URL (API ранее 429). Lab-число Perf 29 было раздуто локальной машиной (8×http.server+node+chrome) — не показатель прода.
+
+### 2026-08-05 — PSI mobile /web-studiya/ POST-DEPLOY: стабильно 90+
+
+- Юзер прогнал живой `https://raskrutov.kz/web-studiya/` на mobile PageSpeed — **Performance стабильно 90+**.
+- Подтверждает: clean-rebuild (без Mottor `public.bundle`) работает на проде; локальный lab Perf 29 был мусором.
+- Desktop / точные CWV (FCP/LCP/TBT/CLS) юзер не скинул — при необходимости дозамерить.
+- Дальше: решить, долбим до ровной 100 на студии или стоп / следующий URL.
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
