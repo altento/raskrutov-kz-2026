@@ -405,7 +405,8 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - URL `/web-studiya/` не меняется → sitemap/redirect/.htaccess/canonical трогать не нужно.
 - Feature `performance/pagespeed-raskrutov`: коммит swap поверх `a7a901fb`.
 - Plesk: точечный copy (index.html + index.mottor-legacy.html + studio-clean.css + img/cities + img/studio) в `site_plesk`, commit/push ветку `plesk`. **Без** `/MIR` (чтобы не тащить untracked geo-мусор).
-- Prod smoke: `https://raskrutov.kz/web-studiya/` → см. журнал ниже (HTTP + rk-clean + города + формы).
+- Plesk-пуш выполнен шелл-агентом: коммит `01f8e6ec` (26 файлов: index.html + studio-clean.css + 18 cities + 6 studio), rebase поверх Astana `e02fd250`, push `e02fd250..01f8e6ec`.
+- Prod smoke `https://raskrutov.kz/web-studiya/`: HTTP 200, отдаётся clean (rk-clean, studio-clean.css, без public.bundle/GH-префикса). **42/42 картинки грузятся, 0 битых, 18/18 городов ок** (был кратковременный лаг пропагации бинарников — прошёл). Sticky Позвонить/WhatsApp, крошки, hero-laptop, формы на месте.
 - PSI: POST-DEPLOY, мерить руками на живом URL (API ранее 429). Lab-число Perf 29 было раздуто локальной машиной (8×http.server+node+chrome) — не показатель прода.
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
