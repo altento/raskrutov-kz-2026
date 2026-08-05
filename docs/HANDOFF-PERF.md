@@ -451,6 +451,8 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - CSS: `assets/css/hub-city-clean.css` (новый).
 - Feature commit + точечный plesk: `web-studiya/astana/index.html` + hub-city-clean.css (+ legacy не обязателен на прод).
 - URL `/web-studiya/astana/` без смены → sitemap/301 не трогали.
-- Живой смоук — см. ниже / после деплоя.
+- Живой смоук `https://raskrutov.kz/web-studiya/astana/`: HTTP 200, `rk-hub-city`, H1 «Веб-студия в Астане для роста бизнеса», без `public.bundle`, `hub-city-clean.css` 200.
+- Feature `323ce2cf`; plesk `9976d73e` (`01f8e6ec..9976d73e`).
+- Дальше: пилот Алматы / Шымкент по тому же шаблону (не массово 18).
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
