@@ -185,6 +185,11 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] Не заливать на Plesk ветку `deploy` / `site_deploy` (там GH prefix)
 - [ ] Не коммитить мусорные untracked `lpfile/` и одноразовые `_psi_check_*.py` без нужды
 
+
+#### F. CLEAN `/web-studiya/` index-clean (2026-08-05, локально, без swap)
+- [ ] Глазами сверить index-clean vs donor (1440/390) — reports/web-studiya-clean/
+- [ ] Approve swap: index.html ← index-clean.html (+ rename mottor → index.mottor-legacy.html)
+- [ ] После approve: commit/push feature + точечный plesk deploy /web-studiya/
 ### 5.2 Действия АГЕНТА (когда юзер дал ввод)
 1. По логам/коду Supabase — починить `submit-lead` (или задеплоить исправленную функцию)
 2. После фикса форм — прогнать живой сабмит, обновить HANDOFF
@@ -370,12 +375,27 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Отчёт обновлён: `reports/geo-pages-performance-final.md`
 - Commit/push/deploy — не выполнялись
 
-### 2026-08-05 — ФИНАЛЬНЫЙ PRE-DEPLOY GATE: PASS (Вариант B)
+### 2026-08-05 — ДЕПЛОЙ 8e992322 ВЫПОЛНЕН / КОНТРОЛЬНЫЙ PSI CHECK (API 429)
 
-- **Концепция геометрии (Вариант B):** Размеры `width="330" height="248"` зафиксированы как размеры карточки-контейнера (`aspect-ratio: 4/3`). В CSS включено `object-fit: cover`. Физические (intrinsic) размеры 13 пар (440×248...660 px) сохраняют пропорции без визуальных искажений.
-- **Проверка Pavlodar и Uralsk:** Монументы и главные объекты архитектуры сохранены по центру кадров.
-- **URL Resolution Audit:** Все 13 WebP источника (`srcset`) и 13 JPEG fallback (`src`) проверены на отклик относительно URL каждого шаблона — **4 769 / 4 769 ассетов отдают HTTP 200 OK**, 0 ошибок 404.
-- **Font-Display Audit:** Все критические CSS-файлы (`sozdanie-critical.v1.css`, `hub-critical.v1.css`, `dizayn-critical.v1.css`) содержат `font-display: swap`.
-- **Статус:** **PRE-DEPLOY PASS** ✅ (коммиты, push и deploy не выполнялись, ожидают команду).
+- **Commit:** `8e992322` на ветке `plesk` (точечно 57 HTML, 13 WebP, 1 CSS).
+- **Production QA:** 4 репрезентативные страницы проверены на проде — **104 / 104 ассетов HTTP 200 OK, 0 ошибок 404**.
+- **PSI API статус:** **HTTP 429 (QUOTA BLOCKED)**. Автоматические запросы остановлены.
+- **Дальше:** Ручной 3-кратный замер (Mobile & Desktop, 20–30 с интервал) в интерфейсе `pagespeed.web.dev` по подготовленным ссылкам.
+- **Не затронуто:** Новые коммиты, деплои и изменения кода не выполнялись. SEO-ветка не затрагивалась.
+
+### 2026-08-05 — CLEAN /web-studiya/ index-clean (локально, без swap)
+
+- SOURCE: https://m65176a2c628d6.lpmotortest.com/web-studiya
+- TARGET preview: site_mirror/web-studiya/index-clean.html (Mottor index.html НЕ трогали)
+- CSS: assets/css/studio-clean.css + reuse home-clean-critical/deferred
+- JS: home-clean.js + lead-forms.js
+- Cities: 18 webp from RAR → assets/img/cities/
+- Studio assets: assets/img/studio/ (hero-bg, hero-laptop, adv-01..04)
+- Header / nav / sticky CTA (Позвонить+WhatsApp) / soc-widget — с главной
+- Forms: data-lead-form, names «Студия — контакты…» / «Студия — попап…»
+- Screenshots: reports/web-studiya-clean/donor-*.png, local-*.png
+- LH mobile median lab: Perf 29 / FCP 4.5s / LCP 6.9s / TBT ~14s / CLS 0.026 (локальный simulate; не прод; TBT раздут home-deferred+third-party — не фейк 90+)
+- Diagnosis: reports/web-studiya-clean/lh-diagnosis.md (from lh-mobile-2.json)
+- Commit/push/deploy/swap index → НЕ делали (ждём approve юзера)
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->

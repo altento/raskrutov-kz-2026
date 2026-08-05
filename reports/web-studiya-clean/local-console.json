@@ -1,0 +1,15 @@
+{
+  "url": "http://127.0.0.1:8767/web-studiya/index-clean.html",
+  "viewport": "390x844",
+  "console": [
+    {
+      "type": "info",
+      "text": "Images loaded lazily and replaced with placeholders. Load events are deferred. See https://go.microsoft.com/fwlink/?linkid=2048113",
+      "location": "{'url': 'http://127.0.0.1:8767/web-studiya/index-clean.html', 'line': 681, 'column': 0, 'lineNumber': 681, 'columnNumber': 0}"
+    }
+  ],
+  "failed_requests": [],
+  "page_errors": [],
+  "console_error_count": 0,
+  "failed_404": []
+}
