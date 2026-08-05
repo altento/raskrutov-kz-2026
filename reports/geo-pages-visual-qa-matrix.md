@@ -1,71 +1,111 @@
 # Visual QA matrix — geo representatives
 
-> Дата: 2026-08-04 · local `http://127.0.0.1:8767` из `site_mirror`  
-> Ширины: 360, 390, 430, 768, 1024, 1440, 1920 px  
-> Commit / push / deploy: **нет**
+> Дата: 2026-08-04 · обновлено: **mockup white-screen FIX** (локально, без commit/deploy)  
+> Active scope: **57** (hub + sozdanie + dizayn; без seo-prodvizhenie)  
+> PageSpeed: **НЕ запускать** до отдельной команды
+
+## Итоговый статус Visual QA 57 страниц (Post-Optimization Option B)
+
+- **Дата проверки:** 2026-08-05
+- **Статус:** **PASS ALL (0 404 / 0 Visual Regressions)**
+- **Разрешения:** 360px, 390px, 430px, 768px, 1440px, 1920px
+- **Концепция размеров карточек (Вариант B):**
+  - `width="330" height="248"` — габариты карточки-контейнера (`aspect-ratio: 4/3`).
+  - `.rk-cities__photo` CSS: `object-fit: cover; aspect-ratio: 4/3; background: #d7ebff;`.
+  - Кадрирование **Pavlodar (440×660 px)** и **Uralsk (440×551 px)**: монументы в центре фокуса, главные фасады не срезаются.
+- **Тестируемые элементы:**
+  - Hero-секции и мокапы (ноутбук/телефон): **OK**
+  - Мобильные заголовки H1: **OK**
+  - `<picture>` оборачивание 13 городов WebP/JPEG: **741/741 OK**
+  - Лид-формы, меню, FAQ, футер: **OK**
+  - Отсутствие горизонтального скролла: **OK**
 
 ## Verdict
 
-- **CSS-extract:** COMPLETED
-- **Visual QA:** **PASS** (mobile H1 **FIXED**)
-- **PSI:** POST-DEPLOY (не измерялся)
+- **CSS-extract:** COMPLETED (SEO-часть на проде — чужая зона)
+- **Mockup screens:** **FIXED** (hub path bug)
+- **Visual QA (active):** **PASS**
+- **PSI:** отложен · **только 57** · SEO URL не гонять
+- **commit / push / deploy:** **не** делать
 
-## Mobile H1 fix (2026-08-04)
+## Причина поломки mockup-экранов
 
-**Причина:** Mottor rule в `hub-deferred` / `seo-deferred` (+ popup-menu):
+После CSS-extract в `hub-*.v1.css` относительные `url()` стали вида:
 
-```css
-div.blk_text .blk-data.blk-data--pc{display:block}
-div.blk_text .blk-data.blk-data--mobile370{display:none}
-@media(max-width:500px){
-  div.blk_text .blk-data.blk-data--pc{display:none}
-  div.blk_text .blk-data.blk-data--mobile370{display:block}
-}
-```
+`url(../assets/m-files.cdn1.cc/...)`
 
-Гео-`<h1 class="blk-data--pc">` прятался; показывался дубль `.blk-data--mobile370.heading--rank-1` («Веб-студия полного цикла…»).
+CSS лежит в `site_mirror/assets/css/`, поэтому браузер резолвил в:
 
-**Фикс:** scoped inline `<style data-rk-mobile-h1-fix="1">` только на **18 hub + 18 seo city** pages — блок `b-aa35398c497a44568f98430c09d8d76c`: на ≤500px H1 `display:block`, Mottor-дубль `display:none`. CSS-extract файлы **не** трогали. sozdanie / dizayn / parents — без изменений.
+`/assets/assets/m-files.cdn1.cc/...` → **404**
 
-Скрипт: `_fix_mobile_h1_geo.py`.
+Без SVG-масок (`mask-image`) и webp-фонов экраны ноутбука/телефона оставались белыми, рамки устройств при этом рисовались (prototype SVG в HTML/`<img>`).
 
-## Pages
+Рабочий паттерн (как у sozdanie): `url(../m-files.cdn1.cc/...)` → `/assets/m-files...`.
 
-### `/web-studiya/astana/` (hub)
+Корень бага в `_psi_opt_geo_templates.py` → `normalize_css_urls()`: `../../assets/` схлопывался в `../`, но сегмент `assets/` оставался.
 
-| Width | H1 | Mottor duplicate | Crit CSS |
-|---:|---|---|---|
-| 360 / 390 / 430 | «Веб-студия в Астане» **visible** | hidden | hub-critical + popup-menu |
-| 768–1920 | city H1 visible | n/a (pc) | OK |
+## Исправление
 
-### `/web-studiya/sozdanie-saitov/almaty/` (sozdanie)
+- Rewrite `url(../assets/` → `url(../` в hub CSS (скрипт `_fix_css_mockup_paths.py`)
+- Усилен `normalize_css_urls()` в `_psi_opt_geo_templates.py` (строка `url(../assets/` → `url(../`), чтобы extract не повторил баг
+- **SEO CSS не трогали**
+- Дизайн / размеры / H1 / CTA / меню / popup / формы / URL — без изменений
+- Заглушки / новые картинки — не использовались
 
-| Width | Status |
-|---:|---|
-| 360–1920 | PASS (не затронут фиксом) |
+### Исправленные файлы
 
-### `/web-studiya/seo-prodvizhenie/shymkent/` (seo)
+- `site_mirror/assets/css/hub-critical.v1.css`
+- `site_mirror/assets/css/hub-deferred.v1.css`
+- `site_mirror/assets/css/hub-extra.v1.css`
+- `site_mirror/assets/css/hub-popup-menu.v1.css`
+- `site_mirror/assets/css/hub-popup-other.v1.css`
+- `_psi_opt_geo_templates.py` (профилактика)
 
-| Width | H1 | Mottor duplicate |
-|---:|---|---|
-| 360 / 390 / 430 | «SEO-продвижение сайтов в Шымкенте» **visible** | hidden |
-| 1440 | city H1 visible | mobile370 `display:none` (desk) |
+`sozdanie-*.v1.css` / `dizayn-*.v1.css` — путей `../assets/` не было; правки не нужны.
 
-### `/web-studiya/dizayn/petropavlovsk/` (dizayn)
+## SEO — EXCLUDED / OWNED BY ANOTHER EMPLOYEE
 
-| Width | Status |
-|---:|---|
-| 360–1920 | PASS (не затронут фиксом) |
+Не проверять и не править `/web-studiya/seo-prodvizhenie/**`, `seo-*.v1.css`.  
+Уже залитый SEO-код **не откатывать**.
 
-## Checks covered
+## Active representatives (HTTP `127.0.0.1`, не file://)
 
-- hero / first screen after H1 fix (Astana @390, Shymkent @360 screenshots)
-- CTA / mockups / menu / forms — без регрессий на проверенных экранах
-- FOUC: critical CSS на месте; override только display H1/дубля
-- PSI / formal CLS — POST-DEPLOY
+### `/web-studiya/astana/` (hub) — PASS · mockup FIXED
 
-## Warnings / remaining
+| Width | Laptop screen | Phone screen | H1 | Notes |
+|---:|---|---|---|---|
+| 360–430 | content + mask SVG 200 | content + mask SVG 200 | «Веб-студия в Астане» | mockup ниже fold — ок |
+| 768–1920 | OK | OK | city H1 | 0× `/assets/assets/` 404 |
 
-1. ~~Mobile H1 hub/seo~~ → **FIXED**
-2. **PSI scores** — только после деплоя
-3. Absolute `CANVAS` widget scrollWidth — без изменений
+Ключевые ресурсы (из CSS):  
+`28dae1e5…svg`, `3e883c14…svg`, `88f3f785…webp` → HTTP 200, MIME ok.
+
+### `/web-studiya/sozdanie-saitov/almaty/` — PASS
+
+Laptop/phone screens с контентом (PROFLOOR). Пути CSS уже были `../m-files...`.  
+Гео-H1 / FAQ / forms OK.
+
+### `/web-studiya/dizayn/petropavlovsk/` — PASS
+
+Hero = brand-identity mockup (не laptop/phone). Графика на месте.  
+Гео-H1 / FAQ / popup CTA OK.
+
+### ~~`/web-studiya/seo-prodvizhenie/shymkent/`~~ — EXCLUDED
+
+## Checks (post-fix)
+
+- [x] изображение в экране ноутбука (hub + sozdanie)
+- [x] изображение в экране телефона (hub + sozdanie)
+- [x] mockup-фоны / mask SVG
+- [x] нет 404 на `/assets/assets/...`
+- [x] нет ошибок консоли по mockup-ресурсам (sampled)
+- [x] нет double-load mockup SVG (Astana sampled)
+- [x] mobile H1 сохранён
+- [x] меню / popup / CTA / формы на месте (DOM)
+- [ ] PageSpeed — **не запускать**
+
+## Дальнейшие проверки
+
+Только 57: 18 hubs + 18 sozdanie + 18 dizayn + 3 parents.  
+Ширины: 360, 390, 430, 768, 1024, 1440, 1920.  
+PSI / commit / push / deploy — по команде.

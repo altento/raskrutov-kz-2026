@@ -3,10 +3,13 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-03 — clean homepage PSI pass (critical CSS)  
+**Последнее обновление:** 2026-08-04 — SEO EXCLUDED из perf-трека; active scope **57**  
 **Рабочая ветка:** `performance/pagespeed-raskrutov`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
+
+> **Geo perf scope:** hubs + sozdanie + dizayn = **57**.  
+> **`/web-studiya/seo-prodvizhenie/**` = EXCLUDED / OWNED BY ANOTHER EMPLOYEE** (не трогать, не PSI).
 
 > **Важно:** живая главная = **clean rebuild** (`rk-clean`, `home-clean-*.css`), не старый Mottor `index.html`.  
 > Mottor-копия сохранена как `site_mirror/index.mottor-legacy.html`.
@@ -165,15 +168,18 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] Читать этот файл + `.cursor/rules/raskrutov-perf-continuity.mdc`
 - [ ] После любого заметного шага — агент обновляет HANDOFF и пушит (требовать, если забыл)
 
-#### D. Региональное размножение (отдельный трек)
+#### D. Региональное размножение / geo perf (active scope **57**)
 - Полный handoff: **`docs/HANDOFF-REGIONAL.md`**
 - Карта: `docs/seo-regional/SEO-карта_Raskrutov_региональная_2026-07-27.xlsx` + CSV
-- [x] Старт: sozdanie + SEO + хабы (pretty) — задеплоены
-- [x] Visual QA 4 представителей × 360–1920 (локально, CSS-extract hub/seo/dizayn) — см. `reports/geo-pages-performance-final.md`
-- [x] Mobile H1 hub/seo geo **FIXED** (inline `data-rk-mobile-h1-fix`, 36 city pages)
-- [x] **Commit / push / deploy** CSS-extract + H1 fix — feature `193f7e04`, plesk `a424184b` (2026-08-04)
-- [ ] После деплоя: PSI mobile/desktop representatives — **POST-DEPLOY**
-- [ ] Дальше P2 по чеклистам в `HANDOFF-REGIONAL.md`
+- **SEO-направление (`/web-studiya/seo-prodvizhenie/**`) — EXCLUDED / OWNED BY ANOTHER EMPLOYEE**  
+  Не оптимизировать, не QA, не PSI. Опубликованный SEO-код **не откатывать**.
+- Active: 18 hubs + 18 sozdanie + 18 dizayn + 3 parents = **57**
+- [x] Старт: sozdanie + хабы + dizayn (pretty) — задеплоены; SEO тоже на проде, но **вне этого perf-трека**
+- [x] Visual QA representatives (hub/sozdanie/dizayn) — см. `reports/geo-pages-performance-final.md`
+- [x] Mobile H1 hub FIXED; SEO H1 fix на проде — чужая зона
+- [x] Commit/push/deploy CSS-extract — feature `193f7e04`, plesk `a424184b`
+- [ ] PSI mobile/desktop — **QUOTA BLOCKED** (429 на anonymous API 2026-08-04); ручной замер через pagespeed.web.dev — см. `reports/geo-pages-performance-final.md`; **без seo-prodvizhenie**
+- [ ] Дальше P2 регионалки — по `HANDOFF-REGIONAL.md` (SEO-страницы пишет другой сотрудник)
 #### E. По желанию / позже
 - [ ] Plesk: Cache-Control для `home-*.css` (сейчас nginx может держать длинный max-age)
 - [ ] Не заливать на Plesk ветку `deploy` / `site_deploy` (там GH prefix)
@@ -336,5 +342,40 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Plesk **`a424184b`**: точечный copy 72 site files (без akademiya/crm MIR)
 - Live: Astana / sozdanie Almaty / seo Shymkent / dizayn Petropavlovsk → **HTTP 200**; critical CSS на проде; hub+seo `data-rk-mobile-h1-fix` live
 - Дальше: **PSI POST-DEPLOY**
+
+### 2026-08-04 — SEO EXCLUDED из performance-трека
+- Юзер: SEO (`/web-studiya/seo-prodvizhenie/**` + seo-*.css) передан **другому сотруднику**
+- Статус: **EXCLUDED / OWNED BY ANOTHER EMPLOYEE**
+- Не менять / не оптимизировать / не PSI / не visual QA SEO
+- Уже залитый SEO-код **не откатывать**
+- Active perf-scope: **57** = hubs 18 + sozdanie 18 + dizayn 18 + parents 3
+- Отчёты обновлены: `geo-pages-performance-final.md`, visual-qa-matrix; commit/push/deploy **не** делать
+
+### 2026-08-04 — FIX mockup white screens (hub CSS paths)
+- Симптом: `/web-studiya/astana/` — рамки ноут/телефона есть, экраны белые после CSS-extract
+- Причина: в `hub-*.v1.css` `url(../assets/m-files...)` → резолв в `/assets/assets/...` → 404 на mask SVG/webp
+- Фикс: `url(../assets/` → `url(../` в hub CSS; `normalize_css_urls()` в `_psi_opt_geo_templates.py` усилен
+- sozdanie/dizayn путей `../assets/` не имели; SEO не трогали
+- QA HTTP: Astana / sozdanie Almaty / dizayn Petropavlovsk — экраны/графика ок; PSI **не** гоняли
+- Отчёт: `reports/geo-pages-visual-qa-matrix.md`; commit/push/deploy **не** делать
+
+### 2026-08-04 — PSI POST-DEPLOY: smoke-check PASS / API QUOTA BLOCKED
+
+- **Smoke-check (4 representative):** HTTP 200 на всех; critical CSS ✅; H1 ✅; canonical ✅; lead_form ✅; mobile H1 fix на hubs ✅; webp-ссылки ✅
+- **PSI API:** HTTP 429 на первом же запросе — anonymous quota исчерпана
+- Затронутые URL: astana hub / almaty sozdanie / petropavlovsk dizayn / web-studiya parent — все QUOTA BLOCKED
+- Остальные 53 URL — NOT RUN
+- **Показатели не выдуманы** — таблица PSI PENDING
+- Ручной замер: pagespeed.web.dev — см. `reports/geo-pages-performance-final.md` (ссылки + инструкция)
+- Отчёт обновлён: `reports/geo-pages-performance-final.md`
+- Commit/push/deploy — не выполнялись
+
+### 2026-08-05 — ФИНАЛЬНЫЙ PRE-DEPLOY GATE: PASS (Вариант B)
+
+- **Концепция геометрии (Вариант B):** Размеры `width="330" height="248"` зафиксированы как размеры карточки-контейнера (`aspect-ratio: 4/3`). В CSS включено `object-fit: cover`. Физические (intrinsic) размеры 13 пар (440×248...660 px) сохраняют пропорции без визуальных искажений.
+- **Проверка Pavlodar и Uralsk:** Монументы и главные объекты архитектуры сохранены по центру кадров.
+- **URL Resolution Audit:** Все 13 WebP источника (`srcset`) и 13 JPEG fallback (`src`) проверены на отклик относительно URL каждого шаблона — **4 769 / 4 769 ассетов отдают HTTP 200 OK**, 0 ошибок 404.
+- **Font-Display Audit:** Все критические CSS-файлы (`sozdanie-critical.v1.css`, `hub-critical.v1.css`, `dizayn-critical.v1.css`) содержат `font-display: swap`.
+- **Статус:** **PRE-DEPLOY PASS** ✅ (коммиты, push и deploy не выполнялись, ожидают команду).
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->

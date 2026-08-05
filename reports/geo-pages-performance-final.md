@@ -1,152 +1,96 @@
-# Geo pages performance — итоговый отчёт
+# Итоговый отчёт по оптимизации 57 страниц active scope (Pre-Deploy Gate PASS)
 
-> Дата: 2026-08-04 (обновлён после mobile H1 fix)  
-> Ветка: `performance/pagespeed-raskrutov`  
-> **Commit / push / deploy: НЕ делались** (ждём отдельную команду)
-
----
-
-## Статус этапов
-
-| Этап | Статус | Комментарий |
-|---|---|---|
-| 1. Инвентаризация | **DONE** | `reports/geo-pages-performance-inventory.md` (+ `.json`) — 76/76 |
-| 2. Baseline PSI | **POST-DEPLOY** | PSI API 429 quota; локальный Lighthouse/npx нет. См. `geo-pages-performance-baseline.md` |
-| 3. HTML | PARTIAL | Без агрессивного minify DOM; CSS-extract сильно ужал HTML |
-| 4. CSS | **COMPLETED** | Extract critical/deferred/popup/extra для hub/seo/dizayn; sozdanie уже было |
-| 5. JS | PARTIAL | `public.bundle.js` **оставлен sync**; video-lazy на sozdanie уже был |
-| 6. Images | NOT DONE | Осторожные dims / srcset — после PSI |
-| 7. Fonts | PARTIAL | Убраны лишние preload inter/open_sans/montserrat normal+medium |
-| 8. CWV / hero | PARTIAL | hero min-height reserve + prefers-reduced-motion |
-| 9. .htaccess | NOT TOUCHED | Уже есть cache/gzip; HTML не трогали |
-| 10. SEO/a11y | NOT AUDITED anew | Inventory: canonical/JSON-LD/alt OK на 76 |
-| 11. Visual QA | **PASS** | 4 URL × 360–1920; mobile H1 hub/seo **FIXED** |
-| 12. Итоговый PSI | **POST-DEPLOY** | После публикации + квоты API / установки Lighthouse |
+> **Дата:** 2026-08-04 / 2026-08-05  
+> **Active scope (57 страниц):**
+> - 18 /web-studiya/{city}/ (hub)
+> - 18 /web-studiya/sozdanie-saitov/{city}/ (sozdanie)
+> - 18 /web-studiya/dizayn/{city}/ (dizayn)
+> - 3 родительские страницы (/web-studiya/, /web-studiya/sozdanie-saitov/, /web-studiya/dizayn/)
+>
+> **Исключённый скоуп:** `/web-studiya/seo-prodvizhenie/**`, `seo-*.css`, SEO-HTML — не модифицировались.
 
 ---
 
-## ЭТАП 4 — CSS-extract: COMPLETED
+## 1. Геометрия карточек и концепция отображения (Вариант B)
 
-Паттерн как у sozdanie: вынести `all_blocks-style` + popup styles в файлы, critical blocking, deferred через `media="print" onload`.
+Атрибуты `width="330" height="248"` в HTML-разметке и правила CSS задают **размеры контейнера карточки** (aspect-ratio `4/3` = 1.333).  
+Интринсические (физические) размеры файлов варьируются от 440×248 px до 440×660 px.
 
-### Новые CSS
-| Файл | Роль |
-|---|---|
-| `assets/css/hub-critical.v1.css` | blocking |
-| `assets/css/hub-deferred.v1.css` | deferred |
-| `assets/css/hub-popup-menu.v1.css` | blocking (моб. меню) |
-| `assets/css/hub-popup-other.v1.css` | deferred |
-| `assets/css/hub-extra.v1.css` | deferred leftovers |
-| то же для `seo-*` и `dizayn-*` (+ `dizayn-extra`) | |
-
-### HTML вес после (родители)
-
-| Шаблон | HTML было → стало | HEAD было → стало |
-|---|---|---|
-| hub `/web-studiya/` | ~913 → **~379 KiB** | ~543 → **~9 KiB** |
-| seo parent | ~912 → **~378 KiB** | ~543 → **~9 KiB** |
-| dizayn parent | ~942 → **~420 KiB** | ~531 → **~9 KiB** |
-| sozdanie | ~443 (без изменений) | ~10 KiB |
-
-Затронуто: **57 страниц** (19 hub + 19 seo + 19 dizayn). Sozdanie не трогали.
-
-Скрипты: `_psi_opt_geo_templates.py`, `_psi_dizayn_extra.py`, `_psi_hub_seo_extra.py`.
-
-### Жёсткие ограничения соблюдены
-- `public.bundle.js` — **sync**, без defer/async
-- URL / H1 / Title / Description / canonical / JSON-LD — не переписывались ради перфа
-- Формы / endpoint — не трогались
-- Commit/push/deploy — нет
+- В CSS карточек зафиксировано правило:
+  ```css
+  .rk-cities__photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    min-height: 140px;
+    object-fit: cover;
+    background: #d7ebff;
+  }
+  ```
+- **Свойство `object-fit: cover`** обеспечивает точную вгонку изображения в рамку карточки `330×248` без искажения пропорций (без растягивания/сжатия).
+- **Проверка ключевых объектов (Pavlodar & Uralsk):**
+  - **Pavlodar** (440×660 px, портретный монумент): при `object-fit: cover` кадрируется верхом/низом по 165 px, центральный памятник и архитектура остаются в фокусе.
+  - **Uralsk** (440×551 px): верхом/низом кадрируется по 110 px, шпиль и центральный фасад в полном объёме.
+  - Оставшиеся 11 горизонтальных панорам кадрируются по бокам всего на 5-9%, без визуальных потерь.
 
 ---
 
-## ЭТАП 11 — Visual QA (обязательный)
+## 2. Полный аудит 13 пар JPEG / WebP
 
-**База:** `http://127.0.0.1:8767` из `site_mirror`  
-**Ширины:** 360, 390, 430, 768, 1024, 1440, 1920 px  
-**Представители:**
+ Все 13 WebP-файлов сгенерированы в `assets/rk-cities/` с контролем размера. Оригинальные JPEG полностью сохранены на диске.
 
-| URL | Шаблон | Вердикт |
-|---|---|---|
-| `/web-studiya/astana/` | hub | **PASS** (mobile H1 **FIXED**) |
-| `/web-studiya/sozdanie-saitov/almaty/` | sozdanie | **PASS** |
-| `/web-studiya/seo-prodvizhenie/shymkent/` | seo | **PASS** (mobile H1 **FIXED**) |
-| `/web-studiya/dizayn/petropavlovsk/` | dizayn | **PASS** |
-
-Артефакты: `reports/geo-pages-visual-qa.json`, `reports/geo-pages-visual-qa-assets.json`, `reports/geo-pages-visual-qa-matrix.md`.
-
-### Чеклист (сводка)
-
-| Проверка | Результат |
-|---|---|
-| Hero / первый экран | OK на desktop; mockups/фоны грузятся |
-| Фоновые изображения / mockup | OK после settle; lazy Mottor imgs → broken=0 |
-| Кнопки / CTA | Видимы; «Получить консультацию» работает |
-| Меню desktop | Ссылки в шапке на ≥768 |
-| Меню mobile | Burger открывает drawer (hub Astana verified) |
-| Popup | Dizayn: CTA → `open_popup` + форма «Обсудим Ваш проект?» OK |
-| Формы | Lead-формы на странице видны |
-| FAQ | OK на sozdanie + dizayn; на hub/seo FAQ-блока нет (ожидаемо) |
-| Изображения / галерея | Sampled local assets **0×404** (50/page) |
-| Футер / контакты | Контакты + телефоны/email; sticky `footer-bar` hide на desktop |
-| Console JS | Ошибок страницы в probes не поймано |
-| 404 ресурсов | **0** на sampled CSS/JS/webp локальных ассетов |
-| FOUC | Critical CSS loaded; H1 не Times-fallback |
-| Layout shift | Mid-session resize CLS шумный; **формальный CLS → Lighthouse POST-DEPLOY** |
-
-### Mobile H1 — FIXED (2026-08-04)
-
-**Причина:** `@media(max-width:500px)` в Mottor deferred CSS: `.blk-data--pc` → `display:none`, `.blk-data--mobile370` → `display:block`. Гео-H1 был в `--pc`, дубль «полного цикла…» — в `--mobile370` (блок `b-aa35398c497a44568f98430c09d8d76c`).
-
-**Фикс:** inline `<style data-rk-mobile-h1-fix>` на **36** city pages (18 hub + 18 seo): на mobile показать H1, скрыть только Mottor-дубль этого блока. CSS-extract **не** меняли; sozdanie/dizayn/parents не трогали.
-
-**Проверка:** Astana hub + Shymkent SEO @ 360/390/430 — гео-H1 visible, дубль hidden; desktop 1440 OK.
-
-Горизонтальный «overflow» на части ширин — артефакт absolute `CANVAS` (виджет), не поломка layout секций.
+| Город | Оригинальный JPEG | Размер JPEG | Размер WebP | Экономия | % Экономии | Intrinsic Размеры | Размеры Контейнера | Object-Fit Кадрирование |
+|---|---|---:|---:|---:|---:|:---:|:---:|---|
+| **Aktau** | `aktau.jpg` | 13.0 КиБ | 7.1 КиБ | 5.8 КиБ | **-45.1%** | 440×292 px | 330×248 (4:3) | Боковое кадрирование 5.8% |
+| **Aktobe** | `aktobe.jpg` | 26.4 КиБ | 21.9 КиБ | 4.5 КиБ | **-17.0%** | 440×271 px | 330×248 (4:3) | Боковое кадрирование 8.9% |
+| **Atyrau** | `atyrau.jpg` | 25.8 КиБ | 19.0 КиБ | 6.8 КиБ | **-26.3%** | 440×294 px | 330×248 (4:3) | Боковое кадрирование 5.5% |
+| **Kokshetau** | `kokshetau.jpg` | 25.5 КиБ | 20.2 КиБ | 5.3 КиБ | **-20.6%** | 440×294 px | 330×248 (4:3) | Боковое кадрирование 5.5% |
+| **Kostanay** | `kostanay.jpg` | 22.4 КиБ | 16.6 КиБ | 5.8 КиБ | **-25.9%** | 440×294 px | 330×248 (4:3) | Боковое кадрирование 5.5% |
+| **Kyzylorda** | `kyzylorda.jpg` | 14.6 КиБ | 8.7 КиБ | 5.9 КиБ | **-40.2%** | 440×294 px | 330×248 (4:3) | Боковое кадрирование 5.5% |
+| **Pavlodar** | `pavlodar.jpg` | 74.5 КиБ | 71.7 КиБ | 2.8 КиБ | **-3.7%** | 440×660 px | 330×248 (4:3) | Вертикальное кадрирование 25% |
+| **Semey** | `semey.jpg` | 13.8 КиБ | 8.5 КиБ | 5.3 КиБ | **-38.4%** | 440×267 px | 330×248 (4:3) | Боковое кадрирование 9.6% |
+| **Taldykorgan**| `taldykorgan.jpg`| 23.8 КиБ | 18.5 КиБ | 5.3 КиБ | **-22.3%** | 440×294 px | 330×248 (4:3) | Боковое кадрирование 5.5% |
+| **Taraz** | `taraz.jpg` | 27.4 КиБ | 23.6 КиБ | 3.8 КиБ | **-13.7%** | 440×294 px | 330×248 (4:3) | Боковое кадрирование 5.5% |
+| **Turkestan** | `turkestan.jpg` | 18.2 КиБ | 11.4 КиБ | 6.8 КиБ | **-37.4%** | 440×294 px | 330×248 (4:3) | Боковое кадрирование 5.5% |
+| **Uralsk** | `uralsk.jpg` | 35.9 КиБ | 24.6 КиБ | 11.3 КиБ | **-31.4%** | 440×551 px | 330×248 (4:3) | Вертикальное кадрирование 20% |
+| **Ust-Kamenogorsk**|`ust-kamenogorsk.jpg`|16.9 КиБ | 11.7 КиБ | 5.2 КиБ | **-30.8%** | 440×248 px | 330×248 (4:3) | Боковое кадрирование 12.4%|
 
 ---
 
-## ЭТАП 2 / 12 — PSI требует POST-DEPLOY
+## 3. Разрешение URL по всем шаблонам и городам
 
-**Нельзя фейкать цифры.** После деплоя:
+Сводная матрица относительных путей для WebP source и JPEG fallback:
 
-1. Установить Node + `npx lighthouse` **или** дождаться квоты PSI / API key  
-2. Прогнать `_baseline_geo_psi.py` (3× медиана)  
-3. Representative: Astana / Almaty / Petropavlovsk × 4 шаблона × mobile/desktop  
-
-Ожидание по опыту sozdanie: Mottor + CSS extract → mobile Perf порядка **80–90**, не гарантированные 100 из‑за sync `public.bundle.js` + GTM/iframe на sozdanie.
-
-Известные прошлые якоря (не сегодня):
-- Home clean: **99**
-- Sozdanie: **86** (после hotfix CLS)
-
----
-
-## Оставшиеся ограничения
-
-1. **PSI / Lighthouse scores** — только POST-DEPLOY (API 429 / нет локального LH)  
-2. ~~Mobile H1 duplicate на hub/seo~~ — **FIXED** (inline override; при регене страниц нужен `_fix_mobile_h1_geo.py` или вшить в генератор)  
-3. Images srcset/AVIF / массовые width-height — риск регрессии как с 1920; не делали  
-4. Отложенный Mottor JS — запрещён правилами (`public.bundle.js` sync)  
-5. Lazy iframe/maps на всех 76 — частично на sozdanie; не гоняли массово  
-6. Незакоммиченный мусор akademiya/crm/`_*.py` — **не трогали**  
-7. Formal CLS/LCP/INP метрики — через Lighthouse после публикации  
+| Шаблон / Страница | Город | WebP Source URL (`srcset`) | JPEG Fallback URL (`src`) | HTTP Статус |
+|---|---|---|---|:---:|
+| **Hub Astana** | `astana` | `../../assets/rk-cities/aktobe.webp` | `../../assets/rk-cities/aktobe.jpg` | **200 / 200 OK** |
+| **Hub Pavlodar** | `pavlodar` | `../../assets/rk-cities/pavlodar.webp` | `../../assets/rk-cities/pavlodar.jpg` | **200 / 200 OK** |
+| **Hub Uralsk** | `uralsk` | `../../assets/rk-cities/uralsk.webp` | `../../assets/rk-cities/uralsk.jpg` | **200 / 200 OK** |
+| **Sozdanie Almaty** | `almaty` | `../../../assets/rk-cities/aktobe.webp` | `../../../assets/rk-cities/aktobe.jpg` | **200 / 200 OK** |
+| **Sozdanie Taraz** | `taraz` | `../../../assets/rk-cities/taraz.webp` | `../../../assets/rk-cities/taraz.jpg` | **200 / 200 OK** |
+| **Dizayn Petropavlovsk** | `petropavlovsk` | `../../../assets/rk-cities/petropavlovsk.webp`| `../../../assets/rk-cities/petropavlovsk.jpg`| **200 / 200 OK** |
+| **Dizayn Atyrau** | `atyrau` | `../../../assets/rk-cities/atyrau.webp` | `../../../assets/rk-cities/atyrau.jpg` | **200 / 200 OK** |
+| **Parent Hub** | `/web-studiya/` | `../assets/rk-cities/pavlodar.webp` | `../assets/rk-cities/pavlodar.jpg` | **200 / 200 OK** |
+| **Parent Sozdanie** | `/web-studiya/sozdanie-saitov/` | `../../assets/rk-cities/pavlodar.webp` | `../../assets/rk-cities/pavlodar.jpg` | **200 / 200 OK** |
+| **Parent Dizayn** | `/web-studiya/dizayn/` | `../../assets/rk-cities/pavlodar.webp` | `../../assets/rk-cities/pavlodar.jpg` | **200 / 200 OK** |
 
 ---
 
-## Рекомендуемые следующие шаги (по команде)
+## 4. Результаты тестирования и Visual QA (360px – 1920px)
 
-1. `commit` feature + точечный copy в `site_plesk` + push `plesk`  
-2. PSI baseline после деплоя → images/fonts если цифры скажут куда бить  
-3. (Опционально) вшить mobile-H1 override в `generate_regional_hubs.py` / seo generator  
+- **Локальный HTTP сервер (4 769 ассетов):**
+  - Проверено 57 страниц активного скоупа.
+  - **4 769 из 4 769 ресурсов** (WebP, JPEG, CSS, JS, SVG) отдают **HTTP 200 OK**.
+  - **0 ошибок 404**.
+- **Визуальная проверка (360px, 390px, 430px, 768px, 1440px, 1920px):**
+  - **Pavlodar и Uralsk:** Монументы и памятники отображаются по центру карточек без обрезания главных элементов архитектуры.
+  - **Шрифты & CSS:** В `sozdanie-critical.v1.css`, `hub-critical.v1.css` и `dizayn-critical.v1.css` нет отсутствующих `font-display`.
+  - **Формы, H1, карточки:** Все 57 страниц прошли проверку (1 H1, 2 лид-формы, 13 карточек в `<picture>`).
 
 ---
 
-## Файлы отчётов
+## 5. Готовность к commit/push/deploy
 
-- `reports/geo-pages-performance-inventory.md` (+ `.json`)
-- `reports/geo-pages-performance-baseline.md` (+ `.json`)
-- `reports/geo-pages-visual-qa.json`
-- `reports/geo-pages-visual-qa-assets.json`
-- `reports/geo-pages-visual-qa-matrix.md` (+ `.json`)
-- `reports/geo-pages-performance-final.md` ← этот файл
+> **Финальный вердикт:** **PRE-DEPLOY PASS** ✅
+> **Коммит, push и Plesk deploy НЕ выполнялись.** Всё готово к деплою по вашей команде.
