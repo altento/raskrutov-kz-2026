@@ -398,4 +398,14 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Diagnosis: reports/web-studiya-clean/lh-diagnosis.md (from lh-mobile-2.json)
 - Commit/push/deploy/swap index → НЕ делали (ждём approve юзера)
 
+### 2026-08-05 — SWAP + DEPLOY clean /web-studiya/ (approve юзера получен)
+
+- Юзер сказал «делай как надо» → выполнен swap боевой страницы.
+- Swap в `site_mirror/web-studiya/`: `index.html` (Mottor 391 KiB) → `index.mottor-legacy.html`; clean 50 KiB → `index.html` (через `git mv`, история сохранена).
+- URL `/web-studiya/` не меняется → sitemap/redirect/.htaccess/canonical трогать не нужно.
+- Feature `performance/pagespeed-raskrutov`: коммит swap поверх `a7a901fb`.
+- Plesk: точечный copy (index.html + index.mottor-legacy.html + studio-clean.css + img/cities + img/studio) в `site_plesk`, commit/push ветку `plesk`. **Без** `/MIR` (чтобы не тащить untracked geo-мусор).
+- Prod smoke: `https://raskrutov.kz/web-studiya/` → см. журнал ниже (HTTP + rk-clean + города + формы).
+- PSI: POST-DEPLOY, мерить руками на живом URL (API ранее 429). Lab-число Perf 29 было раздуто локальной машиной (8×http.server+node+chrome) — не показатель прода.
+
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
