@@ -6,6 +6,11 @@
 
 **Тон:** мат обязателен (как в perf-handoff).
 
+> **Perf-track (с 2026-08-04):** страницы `/web-studiya/seo-prodvizhenie/**` =  
+> **EXCLUDED / OWNED BY ANOTHER EMPLOYEE**.  
+> Performance-агент их не оптимизирует / не PSI / не откатывает.  
+> Active perf-scope: **57** = hubs + sozdanie + dizayn (+ 3 parents).
+
 ---
 
 ## 1. Что это за задача
@@ -97,13 +102,17 @@ CSV-копии: `docs/seo-regional/`.
 - [ ] Глазами: `/web-studiya/seo-prodvizhenie/` + Алматы/Астана + 301 legacy
 - [x] Следующее направление: **хабы** `/web-studiya/{city}`
 - [ ] Глазами: `/web-studiya/astana/` + `/web-studiya/` (сетка городов) + крошки/услуги
+- [ ] **PILOT clean Astana hub:** открыть `…/astana/index-clean.html` локально → approve swap на `index.html`
+- [x] **Astana hub SWAP (2026-08-05):** clean → `index.html`, Mottor → `index.mottor-legacy.html` (approve «ок»)
+- [ ] После approve Astana: масштабировать шаблон на Алматы / Шымкент (не массово 18 сразу)
 - [x] Следующее: **дизайн** `/web-studiya/dizayn/{city}`
 - [ ] Глазами: `/web-studiya/dizayn/astana/` + parent cities
 - [x] Visual QA perf-представителей (Astana hub / Almaty sozdanie / Shymkent seo / Petropavlovsk dizayn × 360–1920) — локально после CSS-extract
 - [x] Mobile H1 на hub/seo geo **FIXED**
 - [x] Commit + deploy CSS-extract + H1 fix (feature `193f7e04`, plesk `a424184b`)
-- [ ] После деплоя — PSI
-- [ ] После QA — следующее P2 (контекст / лидоген / …)
+- [x] **SEO (`seo-prodvizhenie`) EXCLUDED из perf-трека** — owned by another employee; код на проде не откатывать
+- [ ] PSI — только **57** (hub + sozdanie + dizayn); **без SEO**
+- [ ] Следующее P2 регионалки (контекст / лидоген / …) — SEO пишет другой сотрудник
 
 ## 5. Чеклист АГЕНТА
 
@@ -200,5 +209,11 @@ CSV-копии: `docs/seo-regional/`.
 
 ### 2026-08-04 — mobile H1 FIXED
 - Override на 18 hub + 18 seo city; Astana/Shymkent @360–430 OK
-- sozdanie/dizayn не трогали; commit/deploy всё ещё ждут команду
+- sozdanie/dizayn не трогали
+
+### 2026-08-04 — SEO OUT OF PERF TRACK
+- `/web-studiya/seo-prodvizhenie/**` + `seo-*.v1.css` → **EXCLUDED / OWNED BY ANOTHER EMPLOYEE**
+- Не править / не PSI / не QA в performance-сессиях
+- Published SEO **не откатывать**
+- Perf active: **57** (hubs + sozdanie + dizayn + 3 parents)
 

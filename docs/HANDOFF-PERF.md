@@ -433,4 +433,24 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Варианты «навсегда убрать 429» (юзер пока не выбрал): бесплатный PSI API key в Google Cloud → подставить в скрипт.
 - Оптимизации под балл **не делали** — сначала честные цифры, потом резать.
 
+### 2026-08-05 — PILOT clean hub Astana (index-clean, без swap)
+
+- Задача: programmatic SEO + clean migration для регионального хаба `/web-studiya/astana/`.
+- SOURCE/донор визуала: clean parent `/web-studiya/` (+ токены home-clean). Mottor `astana/index.html` **не трогали**.
+- Preview: `site_mirror/web-studiya/astana/index-clean.html` (~59 KiB, без `public.bundle`).
+- CSS: `assets/css/hub-city-clean.css` + reuse studio-clean / home-clean / lead-forms.
+- Уникально: Title/Description/H1 из ТЗ; региональный prose; направления с проверенными URL; FAQ×8 + FAQPage; areaServed Астана; честный remote (офис = Петропавловск).
+- Формы: `data-lead-form` «Астана хаб — контакты…» / «Астана хаб — попап…».
+- Swap / commit / push / plesk — **НЕ** делали (скилл + ждать approve).
+- Локальный preview: `http://127.0.0.1:8771/web-studiya/astana/index-clean.html`
+- Дальше: глазами сверить → approve swap → шаблон для Алматы/Шымкент.
+
+### 2026-08-05 — SWAP + DEPLOY clean hub Astana (approve «ок»)
+
+- Swap: `astana/index.html` (Mottor ~394 KiB) → `index.mottor-legacy.html`; clean ~59 KiB → `index.html`.
+- CSS: `assets/css/hub-city-clean.css` (новый).
+- Feature commit + точечный plesk: `web-studiya/astana/index.html` + hub-city-clean.css (+ legacy не обязателен на прод).
+- URL `/web-studiya/astana/` без смены → sitemap/301 не трогали.
+- Живой смоук — см. ниже / после деплоя.
+
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
