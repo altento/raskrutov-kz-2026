@@ -1,7 +1,7 @@
-name: Import project agent skills
+name: Finalize project agent skills
 
 on:
-  push:
+  pull_request:
     branches: [main]
     paths:
       - '.github/workflows/import-agent-skills.yml'
@@ -15,6 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.head_ref }}
           fetch-depth: 0
 
       - name: Rebuild and validate skill bundle
@@ -39,7 +40,7 @@ jobs:
           test -f .agents/skills/lp-motor-clean-migration/references/migration-report-template.md
           test -f .agents/skills/lp-motor-clean-migration/references/post-migration-search-patterns.md
 
-      - name: Remove temporary importer and commit
+      - name: Commit complete skill bundle to PR branch
         shell: bash
         run: |
           set -euo pipefail
@@ -49,4 +50,4 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A .agents/skills .github/skills-import .github/workflows/import-agent-skills.yml
           git commit -m 'feat: add complete project agent skills bundle'
-          git push origin main
+          git push origin HEAD:${{ github.head_ref }}
