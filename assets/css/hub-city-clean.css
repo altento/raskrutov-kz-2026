@@ -26,22 +26,20 @@
   margin: 0;
   border-radius: 20px;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 30% 40%, rgba(127, 63, 242, 0.14), transparent 55%),
-    radial-gradient(circle at 70% 60%, rgba(0, 122, 255, 0.12), transparent 50%),
-    #eef2ff;
-  box-shadow: 0 10px 32px rgba(40, 30, 90, 0.1);
-  align-self: start;
+  background: transparent;
+  box-shadow: none;
+  align-self: center;
 }
 
 .rk-astana-regional__media img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3;
-  max-height: 320px;
-  object-fit: cover;
-  object-position: center 40%;
+  aspect-ratio: 1000 / 554;
+  max-height: 340px;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
 }
 
 .rk-astana-regional__copy .rk-h2 {
@@ -73,25 +71,24 @@
 
 @media (min-width: 900px) {
   .rk-astana-regional__inner {
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 36px;
     align-items: center;
   }
 
   .rk-astana-regional__media img {
-    aspect-ratio: 5 / 4;
-    max-height: 360px;
+    max-height: 380px;
   }
 }
 
 @media (max-width: 899px) {
   .rk-astana-regional__media {
-    max-width: 100%;
+    max-width: 520px;
+    margin-inline: auto;
   }
 
   .rk-astana-regional__media img {
-    aspect-ratio: 16 / 10;
-    max-height: 220px;
+    max-height: 240px;
   }
 }
 
