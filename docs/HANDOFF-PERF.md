@@ -513,3 +513,8 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Feature **`1dc8b067`**, plesk **`4f905053`** (`e5eceb45..4f905053`).
 - Не тащили akademiya/faq/crm dirty tree и untracked lpfile.
 - Live smoke sample: clean markers, без Mottor `public.bundle`.
+
+### 2026-08-06 — FIX 8 направлений на city hubs
+
+- Вернули AEO/GEO + Лидогенерация (было 6, стало 8 как parent/Astana).
+- `hub-city-clean.css?v=13`, сетка 4×2; фикс escaped attrs `#services`.

@@ -133,10 +133,10 @@
     gap: 14px;
   }
 
-  /* Almaty: 6 directions → 3×2 */
+  /* City hubs: 8 directions → 4×2 like parent/Astana */
   .rk-almaty-page.rk-studio-page #services .rk-studio-grid,
 .rk-hub-city-page.rk-studio-page #services .rk-studio-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 14px;
   }
 

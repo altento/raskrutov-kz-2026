@@ -275,3 +275,10 @@ CSV-копии: `docs/seo-regional/`.
 - Commits: feature **`1dc8b067`**, plesk **`4f905053`**.
 - Live smoke: astana/almaty/shymkent/petropavlovsk/ust-kamenogorsk/aktau — HTTP 200, clean, без Mottor bundle.
 - SEO uniqueness: Title/Desc/H1/regional unique; FAQ-вопросы шаблонные — ок для услуги.
+
+### 2026-08-06 — FIX: вернули 8 направлений на city hubs
+
+- На Almaty + 16 batch было 6 карточек (слияние SEO/AEO, без Лидогенерации). Юзер: «потерял по 2».
+- Восстановлен полный набор как у parent/Astana: 01–08 (+ AEO/GEO, Лидогенерация).
+- Попутно: починены `class=\"…\"` в `#services` у batch-генератора; CSS сетка 4×2 (`hub-city-clean.css?v=13`).
+- Deploy: feature + точечный plesk.
