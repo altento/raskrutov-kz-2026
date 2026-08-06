@@ -1598,6 +1598,7 @@
   .sz-hero__inner {
     min-height: 0;
     display: grid;
+    padding-bottom: 0;
   }
   .sz-hero__visual {
     position: relative;
@@ -1652,6 +1653,6 @@
   }
   .sz-prices {
     background-image: none;
-    padding-top: 0;
+    padding-top: 30px;
   }
 }
