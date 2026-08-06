@@ -189,6 +189,7 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] **Astana hub purple/hub-aligned 2026-08-06:** глазами `http://127.0.0.1:8771/web-studiya/astana/` на 390/768/1440 → approve → commit/push/plesk (v4: карточки/hero как у хаба; самодельная каша убрана)
 - [ ] После отдельного ОК: точечный deploy Astana/Almaty HTML + hub-city-clean.css, затем PSI mobile медианой (без SEO geo)
 - [x] **Almaty hub CLEAN 2026-08-06:** глазами http://127.0.0.1:8771/web-studiya/almaty/ 390/768/1440 → approve → commit/push/plesk
+- [x] **All 18 clean city hubs DEPLOY 2026-08-06:** юзер «зааливай» → feature + точечный plesk; глазами sample на https://raskrutov.kz/web-studiya/{city}/
 #### E. По желанию / позже
 - [ ] Plesk: Cache-Control для `home-*.css` (сейчас nginx может держать длинный max-age)
 - [ ] Не заливать на Plesk ветку `deploy` / `site_deploy` (там GH prefix)
@@ -495,3 +496,19 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 
 - Feature + plesk: web-studiya/almaty/index.html (+ mottor-legacy), hub-city-clean.css, Astana CSS ?v=10.
 - Live: https://raskrutov.kz/web-studiya/almaty/
+
+### 2026-08-06 — Batch5 clean hubs (локально)
+
+- 5 хабов: shymkent/aktau/aktobe/atyrau/karaganda; CSS `rk-hub-city-page` v11.
+- Commit/push/plesk не делались — ждать «заливай».
+
+### 2026-08-06 — Rest clean hubs: все 18 city hubs (локально)
+
+- Закрыт полный комплект `/web-studiya/{city}/` clean (18). Mottor → legacy.
+
+### 2026-08-06 — DEPLOY all 18 clean city hubs
+
+- Юзер: «зааливай все на сервер».
+- Feature + точечный plesk (без `/MIR`): 18× index.html (+ mottor-legacy), `hub-city-clean.css`, img/cities + hero-devices.
+- Не тащили akademiya/faq/crm dirty tree и untracked lpfile.
+- Live smoke sample городов — clean markers + CSS 200.

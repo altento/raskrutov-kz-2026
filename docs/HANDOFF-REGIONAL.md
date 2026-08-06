@@ -106,7 +106,8 @@ CSV-копии: `docs/seo-regional/`.
 - [x] **Astana hub SWAP (2026-08-05):** clean → `index.html`, Mottor → `index.mottor-legacy.html` (approve «ок»)
 - [ ] **Astana hub REDESIGN purple/mockup (2026-08-06):** глазами `127.0.0.1:8771/web-studiya/astana/` 390/768/1440; оранж отменён; commit/push/deploy только по отдельной команде
 - [x] **Almaty hub CLEAN (2026-08-06):** deploy plesk глазами `127.0.0.1:8771/web-studiya/almaty/` 390/768/1440; Mottor → `index.mottor-legacy.html`; commit/push/deploy только по отдельной команде
-- [ ] После approve Almaty: масштабировать clean-шаблон на Шымкент (не массово 18 сразу)
+- [x] Batch5 clean hubs (2026-08-06): shymkent/aktau/aktobe/atyrau/karaganda — локально → **deploy all 18**
+- [x] **All 18 clean hubs DEPLOY (2026-08-06):** feature + точечный plesk; глазами 2–3 города на https://raskrutov.kz/web-studiya/{city}/
 - [x] Следующее: **дизайн** `/web-studiya/dizayn/{city}`
 - [ ] Глазами: `/web-studiya/dizayn/astana/` + parent cities
 - [x] Visual QA perf-представителей (Astana hub / Almaty sozdanie / Shymkent seo / Petropavlovsk dizayn × 360–1920) — локально после CSS-extract
@@ -251,3 +252,25 @@ CSV-копии: `docs/seo-regional/`.
 
 - Clean /web-studiya/almaty/ + hub-city-clean.css → feature + точечный plesk.
 - Live: https://raskrutov.kz/web-studiya/almaty/
+
+### 2026-08-06 — Batch5 clean hubs (локально)
+
+- Города: Шымкент, Актау, Актобе, Атырау, Караганда.
+- Mottor → `index.mottor-legacy.html`; clean по эталону Алматы: devices hero + `cities/{slug}.webp`, FAQ×9, ProfessionalService areaServed, remote note.
+- CSS: `hub-city-clean.css` + класс `.rk-hub-city-page` (?v=11).
+- Preview: `http://127.0.0.1:8771/web-studiya/{slug}/` — commit/push/deploy по отдельной команде.
+
+### 2026-08-06 — Rest clean hubs (локально): все 18
+
+- Добиты Mottor-остатки: kokshetau, kostanay, kyzylorda, pavlodar, petropavlovsk, semey, taldykorgan, taraz, turkestan, uralsk, ust-kamenogorsk.
+- У каждого: `index.mottor-legacy.html`, clean по эталону Алматы, `cities/{slug}.webp`, devices hero, FAQ×9, JSON-LD, уникальные тексты.
+- Петропавловск (HQ): без формулировки «местного адреса нет»; офис в городе + очно/онлайн.
+- CSS: `.rk-hub-city-page`, `hub-city-clean.css?v=12`.
+- QA `_qa_hub_all18.py`: 18/18 OK, уникальные H1.
+
+### 2026-08-06 — DEPLOY all 18 clean city hubs
+
+- Юзер: «зааливай все на сервер».
+- Feature + точечный plesk (без `/MIR`): 18× `web-studiya/{city}/index.html` (+ mottor-legacy), `hub-city-clean.css`, city/studio webp.
+- Live smoke: sample городов на https://raskrutov.kz/web-studiya/{city}/ — clean, без Mottor bundle.
+- SEO uniqueness: Title/Desc/H1/regional unique; FAQ-вопросы шаблонные — ок для услуги.
