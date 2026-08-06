@@ -1524,7 +1524,7 @@
 @media (max-width: 390px) {
   .sz-hero {
     padding-top: 12px;
-    padding-bottom: 32px;
+    padding-bottom: 0;
   }
 
   .sz-hero__title {
@@ -1588,7 +1588,12 @@
 @media (max-width: 1023px) {
   .sz-hero {
     min-height: 0;
-    padding-bottom: 28px;
+    padding-bottom: 0;
+    background-color: #e8ecff;
+    background-image: url("../img/sozdanie-saitov/hero-bg.webp");
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    background-size: cover;
   }
   .sz-hero__inner {
     min-height: 0;
@@ -1647,5 +1652,6 @@
   }
   .sz-prices {
     background-image: none;
+    padding-top: 0;
   }
 }
