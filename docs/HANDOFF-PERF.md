@@ -510,5 +510,6 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 
 - Юзер: «зааливай все на сервер».
 - Feature + точечный plesk (без `/MIR`): 18× index.html (+ mottor-legacy), `hub-city-clean.css`, img/cities + hero-devices.
+- Feature **`1dc8b067`**, plesk **`4f905053`** (`e5eceb45..4f905053`).
 - Не тащили akademiya/faq/crm dirty tree и untracked lpfile.
-- Live smoke sample городов — clean markers + CSS 200.
+- Live smoke sample: clean markers, без Mottor `public.bundle`.

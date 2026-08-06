@@ -272,5 +272,6 @@ CSV-копии: `docs/seo-regional/`.
 
 - Юзер: «зааливай все на сервер».
 - Feature + точечный plesk (без `/MIR`): 18× `web-studiya/{city}/index.html` (+ mottor-legacy), `hub-city-clean.css`, city/studio webp.
-- Live smoke: sample городов на https://raskrutov.kz/web-studiya/{city}/ — clean, без Mottor bundle.
+- Commits: feature **`1dc8b067`**, plesk **`4f905053`**.
+- Live smoke: astana/almaty/shymkent/petropavlovsk/ust-kamenogorsk/aktau — HTTP 200, clean, без Mottor bundle.
 - SEO uniqueness: Title/Desc/H1/regional unique; FAQ-вопросы шаблонные — ок для услуги.
