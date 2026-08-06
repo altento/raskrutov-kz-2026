@@ -252,9 +252,19 @@
     var el = $("[data-rk-map]");
     if (!el || el.getAttribute("data-ready") === "1") return;
 
+    function ensureMapA11y() {
+      if (!el.getAttribute("role")) {
+        el.setAttribute("role", "region");
+      }
+      if (!el.getAttribute("aria-label") && !el.getAttribute("aria-labelledby")) {
+        el.setAttribute("aria-label", "Интерактивная карта офиса Raskrutov");
+      }
+    }
+
     function mount() {
       if (el.getAttribute("data-ready") === "1") return;
       el.setAttribute("data-ready", "1");
+      ensureMapA11y();
       var lat = el.getAttribute("data-lat") || "54.8746";
       var lon = el.getAttribute("data-lon") || "69.135701";
       var zoom = el.getAttribute("data-zoom") || "16";
@@ -267,12 +277,16 @@
         "&pt=" +
         encodeURIComponent(lon + "," + lat + ",pm2rdm") +
         "&l=map";
-      iframe.title = el.getAttribute("aria-label") || "Карта офиса Raskrutov";
+      iframe.title =
+        el.getAttribute("aria-label") ||
+        "Интерактивная карта проезда к офису Raskrutov";
       iframe.loading = "lazy";
       iframe.setAttribute("allowfullscreen", "");
       iframe.referrerPolicy = "no-referrer-when-downgrade";
       el.appendChild(iframe);
     }
+
+    ensureMapA11y();
 
     if ("IntersectionObserver" in window) {
       var io = new IntersectionObserver(

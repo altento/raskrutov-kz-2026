@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="../assets/css/home-clean-critical.v1.css?v=1">
   <link rel="stylesheet" href="../assets/css/home-clean-deferred.v1.css?v=1" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="../assets/css/home-clean-deferred.v1.css?v=1"></noscript>
-  <link rel="stylesheet" href="../assets/css/studio-clean.css?v=3">
+  <link rel="stylesheet" href="../assets/css/studio-clean.css?v=4">
   <link rel="stylesheet" href="../assets/css/lead-forms.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="../assets/css/lead-forms.css"></noscript>
   <script type="application/ld+json" data-schema="raskrutov">
@@ -405,31 +405,39 @@
 
         <div class="rk-adv-list" id="advantages">
           <article class="rk-adv-item">
-            <img class="rk-adv-item__icon" src="../assets/img/studio/adv-01.webp" alt="" width="104" height="104" loading="lazy" decoding="async">
-            <div>
-              <h3 class="rk-adv-item__title">19+ лет опыта</h3>
+            <div class="rk-adv-item__content">
+              <p class="rk-adv-item__title"><strong>19+ лет опыта</strong></p>
               <p class="rk-adv-item__text">в digital-среде</p>
             </div>
+            <div class="rk-adv-item__media" aria-hidden="true">
+              <img class="rk-adv-item__icon" src="../assets/img/studio/adv-01.webp" alt="" width="104" height="104" loading="lazy" decoding="async">
+            </div>
           </article>
           <article class="rk-adv-item">
-            <img class="rk-adv-item__icon" src="../assets/img/studio/adv-02.webp" alt="" width="104" height="104" loading="lazy" decoding="async">
-            <div>
-              <h3 class="rk-adv-item__title">Команда экспертов</h3>
+            <div class="rk-adv-item__content">
+              <p class="rk-adv-item__title"><strong>Команда экспертов</strong></p>
               <p class="rk-adv-item__text">профи в своих нишах</p>
             </div>
-          </article>
-          <article class="rk-adv-item">
-            <img class="rk-adv-item__icon" src="../assets/img/studio/adv-03.webp" alt="" width="104" height="104" loading="lazy" decoding="async">
-            <div>
-              <h3 class="rk-adv-item__title">Фокус на результат</h3>
-              <p class="rk-adv-item__text">KPI и рост конверсий</p>
+            <div class="rk-adv-item__media" aria-hidden="true">
+              <img class="rk-adv-item__icon" src="../assets/img/studio/adv-02.webp" alt="" width="104" height="104" loading="lazy" decoding="async">
             </div>
           </article>
           <article class="rk-adv-item">
-            <img class="rk-adv-item__icon" src="../assets/img/studio/adv-04.webp" alt="" width="104" height="104" loading="lazy" decoding="async">
-            <div>
-              <h3 class="rk-adv-item__title">Прозрачность</h3>
+            <div class="rk-adv-item__content">
+              <p class="rk-adv-item__title"><strong>Фокус на результат</strong></p>
+              <p class="rk-adv-item__text">KPI и рост конверсий</p>
+            </div>
+            <div class="rk-adv-item__media" aria-hidden="true">
+              <img class="rk-adv-item__icon" src="../assets/img/studio/adv-03.webp" alt="" width="104" height="104" loading="lazy" decoding="async">
+            </div>
+          </article>
+          <article class="rk-adv-item">
+            <div class="rk-adv-item__content">
+              <p class="rk-adv-item__title"><strong>Прозрачность</strong></p>
               <p class="rk-adv-item__text">отчёты и аналитика</p>
+            </div>
+            <div class="rk-adv-item__media" aria-hidden="true">
+              <img class="rk-adv-item__icon" src="../assets/img/studio/adv-04.webp" alt="" width="104" height="104" loading="lazy" decoding="async">
             </div>
           </article>
         </div>
@@ -591,7 +599,8 @@
               data-lat="54.8746"
               data-lon="69.135701"
               data-zoom="16"
-              aria-label="Карта офиса Raskrutov"
+              role="region"
+              aria-label="Интерактивная карта офиса Raskrutov"
             ></div>
             <div class="rk-contacts-social">
               <p class="rk-contacts-social__title">Мы в соцсетях</p>
@@ -748,7 +757,7 @@
       else window.addEventListener("load", schedule, { once: true });
     })();
   </script>
-  <script src="../assets/js/home-clean.js?v=21" defer></script>
+  <script src="../assets/js/home-clean.js?v=22" defer></script>
   <script src="../assets/js/lead-forms.js" defer></script>
 </body>
 </html>
