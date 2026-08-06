@@ -140,6 +140,13 @@ h1 {
   font-size: clamp(2.55rem, 4.65vw, 4.45rem);
 }
 
+.hero h1 {
+  font-size: clamp(36px, 3.2vw, 50px);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 100%;
+}
+
 h2 {
   margin-bottom: 20px;
   font-size: clamp(2rem, 3.4vw, 3.15rem);
@@ -911,23 +918,24 @@ a.project-card:hover {
   transform: translateY(-4px);
 }
 
+.project-card--featured,
+.project-card--featured h3,
+.project-card--featured p,
+.project-card--featured .project-card__status,
+.project-card--featured .project-card__link {
+  color: #fff;
+}
+
 .project-card--featured {
-  color: #ffffff;
   background:
     radial-gradient(circle at 94% 0%, rgba(255, 255, 255, 0.2), transparent 32%),
     var(--gradient-brand-wide);
 }
 
-.project-card--featured h3,
-.project-card--featured p,
-.project-card--featured .project-card__status,
-.project-card--featured .project-card__link {
-  color: #ffffff;
-}
-
 .project-card--featured .project-card__status {
-  border-color: rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
 }
 
 .project-card--progress {
@@ -968,6 +976,14 @@ a.project-card:hover {
 
 .project-card__link--muted {
   color: var(--color-muted);
+}
+
+.project-card.project-card--featured,
+.project-card.project-card--featured h3,
+.project-card.project-card--featured p,
+.project-card.project-card--featured .project-card__status,
+.project-card.project-card--featured .project-card__link {
+  color: #fff;
 }
 
 .franchise-section {
@@ -1508,6 +1524,10 @@ a.project-card:hover {
 
   h1 {
     font-size: clamp(2.15rem, 10.5vw, 3.35rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 3.2vw, 50px);
   }
 
   h2 {

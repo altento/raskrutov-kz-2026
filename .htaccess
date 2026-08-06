@@ -3,6 +3,7 @@
   RewriteEngine On
   RewriteRule ^raskrutov-kz-2026/(.*)$ /$1 [R=301,L]
   RewriteRule ^raskrutov-kz-2026/?$ / [R=301,L]
+  RewriteRule ^keysy/partnery/turan-agency/?$ /keysy/partnery/ [R=301,L,NE]
 </IfModule>
 
 # 301: legacy /pages/*.html -> pretty URLs
