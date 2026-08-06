@@ -38,9 +38,9 @@
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1 / 1;
-  max-height: 380px;
-  object-fit: cover;
+  aspect-ratio: 1000 / 554;
+  max-height: 340px;
+  object-fit: contain;
   object-position: center;
   background: transparent;
 }
