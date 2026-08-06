@@ -2,14 +2,17 @@
    Do not invent a second design system. */
 
 .rk-astana-page,
-.rk-almaty-page {
+.rk-almaty-page,
+.rk-hub-city-page {
   overflow-x: clip;
 }
 
 .rk-astana-page .rk-nav a[href="/web-studiya/"],
 .rk-astana-page .rk-mobile-nav a[href="/web-studiya/"],
 .rk-almaty-page .rk-nav a[href="/web-studiya/"],
-.rk-almaty-page .rk-mobile-nav a[href="/web-studiya/"] {
+.rk-almaty-page .rk-mobile-nav a[href="/web-studiya/"],
+.rk-hub-city-page .rk-nav a[href="/web-studiya/"],
+.rk-hub-city-page .rk-mobile-nav a[href="/web-studiya/"] {
   color: var(--rk-purple, #7f3ff2);
 }
 
@@ -97,7 +100,8 @@
 
 /* Show visible title above services (hub hides #services .rk-h2) */
 .rk-astana-page #services > .rk-container > .rk-h2:not(.rk-sr-only),
-.rk-almaty-page #services > .rk-container > .rk-h2:not(.rk-sr-only) {
+.rk-almaty-page #services > .rk-container > .rk-h2:not(.rk-sr-only),
+.rk-hub-city-page #services > .rk-container > .rk-h2:not(.rk-sr-only) {
   display: block;
   margin: 0 0 24px;
   text-align: center;
@@ -110,13 +114,15 @@
 
 /* Service cards grid */
 .rk-astana-page #services .rk-studio-grid,
-.rk-almaty-page #services .rk-studio-grid {
+.rk-almaty-page #services .rk-studio-grid,
+.rk-hub-city-page #services .rk-studio-grid {
   grid-template-columns: 1fr;
 }
 
 @media (min-width: 700px) {
   .rk-astana-page #services .rk-studio-grid,
-  .rk-almaty-page #services .rk-studio-grid {
+  .rk-almaty-page #services .rk-studio-grid,
+.rk-hub-city-page #services .rk-studio-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -128,29 +134,34 @@
   }
 
   /* Almaty: 6 directions → 3×2 */
-  .rk-almaty-page.rk-studio-page #services .rk-studio-grid {
+  .rk-almaty-page.rk-studio-page #services .rk-studio-grid,
+.rk-hub-city-page.rk-studio-page #services .rk-studio-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 14px;
   }
 
   .rk-astana-page #services .rk-studio-card,
-  .rk-almaty-page #services .rk-studio-card {
+  .rk-almaty-page #services .rk-studio-card,
+.rk-hub-city-page #services .rk-studio-card {
     min-height: 0;
     padding: 16px 14px 44px;
   }
 
   .rk-astana-page #services .rk-studio-card > h2,
-  .rk-almaty-page #services .rk-studio-card > h2 {
+  .rk-almaty-page #services .rk-studio-card > h2,
+.rk-hub-city-page #services .rk-studio-card > h2 {
     font-size: 16px;
   }
 
   .rk-astana-page #services .rk-studio-card ul,
-  .rk-almaty-page #services .rk-studio-card ul {
+  .rk-almaty-page #services .rk-studio-card ul,
+.rk-hub-city-page #services .rk-studio-card ul {
     font-size: 13px;
   }
 
   .rk-astana-page #services .rk-studio-card__num,
-  .rk-almaty-page #services .rk-studio-card__num {
+  .rk-almaty-page #services .rk-studio-card__num,
+.rk-hub-city-page #services .rk-studio-card__num {
     font-size: 24px;
   }
 }
@@ -301,19 +312,22 @@
 }
 
 .rk-astana-page .rk-section--faq .rk-h2,
-.rk-almaty-page .rk-section--faq .rk-h2 {
+.rk-almaty-page .rk-section--faq .rk-h2,
+.rk-hub-city-page .rk-section--faq .rk-h2 {
   margin: 0 0 24px;
   text-align: center;
 }
 
 .rk-astana-page .rk-faq,
-.rk-almaty-page .rk-faq {
+.rk-almaty-page .rk-faq,
+.rk-hub-city-page .rk-faq {
   max-width: 860px;
   margin: 0 auto;
 }
 
 .rk-astana-page .rk-contacts__remote,
-.rk-almaty-page .rk-contacts__remote {
+.rk-almaty-page .rk-contacts__remote,
+.rk-hub-city-page .rk-contacts__remote {
   margin: 0 0 14px;
   padding: 12px 14px;
   border-radius: 10px;
