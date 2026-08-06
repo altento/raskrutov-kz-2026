@@ -104,6 +104,7 @@ CSV-копии: `docs/seo-regional/`.
 - [ ] Глазами: `/web-studiya/astana/` + `/web-studiya/` (сетка городов) + крошки/услуги
 - [ ] **PILOT clean Astana hub:** открыть `…/astana/index-clean.html` локально → approve swap на `index.html`
 - [x] **Astana hub SWAP (2026-08-05):** clean → `index.html`, Mottor → `index.mottor-legacy.html` (approve «ок»)
+- [ ] **Astana hub REDESIGN purple/mockup (2026-08-06):** глазами `127.0.0.1:8771/web-studiya/astana/` 390/768/1440; оранж отменён; commit/push/deploy только по отдельной команде
 - [ ] После approve Astana: масштабировать шаблон на Алматы / Шымкент (не массово 18 сразу)
 - [x] Следующее: **дизайн** `/web-studiya/dizayn/{city}`
 - [ ] Глазами: `/web-studiya/dizayn/astana/` + parent cities
@@ -216,4 +217,23 @@ CSV-копии: `docs/seo-regional/`.
 - Не править / не PSI / не QA в performance-сессиях
 - Published SEO **не откатывать**
 - Perf active: **57** (hubs + sozdanie + dizayn + 3 parents)
+
+### 2026-08-06 — полный redesign `/web-studiya/astana/` (локально)
+
+- DOM пересобран в 9 секций по концепции «Digital-партнёр для бизнеса в Астане».
+- 4 направления вместо 9 карточек и повторяющихся отдельных сервисных секций.
+- Уникальные regional prose, задачи, подход, кейс-категории, 6 этапов и FAQ×6.
+- Только одно hero-изображение; HTML −23 KiB; `studio-clean.css` отключён на этой странице.
+- QA: 6 контрольных ширин без overflow; 20/20 внутренних URL 200; JSON-LD валиден.
+- `/web-studiya/seo-prodvizhenie/astana/` не создавался; другие города и parent не менялись.
+- Commit / push / deploy не выполнялись.
+
+### 2026-08-06 — Astana: выравнивание под хаб (v4, локально)
+
+- Юзер: предыдущая версия «криво и ужасно».
+- Пересобрано ближе к `/web-studiya/`: hero 1 lead + 3 trust; карточки услуг с `ul` + SVG `+`; adv + cta-panel; contacts/banner как у хаба.
+- Убраны самодельные битые блоки (фейк-visual из hero-bg, текстовые «more» вместо кружка, перегруженные task/why/include).
+- Оставлены региональные: prose, cases→/keysy/, process×5, FAQ×8, remote note.
+- CSS: `hub-city-clean.css?v=4` тонкий слой.
+- Preview: `http://127.0.0.1:8771/web-studiya/astana/` — без commit/push.
 

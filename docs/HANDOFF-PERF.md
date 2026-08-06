@@ -185,6 +185,9 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [x] Commit/push/deploy CSS-extract — feature `193f7e04`, plesk `a424184b`
 - [ ] PSI mobile/desktop — **QUOTA BLOCKED** (429 на anonymous API 2026-08-04); ручной замер через pagespeed.web.dev — см. `reports/geo-pages-performance-final.md`; **без seo-prodvizhenie**
 - [ ] Дальше P2 регионалки — по `HANDOFF-REGIONAL.md` (SEO-страницы пишет другой сотрудник)
+- [ ] ~~Astana hub orange 2026-08-06~~ — **отменено** (не в стиле хаба)
+- [ ] **Astana hub purple/hub-aligned 2026-08-06:** глазами `http://127.0.0.1:8771/web-studiya/astana/` на 390/768/1440 → approve → commit/push/plesk (v4: карточки/hero как у хаба; самодельная каша убрана)
+- [ ] После отдельного ОК: точечный deploy Astana HTML + CSS, затем PSI mobile медианой (без SEO geo)
 #### E. По желанию / позже
 - [ ] Plesk: Cache-Control для `home-*.css` (сейчас nginx может держать длинный max-age)
 - [ ] Не заливать на Plesk ветку `deploy` / `site_deploy` (там GH prefix)
@@ -454,5 +457,27 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Живой смоук `https://raskrutov.kz/web-studiya/astana/`: HTTP 200, `rk-hub-city`, H1 «Веб-студия в Астане для роста бизнеса», без `public.bundle`, `hub-city-clean.css` 200.
 - Feature `323ce2cf`; plesk `9976d73e` (`01f8e6ec..9976d73e`).
 - Дальше: пилот Алматы / Шымкент по тому же шаблону (не массово 18).
+
+### 2026-08-06 — REDESIGN clean hub Astana (локально, без deploy)
+
+- Полностью пересобран `site_mirror/web-studiya/astana/index.html`: 14 → 9 секций, H2 15 → 8, H3 23 → 12.
+- Hero: два изображения → одно; HTML 57 953 → 34 897 bytes; CSS-файлы 5 → 4; новых JS/библиотек нет.
+- Новый page-specific визуал: black / white / `#FE780A`; глобальные токены и `/web-studiya/` не менялись.
+- SEO: утверждённые Title/Description/H1/canonical, Service areaServed Astana, FAQ×6, breadcrumbs.
+- QA: 320/375/430/768/1024/1440 без horizontal overflow; CTA виден на mobile; 20/20 внутренних URL 200; runtime errors 0; menu PASS.
+- Форма: один global `data-lead-form`, Supabase endpoint/UTM/analytics сохранены; реальный submit не выполнялся.
+- Lighthouse CLI завис на загрузке пакета и остановлен; score не выдумывался. PSI — после разрешённого deploy.
+- Отчёт: `reports/web-studiya-astana-clean/REPORT.md`.
+- Commit / push / plesk **не выполнялись** по прямому запрету пользователя.
+
+### 2026-08-06 — Astana hub: откат оранжа → стиль хаба + макет (локально)
+
+- Юзер отклонил orange/black: страница должна быть как `/web-studiya/` + макет (светлый, purple/blue).
+- Переписаны `astana/index.html` + `hub-city-clean.css?v=3`; подключены `studio-clean.css` + home-clean.
+- ~11 смысловых секций; 6 направлений; FAQ×8; ProfessionalService areaServed Астана; офис только Петропавловск + remote.
+- QA `_qa_astana_hub_v3.py`: 1 H1, miss links 0, без `public.bundle`/оранжа; preview `127.0.0.1:8771` HTTP 200 `rk-astana-page`.
+- Browser mobile: hero/CTA/sticky в hub-стиле.
+- Commit / push / plesk **снова запрещены** пользователем.
+- Отчёт: `reports/web-studiya-astana-clean/REPORT.md`.
 
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
