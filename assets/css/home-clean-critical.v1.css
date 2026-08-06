@@ -80,8 +80,8 @@ body.rk-clean {
 
 @media (min-width: 501px) {
   body.rk-clean {
-    /* как у эталона Mottor: холст 1400 */
-    min-width: 1400px;
+    /* Fixed: 1400px canvas forced desktop overflow/CLS; geometry via media queries */
+    min-width: 0;
   }
 }
 

@@ -1,0 +1,229 @@
+/* Web-studiya — deferred: below-fold sections (load after first paint) */
+
+/* Advantages — 4 equal cards, text left / icon top-right */
+.rk-adv-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  margin: 28px 0 0;
+}
+
+.rk-adv-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 140px;
+  height: 100%;
+  margin: 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(40, 30, 90, 0.06);
+  box-sizing: border-box;
+}
+
+.rk-adv-item__content {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  max-width: 100%;
+  padding-right: 84px;
+}
+
+.rk-adv-item__title {
+  margin: 0 0 6px;
+  font-family: var(--rk-font-head);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #111;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.rk-adv-item__title strong {
+  font-weight: inherit;
+}
+
+.rk-adv-item__text {
+  margin: 0;
+  font-family: var(--rk-font-head);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #666;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.rk-adv-item__media {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 0;
+  width: 72px;
+  height: 72px;
+  pointer-events: none;
+}
+
+.rk-adv-item__icon {
+  display: block;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+@media (min-width: 640px) {
+  .rk-adv-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rk-adv-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .rk-adv-item {
+    min-height: 160px;
+    padding: 22px 20px;
+  }
+}
+
+/* Cities */
+.rk-cities {
+  margin: 0;
+  padding: 48px 0 56px;
+}
+
+.rk-cities__title {
+  margin: 0 0 28px;
+  text-align: center;
+  font-family: var(--rk-font-head);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1e1e1e;
+}
+
+.rk-cities__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.rk-cities__card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #006fdc;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 111, 220, 0.16);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rk-cities__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 111, 220, 0.26);
+  color: #fff;
+}
+
+.rk-cities__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #d7ebff;
+}
+
+.rk-cities__label {
+  padding: 12px 10px 14px;
+  font-family: var(--rk-font-head);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .rk-cities__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .rk-cities__grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .rk-cities__label {
+    font-size: 14px;
+  }
+}
+
+/* Bottom banner CTA */
+.rk-studio-banner {
+  padding: 28px 0;
+  background: linear-gradient(90deg, #7f3ff2 0%, #5b6cf0 45%, #df62e2 100%);
+  color: #fff;
+}
+
+.rk-studio-banner__inner {
+  display: grid;
+  gap: 16px;
+  align-items: center;
+}
+
+.rk-studio-banner__title {
+  margin: 0 0 6px;
+  font-family: var(--rk-font-head);
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.rk-studio-banner__text {
+  margin: 0;
+  font-family: var(--rk-font-head);
+  font-size: 15px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.rk-studio-banner .rk-btn {
+  justify-self: start;
+}
+
+@media (min-width: 900px) {
+  .rk-studio-banner__inner {
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+  }
+}
+
+/* Nav current for Студия */
+.rk-studio-page .rk-nav a[href="/web-studiya/"],
+.rk-studio-page .rk-mobile-nav a[href="/web-studiya/"] {
+  color: var(--rk-purple);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rk-cities__card {
+    transition: none;
+  }
+
+  .rk-cities__card:hover {
+    transform: none;
+  }
+}

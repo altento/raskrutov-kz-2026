@@ -2391,12 +2391,13 @@ button {
   content: "";
   position: absolute;
   top: -100px;
-  left: -40px;
+  left: 0;
   width: 30px;
   height: 250px;
-  transform: rotate(45deg);
+  transform: translate3d(-160%, 0, 0) rotate(20deg);
   background: linear-gradient(90deg, transparent, #fff, transparent);
   opacity: 0.4;
+  will-change: transform;
   animation: rk-soc-shine 3s ease-in-out infinite;
 }
 
@@ -2431,9 +2432,18 @@ button {
 }
 
 @keyframes rk-soc-shine {
-  0% { left: -30px; margin-left: 0; }
-  30% { left: 110%; margin-left: 80px; }
-  100% { left: 110%; margin-left: 80px; }
+  from {
+    transform: translate3d(-160%, 0, 0) rotate(20deg);
+  }
+  to {
+    transform: translate3d(260%, 0, 0) rotate(20deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rk-soc-widget__toggle::after {
+    animation: none;
+  }
 }
 
 /* Modal */
