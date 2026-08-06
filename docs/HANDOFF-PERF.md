@@ -187,7 +187,8 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] Дальше P2 регионалки — по `HANDOFF-REGIONAL.md` (SEO-страницы пишет другой сотрудник)
 - [ ] ~~Astana hub orange 2026-08-06~~ — **отменено** (не в стиле хаба)
 - [ ] **Astana hub purple/hub-aligned 2026-08-06:** глазами `http://127.0.0.1:8771/web-studiya/astana/` на 390/768/1440 → approve → commit/push/plesk (v4: карточки/hero как у хаба; самодельная каша убрана)
-- [ ] После отдельного ОК: точечный deploy Astana HTML + CSS, затем PSI mobile медианой (без SEO geo)
+- [ ] После отдельного ОК: точечный deploy Astana/Almaty HTML + hub-city-clean.css, затем PSI mobile медианой (без SEO geo)
+- [x] **Almaty hub CLEAN 2026-08-06:** глазами http://127.0.0.1:8771/web-studiya/almaty/ 390/768/1440 → approve → commit/push/plesk
 #### E. По желанию / позже
 - [ ] Plesk: Cache-Control для `home-*.css` (сейчас nginx может держать длинный max-age)
 - [ ] Не заливать на Plesk ветку `deploy` / `site_deploy` (там GH prefix)
@@ -480,4 +481,17 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Commit / push / plesk **снова запрещены** пользователем.
 - Отчёт: `reports/web-studiya-astana-clean/REPORT.md`.
 
+### 2026-08-06 — Almaty hub CLEAN (локально, эталон Astana)
+
+- Mottor `web-studiya/almaty/index.html` → `index.mottor-legacy.html`; clean rebuild ~53 KiB.
+- Структура/визуал/JS как Astana; тексты/FAQ×9/JSON-LD уникальны под Алматы; remote без офиса в городе.
+- CSS `hub-city-clean.css?v=9`: `.rk-almaty-page` + сетка 3×2; Astana HTML не меняли.
+- Preview `http://127.0.0.1:8771/web-studiya/almaty/`: 200, 1 H1, modal lead OK, WA/tel OK, overflow@390 нет.
+- Commit / push / plesk **не выполнялись** (запрет в ТЗ).
+
 <!-- следующая запись: дата — что сделали — новый PSI — что дальше -->
+
+### 2026-08-06 — Almaty hub CLEAN deploy
+
+- Feature + plesk: web-studiya/almaty/index.html (+ mottor-legacy), hub-city-clean.css, Astana CSS ?v=10.
+- Live: https://raskrutov.kz/web-studiya/almaty/

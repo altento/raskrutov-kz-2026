@@ -105,7 +105,8 @@ CSV-копии: `docs/seo-regional/`.
 - [ ] **PILOT clean Astana hub:** открыть `…/astana/index-clean.html` локально → approve swap на `index.html`
 - [x] **Astana hub SWAP (2026-08-05):** clean → `index.html`, Mottor → `index.mottor-legacy.html` (approve «ок»)
 - [ ] **Astana hub REDESIGN purple/mockup (2026-08-06):** глазами `127.0.0.1:8771/web-studiya/astana/` 390/768/1440; оранж отменён; commit/push/deploy только по отдельной команде
-- [ ] После approve Astana: масштабировать шаблон на Алматы / Шымкент (не массово 18 сразу)
+- [x] **Almaty hub CLEAN (2026-08-06):** deploy plesk глазами `127.0.0.1:8771/web-studiya/almaty/` 390/768/1440; Mottor → `index.mottor-legacy.html`; commit/push/deploy только по отдельной команде
+- [ ] После approve Almaty: масштабировать clean-шаблон на Шымкент (не массово 18 сразу)
 - [x] Следующее: **дизайн** `/web-studiya/dizayn/{city}`
 - [ ] Глазами: `/web-studiya/dizayn/astana/` + parent cities
 - [x] Visual QA perf-представителей (Astana hub / Almaty sozdanie / Shymkent seo / Petropavlovsk dizayn × 360–1920) — локально после CSS-extract
@@ -237,3 +238,16 @@ CSV-копии: `docs/seo-regional/`.
 - CSS: `hub-city-clean.css?v=4` тонкий слой.
 - Preview: `http://127.0.0.1:8771/web-studiya/astana/` — без commit/push.
 
+### 2026-08-06 — Almaty hub CLEAN (локально, эталон Astana)
+
+- Mottor `/web-studiya/almaty/index.html` → `index.mottor-legacy.html`.
+- Clean rebuild по структуре Astana: header/menu, hero, regional, 6 направлений, adv+CTA, cases→/keysy/, process×5, FAQ×9, contacts+modal, sticky WA/tel.
+- Уникальные тексты/FAQ/JSON-LD под Алматы; remote note без офиса в городе; `service=Веб-студия — Алматы`.
+- CSS: `hub-city-clean.css?v=9` — алиас `.rk-almaty-page` + сетка 3×2 для 6 карточек.
+- QA: 390 без overflow; modal lead открывается; assets OK; Astana HTML не трогали; sitemap URL уже был.
+- Preview: `http://127.0.0.1:8771/web-studiya/almaty/` — **без commit/push/deploy**.
+
+### 2026-08-06 — Almaty hub DEPLOY
+
+- Clean /web-studiya/almaty/ + hub-city-clean.css → feature + точечный plesk.
+- Live: https://raskrutov.kz/web-studiya/almaty/
