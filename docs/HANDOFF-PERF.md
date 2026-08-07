@@ -207,10 +207,11 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [x] Commit/push feature + точечный plesk: parent `dizayn/index.html` + `dizayn-parent-clean.css` (+ mottor-legacy)
 - [x] **18 geo `dizayn/{city}/` НЕ деплоили** — оставляем Mottor на проде, переработка отдельно
 
-#### H. Dizayn geo gap-fix (локально) — **не на прод**
-- [x] Локально выпилен reserve + rename labels (готовим к clean rebuild)
-- [ ] Full clean rebuild 18 geo `dizayn/{city}/` — по отдельной команде
-- [ ] Deploy geo — только после переработки / «заливай»
+#### I. Dizayn parent LCP optimize (2026-08-07 DEPLOYED)
+- [x] Глазами юзер «залей,я проверю»
+- [x] Commit/push feature + точечный plesk: `dizayn/index.html` + `dizayn-parent-clean.css?v=3` + `assets/img/dizayn/hero-branding.webp`
+- [ ] Ручной PSI mobile на https://pagespeed.web.dev после пропагации
+- [ ] Full clean rebuild 18 geo `dizayn/{city}/` — отдельно / «заливай»
 ### 5.2 Действия АГЕНТА (когда юзер дал ввод)
 1. По логам/коду Supabase — починить `submit-lead` (или задеплоить исправленную функцию)
 2. После фикса форм — прогнать живой сабмит, обновить HANDOFF
@@ -550,3 +551,18 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Точечный plesk: только parent HTML + CSS (+ mottor-legacy). **18 geo на проде не трогали** (остались Mottor с дырой — ок, ждём clean rebuild).
 - Feature `11dab63f`, plesk `dfc09e13` (rebase поверх `46b0d186`).
 - Локальные gap-fix на geo HTML остаются в working tree как черновик к переработке (в этот commit feature не вошли).
+
+### 2026-08-07 — Dizayn parent LCP optimize (локально)
+
+- Аудит live: LCP = декоративный full-bleed `assets/img/studio/hero-bg.webp` (painted area огромная), не брендинг-коллаж. PSI API 429.
+- Фикс (только parent clean):
+  - убрали `<img>` hero-bg; на mobile — CSS-градиент; desktop ≥960 — `background-image` hero-bg через CSS;
+  - LCP-кандидат: `assets/img/dizayn/hero-branding.webp` (~13 KiB) + preload `fetchpriority=high`;
+  - `dizayn-parent-clean.css?v=3`; Metrika `webvisor:false` на этой странице;
+  - `index-clean.html` синхронизирован с `index.html`.
+- Локально 390: LCP ≈ branding img, без hero-bg `<img>`. Commit/deploy — по «заливай».
+
+### 2026-08-07 — DEPLOY dizayn parent LCP optimize
+
+- Юзер: «залей,я проверю».
+- Точечный plesk: parent `index.html` + `dizayn-parent-clean.css` + `img/dizayn/hero-branding.webp`. Geo не трогали.

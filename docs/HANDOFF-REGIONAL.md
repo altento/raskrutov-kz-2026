@@ -110,7 +110,7 @@ CSV-копии: `docs/seo-regional/`.
 - [x] **All 18 clean hubs DEPLOY (2026-08-06):** feature + точечный plesk; глазами 2–3 города на https://raskrutov.kz/web-studiya/{city}/
 - [x] Следующее: **дизайн** `/web-studiya/dizayn/{city}`
 - [x] **Parent `/web-studiya/dizayn/` CLEAN DEPLOY (2026-08-07)** — юзер «залей хаб»; geo 18 **не** деплоили, переработка отдельно
-- [ ] Глазами live: https://raskrutov.kz/web-studiya/dizayn/
+- [x] **Parent LCP optimize DEPLOY (2026-08-07)** — hero-bg убран с mobile LCP; branding.webp; юзер проверяет PSI глазами
 - [ ] Clean rebuild + deploy 18 geo `dizayn/{city}/` — по команде
 - [x] Visual QA perf-представителей (Astana hub / Almaty sozdanie / Shymkent seo / Petropavlovsk dizayn × 360–1920) — локально после CSS-extract
 - [x] Mobile H1 на hub/seo geo **FIXED**

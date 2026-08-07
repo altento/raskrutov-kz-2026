@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://raskrutov.kz/web-studiya/dizayn/">
   <meta property="og:title" content="Дизайн для бизнеса — логотип, брендбук и визуальная упаковка | Raskrutov">
   <meta property="og:description" content="Разрабатываем визуальную основу бренда: нейминг, логотип, брендбук, фирменный стиль и дизайн-материалы.">
-  <meta property="og:image" content="https://raskrutov.kz/assets/m-files.cdn1.cc/lpfile/f/8/4/f84c1d06edbb90a7bf2a49639a2dfba6/-/crop/0x103x1672x736/-/resize/678/-/resize/1920/f.webp">
+  <meta property="og:image" content="https://raskrutov.kz/assets/img/dizayn/hero-branding.webp">
   <meta property="og:site_name" content="Raskrutov">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://raskrutov.kz/web-studiya/dizayn/">
@@ -17,13 +17,13 @@
   <link href="../../assets/m-files.cdn1.cc/lpfile/favicon/favicon__q_1.png" type="image/png" rel="icon">
   <link href="../../favicon.ico" sizes="16x16 32x32 48x48" rel="icon" type="image/x-icon">
   <link rel="preload" as="style" href="../../assets/css/home-clean-critical.v1.css?v=1">
-  <link rel="preload" as="image" href="../../assets/m-files.cdn1.cc/lpfile/f/8/4/f84c1d06edbb90a7bf2a49639a2dfba6/-/crop/0x103x1672x736/-/resize/678/-/resize/1920/f.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="../../assets/img/dizayn/hero-branding.webp" fetchpriority="high">
   <link rel="preload" href="../../assets/m-files.cdn1.cc/web/user/fonts/montserrat/montserrat_bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../../assets/css/home-clean-critical.v1.css?v=1">
   <link rel="stylesheet" href="../../assets/css/home-clean-deferred.v1.css?v=1" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="../../assets/css/home-clean-deferred.v1.css?v=1"></noscript>
   <link rel="stylesheet" href="../../assets/css/studio-clean.css?v=1">
-  <link rel="stylesheet" href="../../assets/css/dizayn-parent-clean.css?v=2">
+  <link rel="stylesheet" href="../../assets/css/dizayn-parent-clean.css?v=3">
   <link rel="stylesheet" href="../../assets/css/lead-forms.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="../../assets/css/lead-forms.css"></noscript>
   <script type="application/ld+json" data-schema="raskrutov">
@@ -210,11 +210,8 @@
 
   <main id="main">
     <section class="rk-studio-hero" aria-label="Услуги дизайнера">
-      <div class="rk-studio-hero__bg" aria-hidden="true">
-        <picture>
-          <img src="../../assets/img/studio/hero-bg.webp" alt="" width="1920" height="900" decoding="async" loading="eager" fetchpriority="low">
-        </picture>
-      </div>
+      <!-- Decorative studio texture: CSS-only (desktop). No full-bleed <img> — it stole mobile LCP. -->
+      <div class="rk-studio-hero__bg" aria-hidden="true"></div>
       <div class="rk-container rk-studio-hero__inner">
         <div class="rk-studio-hero__copy">
           <nav class="rk-crumbs" aria-label="Хлебные крошки">
@@ -251,7 +248,7 @@
         </div>
         <figure class="rk-studio-hero__media">
           <img
-            src="../../assets/m-files.cdn1.cc/lpfile/f/8/4/f84c1d06edbb90a7bf2a49639a2dfba6/-/crop/0x103x1672x736/-/resize/678/-/resize/1920/f.webp"
+            src="../../assets/img/dizayn/hero-branding.webp"
             alt="Примеры фирменного стиля: брендбук, визитки, упаковка и другие носители айдентики"
             width="678"
             height="298"
@@ -713,7 +710,7 @@
           clickmap: true,
           trackLinks: true,
           accurateTrackBounce: true,
-          webvisor: true
+          webvisor: false
         });
       }
       function schedule() {
