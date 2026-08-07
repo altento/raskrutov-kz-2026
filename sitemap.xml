@@ -220,17 +220,17 @@
     <loc>https://raskrutov.kz/web-studiya/sozdanie-saitov/sayt-vizitka</loc>
   </url>
   <url>
-    <loc>https://raskrutov.kz/web-studiya/sozdanie-saitov/almaty</loc>
+    <loc>https://raskrutov.kz/web-studiya/sozdanie-saitov/almaty/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://raskrutov.kz/web-studiya/sozdanie-saitov/astana</loc>
+    <loc>https://raskrutov.kz/web-studiya/sozdanie-saitov/astana/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://raskrutov.kz/web-studiya/sozdanie-saitov/shymkent</loc>
+    <loc>https://raskrutov.kz/web-studiya/sozdanie-saitov/shymkent/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -250,7 +250,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://raskrutov.kz/web-studiya/sozdanie-saitov/karaganda</loc>
+    <loc>https://raskrutov.kz/web-studiya/sozdanie-saitov/karaganda/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
