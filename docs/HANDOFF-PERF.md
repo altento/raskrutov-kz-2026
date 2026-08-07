@@ -621,5 +621,6 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 
 - Юзер: «залей,прогоню ее».
 - Swap: Mottor → `index.mottor-legacy.html`, clean → live `index.html` (+ `index-clean.html` source).
-- Feature + точечный plesk: `web-studiya/dizayn/astana/index.html` + `dizayn-clean.css` + `hub-city-clean.css` (без `/MIR`).
-- Live: https://raskrutov.kz/web-studiya/dizayn/astana/
+- Feature `e89acbe4`, plesk deploy `52477e88` (push merge `6787cb02`).
+- Точечный plesk: `web-studiya/dizayn/astana/index.html` + `dizayn-clean.css` + `hub-city-clean.css` (без `/MIR`).
+- Live: https://raskrutov.kz/web-studiya/dizayn/astana/ — verified: `rk-clean`, no `public.bundle`.
