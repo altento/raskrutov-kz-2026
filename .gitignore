@@ -17,3 +17,10 @@ raskrutov-site.zip
 Thumbs.db
 desktop.ini
 .vscode/
+
+# Local dependencies / work directories
+node_modules/
+_work/
+site_plesk/
+_tmp_*
+_perf_tools/_tmp_*

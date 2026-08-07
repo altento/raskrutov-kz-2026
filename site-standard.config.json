@@ -1,0 +1,21 @@
+{
+  "siteUrl": "https://raskrutov.kz",
+  "htmlGlobs": ["**/*.html"],
+  "excludeDirs": ["node_modules", ".git", "dist", "coverage", "vendor"],
+  "assetRoots": ["assets"],
+  "limits": {
+    "imageBytes": 250000,
+    "heroImageBytes": 140000,
+    "maxHighPriorityImages": 1
+  },
+  "lighthouse": {
+    "runs": 3,
+    "performance": 0.9,
+    "accessibility": 0.95,
+    "seo": 1,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200
+  }
+}
+
