@@ -581,4 +581,5 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 ### 2026-08-07 — DEPLOY dizayn parent PSI round 2
 
 - Юзер: «залей,проверю».
+- Feature `bf7e9d7f`, plesk `ef786872`.
 - Точечный plesk: parent HTML + critical/page CSS + `img/dizayn/{hero,examples,cities}`. Geo не трогали.
