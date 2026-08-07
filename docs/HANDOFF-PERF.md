@@ -565,4 +565,6 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 ### 2026-08-07 — DEPLOY dizayn parent LCP optimize
 
 - Юзер: «залей,я проверю».
+- Feature `e55ac9aa`, plesk `d62792ec`.
 - Точечный plesk: parent `index.html` + `dizayn-parent-clean.css` + `img/dizayn/hero-branding.webp`. Geo не трогали.
+- Live smoke: `dizayn-parent-clean.css?v=3`, preload `hero-branding.webp`, без `<img>` hero-bg.
