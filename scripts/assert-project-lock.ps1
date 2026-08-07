@@ -1,4 +1,4 @@
-param(
+﻿param(
     [ValidateSet("commit","push")]
     [string]$Mode = "commit"
 )

@@ -1,4 +1,4 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 
 function Emit-Allow {
     [Console]::Out.WriteLine('{"permission":"allow"}')

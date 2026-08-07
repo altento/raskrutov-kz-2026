@@ -1,4 +1,4 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 
 $lib = Join-Path $PSScriptRoot "project-lock-lib.ps1"
 . (Resolve-Path $lib)

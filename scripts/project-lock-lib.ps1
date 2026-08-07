@@ -1,4 +1,4 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 
 $script:LockBranch = "cursor-lock/site-write"
 $script:LockRef = "refs/heads/$($script:LockBranch)"
