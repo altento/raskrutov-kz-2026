@@ -1,0 +1,44 @@
+{
+  "siteUrl": "https://raskrutov.kz",
+  "roots": ["site_mirror"],
+  "htmlFileNames": ["index.html"],
+  "excludeDirs": [
+    "node_modules",
+    ".git",
+    "dist",
+    "coverage",
+    "vendor",
+    "pages",
+    "assets",
+    "seo-prodvizhenie",
+    "site_deploy",
+    "site_plesk",
+    "site_mirror_build2",
+    "site_mirror_build3",
+    "reports",
+    "_tmp_7za",
+    "_tmp_city_images",
+    "_tmp_node",
+    "__pycache__"
+  ],
+  "excludeFilePatterns": [
+    "index.mottor-legacy.html",
+    "index-clean.html",
+    "index__q_"
+  ],
+  "assetRoots": ["site_mirror/assets"],
+  "limits": {
+    "imageBytes": 250000,
+    "heroImageBytes": 140000,
+    "maxHighPriorityImages": 1
+  },
+  "lighthouse": {
+    "runs": 3,
+    "performance": 0.9,
+    "accessibility": 0.95,
+    "seo": 1,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200
+  }
+}

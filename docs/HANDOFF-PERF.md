@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-07 — DEPLOY all 18 clean geo dizayn + alts  
+**Последнее обновление:** 2026-08-07 — quality:all ERROR=0 WARN=0 (img dims + lang/H1/meta)  
 **Рабочая ветка:** `performance/pagespeed-raskrutov`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -194,7 +194,9 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] Plesk: Cache-Control для `home-*.css` (сейчас nginx может держать длинный max-age)
 - [ ] Не заливать на Plesk ветку `deploy` / `site_deploy` (там GH prefix)
 - [ ] Не коммитить мусорные untracked `lpfile/` и одноразовые `_psi_check_*.py` без нужды
-
+- [x] **Quality audit 2026-08-07 (локально ERROR=0 WARN=0):** lang/H1/meta + img width/height; сказать «крепи»; «заливай» если надо на прод
+- [ ] Глазами spot-check после H1 demote + img dims: `/r-builder/`, `/web-studiya/sozdanie-saitov/landing/`, `…/mnogostranichnye-sayty/` (визуал классов должен держаться)
+- [x] WARN img width/height — закрыто скриптом `_fix_img_dims_owned.py`
 
 #### F. CLEAN `/web-studiya/` index-clean (2026-08-05, локально, без swap)
 - [ ] Глазами сверить index-clean vs donor (1440/390) — reports/web-studiya-clean/
@@ -670,3 +672,23 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Feature `7009c5d6`, plesk deploy `e5955fec`.
 - Точечный plesk: 18× `dizayn/{city}/index.html`, `dizayn/index.html` alts, hub alts (18+parent), `dizayn-geo-critical.v1.css`, `hub-city-clean.css`, `cities/card/*`.
 - Без `/MIR`. Live sample verified: almaty/shymkent/petropavlovsk/astana — `rk-clean`, no bundle, geo-critical.
+
+### 2026-08-07 — Quality audit cleanup (локально, ERROR=0)
+
+- Cursor standard: `site-standard.config.json` + `tools/audit-pages.mjs` — только `site_mirror/**/index.html`, exclude `pages`/`assets`/`seo-prodvizhenie`/deploys/`_tmp_*`.
+- Фикс owned pages (`_fix_audit_errors_owned.py`):
+  - `lang="ru"` на 85 страницах без lang (sozdanie geo Mottor, akademiya, crm, faq, keysy, r-builder, …);
+  - лишние H1→H2 на 9 страницах (5× r-builder + landing/internet-magazin/korporativnyy-sayt/mnogostranichnye-sayty; 115 demote);
+  - meta description на `consent/` и `regulation/`.
+- **SEO `/web-studiya/seo-prodvizhenie/**` не трогали** (чужой раздел) — выкинут из аудита.
+- `npm run quality:all` → **126 HTML, ошибок: 0**, предупреждений ~5452 (img width/height на Mottor — следующая волна).
+- Commit/plesk — по «крепи» / «заливай».
+
+### 2026-08-07 — Quality audit img dims (локально, WARN=0)
+
+- Юзер: «нада чинить все».
+- `_fix_img_dims_owned.py`: проставил `width`/`height` на ~5k+ `<img>` без размеров (owned pages).
+  - размеры из Mottor URL (`crop`/`resize`/`scale`) + Pillow/SVG для локальных файлов;
+  - `seo-prodvizhenie` не трогали.
+- `npm run quality:all` → **126 HTML; ошибок: 0; предупреждений: 0**.
+- Commit/plesk — по «крепи» / «заливай».
