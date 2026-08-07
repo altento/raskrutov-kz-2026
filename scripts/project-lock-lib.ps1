@@ -5,12 +5,21 @@ $script:LockRef = "refs/heads/$($script:LockBranch)"
 $script:ExpectedRepoFragment = "raskrutovstudio-collab/raskrutov-kz-2026"
 $script:EmptyTreeSha = "4b825dc642cb6eb9a060e54bf8d69288fbee4904"
 
+# пределяем корень репозитория средствами PowerShell.
+# то избегает проблем Windows PowerShell 5.1 с кириллицей
+# в выводе `git rev-parse --show-toplevel`.
+$script:SingleWriterRepoRoot = [System.IO.Path]::GetFullPath(
+    (Join-Path $PSScriptRoot "..")
+)
+
 function Get-RepoRoot {
-    $root = (& git rev-parse --show-toplevel 2>$null)
-    if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($root)) {
-        throw "Текущая папка не является Git-репозиторием."
+    $root = (Resolve-Path -LiteralPath $script:SingleWriterRepoRoot).Path
+
+    if (-not (Test-Path -LiteralPath (Join-Path $root ".git"))) {
+        throw "е удалось определить корень Git-репозитория."
     }
-    return $root.Trim()
+
+    return $root
 }
 
 function Write-LockLog {
