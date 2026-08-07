@@ -1,0 +1,353 @@
+/* City hubs (Astana / Almaty) — thin overrides over studio-clean / home-clean.
+   Do not invent a second design system. */
+
+.rk-astana-page,
+.rk-almaty-page,
+.rk-hub-city-page,
+.rk-dizayn-astana-page,
+.rk-dizayn-geo-page {
+  overflow-x: clip;
+}
+
+.rk-astana-page .rk-nav a[href="/web-studiya/"],
+.rk-astana-page .rk-mobile-nav a[href="/web-studiya/"],
+.rk-almaty-page .rk-nav a[href="/web-studiya/"],
+.rk-almaty-page .rk-mobile-nav a[href="/web-studiya/"],
+.rk-hub-city-page .rk-nav a[href="/web-studiya/"],
+.rk-hub-city-page .rk-mobile-nav a[href="/web-studiya/"] {
+  color: var(--rk-purple, #7f3ff2);
+}
+
+/* Regional prose under hero — split like hub mockup */
+.rk-astana-regional {
+  padding: 40px 0 48px;
+  background: #fff;
+}
+
+.rk-astana-regional__inner {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+
+.rk-astana-regional__media {
+  margin: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+  align-self: center;
+}
+
+.rk-astana-regional__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  max-height: 380px;
+  object-fit: cover;
+  object-position: center;
+  background: transparent;
+}
+
+.rk-astana-regional__copy .rk-h2 {
+  margin: 0 0 16px;
+  text-align: left;
+  font-family: var(--rk-font-head);
+  font-size: clamp(22px, 2.8vw, 30px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1e1e1e;
+}
+
+.rk-astana-regional__text p {
+  margin: 0 0 12px;
+  color: #4b4b4b;
+  font-family: var(--rk-font-head);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.rk-astana-regional__note {
+  margin: 16px 0 0 !important;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #e4e8f4;
+  background: #f7f8ff;
+  color: #333 !important;
+}
+
+@media (min-width: 900px) {
+  .rk-astana-regional__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 36px;
+    align-items: center;
+  }
+
+  .rk-astana-regional__media img {
+    max-height: 380px;
+  }
+}
+
+@media (max-width: 899px) {
+  .rk-astana-regional__media {
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .rk-astana-regional__media img {
+    max-height: 240px;
+  }
+}
+
+/* Show visible title above services (hub hides #services .rk-h2) */
+.rk-astana-page #services > .rk-container > .rk-h2:not(.rk-sr-only),
+.rk-almaty-page #services > .rk-container > .rk-h2:not(.rk-sr-only),
+.rk-hub-city-page #services > .rk-container > .rk-h2:not(.rk-sr-only) {
+  display: block;
+  margin: 0 0 24px;
+  text-align: center;
+  font-family: var(--rk-font-head);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1e1e1e;
+}
+
+/* Service cards grid */
+.rk-astana-page #services .rk-studio-grid,
+.rk-almaty-page #services .rk-studio-grid,
+.rk-hub-city-page #services .rk-studio-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 700px) {
+  .rk-astana-page #services .rk-studio-grid,
+  .rk-almaty-page #services .rk-studio-grid,
+.rk-hub-city-page #services .rk-studio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .rk-astana-page.rk-studio-page #services .rk-studio-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  /* City hubs: 8 directions → 4×2 like parent/Astana */
+  .rk-almaty-page.rk-studio-page #services .rk-studio-grid,
+.rk-hub-city-page.rk-studio-page #services .rk-studio-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .rk-astana-page #services .rk-studio-card,
+  .rk-almaty-page #services .rk-studio-card,
+.rk-hub-city-page #services .rk-studio-card {
+    min-height: 0;
+    padding: 16px 14px 44px;
+  }
+
+  .rk-astana-page #services .rk-studio-card > h2,
+  .rk-almaty-page #services .rk-studio-card > h2,
+.rk-hub-city-page #services .rk-studio-card > h2 {
+    font-size: 16px;
+  }
+
+  .rk-astana-page #services .rk-studio-card ul,
+  .rk-almaty-page #services .rk-studio-card ul,
+.rk-hub-city-page #services .rk-studio-card ul {
+    font-size: 13px;
+  }
+
+  .rk-astana-page #services .rk-studio-card__num,
+  .rk-almaty-page #services .rk-studio-card__num,
+.rk-hub-city-page #services .rk-studio-card__num {
+    font-size: 24px;
+  }
+}
+
+/* Cases strip — reuse card chrome, not a new visual language */
+.rk-astana-cases {
+  padding: 40px 0 48px;
+  background: #fff;
+}
+
+.rk-astana-cases .rk-h2 {
+  margin: 0 0 24px;
+  text-align: center;
+  font-family: var(--rk-font-head);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 700;
+  color: #1e1e1e;
+}
+
+.rk-hub-cases-note {
+  max-width: 720px;
+  margin: -8px auto 20px;
+  text-align: center;
+  color: #4b4b4b;
+  font-family: var(--rk-font-head);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.rk-astana-cases__grid {
+  display: grid;
+  gap: 14px;
+}
+
+.rk-astana-cases__card {
+  display: block;
+  margin: 0;
+  padding: 18px 16px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #e4e8f4;
+  box-shadow: 0 8px 28px rgba(40, 30, 90, 0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rk-astana-cases__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(40, 30, 90, 0.12);
+  color: inherit;
+}
+
+.rk-astana-cases__card h3 {
+  margin: 0 0 6px;
+  font-family: var(--rk-font-head);
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+}
+
+.rk-astana-cases__card p {
+  margin: 0 0 10px;
+  font-family: var(--rk-font-head);
+  font-size: 14px;
+  line-height: 1.45;
+  color: #666;
+}
+
+.rk-astana-cases__card span {
+  font-family: var(--rk-font-head);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rk-link, #006fdc);
+}
+
+@media (min-width: 800px) {
+  .rk-astana-cases__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Process — vertical on mobile, 5 cols on desktop */
+.rk-astana-process {
+  padding: 40px 0 48px;
+  background: #f7f8ff;
+}
+
+.rk-astana-process .rk-h2 {
+  margin: 0 0 24px;
+  text-align: center;
+  font-family: var(--rk-font-head);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 700;
+  color: #1e1e1e;
+}
+
+.rk-astana-process__list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.rk-astana-process__item {
+  margin: 0;
+  padding: 16px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #e4e8f4;
+  box-shadow: 0 6px 20px rgba(40, 30, 90, 0.06);
+  counter-increment: step;
+}
+
+.rk-astana-process__item::before {
+  content: counter(step, decimal-leading-zero);
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--rk-font-head);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  color: #e6e6ef;
+}
+
+.rk-astana-process__item h3 {
+  margin: 0 0 6px;
+  font-family: var(--rk-font-head);
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+}
+
+.rk-astana-process__item p {
+  margin: 0;
+  font-family: var(--rk-font-head);
+  font-size: 13px;
+  line-height: 1.45;
+  color: #666;
+}
+
+@media (min-width: 960px) {
+  .rk-astana-process__list {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.rk-astana-page .rk-section--faq .rk-h2,
+.rk-almaty-page .rk-section--faq .rk-h2,
+.rk-hub-city-page .rk-section--faq .rk-h2 {
+  margin: 0 0 24px;
+  text-align: center;
+}
+
+.rk-astana-page .rk-faq,
+.rk-almaty-page .rk-faq,
+.rk-hub-city-page .rk-faq {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.rk-astana-page .rk-contacts__remote,
+.rk-almaty-page .rk-contacts__remote,
+.rk-hub-city-page .rk-contacts__remote,
+.rk-dizayn-astana-page .rk-contacts__remote,
+.rk-dizayn-geo-page .rk-contacts__remote {
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f3f0ff;
+  font-family: var(--rk-font-head);
+  font-size: 14px;
+  line-height: 1.45;
+  color: #3d3570;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rk-astana-cases__card {
+    transition: none;
+  }
+
+  .rk-astana-cases__card:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,73 @@
+/* Raskrutov sitewide breadcrumbs (sit under Mottor fixed menu) */
+.rk-breadcrumbs {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 0 8px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #6b6b6b;
+  background: transparent;
+}
+
+.rk-breadcrumbs ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 0;
+}
+
+.rk-breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+}
+
+.rk-breadcrumbs li:not(:last-child)::after {
+  content: "→";
+  margin: 0 8px;
+  color: #b0b0b0;
+  font-weight: 400;
+}
+
+.rk-breadcrumbs a {
+  color: #5a5a5a;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.rk-breadcrumbs a:hover,
+.rk-breadcrumbs a:focus {
+  color: #9867f3;
+  border-bottom-color: rgba(152, 103, 243, 0.45);
+  outline: none;
+}
+
+.rk-breadcrumbs [aria-current="page"] {
+  color: #3a3a3a;
+  font-weight: 600;
+}
+
+/* Hide legacy Mottor button-breadcrumb rows */
+.rk-old-breadcrumbs,
+.rk-old-breadcrumbs-wrap {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .rk-breadcrumbs {
+    padding: 10px 16px 0;
+    font-size: 12px;
+  }
+  .rk-breadcrumbs li:not(:last-child)::after {
+    margin: 0 6px;
+  }
+}

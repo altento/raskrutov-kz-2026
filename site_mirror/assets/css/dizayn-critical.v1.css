@@ -1,0 +1,223 @@
+/* Dizayn parent — above-fold only (blocking). Full styles in dizayn-page.css (deferred). */
+
+body.rk-clean.rk-studio-page {
+  min-width: 320px;
+}
+
+@media (min-width: 501px) {
+  body.rk-clean.rk-studio-page {
+    min-width: 0;
+  }
+}
+
+.rk-sticky-cta {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .rk-sticky-cta {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 95;
+    gap: 8px;
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0));
+    background: rgba(255, 255, 255, 0.96);
+    border-top: 1px solid var(--rk-border);
+    backdrop-filter: blur(8px);
+  }
+
+  .rk-sticky-cta__btn {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-family: var(--rk-font-head);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+  }
+
+  .rk-sticky-cta__btn--call {
+    background: linear-gradient(270deg, rgb(223, 98, 226) 9%, rgb(106, 92, 234) 90%);
+  }
+
+  .rk-sticky-cta__btn--wa {
+    background: #0e7a4b;
+  }
+
+  body.rk-studio-page {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom, 0));
+  }
+}
+
+.rk-crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 14px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #6b6b6b;
+}
+
+.rk-crumbs a {
+  color: #5a5a5a;
+  text-decoration: none;
+}
+
+.rk-crumbs__sep {
+  color: #b0b0b0;
+}
+
+.rk-studio-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 28px 0 40px;
+  background: #f7f8ff;
+}
+
+.rk-dizayn-parent-page .rk-studio-hero {
+  padding-top: 12px;
+  background:
+    radial-gradient(ellipse 70% 55% at 85% 20%, rgba(152, 103, 243, 0.12), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 10% 80%, rgba(0, 111, 220, 0.08), transparent 55%),
+    #f7f8ff;
+}
+
+.rk-dizayn-parent-page .rk-studio-hero__bg {
+  display: none;
+}
+
+.rk-studio-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 28px;
+  align-items: center;
+}
+
+.rk-studio-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(127, 63, 242, 0.1);
+  color: #6b46c1;
+  font-family: var(--rk-font-head);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.rk-studio-hero__title {
+  margin: 0 0 14px;
+  font-family: var(--rk-font-head);
+  font-size: clamp(28px, 6vw, 44px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #5b2bbd;
+}
+
+.rk-studio-hero__lead {
+  margin: 0 0 20px;
+  max-width: 36em;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--rk-text-soft);
+}
+
+.rk-studio-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 18px;
+}
+
+.rk-studio-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-family: var(--rk-font-head);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.rk-studio-hero__cta--primary {
+  color: #fff;
+  background: linear-gradient(270deg, rgb(223, 98, 226) 9%, rgb(106, 92, 234) 90%);
+}
+
+.rk-studio-hero__cta--secondary {
+  color: #2084d6;
+  background: #fff;
+  border: 1px solid #2084d6;
+}
+
+.rk-studio-hero__trust {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.rk-studio-hero__trust li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.rk-check-ico {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  fill: var(--rk-purple);
+}
+
+.rk-studio-hero__media {
+  margin: 0;
+  text-align: center;
+  aspect-ratio: 678 / 298;
+}
+
+.rk-studio-hero__media img {
+  width: min(100%, 640px);
+  height: auto;
+  display: inline-block;
+}
+
+@media (min-width: 960px) {
+  .rk-dizayn-parent-page .rk-studio-hero {
+    background-image:
+      linear-gradient(180deg, rgba(247, 248, 255, 0.55), rgba(247, 248, 255, 0.92)),
+      url("../img/studio/hero-bg.webp");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  .rk-studio-hero__inner {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 40px;
+  }
+}

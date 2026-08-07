@@ -1,3 +1,10 @@
+# Accidental GitHub Pages upload to Plesk: /raskrutov-kz-2026/... → /...
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^raskrutov-kz-2026/(.*)$ /$1 [R=301,L]
+  RewriteRule ^raskrutov-kz-2026/?$ / [R=301,L]
+</IfModule>
+
 # 301: legacy /pages/*.html -> pretty URLs
 <IfModule mod_alias.c>
 Redirect 301 /pages/akademiya.html /akademiya
@@ -58,9 +65,9 @@ Redirect 301 /pages/web-studiya_kontekstnaya-reklama_google-ads.html /web-studiy
 Redirect 301 /pages/web-studiya_kontekstnaya-reklama_yandex-direct.html /web-studiya/kontekstnaya-reklama/yandex-direct
 Redirect 301 /pages/web-studiya_lidogeneratsiya.html /web-studiya/lidogeneratsiya
 Redirect 301 /pages/web-studiya_podderzhka-saytov.html /web-studiya/podderzhka-saytov
-Redirect 301 /pages/web-studiya_seo-prodvizhenie.html /web-studiya/seo-prodvizhenie
-Redirect 301 /pages/web-studiya_seo-prodvizhenie_google.html /web-studiya/seo-prodvizhenie/google
-Redirect 301 /pages/web-studiya_seo-prodvizhenie_yandex.html /web-studiya/seo-prodvizhenie/yandex
+Redirect 301 /pages/web-studiya_seo-prodvizhenie.html /web-studiya/seo-prodvizhenie/
+Redirect 301 /pages/web-studiya_seo-prodvizhenie_google.html /web-studiya/seo-prodvizhenie/google/
+Redirect 301 /pages/web-studiya_seo-prodvizhenie_yandex.html /web-studiya/seo-prodvizhenie/yandex/
 Redirect 301 /pages/web-studiya_sozdanie-saitov.html /web-studiya/sozdanie-saitov
 Redirect 301 /pages/web-studiya_sozdanie-saitov_ai-konsultanty.html /web-studiya/sozdanie-saitov/ai-konsultanty
 Redirect 301 /pages/web-studiya_sozdanie-saitov_crm-sistemy.html /web-studiya/sozdanie-saitov/crm-sistemy
@@ -91,7 +98,116 @@ Redirect 301 /pages/web-studiya_sozdanie-saitov_sayt-vizitka.html /web-studiya/s
   ExpiresByType application/font-woff "access plus 1 year"
 </IfModule>
 
-# Compression for text resources
-<IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+# Cache-Control for hashed/static assets (PSI / repeat views)
+<IfModule mod_headers.c>
+  # Versioned Mottor bundles & hashed lpfile paths — long cache
+  <FilesMatch "(__q_v_|/-/|lpfile/).+\.(css|js|webp|png|jpe?g|svg|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # Site-owned CSS/JS/images without content-hash in filename — short cache so hotfixes propagate
+  <FilesMatch "^(home-|sozdanie-|lead-forms|breadcrumbs|hero-|perf-img).+\.(css|js|webp)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "^(robots\.txt|sitemap\.xml)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
 </IfModule>
+
+# MIME types for modern static assets (safe IfModule)
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType image/avif .avif
+  AddType image/svg+xml .svg
+  AddType font/woff2 .woff2
+  AddType font/woff .woff
+</IfModule>
+
+# Compression for text resources (+ fonts when supported)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml application/xml text/xml font/woff font/woff2 application/font-woff
+</IfModule>
+Redirect 301 /web-studiya/aeo-geo-prodvizhenie /web-studiya/aeo-prodvizhenie/
+Redirect 301 /web-studiya/aeo-geo-prodvizhenie/ /web-studiya/aeo-prodvizhenie/
+Redirect 301 /pages/web-studiya_aeo-geo-prodvizhenie.html /web-studiya/aeo-prodvizhenie/
+
+# Do NOT add: Redirect /index.html → /
+# That loops with DirectoryIndex (/ → index.html → / → …) → ERR_TOO_MANY_REDIRECTS
+
+# Regional sozdanie-saitov pretty redirects (auto)
+Redirect 301 /sozdanie-saitov-v-almaty /web-studiya/sozdanie-saitov/almaty/
+Redirect 301 /sozdanie-saitov-v-almaty/ /web-studiya/sozdanie-saitov/almaty/
+Redirect 301 /sozdanie-saitov-v-astane /web-studiya/sozdanie-saitov/astana/
+Redirect 301 /sozdanie-saitov-v-astane/ /web-studiya/sozdanie-saitov/astana/
+Redirect 301 /sozdanie-saitov-v-shimkente /web-studiya/sozdanie-saitov/shymkent/
+Redirect 301 /sozdanie-saitov-v-shimkente/ /web-studiya/sozdanie-saitov/shymkent/
+Redirect 301 /sozdanie-saitov-v-aktau /web-studiya/sozdanie-saitov/aktau/
+Redirect 301 /sozdanie-saitov-v-aktau/ /web-studiya/sozdanie-saitov/aktau/
+Redirect 301 /sozdanie-saitov-v-aktobe /web-studiya/sozdanie-saitov/aktobe/
+Redirect 301 /sozdanie-saitov-v-aktobe/ /web-studiya/sozdanie-saitov/aktobe/
+Redirect 301 /sozdanie-saitov-v-atyrau /web-studiya/sozdanie-saitov/atyrau/
+Redirect 301 /sozdanie-saitov-v-atyrau/ /web-studiya/sozdanie-saitov/atyrau/
+Redirect 301 /sozdanie-saitov-v-karagande /web-studiya/sozdanie-saitov/karaganda/
+Redirect 301 /sozdanie-saitov-v-karagande/ /web-studiya/sozdanie-saitov/karaganda/
+Redirect 301 /sozdanie-saitov-v-kokshetau /web-studiya/sozdanie-saitov/kokshetau/
+Redirect 301 /sozdanie-saitov-v-kokshetau/ /web-studiya/sozdanie-saitov/kokshetau/
+Redirect 301 /sozdanie-saitov-v-kostanae /web-studiya/sozdanie-saitov/kostanay/
+Redirect 301 /sozdanie-saitov-v-kostanae/ /web-studiya/sozdanie-saitov/kostanay/
+Redirect 301 /sozdanie-saitov-v-kyzylorde /web-studiya/sozdanie-saitov/kyzylorda/
+Redirect 301 /sozdanie-saitov-v-kyzylorde/ /web-studiya/sozdanie-saitov/kyzylorda/
+Redirect 301 /sozdanie-saitov-v-pavlodare /web-studiya/sozdanie-saitov/pavlodar/
+Redirect 301 /sozdanie-saitov-v-pavlodare/ /web-studiya/sozdanie-saitov/pavlodar/
+Redirect 301 /sozdanie-saitov-v-Petropavlovske /web-studiya/sozdanie-saitov/petropavlovsk/
+Redirect 301 /sozdanie-saitov-v-Petropavlovske/ /web-studiya/sozdanie-saitov/petropavlovsk/
+Redirect 301 /sozdanie-saitov-v-semee /web-studiya/sozdanie-saitov/semey/
+Redirect 301 /sozdanie-saitov-v-semee/ /web-studiya/sozdanie-saitov/semey/
+Redirect 301 /sozdanie-saitov-v-taldykorgane /web-studiya/sozdanie-saitov/taldykorgan/
+Redirect 301 /sozdanie-saitov-v-taldykorgane/ /web-studiya/sozdanie-saitov/taldykorgan/
+Redirect 301 /sozdanie-saitov-v-taraze /web-studiya/sozdanie-saitov/taraz/
+Redirect 301 /sozdanie-saitov-v-taraze/ /web-studiya/sozdanie-saitov/taraz/
+Redirect 301 /sozdanie-saitov-v-turkestane /web-studiya/sozdanie-saitov/turkestan/
+Redirect 301 /sozdanie-saitov-v-turkestane/ /web-studiya/sozdanie-saitov/turkestan/
+Redirect 301 /sozdanie-saitov-v-uralske /web-studiya/sozdanie-saitov/uralsk/
+Redirect 301 /sozdanie-saitov-v-uralske/ /web-studiya/sozdanie-saitov/uralsk/
+Redirect 301 /sozdanie-saitov-v-ust-kamenogorske /web-studiya/sozdanie-saitov/ust-kamenogorsk/
+Redirect 301 /sozdanie-saitov-v-ust-kamenogorske/ /web-studiya/sozdanie-saitov/ust-kamenogorsk/
+
+# Regional seo-prodvizhenie pretty redirects (auto)
+Redirect 301 /seo-prodvizhenie-sajtov-v-almaty /web-studiya/seo-prodvizhenie/almaty/
+Redirect 301 /seo-prodvizhenie-sajtov-v-almaty/ /web-studiya/seo-prodvizhenie/almaty/
+Redirect 301 /seo-prodvizhenie-sajtov-v-astane /web-studiya/seo-prodvizhenie/astana/
+Redirect 301 /seo-prodvizhenie-sajtov-v-astane/ /web-studiya/seo-prodvizhenie/astana/
+Redirect 301 /seo-prodvizhenie-sajtov-v-shimkente /web-studiya/seo-prodvizhenie/shymkent/
+Redirect 301 /seo-prodvizhenie-sajtov-v-shimkente/ /web-studiya/seo-prodvizhenie/shymkent/
+Redirect 301 /seo-prodvizhenie-sajtov-v-aktau /web-studiya/seo-prodvizhenie/aktau/
+Redirect 301 /seo-prodvizhenie-sajtov-v-aktau/ /web-studiya/seo-prodvizhenie/aktau/
+Redirect 301 /seo-prodvizhenie-sajtov-v-aktobe /web-studiya/seo-prodvizhenie/aktobe/
+Redirect 301 /seo-prodvizhenie-sajtov-v-aktobe/ /web-studiya/seo-prodvizhenie/aktobe/
+Redirect 301 /seo-prodvizhenie-sajtov-v-atyrau /web-studiya/seo-prodvizhenie/atyrau/
+Redirect 301 /seo-prodvizhenie-sajtov-v-atyrau/ /web-studiya/seo-prodvizhenie/atyrau/
+Redirect 301 /seo-prodvizhenie-sajtov-v-karagande /web-studiya/seo-prodvizhenie/karaganda/
+Redirect 301 /seo-prodvizhenie-sajtov-v-karagande/ /web-studiya/seo-prodvizhenie/karaganda/
+Redirect 301 /seo-prodvizhenie-sajtov-v-kokshetau /web-studiya/seo-prodvizhenie/kokshetau/
+Redirect 301 /seo-prodvizhenie-sajtov-v-kokshetau/ /web-studiya/seo-prodvizhenie/kokshetau/
+Redirect 301 /seo-prodvizhenie-sajtov-v-kostanae /web-studiya/seo-prodvizhenie/kostanay/
+Redirect 301 /seo-prodvizhenie-sajtov-v-kostanae/ /web-studiya/seo-prodvizhenie/kostanay/
+Redirect 301 /seo-prodvizhenie-sajtov-v-kyzylorde /web-studiya/seo-prodvizhenie/kyzylorda/
+Redirect 301 /seo-prodvizhenie-sajtov-v-kyzylorde/ /web-studiya/seo-prodvizhenie/kyzylorda/
+Redirect 301 /seo-prodvizhenie-sajtov-v-pavlodare /web-studiya/seo-prodvizhenie/pavlodar/
+Redirect 301 /seo-prodvizhenie-sajtov-v-pavlodare/ /web-studiya/seo-prodvizhenie/pavlodar/
+Redirect 301 /seo-prodvizhenie-sajtov-v-petropavlovske /web-studiya/seo-prodvizhenie/petropavlovsk/
+Redirect 301 /seo-prodvizhenie-sajtov-v-petropavlovske/ /web-studiya/seo-prodvizhenie/petropavlovsk/
+Redirect 301 /seo-prodvizhenie-sajtov-v-semee /web-studiya/seo-prodvizhenie/semey/
+Redirect 301 /seo-prodvizhenie-sajtov-v-semee/ /web-studiya/seo-prodvizhenie/semey/
+Redirect 301 /seo-prodvizhenie-sajtov-v-taldykorgane /web-studiya/seo-prodvizhenie/taldykorgan/
+Redirect 301 /seo-prodvizhenie-sajtov-v-taldykorgane/ /web-studiya/seo-prodvizhenie/taldykorgan/
+Redirect 301 /seo-prodvizhenie-sajtov-v-taraze /web-studiya/seo-prodvizhenie/taraz/
+Redirect 301 /seo-prodvizhenie-sajtov-v-taraze/ /web-studiya/seo-prodvizhenie/taraz/
+Redirect 301 /seo-prodvizhenie-sajtov-v-turkestane /web-studiya/seo-prodvizhenie/turkestan/
+Redirect 301 /seo-prodvizhenie-sajtov-v-turkestane/ /web-studiya/seo-prodvizhenie/turkestan/
+Redirect 301 /seo-prodvizhenie-sajtov-v-uralske /web-studiya/seo-prodvizhenie/uralsk/
+Redirect 301 /seo-prodvizhenie-sajtov-v-uralske/ /web-studiya/seo-prodvizhenie/uralsk/
+Redirect 301 /seo-prodvizhenie-sajtov-v-ust-kamenogorske /web-studiya/seo-prodvizhenie/ust-kamenogorsk/
+Redirect 301 /seo-prodvizhenie-sajtov-v-ust-kamenogorske/ /web-studiya/seo-prodvizhenie/ust-kamenogorsk/

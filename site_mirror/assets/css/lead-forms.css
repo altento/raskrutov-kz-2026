@@ -1,0 +1,24 @@
+/* Raskrutov lead forms — honeypot + status (non-visual impact on layout) */
+.lead-form-honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.lead-form-status {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.4;
+  min-height: 1.2em;
+}
+
+.lead-form-status[data-status-kind="success"] {
+  color: #0e7a09;
+}
+
+.lead-form-status[data-status-kind="error"] {
+  color: #b00020;
+}
