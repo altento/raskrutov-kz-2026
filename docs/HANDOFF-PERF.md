@@ -645,5 +645,6 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 ### 2026-08-07 — DEPLOY PSI fix dizayn Astana
 
 - Юзер: «заливай».
+- Feature `8ce2745c`, plesk deploy `0f4b8d47` (push merge `5fda6def`).
 - Точечный plesk: `web-studiya/dizayn/astana/index.html` + `dizayn-geo-critical.v1.css` + `assets/img/cities/card/*.webp` (18).
-- Live: https://raskrutov.kz/web-studiya/dizayn/astana/
+- Live: https://raskrutov.kz/web-studiya/dizayn/astana/ — verified: geo-critical + cities/card + deferred page CSS.
