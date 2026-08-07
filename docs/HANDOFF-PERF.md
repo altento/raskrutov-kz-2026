@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-07 — clean parent `/web-studiya/dizayn/` на проде; geo dizayn ждут переработку  
+**Последнее обновление:** 2026-08-07 — dizayn parent CLEAN rebuild v2 на проде; geo dizayn ждут переработку  
 **Рабочая ветка:** `performance/pagespeed-raskrutov`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -211,6 +211,12 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [x] Юзер «залей,проверю»
 - [x] Commit/push feature + точечный plesk: HTML + `dizayn-critical.v1.css` + `dizayn-page.css` + `assets/img/dizayn/**`
 - [ ] Ручной PSI mobile после пропагации
+
+#### K. Dizayn parent CLEAN rebuild v2 (2026-08-07 DEPLOYED)
+- [x] Глазами / «заливай,прогоню»
+- [x] Swap live + точечный plesk
+- [ ] Ручной PSI mobile после пропагации
+- [ ] Потом geo 18 clean rebuild
 - [ ] Full clean rebuild 18 geo `dizayn/{city}/` — отдельно / «заливай»
 ### 5.2 Действия АГЕНТА (когда юзер дал ввод)
 1. По логам/коду Supabase — починить `submit-lead` (или задеплоить исправленную функцию)
@@ -583,3 +589,20 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Юзер: «залей,проверю».
 - Feature `bf7e9d7f`, plesk `ef786872`.
 - Точечный plesk: parent HTML + critical/page CSS + `img/dizayn/{hero,examples,cities}`. Geo не трогали.
+
+### 2026-08-07 — CLEAN rebuild v2 parent dizayn (донор LP Motor, без swap)
+
+- Юзер: PSI снова фигня → пересборка по `lp-motor-clean-migration` + `programmatic-seo` с донора `https://m65176a2c628d6.lpmotortest.com/web-studiya/dizayn`.
+- SOURCE: LP Motor donor; TARGET: `site_mirror/web-studiya/dizayn/index-clean.html` (живой `index.html` **не** заменён).
+- Порядок секций как у донора: hero → 3 услуги → benefits → process → included → examples → **cities (с хаба вебстудии)** → FAQ → mid-offer → contacts → banner.
+- Карточки городов: разметка/CSS как `/web-studiya/` (`rk-cities` из `studio-clean.css`), фото `assets/img/cities/{slug}.webp` 1000², лейблы «Услуги дизайнера в {город}».
+- CSS: `assets/css/dizayn-clean.css` + `studio-clean.css` (без Mottor/PSI-хаков critical split).
+- Ассеты перекачаны с CDN донора: hero ~22 KiB / 480 mobile; examples ~15–20 KiB (не 5 KiB каша).
+- Локальный preview: `http://127.0.0.1:8767/web-studiya/dizayn/index-clean.html`.
+- Commit / swap / plesk — **только** по «заливай».
+
+### 2026-08-07 — DEPLOY dizayn parent CLEAN rebuild v2
+
+- Юзер: «заливай,прогоню».
+- Swap: `index-clean.html` → live `index.html` (mottor-legacy без изменений).
+- Точечный plesk: parent HTML + `dizayn-clean.css` + `studio-clean.css` + hero/examples + `assets/img/cities/*.webp`. Geo не трогали.
