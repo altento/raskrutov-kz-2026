@@ -113,7 +113,8 @@ CSV-копии: `docs/seo-regional/`.
 - [x] **Parent LCP optimize DEPLOY (2026-08-07)** — hero-bg убран с mobile LCP; branding.webp; юзер проверяет PSI глазами
 - [x] **PSI round 2 DEPLOY (2026-08-07)** — blocking CSS + compressed examples/cities; юзер проверяет PSI
 - [x] **CLEAN rebuild v2 DEPLOY (2026-08-07)** — донор LP Motor + cities с хаба; юзер прогоняет PSI
-- [ ] Clean rebuild + deploy 18 geo `dizayn/{city}/` — по команде
+- [x] **DEPLOY dizayn Astana clean (2026-08-07)** — swap + точечный plesk; юзер прогоняет
+- [ ] Алматы шаблон + batch 16 geo `dizayn/{city}/` — по команде
 - [x] Visual QA perf-представителей (Astana hub / Almaty sozdanie / Shymkent seo / Petropavlovsk dizayn × 360–1920) — локально после CSS-extract
 - [x] Mobile H1 на hub/seo geo **FIXED**
 - [x] Commit + deploy CSS-extract + H1 fix (feature `193f7e04`, plesk `a424184b`)

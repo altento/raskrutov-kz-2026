@@ -3,7 +3,8 @@
 
 .rk-astana-page,
 .rk-almaty-page,
-.rk-hub-city-page {
+.rk-hub-city-page,
+.rk-dizayn-astana-page {
   overflow-x: clip;
 }
 
@@ -327,7 +328,8 @@
 
 .rk-astana-page .rk-contacts__remote,
 .rk-almaty-page .rk-contacts__remote,
-.rk-hub-city-page .rk-contacts__remote {
+.rk-hub-city-page .rk-contacts__remote,
+.rk-dizayn-astana-page .rk-contacts__remote {
   margin: 0 0 14px;
   padding: 12px 14px;
   border-radius: 10px;

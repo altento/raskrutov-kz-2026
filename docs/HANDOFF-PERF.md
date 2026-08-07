@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-07 — dizayn parent CLEAN rebuild v2 на проде; geo dizayn ждут переработку  
+**Последнее обновление:** 2026-08-07 — DEPLOY clean geo dizayn Astana; parent dizayn v2 на проде  
 **Рабочая ветка:** `performance/pagespeed-raskrutov`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -212,12 +212,12 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [x] Commit/push feature + точечный plesk: HTML + `dizayn-critical.v1.css` + `dizayn-page.css` + `assets/img/dizayn/**`
 - [ ] Ручной PSI mobile после пропагации
 
-#### K. Dizayn parent CLEAN rebuild v2 (2026-08-07 DEPLOYED)
-- [x] Глазами / «заливай,прогоню»
-- [x] Swap live + точечный plesk
+#### L. Dizayn geo Astana CLEAN (2026-08-07 DEPLOYED)
+- [x] Глазами / «залей,прогоню»
+- [x] Swap: Mottor → `index.mottor-legacy.html`, clean → `index.html`
+- [x] Commit/push feature + точечный plesk: HTML + `dizayn-clean.css` + `hub-city-clean.css`
 - [ ] Ручной PSI mobile после пропагации
-- [ ] Потом geo 18 clean rebuild
-- [ ] Full clean rebuild 18 geo `dizayn/{city}/` — отдельно / «заливай»
+- [ ] Потом Алматы + batch 16
 ### 5.2 Действия АГЕНТА (когда юзер дал ввод)
 1. По логам/коду Supabase — починить `submit-lead` (или задеплоить исправленную функцию)
 2. После фикса форм — прогнать живой сабмит, обновить HANDOFF
@@ -607,3 +607,19 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Feature `ab80119a`, plesk `0caaf5b5`.
 - Swap: `index-clean.html` → live `index.html` (mottor-legacy без изменений).
 - Точечный plesk: parent HTML + `dizayn-clean.css` + `studio-clean.css` + hero/examples + `assets/img/cities/*.webp`. Geo не трогали.
+
+### 2026-08-07 — PILOT clean geo dizayn Astana (локально, без swap)
+
+- Юзер: региональные dizayn по аналогии с хабом вебстудии; старт с Астаны.
+- `web-studiya/dizayn/astana/index-clean.html` — shell parent dizayn + regional блок как у `/web-studiya/astana/` (фото города, remote note, FAQ×8 уникальные).
+- SEO: Title/Desc из карты; H1 «Услуги дизайнера и веб-дизайн в Астане»; Service areaServed Астана; без LocalBusiness в городе; офис = Петропавловск.
+- CSS: `dizayn-clean.css?v=2` + `hub-city-clean.css?v=14`. Живой Mottor `index.html` не тронут.
+- Preview: `http://127.0.0.1:8767/web-studiya/dizayn/astana/index-clean.html`.
+- Commit / swap / plesk — по «заливай» / «ок».
+
+### 2026-08-07 — DEPLOY clean geo dizayn Astana
+
+- Юзер: «залей,прогоню ее».
+- Swap: Mottor → `index.mottor-legacy.html`, clean → live `index.html` (+ `index-clean.html` source).
+- Feature + точечный plesk: `web-studiya/dizayn/astana/index.html` + `dizayn-clean.css` + `hub-city-clean.css` (без `/MIR`).
+- Live: https://raskrutov.kz/web-studiya/dizayn/astana/
