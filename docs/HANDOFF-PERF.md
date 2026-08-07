@@ -548,4 +548,5 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Юзер: «залей пока хаб, региональные еще оставь, будем перерабатывать».
 - Swap: Mottor → `index.mottor-legacy.html`, clean → `index.html` (`rk-clean` + `dizayn-parent-clean.css?v=2`).
 - Точечный plesk: только parent HTML + CSS (+ mottor-legacy). **18 geo на проде не трогали** (остались Mottor с дырой — ок, ждём clean rebuild).
-- Локальные gap-fix на geo HTML остаются в working tree как черновик к переработке (в этот commit feature не обязаны).
+- Feature `11dab63f`, plesk `dfc09e13` (rebase поверх `46b0d186`).
+- Локальные gap-fix на geo HTML остаются в working tree как черновик к переработке (в этот commit feature не вошли).
