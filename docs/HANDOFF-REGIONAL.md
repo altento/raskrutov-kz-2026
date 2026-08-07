@@ -109,7 +109,9 @@ CSV-копии: `docs/seo-regional/`.
 - [x] Batch5 clean hubs (2026-08-06): shymkent/aktau/aktobe/atyrau/karaganda — локально → **deploy all 18**
 - [x] **All 18 clean hubs DEPLOY (2026-08-06):** feature + точечный plesk; глазами 2–3 города на https://raskrutov.kz/web-studiya/{city}/
 - [x] Следующее: **дизайн** `/web-studiya/dizayn/{city}`
-- [ ] Глазами: `/web-studiya/dizayn/astana/` + parent cities
+- [x] **Parent `/web-studiya/dizayn/` CLEAN DEPLOY (2026-08-07)** — юзер «залей хаб»; geo 18 **не** деплоили, переработка отдельно
+- [ ] Глазами live: https://raskrutov.kz/web-studiya/dizayn/
+- [ ] Clean rebuild + deploy 18 geo `dizayn/{city}/` — по команде
 - [x] Visual QA perf-представителей (Astana hub / Almaty sozdanie / Shymkent seo / Petropavlovsk dizayn × 360–1920) — локально после CSS-extract
 - [x] Mobile H1 на hub/seo geo **FIXED**
 - [x] Commit + deploy CSS-extract + H1 fix (feature `193f7e04`, plesk `a424184b`)
@@ -282,3 +284,23 @@ CSV-копии: `docs/seo-regional/`.
 - Восстановлен полный набор как у parent/Astana: 01–08 (+ AEO/GEO, Лидогенерация).
 - Попутно: починены `class=\"…\"` в `#services` у batch-генератора; CSS сетка 4×2 (`hub-city-clean.css?v=13`).
 - Deploy: feature + точечный plesk.
+
+### 2026-08-06 — CLEAN rebuild parent `/web-studiya/dizayn/` (локально, только clean, без деплоя)
+
+- Задача: чистый ребилд родительской страницы «Услуги дизайнера» отдельно от gео-страниц.
+- Создан `web-studiya/dizayn/index-clean.html` + `assets/css/dizayn-parent-clean.css`; живой Mottor `index.html` не тронут.
+- Cities-блок на parent: заголовок и лейблы переведены с «Дизайн в {город}» на **«Услуги дизайнера в {город}»** (programmatic-seo requirement), 18 ссылок на существующие `dizayn/{slug}/` не менялись.
+- Geo-страницы `web-studiya/dizayn/{city}/` (18 шт.) — тогда ещё без gap-fix (см. 2026-08-07).
+- Commit/push/deploy не выполнялись — ждём глазами-ОК юзера на swap (см. `HANDOFF-PERF.md` §5.1 G).
+
+### 2026-08-07 — Dizayn Mottor geo: гигантский отступ + rename cities
+
+- Юзер: «на региональных тоже этот отступ гигантский».
+- Причина = `data-dizayn-hero-reserve` 280/320px на пустом hero `section_image` (тот же паттерн, что у parent).
+- Фикс локально: parent Mottor + 18 geo — выпилен reserve; cities/crumbs «Дизайн» → «Услуги дизайнера».
+- Локально: `http://127.0.0.1:8772/web-studiya/dizayn/astana/` — gap ~67px.
+
+### 2026-08-07 — DEPLOY только parent dizayn hub
+
+- Юзер: хаб залить, региональные оставить — будем перерабатывать.
+- Прод: clean `/web-studiya/dizayn/`; geo Mottor на https://raskrutov.kz/web-studiya/dizayn/{city}/ без изменений.

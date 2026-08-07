@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-04 — SEO EXCLUDED из perf-трека; active scope **57**  
+**Последнее обновление:** 2026-08-07 — clean parent `/web-studiya/dizayn/` на проде; geo dizayn ждут переработку  
 **Рабочая ветка:** `performance/pagespeed-raskrutov`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -200,6 +200,17 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] Глазами сверить index-clean vs donor (1440/390) — reports/web-studiya-clean/
 - [ ] Approve swap: index.html ← index-clean.html (+ rename mottor → index.mottor-legacy.html)
 - [ ] После approve: commit/push feature + точечный plesk deploy /web-studiya/
+
+#### G. CLEAN `/web-studiya/dizayn/` parent index-clean (2026-08-07 DEPLOYED)
+- [x] Глазами / approve юзера «залей пока хаб»
+- [x] Swap: `index.html` ← clean, Mottor → `index.mottor-legacy.html`
+- [x] Commit/push feature + точечный plesk: parent `dizayn/index.html` + `dizayn-parent-clean.css` (+ mottor-legacy)
+- [x] **18 geo `dizayn/{city}/` НЕ деплоили** — оставляем Mottor на проде, переработка отдельно
+
+#### H. Dizayn geo gap-fix (локально) — **не на прод**
+- [x] Локально выпилен reserve + rename labels (готовим к clean rebuild)
+- [ ] Full clean rebuild 18 geo `dizayn/{city}/` — по отдельной команде
+- [ ] Deploy geo — только после переработки / «заливай»
 ### 5.2 Действия АГЕНТА (когда юзер дал ввод)
 1. По логам/коду Supabase — починить `submit-lead` (или задеплоить исправленную функцию)
 2. После фикса форм — прогнать живой сабмит, обновить HANDOFF
@@ -518,3 +529,23 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 
 - Вернули AEO/GEO + Лидогенерация (было 6, стало 8 как parent/Astana).
 - `hub-city-clean.css?v=13`, сетка 4×2; фикс escaped attrs `#services`.
+
+### 2026-08-06 — CLEAN rebuild `/web-studiya/dizayn/` parent (локально, без swap)
+
+- Создан `web-studiya/dizayn/index-clean.html` + тонкий `assets/css/dizayn-parent-clean.css` (клон архитектуры `web-studiya/index.html`, depth2 `../../assets/`).
+- Живой Mottor `index.html` не тронут — swap только по отдельному ОК юзера.
+- Контент — только реальные тексты из Mottor `dizayn/index.html`: H1/lead/trust/CTA, 3 услуги (Нейминг/Брендбук/Логотип), «Что получает клиент» (4), «Этапы работы» (4), «Что входит в работу» (6), «Примеры фирменного стиля» (4 реальных мокапа), 18 городов, контакты+форма.
+- Cities: заголовок «Услуги дизайнера в городах Казахстана», лейблы «Услуги дизайнера в {город}» (было «Дизайн в {город}» на Mottor) — по programmatic-seo. Фото — `assets/img/cities/{slug}.webp` (как на хабах).
+- Hero-гэп пофикшен: нет пустого `section_image` 280/320px резерва; крошки внутри hero-copy как на студийной странице.
+- FAQ на Mottor-доноре отсутствовал — FAQPage в JSON-LD не добавляли (не выдумывали вопросы).
+- JSON-LD: Organization+WebSite+WebPage+BreadcrumbList (Главная→Веб-студия→Услуги дизайнера)+Service с hasOfferCatalog (3 услуги) + FAQPage×6 (добавили после аудита донора).
+- FAQ секция восстановлена с Mottor spoilers (6 Q/A). Body class `rk-clean rk-studio-page rk-dizayn-parent-page`.
+- 18 geo-страниц `dizayn/{city}/` — на тот момент Mottor (gap-fix — см. 2026-08-07).
+- Commit/push/deploy не выполнялись.
+
+### 2026-08-07 — DEPLOY clean parent `/web-studiya/dizayn/` (без geo)
+
+- Юзер: «залей пока хаб, региональные еще оставь, будем перерабатывать».
+- Swap: Mottor → `index.mottor-legacy.html`, clean → `index.html` (`rk-clean` + `dizayn-parent-clean.css?v=2`).
+- Точечный plesk: только parent HTML + CSS (+ mottor-legacy). **18 geo на проде не трогали** (остались Mottor с дырой — ок, ждём clean rebuild).
+- Локальные gap-fix на geo HTML остаются в working tree как черновик к переработке (в этот commit feature не обязаны).
