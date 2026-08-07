@@ -3,15 +3,43 @@
 /* Tight hero: no Mottor empty section_image reserve */
 .rk-dizayn-parent-page .rk-studio-hero {
   padding-top: 12px;
+  /* Soft canvas without full-bleed <img> (that stole mobile LCP) */
+  background:
+    radial-gradient(ellipse 70% 55% at 85% 20%, rgba(152, 103, 243, 0.12), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 10% 80%, rgba(0, 111, 220, 0.08), transparent 55%),
+    #f7f8ff;
+}
+
+/* Desktop-only decorative texture via CSS bg — not an LCP <img> */
+@media (min-width: 960px) {
+  .rk-dizayn-parent-page .rk-studio-hero {
+    background-image:
+      linear-gradient(180deg, rgba(247, 248, 255, 0.55), rgba(247, 248, 255, 0.92)),
+      url("../img/studio/hero-bg.webp");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+}
+
+.rk-dizayn-parent-page .rk-studio-hero__bg {
+  display: none;
 }
 
 .rk-dizayn-parent-page .rk-crumbs {
   margin-bottom: 10px;
 }
 
-/* Hero media: horizontal branding mockup, not the studio laptop image */
+/* Hero media: real LCP candidate (branding mockup) */
+.rk-dizayn-parent-page .rk-studio-hero__media {
+  margin: 0;
+  aspect-ratio: 678 / 298;
+}
+
 .rk-dizayn-parent-page .rk-studio-hero__media img {
   width: min(100%, 640px);
+  height: auto;
+  display: inline-block;
 }
 
 /* Cities block — avoid Mottor-like giant gap above title */
