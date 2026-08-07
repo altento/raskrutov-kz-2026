@@ -17,13 +17,13 @@
   <link href="../assets/m-files.cdn1.cc/lpfile/favicon/favicon__q_1.png" type="image/png" rel="icon">
   <link href="../favicon.ico" sizes="16x16 32x32 48x48" rel="icon" type="image/x-icon">
   <link rel="preload" as="style" href="../assets/css/home-clean-critical.v1.css?v=1">
-  <link rel="preload" as="image" href="../assets/img/studio/hero-laptop.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="../assets/img/studio/hero-laptop.webp" type="image/webp" fetchpriority="high">
   <link rel="preload" as="image" href="../assets/img/studio/hero-bg.webp">
   <link rel="preload" href="../assets/m-files.cdn1.cc/web/user/fonts/montserrat/montserrat_bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/css/home-clean-critical.v1.css?v=1">
   <link rel="stylesheet" href="../assets/css/home-clean-deferred.v1.css?v=1" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="../assets/css/home-clean-deferred.v1.css?v=1"></noscript>
-  <link rel="stylesheet" href="../assets/css/studio-clean.css?v=1">
+  <link rel="stylesheet" href="../assets/css/studio-clean.css?v=2">
   <link rel="stylesheet" href="../assets/css/lead-forms.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="../assets/css/lead-forms.css"></noscript>
   <script type="application/ld+json" data-schema="raskrutov">
@@ -248,15 +248,18 @@
           </ul>
         </div>
         <figure class="rk-studio-hero__media">
-          <img
-            src="../assets/img/studio/hero-laptop.webp"
-            alt="Макет сайта на ноутбуке"
-            width="1000"
-            height="554"
-            fetchpriority="high"
-            loading="eager"
-            decoding="async"
-          >
+          <picture>
+            <source media="(max-width: 767px)" srcset="../assets/img/studio/hero-laptop-720.webp" type="image/webp" width="720" height="405">
+            <img
+              src="../assets/img/studio/hero-laptop.webp"
+              alt="Пример сайта на ноутбуке и смартфоне"
+              width="1024"
+              height="576"
+              fetchpriority="high"
+              loading="eager"
+              decoding="async"
+            >
+          </picture>
         </figure>
       </div>
     </section>
@@ -267,10 +270,12 @@
         <div class="rk-studio-grid">
           <article class="rk-studio-card">
             <div class="rk-studio-card__head">
-              <img class="rk-studio-card__icon" src="../assets/css/perf-img/61w2x_f__q_8567452.webp" alt="Иконка услуги: Создание сайтов" width="61" height="62" loading="lazy" decoding="async">
+              <a class="rk-studio-card__icon-link" href="/web-studiya/sozdanie-saitov/" aria-label="Создание сайтов">
+                <img class="rk-studio-card__icon" src="../assets/css/perf-img/61w2x_f__q_8567452.webp" alt="" width="61" height="62" loading="lazy" decoding="async">
+              </a>
               <span class="rk-studio-card__num" aria-hidden="true">01</span>
             </div>
-            <h2>Создание сайтов</h2>
+            <h2><a class="rk-studio-card__title-link" href="/web-studiya/sozdanie-saitov/">Создание сайтов</a></h2>
             <ul>
               <li><a class="rk-sub" href="/web-studiya/sozdanie-saitov/landing/">Лендинги</a></li>
               <li><a class="rk-sub" href="/web-studiya/sozdanie-saitov/korporativnyy-sayt/">Корпоративные сайты</a></li>
@@ -282,10 +287,12 @@
           </article>
           <article class="rk-studio-card">
             <div class="rk-studio-card__head">
-              <img class="rk-studio-card__icon" src="../assets/css/perf-img/60w2x_f__q_91337242.webp" alt="Иконка услуги: Услуги дизайнера" width="60" height="62" loading="lazy" decoding="async">
+              <a class="rk-studio-card__icon-link" href="/web-studiya/dizayn/" aria-label="Услуги дизайнера">
+                <img class="rk-studio-card__icon" src="../assets/css/perf-img/60w2x_f__q_91337242.webp" alt="" width="60" height="62" loading="lazy" decoding="async">
+              </a>
               <span class="rk-studio-card__num" aria-hidden="true">02</span>
             </div>
-            <h2>Услуги дизайнера</h2>
+            <h2><a class="rk-studio-card__title-link" href="/web-studiya/dizayn/">Услуги дизайнера</a></h2>
             <ul>
               <li><a class="rk-sub" href="/web-studiya/dizayn/brendbuk/">Брендбук</a></li>
               <li><a class="rk-sub" href="/web-studiya/dizayn/logotip/">Логотип и фирменный стиль</a></li>
@@ -297,10 +304,12 @@
           </article>
           <article class="rk-studio-card">
             <div class="rk-studio-card__head">
-              <img class="rk-studio-card__icon" src="../assets/css/perf-img/60w2x_f__q_40395660.webp" alt="Иконка услуги: SEO-продвижение" width="60" height="62" loading="lazy" decoding="async">
+              <a class="rk-studio-card__icon-link" href="/web-studiya/seo-prodvizhenie/" aria-label="SEO-продвижение">
+                <img class="rk-studio-card__icon" src="../assets/css/perf-img/60w2x_f__q_40395660.webp" alt="" width="60" height="62" loading="lazy" decoding="async">
+              </a>
               <span class="rk-studio-card__num" aria-hidden="true">03</span>
             </div>
-            <h2>SEO-продвижение</h2>
+            <h2><a class="rk-studio-card__title-link" href="/web-studiya/seo-prodvizhenie/">SEO-продвижение</a></h2>
             <ul>
               <li><a class="rk-sub" href="/web-studiya/seo-prodvizhenie/google/">Продвижение в Google</a></li>
               <li><a class="rk-sub" href="/web-studiya/seo-prodvizhenie/yandex/">Продвижение в Яндекс</a></li>
@@ -312,10 +321,12 @@
           </article>
           <article class="rk-studio-card">
             <div class="rk-studio-card__head">
-              <img class="rk-studio-card__icon" src="../assets/css/perf-img/63w2x_f__q_63045990.webp" alt="Иконка услуги: AEO/GEO" width="63" height="62" loading="lazy" decoding="async">
+              <a class="rk-studio-card__icon-link" href="/web-studiya/aeo-prodvizhenie/" aria-label="AEO/GEO">
+                <img class="rk-studio-card__icon" src="../assets/css/perf-img/63w2x_f__q_63045990.webp" alt="" width="63" height="62" loading="lazy" decoding="async">
+              </a>
               <span class="rk-studio-card__num" aria-hidden="true">04</span>
             </div>
-            <h2>AEO/GEO</h2>
+            <h2><a class="rk-studio-card__title-link" href="/web-studiya/aeo-prodvizhenie/">AEO/GEO</a></h2>
             <ul>
               <li><a class="rk-sub" href="/web-studiya/aeo-prodvizhenie/">Оптимизайия под ИИ-поиск</a></li>
               <li><a class="rk-sub" href="/web-studiya/aeo-prodvizhenie/">Яндекс Нейро и Google SGE</a></li>
@@ -327,10 +338,12 @@
           </article>
           <article class="rk-studio-card">
             <div class="rk-studio-card__head">
-              <img class="rk-studio-card__icon" src="../assets/css/perf-img/63w2x_f__q_9026286.webp" alt="Иконка услуги: Контекстная реклама" width="63" height="62" loading="lazy" decoding="async">
+              <a class="rk-studio-card__icon-link" href="/web-studiya/kontekstnaya-reklama/" aria-label="Контекстная реклама">
+                <img class="rk-studio-card__icon" src="../assets/css/perf-img/63w2x_f__q_9026286.webp" alt="" width="63" height="62" loading="lazy" decoding="async">
+              </a>
               <span class="rk-studio-card__num" aria-hidden="true">05</span>
             </div>
-            <h2>Контекстная реклама</h2>
+            <h2><a class="rk-studio-card__title-link" href="/web-studiya/kontekstnaya-reklama/">Контекстная реклама</a></h2>
             <ul>
               <li><a class="rk-sub" href="/web-studiya/kontekstnaya-reklama/google-ads/">Google ADS</a></li>
               <li><a class="rk-sub" href="/web-studiya/kontekstnaya-reklama/yandex-direct/">Яндекс Директ</a></li>
@@ -342,10 +355,12 @@
           </article>
           <article class="rk-studio-card">
             <div class="rk-studio-card__head">
-              <img class="rk-studio-card__icon" src="../assets/css/perf-img/60w2x_f__q_60428948.webp" alt="Иконка услуги: Лидогенерация" width="60" height="62" loading="lazy" decoding="async">
+              <a class="rk-studio-card__icon-link" href="/web-studiya/lidogeneratsiya/" aria-label="Лидогенерация">
+                <img class="rk-studio-card__icon" src="../assets/css/perf-img/60w2x_f__q_60428948.webp" alt="" width="60" height="62" loading="lazy" decoding="async">
+              </a>
               <span class="rk-studio-card__num" aria-hidden="true">06</span>
             </div>
-            <h2>Лидогенерация</h2>
+            <h2><a class="rk-studio-card__title-link" href="/web-studiya/lidogeneratsiya/">Лидогенерация</a></h2>
             <ul>
               <li><a class="rk-sub" href="/web-studiya/lidogeneratsiya/">Воронки продаж</a></li>
               <li><a class="rk-sub" href="/web-studiya/lidogeneratsiya/">Формы и квизы</a></li>
@@ -357,10 +372,12 @@
           </article>
           <article class="rk-studio-card">
             <div class="rk-studio-card__head">
-              <img class="rk-studio-card__icon" src="../assets/css/perf-img/59w2x_f__q_19538958.webp" alt="Иконка услуги: Поддержка сайтов" width="59" height="62" loading="lazy" decoding="async">
+              <a class="rk-studio-card__icon-link" href="/web-studiya/podderzhka-saytov/" aria-label="Поддержка сайтов">
+                <img class="rk-studio-card__icon" src="../assets/css/perf-img/59w2x_f__q_19538958.webp" alt="" width="59" height="62" loading="lazy" decoding="async">
+              </a>
               <span class="rk-studio-card__num" aria-hidden="true">07</span>
             </div>
-            <h2>Поддержка сайтов</h2>
+            <h2><a class="rk-studio-card__title-link" href="/web-studiya/podderzhka-saytov/">Поддержка сайтов</a></h2>
             <ul>
               <li><a class="rk-sub" href="/web-studiya/podderzhka-saytov/">Техническая поддержка</a></li>
               <li><a class="rk-sub" href="/web-studiya/podderzhka-saytov/">Обновление и безопасность</a></li>
@@ -372,10 +389,12 @@
           </article>
           <article class="rk-studio-card">
             <div class="rk-studio-card__head">
-              <img class="rk-studio-card__icon" src="../assets/css/perf-img/58w2x_f__q_50188939.webp" alt="Иконка услуги: Digital-консалтинг" width="58" height="62" loading="lazy" decoding="async">
+              <a class="rk-studio-card__icon-link" href="/web-studiya/digital-konsalting/" aria-label="Digital-консалтинг">
+                <img class="rk-studio-card__icon" src="../assets/css/perf-img/58w2x_f__q_50188939.webp" alt="" width="58" height="62" loading="lazy" decoding="async">
+              </a>
               <span class="rk-studio-card__num" aria-hidden="true">08</span>
             </div>
-            <h2>Digital-консалтинг</h2>
+            <h2><a class="rk-studio-card__title-link" href="/web-studiya/digital-konsalting/">Digital-консалтинг</a></h2>
             <ul>
               <li><a class="rk-sub" href="/web-studiya/digital-konsalting/audit-sayta/">Аудит и аналитика</a></li>
               <li><a class="rk-sub" href="/web-studiya/digital-konsalting/digital-strategiya/">Стратегия и план действий</a></li>

@@ -268,10 +268,15 @@ body.rk-clean.rk-studio-page {
   text-align: center;
 }
 
-.rk-studio-hero__media img {
-  width: min(100%, 560px);
-  height: auto;
+.rk-studio-hero__media picture {
   display: inline-block;
+  width: min(100%, 640px);
+}
+
+.rk-studio-hero__media img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @media (min-width: 960px) {
@@ -334,6 +339,18 @@ body.rk-clean.rk-studio-page {
   margin: 0;
 }
 
+.rk-studio-page .rk-studio-card__icon-link {
+  display: inline-flex;
+  line-height: 0;
+  border-radius: 8px;
+}
+
+.rk-studio-page .rk-studio-card__icon-link:focus-visible,
+.rk-studio-page .rk-studio-card__title-link:focus-visible {
+  outline: 2px solid var(--rk-purple, #7f3ff2);
+  outline-offset: 3px;
+}
+
 .rk-studio-page .rk-studio-card__num {
   font-family: var(--rk-font-head);
   font-size: 28px;
@@ -348,6 +365,15 @@ body.rk-clean.rk-studio-page {
   font-size: 18px;
   line-height: 1.3;
   color: #111;
+}
+
+.rk-studio-page .rk-studio-card__title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.rk-studio-page .rk-studio-card__title-link:hover {
+  color: var(--rk-purple, #7f3ff2);
 }
 
 .rk-studio-page #services > .rk-container > .rk-h2 {
