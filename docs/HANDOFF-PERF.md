@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-07 — DEPLOY PSI fix dizayn Astana (defer CSS + city thumbs)  
+**Последнее обновление:** 2026-08-07 — DEPLOY all 18 clean geo dizayn + alts  
 **Рабочая ветка:** `performance/pagespeed-raskrutov`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -212,15 +212,14 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [x] Commit/push feature + точечный plesk: HTML + `dizayn-critical.v1.css` + `dizayn-page.css` + `assets/img/dizayn/**`
 - [ ] Ручной PSI mobile после пропагации
 
-#### L. Dizayn geo Astana CLEAN (2026-08-07 DEPLOYED; PSI fix LOCAL)
-- [x] Глазами / «залей,прогоню»
-- [x] Swap: Mottor → `index.mottor-legacy.html`, clean → `index.html`
-- [x] Commit/push feature + точечный plesk: HTML + `dizayn-clean.css` + `hub-city-clean.css`
-- [x] Аудит низкой PSI (2026-08-07): blocking studio/dizayn/hub CSS + cities 1000² (~2 MB)
-- [x] Local fix: `dizayn-geo-critical.v1.css` + defer page CSS; `assets/img/cities/card/*.webp` (~506 KiB)
-- [x] Deploy hotfix «заливай» (2026-08-07)
-- [ ] Ручной PSI mobile после пропагации
-- [ ] Потом Алматы + batch 16
+#### M. A11y alts clean studio/dizayn (2026-08-07 DEPLOYED)
+- [x] Глазами / вместе с geo batch
+- [x] Commit + точечный plesk («заливай и крепи»)
+
+#### N. Dizayn geo ALL 18 CLEAN (2026-08-07 DEPLOYED)
+- [x] Sample / «заливай и крепи»
+- [x] Commit feature + точечный plesk: 18× dizayn/{city}/ + CSS + parent alts + hub alts
+- [ ] Ручной PSI sample после пропагации
 ### 5.2 Действия АГЕНТА (когда юзер дал ввод)
 1. По логам/коду Supabase — починить `submit-lead` (или задеплоить исправленную функцию)
 2. После фикса форм — прогнать живой сабмит, обновить HANDOFF
@@ -648,3 +647,25 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Feature `8ce2745c`, plesk deploy `0f4b8d47` (push merge `5fda6def`).
 - Точечный plesk: `web-studiya/dizayn/astana/index.html` + `dizayn-geo-critical.v1.css` + `assets/img/cities/card/*.webp` (18).
 - Live: https://raskrutov.kz/web-studiya/dizayn/astana/ — verified: geo-critical + cities/card + deferred page CSS.
+
+### 2026-08-07 — A11y alts on clean studio/dizayn (локально)
+
+- Юзер: пустые alt на картинках.
+- Заполнено: city photos (dizayn parent/Astana), dizayn service icons, contact icons, hub `rk-studio-card__icon` (из H2), `rk-adv-item__icon` (из H3), hero-bg → `aria-hidden`.
+- Оставлен пустой alt осознанно: Metrika pixel; WA внутри `<a aria-label>` (иначе двойное чтение); декоративный hero-bg.
+- SEO `/web-studiya/seo-prodvizhenie/**` не трогали. Commit/plesk — по «заливай».
+
+### 2026-08-07 — CLEAN rebuild ALL 18 geo dizayn (локально)
+
+- Юзер: «все теперь следующие страницы по услугам дизайнера».
+- Генератор `_gen_dizayn_cities_all.py`: 18× `dizayn/{city}/` clean (~54–55 KiB), Mottor → `index.mottor-legacy.html` (17 swap; Astana refresh).
+- SEO Title/H1/Desc из FINAL_SEO_MAP; уникальные hero/regional/FAQ (не toponym-only); HQ special для Петропавловска; remote note без LocalBusiness в городе.
+- PSI: `dizayn-geo-critical` + deferred studio/dizayn/hub CSS; `cities/card/*.webp`; альты на городах/иконках.
+- CSS: `hub-city-clean` + `dizayn-geo-critical` понимают `.rk-dizayn-geo-page`.
+- QA `_qa_dizayn_geo_all.py`: 18/18 OK. Preview `http://127.0.0.1:8767/web-studiya/dizayn/{city}/`. Commit/plesk — по «заливай».
+
+### 2026-08-07 — DEPLOY all 18 clean geo dizayn + alts
+
+- Юзер: «заливай и крепи».
+- Feature + точечный plesk: 18× `dizayn/{city}/index.html`, `dizayn/index.html` alts, hub alts (18+parent), `dizayn-geo-critical.v1.css`, `hub-city-clean.css`, `cities/card/*`.
+- Без `/MIR`. Live sample: https://raskrutov.kz/web-studiya/dizayn/almaty/

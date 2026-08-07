@@ -115,7 +115,8 @@ CSV-копии: `docs/seo-regional/`.
 - [x] **CLEAN rebuild v2 DEPLOY (2026-08-07)** — донор LP Motor + cities с хаба; юзер прогоняет PSI
 - [x] **DEPLOY dizayn Astana clean (2026-08-07)** — swap + точечный plesk; юзер прогоняет
 - [x] **PSI local fix Astana (2026-08-07)** — defer page CSS + city card thumbs; DEPLOYED
-- [ ] Алматы шаблон + batch 16 geo `dizayn/{city}/` — по команде
+- [x] **CLEAN all 18 geo dizayn DEPLOY (2026-08-07)** — swap+plesk; юзер прогоняет
+- [x] A11y alts hubs/dizayn parent — в том же деплое
 - [x] Visual QA perf-представителей (Astana hub / Almaty sozdanie / Shymkent seo / Petropavlovsk dizayn × 360–1920) — локально после CSS-extract
 - [x] Mobile H1 на hub/seo geo **FIXED**
 - [x] Commit + deploy CSS-extract + H1 fix (feature `193f7e04`, plesk `a424184b`)
