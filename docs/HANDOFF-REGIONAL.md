@@ -114,6 +114,7 @@ CSV-копии: `docs/seo-regional/`.
 - [x] **PSI round 2 DEPLOY (2026-08-07)** — blocking CSS + compressed examples/cities; юзер проверяет PSI
 - [x] **CLEAN rebuild v2 DEPLOY (2026-08-07)** — донор LP Motor + cities с хаба; юзер прогоняет PSI
 - [x] **DEPLOY dizayn Astana clean (2026-08-07)** — swap + точечный plesk; юзер прогоняет
+- [x] **PSI local fix Astana (2026-08-07)** — defer page CSS + city card thumbs; DEPLOYED
 - [ ] Алматы шаблон + batch 16 geo `dizayn/{city}/` — по команде
 - [x] Visual QA perf-представителей (Astana hub / Almaty sozdanie / Shymkent seo / Petropavlovsk dizayn × 360–1920) — локально после CSS-extract
 - [x] Mobile H1 на hub/seo geo **FIXED**

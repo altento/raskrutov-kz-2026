@@ -3,7 +3,7 @@
 > **Читать первым делом** на любом компе после `git pull`.  
 > Живой бэкап сессий. Обновлять после каждого заметного шага и пушить в git.
 
-**Последнее обновление:** 2026-08-07 — DEPLOY clean geo dizayn Astana; parent dizayn v2 на проде  
+**Последнее обновление:** 2026-08-07 — DEPLOY PSI fix dizayn Astana (defer CSS + city thumbs)  
 **Рабочая ветка:** `performance/pagespeed-raskrutov`  
 **Прод-ветка:** `plesk` → https://raskrutov.kz/  
 **Репо:** https://github.com/raskrutovstudio-collab/raskrutov-kz-2026
@@ -212,10 +212,13 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [x] Commit/push feature + точечный plesk: HTML + `dizayn-critical.v1.css` + `dizayn-page.css` + `assets/img/dizayn/**`
 - [ ] Ручной PSI mobile после пропагации
 
-#### L. Dizayn geo Astana CLEAN (2026-08-07 DEPLOYED)
+#### L. Dizayn geo Astana CLEAN (2026-08-07 DEPLOYED; PSI fix LOCAL)
 - [x] Глазами / «залей,прогоню»
 - [x] Swap: Mottor → `index.mottor-legacy.html`, clean → `index.html`
 - [x] Commit/push feature + точечный plesk: HTML + `dizayn-clean.css` + `hub-city-clean.css`
+- [x] Аудит низкой PSI (2026-08-07): blocking studio/dizayn/hub CSS + cities 1000² (~2 MB)
+- [x] Local fix: `dizayn-geo-critical.v1.css` + defer page CSS; `assets/img/cities/card/*.webp` (~506 KiB)
+- [x] Deploy hotfix «заливай» (2026-08-07)
 - [ ] Ручной PSI mobile после пропагации
 - [ ] Потом Алматы + batch 16
 ### 5.2 Действия АГЕНТА (когда юзер дал ввод)
@@ -624,3 +627,23 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Feature `e89acbe4`, plesk deploy `52477e88` (push merge `6787cb02`).
 - Точечный plesk: `web-studiya/dizayn/astana/index.html` + `dizayn-clean.css` + `hub-city-clean.css` (без `/MIR`).
 - Live: https://raskrutov.kz/web-studiya/dizayn/astana/ — verified: `rk-clean`, no `public.bundle`.
+
+### 2026-08-07 — PSI audit + local fix dizayn Astana
+
+- Юзер: низкая производительность; skills `lp-motor-clean-migration` + `programmatic-seo`.
+- Google PSI API = 429; аудит по live HEAD/ассетам + локальный Lighthouse завис на npx.
+- Узкие места live:
+  1. Render-blocking: `studio-clean` + `dizayn-clean` + `hub-city-clean` (~26 KiB сверх critical).
+  2. Сетка городов: 17× WebP 1000², суммарно ~2.0 MB (pavlodar 264 KiB); regional `astana.webp` 110 KiB при display ≤240–380px.
+  3. SEO/контент Astana ок (уникальные FAQ/H1/areaServed, remote note, без фейкового LocalBusiness).
+- Local fix (без deploy):
+  - blocking: `home-clean-critical` + новый `dizayn-geo-critical.v1.css` (~5.7 KiB);
+  - `studio-clean` / `dizayn-clean` / `hub-city-clean` → `media=print` onload;
+  - `assets/img/cities/card/*.webp` 480px q72 (~506 KiB вместо ~2 MB) на regional + grid.
+- Preview: `http://127.0.0.1:8767/web-studiya/dizayn/astana/index.html`. Commit/plesk — по «заливай».
+
+### 2026-08-07 — DEPLOY PSI fix dizayn Astana
+
+- Юзер: «заливай».
+- Точечный plesk: `web-studiya/dizayn/astana/index.html` + `dizayn-geo-critical.v1.css` + `assets/img/cities/card/*.webp` (18).
+- Live: https://raskrutov.kz/web-studiya/dizayn/astana/
