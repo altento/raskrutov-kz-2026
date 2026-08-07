@@ -403,3 +403,33 @@ body.rk-dizayn-page {
     transition: none;
   }
 }
+
+/* Dizayn geo pilot (Astana+) — related links under service cards */
+.rk-dizayn-related {
+  margin: 20px 0 0;
+  text-align: center;
+  font-family: var(--rk-font-head);
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.rk-dizayn-related a {
+  color: #5b2fd6;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.rk-dizayn-related a:hover {
+  color: #7f3ff2;
+}
+
+.rk-dizayn-astana-page #dizayn-services > .rk-container > .rk-h2 {
+  margin: 0 0 20px;
+  font-family: var(--rk-font-head);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1e1e1e;
+  text-align: center;
+}
