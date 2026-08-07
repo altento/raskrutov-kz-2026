@@ -194,8 +194,8 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [ ] Plesk: Cache-Control для `home-*.css` (сейчас nginx может держать длинный max-age)
 - [ ] Не заливать на Plesk ветку `deploy` / `site_deploy` (там GH prefix)
 - [ ] Не коммитить мусорные untracked `lpfile/` и одноразовые `_psi_check_*.py` без нужды
-- [x] **Quality audit 2026-08-07 (локально ERROR=0 WARN=0):** lang/H1/meta + img width/height; сказать «крепи»; «заливай» если надо на прод
-- [ ] Глазами spot-check после H1 demote + img dims: `/r-builder/`, `/web-studiya/sozdanie-saitov/landing/`, `…/mnogostranichnye-sayty/` (визуал классов должен держаться)
+- [x] **Quality audit 2026-08-07 DEPLOYED:** feature `e18b1de6` / docs `12a160bd` / plesk `ee74522c`
+- [ ] Глазами spot-check после H1 demote + img dims: `/r-builder/`, `/web-studiya/sozdanie-saitov/landing/`, `…/mnogostranichnye-sayty/`
 - [x] WARN img width/height — закрыто скриптом `_fix_img_dims_owned.py`
 
 #### F. CLEAN `/web-studiya/` index-clean (2026-08-05, локально, без swap)
