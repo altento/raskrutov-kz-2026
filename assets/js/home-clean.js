@@ -205,9 +205,13 @@
     if (!btn) return;
 
     var showAt = 400;
+    var lastVisible = null;
 
     function toggle() {
-      btn.classList.toggle("rk-scroll-top--visible", window.scrollY > showAt);
+      var visible = window.scrollY > showAt;
+      if (visible === lastVisible) return;
+      lastVisible = visible;
+      btn.classList.toggle("rk-scroll-top--visible", visible);
     }
 
     var ticking = false;

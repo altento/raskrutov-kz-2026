@@ -4,6 +4,18 @@
 /* Page scope                                                         */
 /* ------------------------------------------------------------------ */
 
+/* Sticky CTA clearance (studio-clean targets .rk-studio-page only) */
+@media (max-width: 767px) {
+  body.sozdanie-page {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom, 0));
+  }
+
+  body.sozdanie-page .rk-scroll-top,
+  body.sozdanie-page .rk-soc-widget {
+    bottom: calc(78px + env(safe-area-inset-bottom, 0));
+  }
+}
+
 .sozdanie-page .rk-section {
   padding: 48px 0;
 }
@@ -188,13 +200,35 @@
   overflow: hidden;
   padding: 28px 0 0;
   min-height: 561px;
-  background:
-    url("../img/sozdanie-saitov/hero-bg.webp") center / 100% auto no-repeat,
-    linear-gradient(180deg, #f7f5ff 0%, #fff 70%);
+  background: linear-gradient(180deg, #f7f5ff 0%, #fff 70%);
+}
+
+/* LCP image — replaces CSS background so Chrome discovers it from HTML */
+.sz-hero > picture {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.sz-hero__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
 }
 
 .sz-hero__inner {
   position: relative;
+  z-index: 1;
   display: grid;
   gap: 24px;
   align-items: start;
@@ -297,7 +331,7 @@
   height: 56px;
   min-height: 56px;
   padding: 14px 34px;
-  color: #24a0ff;
+  color: #006fdc;
   background: #fff;
   border: 0.8px solid rgba(30, 30, 30, 0.22);
   box-shadow: 4px 4px 10px -1px rgba(0, 0, 0, 0.16);
@@ -1035,6 +1069,24 @@
 }
 
 @media (max-width: 1023px) {
+  /* Cap LCP paint area: full-section cover made a ~900px-tall LCP candidate */
+  .sz-hero > picture {
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    width: 100%;
+    height: 520px;
+    max-height: 70vh;
+  }
+  .sz-hero > picture .sz-hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
   .sz-geo__grid {
     display: grid;
     grid-auto-flow: column;
@@ -1590,10 +1642,6 @@
     min-height: 0;
     padding-bottom: 0;
     background-color: #e8ecff;
-    background-image: url("../img/sozdanie-saitov/hero-bg.webp");
-    background-repeat: no-repeat;
-    background-position: center 30%;
-    background-size: cover;
   }
   .sz-hero__inner {
     min-height: 0;
@@ -1656,3 +1704,5 @@
     padding-top: 30px;
   }
 }
+
+.sozdanie-page .rk-consent a{color:#006fdc;text-decoration:underline;text-underline-offset:2px;}
