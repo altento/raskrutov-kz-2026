@@ -72,7 +72,7 @@ function Assert-CorrectRepository {
 function Invoke-GitFetch {
     param([Parameter(Mandatory=$true)][string]$RepoRoot)
 
-    $out = (& git -C $RepoRoot fetch origin --prune 2>&1)
+    $out = (& git -C $RepoRoot fetch origin --prune 2>$null)
     if ($LASTEXITCODE -ne 0) {
         throw "git fetch origin --prune завершился ошибкой: $($out -join ' ')"
     }
@@ -81,7 +81,7 @@ function Invoke-GitFetch {
 function Get-RemoteLock {
     param([Parameter(Mandatory=$true)][string]$RepoRoot)
 
-    $ls = (& git -C $RepoRoot ls-remote --heads origin $script:LockRef 2>&1)
+    $ls = (& git -C $RepoRoot ls-remote --heads origin $script:LockRef 2>$null)
     if ($LASTEXITCODE -ne 0) {
         throw "Не удалось проверить remote lock: $($ls -join ' ')"
     }
@@ -97,12 +97,12 @@ function Get-RemoteLock {
     }
 
     $fetchSpec = "+$($script:LockRef):refs/cursor-lock/remote"
-    $fetchOut = (& git -C $RepoRoot fetch --quiet origin $fetchSpec 2>&1)
+    $fetchOut = (& git -C $RepoRoot fetch --quiet origin $fetchSpec 2>$null)
     if ($LASTEXITCODE -ne 0) {
         throw "Не удалось загрузить содержимое remote lock: $($fetchOut -join ' ')"
     }
 
-    $message = (& git -C $RepoRoot show -s --format=%B refs/cursor-lock/remote 2>&1)
+    $message = (& git -C $RepoRoot show -s --format=%B refs/cursor-lock/remote 2>$null)
     if ($LASTEXITCODE -ne 0) {
         throw "Не удалось прочитать lock commit."
     }
@@ -188,7 +188,7 @@ started_at=$started
 repo=$repoUrl
 "@
 
-    $commitOut = ($message | & git -C $RepoRoot commit-tree $script:EmptyTreeSha -F - 2>&1)
+    $commitOut = ($message | & git -C $RepoRoot commit-tree $script:EmptyTreeSha -F - 2>$null)
     if ($LASTEXITCODE -ne 0) {
         throw "Не удалось создать lock commit. Проверьте git user.name/user.email. $($commitOut -join ' ')"
     }
@@ -204,7 +204,7 @@ repo=$repoUrl
     $oldInternal = $env:CURSOR_PROJECT_LOCK_INTERNAL
     $env:CURSOR_PROJECT_LOCK_INTERNAL = "1"
     try {
-        $pushOut = (& git -C $RepoRoot push --quiet origin $refspec $lease 2>&1)
+        $pushOut = (& git -C $RepoRoot push --quiet origin $refspec $lease 2>$null)
         $pushCode = $LASTEXITCODE
     } finally {
         if ($null -eq $oldInternal) {
@@ -282,7 +282,7 @@ function Release-ProjectLock {
     $oldInternal = $env:CURSOR_PROJECT_LOCK_INTERNAL
     $env:CURSOR_PROJECT_LOCK_INTERNAL = "1"
     try {
-        $out = (& git -C $RepoRoot push --quiet origin $deleteRefspec $lease 2>&1)
+        $out = (& git -C $RepoRoot push --quiet origin $deleteRefspec $lease 2>$null)
         $deleteCode = $LASTEXITCODE
     } finally {
         if ($null -eq $oldInternal) {
@@ -337,7 +337,7 @@ function Invoke-ProjectPreflight {
             $behind = [int]$parts[1]
 
             if ($ahead -eq 0 -and $behind -gt 0) {
-                $pullOut = (& git -C $RepoRoot pull --ff-only origin main 2>&1)
+                $pullOut = (& git -C $RepoRoot pull --ff-only origin main 2>$null)
                 if ($LASTEXITCODE -ne 0) {
                     throw "Безопасный fast-forward main не удался: $($pullOut -join ' ')"
                 }
