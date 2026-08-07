@@ -604,5 +604,6 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 ### 2026-08-07 — DEPLOY dizayn parent CLEAN rebuild v2
 
 - Юзер: «заливай,прогоню».
+- Feature `ab80119a`, plesk `0caaf5b5`.
 - Swap: `index-clean.html` → live `index.html` (mottor-legacy без изменений).
 - Точечный plesk: parent HTML + `dizayn-clean.css` + `studio-clean.css` + hero/examples + `assets/img/cities/*.webp`. Geo не трогали.
