@@ -1,0 +1,8 @@
+#!/bin/sh
+# Служебные acquire/release операции lock имеют узкий внутренний bypass.
+if [ "$CURSOR_PROJECT_LOCK_INTERNAL" = "1" ]; then
+  exit 0
+fi
+
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/assert-project-lock.ps1 -Mode push
+exit $?

@@ -1,0 +1,3 @@
+#!/bin/sh
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/assert-project-lock.ps1 -Mode commit
+exit $?
