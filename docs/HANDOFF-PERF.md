@@ -207,10 +207,10 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - [x] Commit/push feature + точечный plesk: parent `dizayn/index.html` + `dizayn-parent-clean.css` (+ mottor-legacy)
 - [x] **18 geo `dizayn/{city}/` НЕ деплоили** — оставляем Mottor на проде, переработка отдельно
 
-#### I. Dizayn parent LCP optimize (2026-08-07 DEPLOYED)
-- [x] Глазами юзер «залей,я проверю»
-- [x] Commit/push feature + точечный plesk: `dizayn/index.html` + `dizayn-parent-clean.css?v=3` + `assets/img/dizayn/hero-branding.webp`
-- [ ] Ручной PSI mobile на https://pagespeed.web.dev после пропагации
+#### J. Dizayn parent PSI round 2 (2026-08-07 DEPLOYED)
+- [x] Юзер «залей,проверю»
+- [x] Commit/push feature + точечный plesk: HTML + `dizayn-critical.v1.css` + `dizayn-page.css` + `assets/img/dizayn/**`
+- [ ] Ручной PSI mobile после пропагации
 - [ ] Full clean rebuild 18 geo `dizayn/{city}/` — отдельно / «заливай»
 ### 5.2 Действия АГЕНТА (когда юзер дал ввод)
 1. По логам/коду Supabase — починить `submit-lead` (или задеплоить исправленную функцию)
@@ -568,3 +568,17 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 - Feature `e55ac9aa`, plesk `d62792ec`.
 - Точечный plesk: parent `index.html` + `dizayn-parent-clean.css` + `img/dizayn/hero-branding.webp`. Geo не трогали.
 - Live smoke: `dizayn-parent-clean.css?v=3`, preload `hero-branding.webp`, без `<img>` hero-bg.
+
+### 2026-08-07 — Dizayn parent PSI round 2 (локально)
+
+- Юзер: mobile PSI хуже (FCP 2.6 / LCP **5.4** / SI 4.9). Аудиты: render-blocking `studio-clean`+`dizayn-parent` (~740ms), oversized examples (~110KB×4) + cities 1000².
+- Фикс локально:
+  - blocking только `home-clean-critical` + новый `dizayn-critical.v1.css` (~4KB); full `dizayn-page.css` (studio+parent merge) — deferred print/onload;
+  - examples → `assets/img/dizayn/examples/*.webp` ~5KB; cities → `assets/img/dizayn/cities/*.webp` 400²;
+  - hero mobile `hero-branding-400.webp` via `<picture>`.
+- Commit/deploy — ждём «заливай».
+
+### 2026-08-07 — DEPLOY dizayn parent PSI round 2
+
+- Юзер: «залей,проверю».
+- Точечный plesk: parent HTML + critical/page CSS + `img/dizayn/{hero,examples,cities}`. Geo не трогали.

@@ -111,6 +111,7 @@ CSV-копии: `docs/seo-regional/`.
 - [x] Следующее: **дизайн** `/web-studiya/dizayn/{city}`
 - [x] **Parent `/web-studiya/dizayn/` CLEAN DEPLOY (2026-08-07)** — юзер «залей хаб»; geo 18 **не** деплоили, переработка отдельно
 - [x] **Parent LCP optimize DEPLOY (2026-08-07)** — hero-bg убран с mobile LCP; branding.webp; юзер проверяет PSI глазами
+- [x] **PSI round 2 DEPLOY (2026-08-07)** — blocking CSS + compressed examples/cities; юзер проверяет PSI
 - [ ] Clean rebuild + deploy 18 geo `dizayn/{city}/` — по команде
 - [x] Visual QA perf-представителей (Astana hub / Almaty sozdanie / Shymkent seo / Petropavlovsk dizayn × 360–1920) — локально после CSS-extract
 - [x] Mobile H1 на hub/seo geo **FIXED**

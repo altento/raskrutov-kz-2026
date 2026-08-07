@@ -17,13 +17,16 @@
   <link href="../../assets/m-files.cdn1.cc/lpfile/favicon/favicon__q_1.png" type="image/png" rel="icon">
   <link href="../../favicon.ico" sizes="16x16 32x32 48x48" rel="icon" type="image/x-icon">
   <link rel="preload" as="style" href="../../assets/css/home-clean-critical.v1.css?v=1">
-  <link rel="preload" as="image" href="../../assets/img/dizayn/hero-branding.webp" fetchpriority="high">
+  <link rel="preload" as="style" href="../../assets/css/dizayn-critical.v1.css?v=1">
+  <link rel="preload" as="image" href="../../assets/img/dizayn/hero-branding-400.webp" media="(max-width: 959px)" fetchpriority="high">
+  <link rel="preload" as="image" href="../../assets/img/dizayn/hero-branding.webp" media="(min-width: 960px)" fetchpriority="high">
   <link rel="preload" href="../../assets/m-files.cdn1.cc/web/user/fonts/montserrat/montserrat_bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../../assets/css/home-clean-critical.v1.css?v=1">
+  <link rel="stylesheet" href="../../assets/css/dizayn-critical.v1.css?v=1">
   <link rel="stylesheet" href="../../assets/css/home-clean-deferred.v1.css?v=1" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="../../assets/css/home-clean-deferred.v1.css?v=1"></noscript>
-  <link rel="stylesheet" href="../../assets/css/studio-clean.css?v=1">
-  <link rel="stylesheet" href="../../assets/css/dizayn-parent-clean.css?v=3">
+  <link rel="stylesheet" href="../../assets/css/dizayn-page.css?v=4" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="../../assets/css/dizayn-page.css?v=4"></noscript>
   <link rel="stylesheet" href="../../assets/css/lead-forms.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="../../assets/css/lead-forms.css"></noscript>
   <script type="application/ld+json" data-schema="raskrutov">
@@ -247,15 +250,18 @@
           </ul>
         </div>
         <figure class="rk-studio-hero__media">
-          <img
-            src="../../assets/img/dizayn/hero-branding.webp"
-            alt="Примеры фирменного стиля: брендбук, визитки, упаковка и другие носители айдентики"
-            width="678"
-            height="298"
-            fetchpriority="high"
-            loading="eager"
-            decoding="async"
-          >
+          <picture>
+            <source media="(max-width: 959px)" srcset="../../assets/img/dizayn/hero-branding-400.webp" type="image/webp" width="400" height="175">
+            <img
+              src="../../assets/img/dizayn/hero-branding.webp"
+              alt="Примеры фирменного стиля: брендбук, визитки, упаковка и другие носители айдентики"
+              width="678"
+              height="298"
+              fetchpriority="high"
+              loading="eager"
+              decoding="async"
+            >
+          </picture>
         </figure>
       </div>
     </section>
@@ -373,19 +379,19 @@
         <h2 class="rk-h2" id="examples-title">Примеры фирменного стиля</h2>
         <div class="rk-examples__grid">
           <figure class="rk-examples__card">
-            <img src="../../assets/m-files.cdn1.cc/lpfile/5/b/9/5b99fa8d95df45d376053e61902d796d/-/crop/5x0x1660x941/-/resize/301/-/scale/x3/f__q_55932084.webp" alt="TechnoRed — пример фирменного стиля для IT-компании" width="301" height="172" loading="lazy" decoding="async">
+            <img src="../../assets/img/dizayn/examples/technored.webp" alt="TechnoRed — пример фирменного стиля для IT-компании" width="360" height="204" loading="lazy" decoding="async">
             <figcaption>TechnoRed - IT-компания</figcaption>
           </figure>
           <figure class="rk-examples__card">
-            <img src="../../assets/m-files.cdn1.cc/lpfile/7/1/3/71358f735a1ba65e5938e2d437d94cfe/-/crop/5x0x1660x941/-/resize/301/-/scale/x3/f__q_65169517.webp" alt="GreenLeaf — пример фирменного стиля для экологичного бренда" width="301" height="172" loading="lazy" decoding="async">
+            <img src="../../assets/img/dizayn/examples/greenleaf.webp" alt="GreenLeaf — пример фирменного стиля для экологичного бренда" width="360" height="204" loading="lazy" decoding="async">
             <figcaption>GreenLeaf - Экологичный бренд</figcaption>
           </figure>
           <figure class="rk-examples__card">
-            <img src="../../assets/m-files.cdn1.cc/lpfile/1/0/d/10de9baa71885eaea5929db9043bba2b/-/crop/10x0x1655x941/-/resize/301/-/scale/x3/f__q_81913524.webp" alt="Mirax — пример фирменного стиля для девелопмента" width="301" height="172" loading="lazy" decoding="async">
+            <img src="../../assets/img/dizayn/examples/mirax.webp" alt="Mirax — пример фирменного стиля для девелопмента" width="360" height="204" loading="lazy" decoding="async">
             <figcaption>Mirax - Девелопмент</figcaption>
           </figure>
           <figure class="rk-examples__card">
-            <img src="../../assets/m-files.cdn1.cc/lpfile/4/9/9/499744b1cc1d5079628dd0c18face1f7/-/crop/11x0x1660x941/-/resize/301/-/scale/x3/f__q_61130775.webp" alt="BloomLab — пример фирменного стиля для косметического бренда" width="301" height="172" loading="lazy" decoding="async">
+            <img src="../../assets/img/dizayn/examples/bloomlab.webp" alt="BloomLab — пример фирменного стиля для косметического бренда" width="360" height="204" loading="lazy" decoding="async">
             <figcaption>BloomLab - Косметика</figcaption>
           </figure>
         </div>
@@ -397,75 +403,75 @@
         <h2 class="rk-cities__title">Услуги дизайнера в городах Казахстана</h2>
         <div class="rk-cities__grid">
           <a class="rk-cities__card" href="/web-studiya/dizayn/astana/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/astana.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/astana.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Астане</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/almaty/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/almaty.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/almaty.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Алматы</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/shymkent/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/shymkent.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/shymkent.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Шымкенте</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/aktau/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/aktau.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/aktau.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Актау</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/aktobe/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/aktobe.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/aktobe.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Актобе</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/atyrau/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/atyrau.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/atyrau.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Атырау</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/karaganda/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/karaganda.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/karaganda.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Караганде</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/kokshetau/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/kokshetau.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/kokshetau.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Кокшетау</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/kostanay/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/kostanay.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/kostanay.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Костанае</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/kyzylorda/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/kyzylorda.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/kyzylorda.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Кызылорде</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/pavlodar/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/pavlodar.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/pavlodar.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Павлодаре</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/petropavlovsk/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/petropavlovsk.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/petropavlovsk.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Петропавловске</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/semey/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/semey.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/semey.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Семее</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/taldykorgan/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/taldykorgan.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/taldykorgan.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Талдыкоргане</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/taraz/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/taraz.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/taraz.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Таразе</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/turkestan/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/turkestan.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/turkestan.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Туркестане</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/uralsk/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/uralsk.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/uralsk.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Уральске</span>
           </a>
           <a class="rk-cities__card" href="/web-studiya/dizayn/ust-kamenogorsk/">
-            <img class="rk-cities__photo" src="../../assets/img/cities/ust-kamenogorsk.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+            <img class="rk-cities__photo" src="../../assets/img/dizayn/cities/ust-kamenogorsk.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
             <span class="rk-cities__label">Услуги дизайнера в Усть-Каменогорске</span>
           </a>
         </div>
