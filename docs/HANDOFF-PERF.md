@@ -667,5 +667,6 @@ Hero section id: `9466bf80aa894ca9b20b37b4d9409cc1`
 ### 2026-08-07 — DEPLOY all 18 clean geo dizayn + alts
 
 - Юзер: «заливай и крепи».
-- Feature + точечный plesk: 18× `dizayn/{city}/index.html`, `dizayn/index.html` alts, hub alts (18+parent), `dizayn-geo-critical.v1.css`, `hub-city-clean.css`, `cities/card/*`.
-- Без `/MIR`. Live sample: https://raskrutov.kz/web-studiya/dizayn/almaty/
+- Feature `7009c5d6`, plesk deploy `e5955fec`.
+- Точечный plesk: 18× `dizayn/{city}/index.html`, `dizayn/index.html` alts, hub alts (18+parent), `dizayn-geo-critical.v1.css`, `hub-city-clean.css`, `cities/card/*`.
+- Без `/MIR`. Live sample verified: almaty/shymkent/petropavlovsk/astana — `rk-clean`, no bundle, geo-critical.
