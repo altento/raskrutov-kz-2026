@@ -3,21 +3,21 @@
   "hooks": {
     "beforeSubmitPrompt": [
       {
-        "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .cursor/hooks/before-submit-lock.ps1",
+        "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .cursor/hooks/before-submit-parallel.ps1",
         "timeout": 30
       }
     ],
     "preToolUse": [
       {
-        "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .cursor/hooks/pre-tool-lock.ps1",
+        "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .cursor/hooks/pre-tool-parallel.ps1",
         "matcher": "Write|StrReplace|Delete|Edit|ApplyPatch|Shell",
         "timeout": 10
       }
     ],
     "afterAgentResponse": [
       {
-        "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .cursor/hooks/after-response-unlock.ps1",
-        "timeout": 20
+        "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .cursor/hooks/after-response-parallel.ps1",
+        "timeout": 180
       }
     ]
   }
