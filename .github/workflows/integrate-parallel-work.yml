@@ -1,0 +1,79 @@
+name: Integrate parallel work
+
+on:
+  push:
+    branches:
+      - work/pc1
+      - work/pc2
+
+permissions:
+  contents: write
+
+concurrency:
+  group: raskrutov-main-integration
+  cancel-in-progress: false
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "raskrutov-parallel-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch work branch
+        env:
+          WORK_BRANCH: ${{ github.ref_name }}
+        run: git fetch origin "$WORK_BRANCH:refs/remotes/origin/$WORK_BRANCH"
+
+      - name: Refuse overlapping file edits
+        env:
+          WORK_BRANCH: ${{ github.ref_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="$(git merge-base origin/main "origin/$WORK_BRANCH")"
+          git diff --name-only "$BASE"..origin/main | sort -u > /tmp/main-files.txt
+          git diff --name-only "$BASE".."origin/$WORK_BRANCH" | sort -u > /tmp/work-files.txt
+          comm -12 /tmp/main-files.txt /tmp/work-files.txt > /tmp/overlap.txt
+          if [ -s /tmp/overlap.txt ]; then
+            echo "Integration stopped: both main and $WORK_BRANCH changed the same file(s):"
+            cat /tmp/overlap.txt
+            exit 20
+          fi
+
+      - name: Merge without committing
+        env:
+          WORK_BRANCH: ${{ github.ref_name }}
+        run: git merge --no-ff --no-commit "origin/$WORK_BRANCH"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.19.0'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Quality gate
+        run: npm run quality:all
+
+      - name: Commit integration
+        env:
+          WORK_BRANCH: ${{ github.ref_name }}
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          git commit -m "merge: integrate $WORK_BRANCH (${SOURCE_SHA:0:8})"
+
+      - name: Push main
+        run: git push origin HEAD:main
